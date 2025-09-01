@@ -1,0 +1,232 @@
+Nguyen Minh Anh
+0233967 67CS1
+3
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Dai So Tuyen Tinh_3
+9 9 9 9 4 A
+3.7
+Nguyen Duc Anh
+0233968 67CS2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Nguyen Minh Quan
+0233969 67IT5
+3
+Triet Hoc_3
+5 5 5 5 1.5 D+
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+Vat Ly 2_3
+5 5 5 5 1.5 D+
+1.8
+Hoang Duc Huy
+0233970 67CS2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Phap Luat Dai Cuong_3
+9 9 10 9.5 4 A
+Vat Ly 2_3
+8 8 9 8.5 4 A
+Giai Tich 2_3
+6 7 7 6.8 2.5 C+
+3.4
+Nguyen Bao Ngoc
+0233971 67IT2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 2_3
+9 9 8 8.5 4 A
+Vat Ly 2_3
+9 8 8 8.2 3.5 B+
+Tieng Anh Co Ban 2_2
+8 8 9 8.5 4 A
+3.6
+Nguyen Quang Duy
+0233972 67IT4
+3
+Giai Tich 2_3
+7 7 6 6.5 2.5 C+
+Vat Ly 2_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.3
+Le Quang Huy
+0233973 67CS1
+3
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Dai So Tuyen Tinh_3
+9 9 9 9 4 A
+3.7
+Tran Thao Nhi
+0233974 67CS2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Hoang Minh Quan
+0233975 67CS1
+3
+Triet Hoc_3
+5 5 5 5 1.5 D+
+Giai Tich 1_3
+5 5 6 5.5 2 C
+Dai So Tuyen Tinh_3
+7 7 7 7 3 B
+2.2
+Nguyen Duc Quang
+0233976 67IT5
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Nguyen Nam Phong
+0233977 67IT4
+3
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Dai So Tuyen Tinh_3
+9 9 9 9 4 A
+3.7
+Nguyen Duc Anh
+0233978 67IT1
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Nguyen Mai Linh
+0233979 67CS1
+3
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Dai So Tuyen Tinh_3
+9 9 9 9 4 A
+3.7
+Nguyen Duc Anh
+0233980 67CS1
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Nguyen Minh Huy
+0233981 67CS2
+3
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Dai So Tuyen Tinh_3
+9 9 9 9 4 A
+3.7
+Nguyen Hai Duy
+0233982 67CS2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Nguyen Quang Minh
+0233983 67CS1
+3
+Triet Hoc_3
+5 5 5 5 1.5 D+
+Giai Tich 1_3
+7 7 8 7.5 3 B
+Dai So Tuyen Tinh_3
+7 7 7 7 3 B
+2.5
+Nguyen Duc Minh
+0233984 67CS2
+4
+Triet Hoc_3
+9 8 6 7.2 3 B
+Giai Tich 1_3
+9 9 8 8.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Nguyen Minh Ngoc
+0233985 67CS1
+3
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Dai So Tuyen Tinh_3
+9 9 9 9 4 A
+3.7
+Nguyen Duc Khai
+0233986 67CS2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9
+Hoang Mai Huong
+0233987 67CS2
+4
+Triet Hoc_3
+9 8 7 7.8 3 B
+Giai Tich 1_3
+9 9 10 9.5 4 A
+Vat Ly 1_3
+5 5 6 5.5 2 C
+Phap Luat Dai Cuong_3
+6 7 7 6.8 2.5 C+
+2.9

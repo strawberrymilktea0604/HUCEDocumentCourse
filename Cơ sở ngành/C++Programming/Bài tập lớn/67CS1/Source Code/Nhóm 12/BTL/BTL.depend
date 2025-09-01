@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1687480169 source:c:\users\minhk\downloads\btl c++\btl\function.cpp
+	"header.h"
+
+1687484812 c:\users\minhk\downloads\btl c++\btl\header.h
+	<iostream>
+	<string>
+	<iomanip>
+	<fstream>
+	<regex>
+
+1687484788 source:c:\users\minhk\downloads\btl c++\btl\main.cpp
+	"header.h"
+
+1687480169 c:\users\minhk\downloads\btl c++\btl\function.cpp
+	"header.h"
+
