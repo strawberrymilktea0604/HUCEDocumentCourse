@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1654861363 source:d:\project\btl_cpp\quanlydulich\main.cpp
+	"btl.h"
+
+1654888690 source:d:\project\btl_cpp\quanlydulich\btl.cpp
+	"btl.h"
+
+1654887721 d:\project\btl_cpp\quanlydulich\btl.h
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<cctype>
+

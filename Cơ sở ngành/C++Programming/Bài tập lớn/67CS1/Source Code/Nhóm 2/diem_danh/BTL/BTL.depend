@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1687476885 source:c:\users\minhk\downloads\btl c++\bai-tap-lon\diem_danh\function.cpp
+
+1687476885 source:c:\users\minhk\downloads\btl c++\bai-tap-lon\diem_danh\main.cpp
+	"Header.h"
+
+1687476885 c:\users\minhk\downloads\btl c++\bai-tap-lon\diem_danh\header.h
+	<iostream>
+	<string>
+	<algorithm>
+	<fstream>
+	<sstream>
+

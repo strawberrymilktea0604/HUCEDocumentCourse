@@ -1,0 +1,19 @@
+Ten khach hang : Hoang Van Toi	 so dien thoai KH : 0966265094
+So mon an da dat 4
+Ten mon an :  ga nuong	30
+Ten mon an : ga quay	20
+Ten mon an : ga hap	10
+Ten mon an : lon	29
+Ten khach hang : Van To	 so dien thoai KH : 0966265094
+So mon an da dat 4
+Ten mon an :  ga nuong	30
+Ten mon an : ga quay	20
+Ten mon an : ga hap	20
+Ten mon an : vit	28
+Ten khach hang : Hoang Van Ti	 so dien thoai KH : 0966265094
+So mon an da dat 5
+Ten mon an :  ga nuong	30
+Ten mon an : ga quay	20
+Ten mon an : ga hap	10
+Ten mon an : heo quay	39
+Ten mon an : bo hap bia	38

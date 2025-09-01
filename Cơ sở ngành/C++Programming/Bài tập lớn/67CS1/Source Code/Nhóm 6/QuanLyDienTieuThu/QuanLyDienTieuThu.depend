@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1684322793 source:c:\users\minhk\downloads\baitaplon\baitaplonfinal\quanlydientieuthu\main.cpp
+	"baitaplon.h"
+
+1684724821 c:\users\minhk\downloads\baitaplon\baitaplonfinal\quanlydientieuthu\baitaplon.h
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+
+1684724031 source:c:\users\minhk\downloads\baitaplon\baitaplonfinal\quanlydientieuthu\baitaplon.cpp
+	"baitaplon.h"
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+
+1685362116 source:c:\users\minhk\downloads\baitaplonfixed\baitaplonfinal\quanlydientieuthu\main.cpp
+	"baitaplon.h"
+
+1685360576 c:\users\minhk\downloads\baitaplonfixed\baitaplonfinal\quanlydientieuthu\baitaplon.h
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<regex>
+
+1685416250 source:c:\users\minhk\downloads\baitaplonfixed\baitaplonfinal\quanlydientieuthu\baitaplon.cpp
+	"baitaplon.h"
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<regex>
+
+1685416250 source:c:\users\minhk\downloads\btl c++\btlnhom4\baitaplonfinal\quanlydientieuthu\baitaplon.cpp
+	"baitaplon.h"
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<regex>
+
+1685360576 c:\users\minhk\downloads\btl c++\btlnhom4\baitaplonfinal\quanlydientieuthu\baitaplon.h
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<regex>
+
+1685362116 source:c:\users\minhk\downloads\btl c++\btlnhom4\baitaplonfinal\quanlydientieuthu\main.cpp
+	"baitaplon.h"
+

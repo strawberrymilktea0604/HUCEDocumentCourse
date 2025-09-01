@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1654888690 source:c:\users\wayari\desktop\test\btl.cpp
+	"btl.h"
+
+1654887721 c:\users\wayari\desktop\test\btl.h
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<cctype>
+
+1654861363 source:c:\users\wayari\desktop\test\main.cpp
+	"btl.h"
+

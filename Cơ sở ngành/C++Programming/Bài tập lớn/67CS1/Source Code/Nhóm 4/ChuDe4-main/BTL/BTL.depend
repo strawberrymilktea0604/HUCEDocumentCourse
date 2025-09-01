@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1684343998 source:c:\users\minhk\downloads\btl c++\chude4-main\chude4-main\function.cpp
+	"BTL.h"
+
+1684343998 c:\users\minhk\downloads\btl c++\chude4-main\chude4-main\btl.h
+	<iostream>
+	<fstream>
+	<conio.h>
+	<iomanip>
+	<string>
+	<regex>
+
+1687483146 source:c:\users\minhk\downloads\btl c++\chude4-main\chude4-main\chude4.cpp
+	"BTL.h"
+

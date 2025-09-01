@@ -1,0 +1,9 @@
+5 
+Trinh Thanh Nhan
+2.8 0.9 3.4 2.2 4.4 
+Le Ngoc Dang Khoa
+7.2 8.1 4.8 5.8 6.1
+Tran Minh Phu
+3.4 4.4 3.8 6.2 7.1 
+Vu Anh Quan
+6.1 5.8 6.2 4.9 6.8

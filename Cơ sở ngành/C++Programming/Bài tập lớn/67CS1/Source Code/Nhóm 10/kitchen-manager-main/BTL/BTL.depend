@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1687482439 source:c:\users\minhk\downloads\btl c++\kitchen-manager-main\kitchen-manager-main\main.cpp
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<cctype>
+	<regex>
+	"quanli.h"
+
+1687482523 c:\users\minhk\downloads\btl c++\kitchen-manager-main\kitchen-manager-main\quanli.h
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<cctype>
+	<regex>
+
+1687482512 source:c:\users\minhk\downloads\btl c++\kitchen-manager-main\kitchen-manager-main\quanli.cpp
+	<iostream>
+	<string>
+	<string.h>
+	<iomanip>
+	<fstream>
+	<cstring>
+	<cctype>
+	<regex>
+	"quanli.h"
+
