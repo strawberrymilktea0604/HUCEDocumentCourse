@@ -1,0 +1,6 @@
+Nhap vao 1 day so
+Viet bang cach dung 1 list hoac tulip 
+tong cac so chan
+
+
+in ra các số nguyên tố của 1 dãy số nguyên nhập vào 

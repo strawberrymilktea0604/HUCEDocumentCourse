@@ -1,0 +1,4 @@
+bread                1.39
+tomatoes             1.56
+milk                 4.35
+coffee               8.97

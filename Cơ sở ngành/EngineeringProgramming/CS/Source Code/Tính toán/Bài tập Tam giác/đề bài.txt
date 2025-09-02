@@ -1,0 +1,3 @@
+viết 1 hàm, kiểm tra ba biến số nguyên a, b, c, xem nó có phải là tam giác không
+mà nếu là tam giác vuông, đều, bình thường
+

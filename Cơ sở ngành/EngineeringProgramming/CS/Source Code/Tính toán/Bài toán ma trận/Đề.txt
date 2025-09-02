@@ -1,0 +1,1 @@
+Cho nhập vào 1 ma trận m hàng n cột, tìm tất cả các phần tử có giá trị từ k nhập từ bàn phím 
