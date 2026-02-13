@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    .error {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm" onsubmit="validateForm(); return false;">
+
+    <fieldset>
+      <legend>Thông tin cá nhân</legend>
+
+      <label for="name">Tên:</label>
+      <input type="text" id="name" name="name" >
+
+      <label for="studentCode">Mã học viên:</label>
+      <input type="text" id="studentCode" name="studentCode" >
+
+      <label for="class">Lớp:</label>
+      <input type="text" id="class" name="class" >
+    </fieldset>
+
+    <fieldset>
+      <legend>Thông tin khác</legend>
+
+      <label for="dob">Ngày sinh:</label>
+      <input type="date" id="dob" name="dob" >
+
+      <label for="age">Tuổi:</label>
+      <input type="number" id="age" name="age" >
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var studentCode = document.getElementById("studentCode").value;
+      var className = document.getElementById("class").value;
+      var dob = new Date(document.getElementById("dob").value);
+      var age = document.getElementById("age").value;
+
+      // Reset background color
+      document.getElementById("name").classList.remove("error");
+      document.getElementById("studentCode").classList.remove("error");
+      document.getElementById("class").classList.remove("error");
+      document.getElementById("dob").classList.remove("error");
+      document.getElementById("age").classList.remove("error");
+
+      // Validate non-empty fields
+      var fields = ["name", "studentCode", "class", "dob", "age"];
+      fields.forEach(function(field) {
+        var element = document.getElementById(field);
+        if (element.value.trim() === "") {
+          element.classList.add("error");
+        }
+      });
+
+      // Validate name
+      if (name.split(' ').length < 2) {
+        document.getElementById("name").classList.add("error");
+      }
+
+      // Validate date of birth
+      if (dob === "Invalid Date") {
+        document.getElementById("dob").classList.add("error");
+      }
+
+      // Validate age
+      if (age < 0) {
+        document.getElementById("age").classList.add("error");
+      }
+    }
+  </script>
+
+</body>
+</html>

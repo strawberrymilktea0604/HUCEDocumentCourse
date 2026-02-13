@@ -1,0 +1,15 @@
+#top {
+    color: rgb(137, 137, 137);
+    position: absolute;
+    font-size: 40px;
+    top: 40px;
+    left: 50px;
+}
+
+#bottom {
+    color: red;
+    position: absolute;
+    font-size: 40px;
+    top: 43px;
+    left: 52px;
+}

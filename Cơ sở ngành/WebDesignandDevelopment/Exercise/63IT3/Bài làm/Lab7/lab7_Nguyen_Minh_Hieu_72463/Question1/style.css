@@ -1,0 +1,81 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to right, #2f80ed, #b2ffda);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 500px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: 10px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.header {
+  text-align: center;
+  margin: 20px 0 30px 0;
+}
+.form-group {
+  width: 80%;
+  text-align: right;
+  margin: 0 0 30px 0;
+}
+.form-group.invalid {
+  width: 80%;
+  text-align: right;
+  margin: 0 0 10px 0;
+}
+.form-group > label {
+  width: 50px;
+  text-align: right;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.form-group > input {
+  height: 2.8rem;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  font-size: 1.6rem;
+  margin: 0 10px;
+  padding-left: 10px;
+}
+.form-group > input:focus {
+  outline: none;
+  border: 1px solid #2f80ed;
+}
+.form-group.invalid > input:focus {
+  border: 1px solid red;
+}
+.form-group > span {
+  color: red;
+  font-size: 1.6rem;
+}
+.btn-group {
+  margin-top: 30px;
+  text-align: center;
+}
+.btn-group > input {
+  height: 3rem;
+  width: 8rem;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0 10px;
+  cursor: pointer;
+}

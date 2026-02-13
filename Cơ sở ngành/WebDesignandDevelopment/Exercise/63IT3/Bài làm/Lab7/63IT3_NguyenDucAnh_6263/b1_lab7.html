@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            <style>
+                .mybtn{
+                    background-color: li    ;
+                }
+                i{
+                    color: rgb(194, 33, 33)
+                }
+                
+            </style>
+    </head>
+    <body>
+        <script>
+            function check(){
+                with(document){
+                    if(c.txtEmail.value==""){
+                        alert("Bạn chưa nhập Email");
+                        c.txtEmail.focus();
+                        return false;
+                    }
+                    if(c.txtPassword.value==""){
+                        alert("Bạn chưa nhập Password");
+                        c.txtPassword.focus();
+                        return false;
+                    }
+                    r= /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/
+                    if(r.test(c.txtPassword.value)==false){
+                        alert("Bạn nhập thiếu kí tự");
+                        c.txtPassword.focus();
+                        return false;
+                    }
+                }
+            }
+        </script>
+    <form name= 'c' onSubmit="return check();" method="POST" action="Lab7-1.html">
+        <table style="padding: 3px;" border=1 width = 300 height = 200 align= center>
+            <tr>
+                <td colspan=2 align = center bgcolor="grey"><b>Admistrator</b></td>
+            </tr>
+            <tr style="height: 55px; ">
+                <td align=right>Email:</td>
+                <td>
+                    <input style="border-style: inset;  border-color: rgb(212, 211, 211) ; background-color: rgb(204, 206, 207);" type="email" name=txtEmail> <i>(*)</i>
+                    <p style="margin: 0;"><i style="color: black;">(exapmple: home@aptech.vn)</i></p>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td align=right>Password:</td>
+                <td><input style="border-style: inset; border-color: rgb(212, 211, 211) ; background-color: rgb(204, 206, 207);" type="password" name=txtPassword> <i>(*)</i></td>
+                
+            </tr>
+            <tr style="height:35px">
+                <td></td>
+                <td>
+                    <input class="mybtn"  type="submit" name = next value="Submit">
+                    <input class="mybtn" type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+  
+    </body>
+</html>

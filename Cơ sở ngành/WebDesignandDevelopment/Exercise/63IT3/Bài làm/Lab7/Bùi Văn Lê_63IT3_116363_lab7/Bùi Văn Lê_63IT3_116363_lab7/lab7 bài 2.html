@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table a b{
+            text-decoration: none;
+            transform: 0.4s;
+            display: block;
+        }
+        table a b:hover{
+            background-color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" style="border: solid black 1px;width: 900px;height: 700px;margin-left: auto;margin-right: auto;" name="bai2" onsubmit="return kiemtra();">
+    <table border="0" align="center" style="height: 700px;width: 700px;">
+        <tr>
+            <td colspan="2" align="center" style="background-color: black;color: white;"><a href="" style="text-decoration: none;"><b style="color: white;">ADDNEW PRODUCTION</b></a></td>
+        </tr>
+        <tr>
+            <td>Category Choose:</td>
+            <td><select name="list">
+                <option value="">Select</option>
+                <option value="">Nokia</option>
+                <option value="">Samsung</option>
+                <option value="">GL</option>
+                <option value="">Sony</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Product Name:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Product Description:</td>
+            <td><textarea name="description" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>Product Quantity:</td>
+            <td style="color: red;" ><input type="text" name="quantity">(positive)</td>
+        </tr>
+        <tr>
+            <td>Product Price:</td>
+            <td style="color: red;"><input type="text" name="price">($)</td>
+        </tr>
+        <tr>
+            <td>Product Image:</td>
+            <td><input type="file"></td>
+        </tr>
+        <tr>
+            <td>Product Info:</td>
+            <td><textarea name="info" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>Product Statuc:</td>
+            <td style="color: red;"><input type="checkbox" name="" id="">Show <br><hr align="center"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onsubmit="return kiemtra(); ">Addnew</button> <input type="reset"></td>
+        </tr>
+    </table>
+</form>  
+<script>
+    //kiểm tra product name không được để trống
+    function kiemtra(){
+        if(bai2.list.value==""){
+            alert("Ban chưa chọn loại sản phẩm")
+            bai2.list.focus();
+            return false
+        }
+        if(bai2.name.value==""){
+            alert("Product Name không được để trống")
+            bai2.name.focus();
+            return false
+        }
+        if(bai2.description.value==""){
+            alert("Product Description không được để trống")
+            bai2.description.focus();
+            return false
+        }
+        if(bai2.quantity.value==""){
+            alert("Product Quantity không được để trống")
+            bai2.quantity.focus();
+            return false
+        }
+        if(bai2.price.value==""){
+            alert("Product Price không được để trống")
+            bai2.price.focus();
+            return false
+        }
+        if(bai2.info.value==""){
+            alert("Product Info không được để trống")
+            bai2.info.focus();
+            return false
+        }
+    }
+</script>  
+</body>
+</html>

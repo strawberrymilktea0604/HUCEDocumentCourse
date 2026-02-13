@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script>
+        function btn01_click() {
+            var p1_tag = document.getElementById("p1");
+            //jquery: $("#p1");
+            p1_tag.innerHTML = "Nội dung đã thay đổi";
+        }
+
+        function btn02_click() {
+            var img1_tag = document.getElementById("img1");
+            img1_tag.src = "./anh1.jpg";
+        }
+
+        function btn03_click() {
+            var p2_tag = document.getElementById("p2");
+            p2_tag.style.color = "red";
+        }
+    </script>
+</head>
+<body>
+    <!--Thay đổi phần dữ liệu của đối tượng trên trang HTML-->
+    <p id="p1">Đây là thẻ p1</p>
+    <button type="button" onclick="btn01_click()">Thay đổi nội dung p1</button><br />
+
+    <!--Thay đổi phần thuộc tính của đối tượng trên trang HTML-->
+    <img src="./anh2.jpg" id="img1" /> <br />
+    <button type="button" onclick="btn02_click()">Thay đổi thuộc tính img1</button>
+
+    <!--Thay đổi css của đối tượng trên trang HTML-->
+    <p id="p2">Đây là thẻ p2</p>
+    <button type="button" onclick="btn03_click()">Thay đổi màu chữ p2</button><br />
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 5px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+
+        p {
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        function check() {
+
+            if (txtEmail.value == "") {
+                alert("Bạn chưa nhập email");
+                txtEmail.focus();
+                return false;
+            }
+            if (txtPass.value == "") {
+                alert("Bạn chưa nhập pass");
+                txtPass.focus();
+                return false;
+            }
+
+            d = /^\w+\@\w+(\.\w{2,3})+$/
+            if (d.test(txtEmail.value) == false) {
+                alert("Email phải có định dạng abc@domain!");
+                txtEmail.focus();
+                return false;
+            }
+            d = /^[a-zA-Z]+[A-Za-z ]*$/
+            if (d.test(txtPass.value) == false) {
+                alert("Password phải có ký tự a-z A-Z!");
+                txtPass.focus();
+                return false;
+            }
+        }
+    </script>
+    <form method="get" action="Bai2.html" >
+    <table>
+        <tr>
+            <td colspan="2" bgcolor="#ddd" style="text-align: center;"><b>Admistrator</b></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>
+                <input type="text" style="background-color: #ddd;" id="txtEmail">
+                <p style="color: red;">(*)</p><br>
+                <p><i>(example:home@aptech.vn)</i></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>
+                <input type="text" style="background-color: #ddd;" id="txtPass">
+                <p style="color: red;">(*)</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="submit" value="Submit" onclick="return check()"/>
+                <button type="reset">Reset</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+
+</html>

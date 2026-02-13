@@ -1,0 +1,88 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+    </head>
+    <body>
+        <h1 align=center>Thông tin đăng ký CLB Tình Nguyện FIT</h1>
+        <form action="session04_02.html" method="POST">
+            <table border=0 cellspacing=5 cellpadding=5 width=600 align=center>
+                <tr>
+                    <td align=right>Họ và tên:</td>
+                    <td><input type=text name="txtHoVaTen" size=30></td>
+                </tr>
+                <tr>
+                    <td align=right>Tên đăng nhập:</td>
+                    <td><Input type=text name=txtTenDangNhap size=30></td>
+                </tr>
+                <tr>
+                    <td align=right>Mật khẩu:</td>
+                    <td><input type=password name=txtMatKhau size=30></td>
+                </tr>
+                <tr>
+                    <td align=right>Giới tính:</td>
+                    <td><input type=radio name=rdGioiTinh value=Nam checked>Nam 
+                        <input type=radio name=rdGioiTinh value=Nữ>Nữ
+                        <input type=radio name=rdGioiTinh value=Khác>Khác
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Sở thích:</td>
+                    <td><input type=checkbox name=ckSoThich value="Âm nhạc">Âm nhạc
+                        <input type=checkbox name=ckSoThich value="Thể thao">Thể thao
+                        <input type=checkbox name=ckSoThich value="Du lịch">Du lịch
+                        <input type=checkbox name=ckSoThich value="Mua sắm">Mua sắm
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Ảnh:</td>
+                    <td>
+                        <input type=file name=fAnh>
+                    </td>    
+                </tr>
+                <tr>
+                    <td align=right>Địa chỉ: </td>
+                    <td><input type=text name=txtDiaChi size=30></td>
+                </tr>
+                <tr>
+                    <td align=right>Ngôn ngữ chính:</td>
+                    <td>
+                        <select name=slNgonNgu>
+                           <option value="Tiếng Việt">Tiếng Việt</option> 
+                           <option value="Tiếng Anh" selected>Tiếng Anh</option>  
+                           <option value="Tiếng Tàu">Tiếng Tàu</option> 
+                           <option value="Khác">Khác</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Câu lạc bộ nào mà em thích:</td>
+                    <td>
+                        <select name=slCLB multiple>
+                            <option>CLB X50</option>
+                            <option>CLB Tình Nguyện FIT</option>
+                            <option>CLB Toeic</option>
+                            <option>CLB Kiến Trúc</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Giới thiệu bản thân:</td>
+                    <td>
+                        <textarea name=taGioiThieu rows=10 cols=30>Nhập thông tin vào đây</textarea>
+                    </td>  
+                </tr>
+                <tr>
+                    <td align=right><input type=hidden name=hdKey value="1231232@123">
+                        <input type=submit name=cmdGuiDi value="Đăng ký">
+                    </td>
+                    <td>
+                        <input type=reset value="Làm lại"> <input type=button value="Về trang chủ" name="btHome">
+
+                    </td>    
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function check() {
+            with(document) {
+                if (f1.txtEmail.value == "") {
+                    alert("Email can not be empty!");
+                    f1.txtEmail.focus();
+                    return false;
+                }
+                r = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+                if (r.test(f1.txtEmail.value) == false) {
+                    alert("Email must be format.(example: admin@aptech.vn)")
+                    f1.txtEmail.focus();
+                    return false;
+                }
+                if (f1.txtPassword.value == "") {
+                    alert("Password can not be empty!");
+                    f1.txtPassword.focus();
+                    return false;
+                }
+                a = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~])(?=.*[@])(?=.*[#])(?=.*[$])(?=.*[?])[A-Za-z\d~@#$?]$/
+                if (a.test(f1.txtPassword.value) == false) {
+                    alert("Password  must include full character as: a-z; A-Z;1-9, ~;@;#;$;?;  (each character appears at least 1 times)");
+                    f1.txtPassword.focus();
+                    return false;
+                }
+
+            }
+        }
+    </script>
+    <form name=f1 action="D:\HocTap\Nam4_ki1\WEB\Lab4\ss5\bai1.html" method="post">
+        <table border="1" cellspacing=5 cellpadding=5 width=600 align=center>
+            <tr>
+                <td colspan="3">
+                    <center>Admistrator</center>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Email: </td>
+                <td colspan="2" align="left"><input type="text" name=txtEmail size=30>(*)
+                    <br>
+                    <i>(example:home@aptech.vn)</i>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Password: </td>
+                <td colspan="2" align="left"><input type="password" name=txtPassword size="30">(*)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="submit" onclick="return check();" name=cmdguidi value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

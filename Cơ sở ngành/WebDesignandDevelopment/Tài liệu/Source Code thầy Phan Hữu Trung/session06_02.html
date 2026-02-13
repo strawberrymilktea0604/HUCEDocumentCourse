@@ -1,0 +1,35 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            <script language="Javascript">
+                function changeBgRed(){
+                    document.bgColor="red";
+                }
+                function changeBg(color,fontcolor){
+                    document.bgColor=color;
+                    document.fgColor=fontcolor;
+                }
+        </script> 
+    </head>
+    <body>
+        
+        <center><span onClick="changeBgRed();">Red</span><br>
+                <span onclick="changeBg('red','yellow');">Red</span>
+                <span onclick="changeBg('black','white');">Black</span>
+                <span onclick="changeBg('green','red');">Green</span>
+        </center>
+        Bạn sinh năm bao nhiêu?
+        <select name=slnamsinh>
+            <option>----</option>
+        <script>
+            d = new Date();
+            for(i=1900;i<=d.getFullYear();i++){
+                document.write("<option>" + i + "</option>");
+            }     
+        </script>
+        </select>
+
+    </body>
+</html>

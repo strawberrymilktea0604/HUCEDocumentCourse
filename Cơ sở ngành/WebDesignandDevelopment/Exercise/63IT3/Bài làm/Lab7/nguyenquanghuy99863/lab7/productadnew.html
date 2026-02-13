@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>productadnew</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        input{
+            margin: 20px 20px 20px;
+             left: 100px;
+             
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <label>Category</label>
+    <select name="cars" id="cars">
+        <option value="volvo">Nokia</option>
+        <option value="saab">SAMSUNG</option>
+        <option value="opel">GL</option>
+        <option value="audi">SONY</option>
+      </select>
+      <br>
+      <label>product name</label>
+      <input id="name" type="text" onfocus="foucusfuntion(this.id)" onblur="blurfuntion(this.id)" >
+      <br>
+      <label>product Description</label>
+      <textarea></textarea>
+        <br>
+        <label>product quantity</label>
+        <input id="quantity" type="text" onfocus="foucusfuntion(this.id)" onblur="blurfuntion(this.id)" >
+        <br>
+        <label>product price</label>
+        <input>
+        <br>
+        <label>product Image</label>
+        <input type="file">
+        <br>
+        <label>product Infor</label>
+        <textarea placeholder="Enter your product" ></textarea>
+            <br>
+            <label>product status</label>
+            <input id="status" type="checkbox" >             <p id="show">hiden</p>
+
+            <hr>
+            <button id="add">Addnew</button>
+            <button >Reset</button>
+</div>
+      
+
+<script>
+    var addbutton=document.getElementById('add');
+    addbutton.onmousemove=()=>{
+        addbutton.style.backgroundColor = "red"
+    }
+    addbutton.onmouseout=()=>{
+        addbutton.style.backgroundColor = "#EFEFEF"
+    }
+
+ function foucusfuntion(id){
+    document.getElementById(id).style.background = "black";
+    document.getElementById(id).style.color = "white";
+
+  }
+function blurfuntion(id)
+{
+    document.getElementById(id).style.background = "white";
+}
+function showandhiden(){
+    var check=document.getElementById('status')
+    console.log(check.checked)
+    check.onclick=function(e){
+    if(this.checked){
+        getElementById('show').innerText('show')
+
+    }else{
+        getElementById('show').innerText('hiden')
+
+    }
+}
+}
+</script>    
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<HTML>
+    <STYLE>
+        h1{
+            background-image: url(C:/Users/minhk/Downloads/LaMinhKhanh-4004267-67cs1/395568683_258388153855658_1900950503288771950_n.png);
+            background-repeat: no-repeat;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 100px;
+        }
+        p {
+            font-family: 'Open Sans', sans-serif;
+            color: gray;
+            font-size: 30px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .column {
+            width: 48%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button[type="submit"] {
+            background-color: #659998;
+            color: #fff;
+            border: none;
+            padding: 10px 50px;
+            border-radius: 3px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        .required {
+            color: red;
+        }
+    </STYLE>
+    <body>
+        <div class="container">
+        <H1  align="center" style="color:white">Volunteer Signup</H1>
+        <p>The HELP Group is seeking volunteers to serve our community. Fill in the information below to indicate how you would like to become involved.</p>
+            <form>
+                <div class="row">
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="name">Name<span class='required'>*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone<span class='required'>*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City<span class='required'>*</span></label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">Zip<span class='required'>*</span></label>
+                            <input type="text" id="zip" name="zip" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="meal-preference">Meal Preference:</label>
+                            <select id="meal-preference" name="meal-preference">
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                                <option value="non-vegetarian">Non-Vegetarian</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="email">Email Address<span class='required'>*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Street<span class='required'>*</span></label>
+                            <input type="text" id="street" name="street" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State<span class='required'>*</span></label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact-info">Include my contact information on list distributed to other attendees:</label>
+                    <label><input type="radio" name="contact-info" value="yes"> Yes</label>
+                    <label><input type="radio" name="contact-info" value="no"> No</label>
+                </div>
+                <div class="form-group">
+                    <label for="days-attending">Days Attending:</label>
+                    <select id="days-attending" name="days-attending">
+                        <option value="Sunday">Sunday</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="activities-attending">Activities Attending:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="activities-attending" value="CEO luncheon"> CEO Luncheon</label><br>
+                        <label><input type="radio" name="activities-attending" value="Finance seminar"> Finance Seminar</label><br>
+                        <label><input type="radio" name="activities-attending" value="Leadership seminar"> Leadership Seminar</label><br>
+                        <label><input type="radio" name="activities-attending" value="Marketing workshop"> Marketing Workshop</label><br>
+                        <label><input type="radio" name="activities-attending" value="Teamwork seminar"> Teamwork Seminar</label><br>
+                    </div>
+                <div class="form-group">
+                    <label for="special-requirements">Special Requirements:</label>
+                    <textarea id="special-requirements" name="special-requirements"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="attend-last-conference">Did you attend last year's conference?</label>
+                    <label><input type="radio" name="attend-last-conference" value="yes"> Yes</label>
+                    <label><input type="radio" name="attend-last-conference" value="no"> No</label>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</HTML>

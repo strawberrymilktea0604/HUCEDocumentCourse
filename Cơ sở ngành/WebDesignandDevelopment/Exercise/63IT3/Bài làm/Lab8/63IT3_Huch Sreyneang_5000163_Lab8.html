@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>63IT3_Huch Sreyneang_5000163_Lab8</title>
+    
+</head>
+<body>
+<form>
+
+    <fieldset>
+        <legend>
+            Information for play game
+        </legend>
+        <table align="center">
+            <tr>
+                <td align="right">
+                    User name *:
+                </td>
+                <td>
+                    <input type="text" id="user_name" size="30" class="reuqired"  />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Password leve 1:
+                </td>
+                <td>
+                    <input type="password" id="password" class="required"  />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Re-enter password level 1*:
+                </td>
+                <td>
+                    <input type="password" id="password_re" class="required"  />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Password leve 2*:
+                </td>
+                <td>
+                    <input type="password" id="password_2" class="required" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Re-enter password leve 2*:
+                </td>
+                <td>
+                    <input type="password" id="password_2_re" class="required" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Security questions
+                </td>
+                <td>
+                    <select id="security_question">
+                        <option>Choose security question</option>
+                        <option>What is your library card number</option>
+                        <option>What is your first phone number</option>
+                        <option>What is your first teacher name</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Answers*:
+                </td>
+                <td>
+                    <input type="text" id="answer" class="required"  />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>
+            Customer information
+        </legend>
+        <table style=" margin-left: 50%; ">
+            <tr>
+                <td align="right">
+                    Full name*:
+                </td>
+                <td>
+                    <input type="text" id="full_name">
+                    <input type="radio" name="sex">
+                    <span> Male </span>
+                    <input type="radio" name="sex">
+                    <span> Female </span>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Email *:
+                </td>
+                <td>
+                    <input type="text" id="email" class="reqired" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Birthday*:
+                    </tdx>
+                <td id="birthday"></td>
+                <script type="text/javascript">
+
+                    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var bounder = document.getElementById("birthday");
+                    var date_list = document.createElement("select");
+                    var month_list = document.createElement("select");
+                    var year_list = document.createElement("select");
+                    bounder.appendChild(date_list)
+                    bounder.appendChild(month_list)
+                    bounder.appendChild(year_list)
+
+                    for (var i = 1; i < 32; i++) {
+                        var item = document.createElement("option");
+                        item.text = i;
+                        date_list.appendChild(item)
+                    }
+                    for (var i = 0; i < 12; i++) {
+                        var item = document.createElement("option");
+                        item.text = month[i];
+                        month_list.appendChild(item)
+                    }
+                    year = 1982;
+                    for (var i = 0; i < 61; i++) {
+                        var item = document.createElement("option");
+                        item.text = year++;
+                        year_list.appendChild(item)
+                    }
+                </script>
+            </tr>
+            <tr>
+                <td align="right">
+                    Address:
+                </td>
+                <td>
+                    <input type="text" id="address" name="address" size="60" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Home phone:
+                </td>
+                <td>
+                    <input type="text" id="homePhone" name="homePhone" />
+                    <span> Mobile: </span>
+                    <input type="text" id="mobile" name="mobile" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <p>*<b>Note:</b> all of the fiels that have "*" must be inputted</p>
+    <div align="center">
+        <script>
+
+            const regex_for_password = /.+/
+            const regex_for_email = /^([a-zA-Z0-9]+)@([a-zA-Z0-9.]+\w+)$/
+
+            function submitt() {
+
+                if (!regex_for_password.test(document.getElementById("user_name")) ||
+                    !regex_for_password.test(document.getElementById("full_name"))
+                ) {
+                    alert("Please enter required field");
+                }
+
+                if (!regex_for_password.test(document.getElementById("password").value) ||
+                    !regex_for_password.test(document.getElementById("password_2").value)) {
+                    alert("You missed 1 in 2 password");
+                    return;
+                }
+                if (document.getElementById("password").value != document.getElementById("password_re").value ||
+                    document.getElementById("password_2").value != document.getElementById("password_2").value) {
+                    alert("Your passwird not match")
+                    return;
+                }
+                if (document.getElementById("security_question").value == "Choose security question") {
+                    alert("Please select security question");
+                    return;
+                }
+                if (!regex_for_email.test(document.getElementById("email"))) {
+                    alert("Your email is not valid");
+                    return;
+                }
+                else {
+                    alert("Submitted");
+                }
+            }
+
+        </script>
+        <input type="submit" value="Register" onclick="submit();" />
+        <input type="reset" value="Clear" />
+    </div>
+</form>
+
+</body>
+    
+
+</html>

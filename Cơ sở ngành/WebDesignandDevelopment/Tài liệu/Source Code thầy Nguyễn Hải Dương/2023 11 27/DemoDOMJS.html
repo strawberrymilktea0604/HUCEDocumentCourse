@@ -1,0 +1,25 @@
+<html>
+<head>
+
+</head>
+<body>
+    <p id="p1"> Đây là thẻ p thứ nhất </p>
+
+    <img id="img1" src="./anh1.jpg" />
+
+    <script>
+        var p1 = document.getElementById("p1");
+        alert(p1.innerHTML);
+
+        //thay đổi dữ liệu của thẻ html
+        p1.innerHTML = "Đã thay đổi nội dung";
+
+        //thay đổi thuộc tính của thẻ html
+        var img1 = document.getElementById("img1");
+        img1.src = "./anh2.jpg";
+
+        //thay đổi css của thẻ html
+        p1.style.color = "red";
+    </script>
+</body>
+</html>

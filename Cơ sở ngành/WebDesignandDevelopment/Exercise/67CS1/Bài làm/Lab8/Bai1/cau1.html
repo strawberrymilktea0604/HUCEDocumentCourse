@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+    <head>
+        <style>
+            .register {
+                border: 10;
+                border-width: 5px;
+                border-color: white;
+                text-align: center;
+                color: yellow;
+                padding: 5px 15px;
+                background-color: green;
+                box-shadow:
+                  inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+                  inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+            }
+        </style>
+        
+    </head>
+    <body>
+        <form method="GET" name=f onSubmit="return check()">
+            <H1 id="mainHeading"> HN-Aptech Registration Form</H1>
+
+            <p>What subject would you like to learn ?<br></p>
+            <label for="language"></label>
+    
+            <input type=checkbox name=program id="program" value="Java" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;"> Java <br>
+            <input type=checkbox name=program id="program" value="HTML" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;"> HTML <br>
+            <input type=checkbox name=program id="program" value=".Net" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;"> .Net <br>
+            <input type=checkbox name=program id="program" value="SQL" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;"> SQL <br>
+    
+            <p>Where do you want to study at ?<br></p>
+    
+            <label for="Address"></label>
+            <input type=radio name="address" id="address" value="NCT">56 Nguyen Chi Thanh <br>
+            <input type=radio name="address" id="address" value="NT">19 Nguyen Trai <br><br>
+
+            <label for="email">Your Email Address </label>
+            <input type="text" id="email" name="email" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;">
+
+            <br><br>
+
+            <input class="register" type=submit name="rdRegister" value="Register">
+        </form>
+        <script>
+
+            var mainHeading = document.getElementById("mainHeading");
+            mainHeading.style.color = "blue";
+            mainHeading.style.fontSize = "14px";
+            mainHeading.style.textAlign = "center";
+            
+            // Set the style for all p elements
+            var paragraphs = document.querySelectorAll("p");
+            paragraphs.forEach(function(p) {
+            p.style.color = "blue";
+            p.style.fontSize = "6px";
+                  });
+
+            mainHeading.addEventListener("mouseover", function() {
+                        this.style.color = "yellow";
+            });
+
+            mainHeading.addEventListener("mouseout", function() {
+                  this.style.color = "blue";
+            });
+
+            function check() {
+                if (f.email.value=="") {
+                    alert("Email empty!");
+					f.email.focus();
+					return false; 
+                }
+                
+                if (f.email.value.includes("@")) {
+                    alert('Register successfully');
+                    f.email.focus();
+                    return true;
+                }
+                else {
+                    alert("Where is @?");
+					f.email.focus();
+					return false; 
+                }
+            }
+        </script>
+    </body>
+
+</html>

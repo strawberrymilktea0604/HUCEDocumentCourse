@@ -1,0 +1,185 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            
+    </head>
+    <body>
+        <script>
+            function changebg(id,color){
+                id.style.backgroundColor=color;
+            }
+            function check(){
+                with(document){
+                    if (f1.txtHoVaTen.value==""){
+                        alert("Phải nhập vào Họ Và Tên");
+                        f1.txtHoVaTen.focus();
+                        return false;
+                    }
+                    if (f1.txtTenDangNhap.value==""){
+                        alert("Phải nhập vào tên đăng nhập!");
+                        f1.txtTenDangNhap.focus();
+                        return false;
+                    }
+                    if (f1.txtMatKhau.value==""){
+                        alert("Phải nhập vào Mật Khẩu");
+                        f1.txtMatKhau.focus();
+                        return false;
+                    }
+                    //kiểm tra mật khẩu phải lớn hơn hoặc bằng 8 ký tự
+                    if (f1.txtMatKhau.value.length<8){
+                        alert("Mật Khẩu phải từ 8 ký tự trở lên!");
+                        return false;
+                    }
+                    //phải chọn 1 giới tính 
+                    t = 0;
+                    for(i=0;i<f1.rdGioiTinh.length;i++){
+                        if (f1.rdGioiTinh[i].checked==true) t++;
+                    }
+                    if (t==0){
+                        alert("Bạn phải chọn 1 giới tính!");
+                        return false;
+                    }
+                    //phải chọn ít nhất 2 sở thích
+                    t = 0;
+                    for(i=0;i<f1.ckSoThich.length;i++){
+                        if (f1.ckSoThich[i].checked) t++;
+                    }
+                    if (t<=1){
+                        alert("Bạn phải chọn từ 2 sở thích trở lên!");
+                        return false;
+                    }
+                }
+            }
+        </script>
+      
+        <form name=f1 action="session07_04.html" method="POST">
+          <b>
+            <p align=left style="color: blue;"> Infomation for play game</p>
+          </b>
+         
+            <table border=0 cellspacing=5 cellpadding=5 width=600 align=center>
+                <tr>
+                    <td align=right>Username*</td>
+                    <td><input type=text name="txtHoVaTen" size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align=right>Password level 1 *</td>
+                    <td><Input type=password name=txtMatKhau size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align=right>Re-enter password level 1 *</td>
+                    <td><input type=password name=txtMatKhau size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                  <td align=right>Password level 2 *</td>
+                  <td><Input type=password name=txtMatKhau size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+              </tr>
+              <tr>
+                  <td align=right>Re-enter password level 2 *</td>
+                  <td><input type=password name=txtMatKhau size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+              </tr>
+              <tr>
+                <td align=right>Security Question *</td>
+                <td>
+                    <select name=slNgonNgu>
+                       <option selected="selected">Choose a questione *</option> 
+                       <option value="Tiếng Anh" >Tiếng Anh</option>  
+                       <option value="Tiếng Tàu">Tiếng Tàu</option> 
+                       <option value="Khác">Khác</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                  <td align=right>Answer *</td>
+                  <td><input type=password name=txtMatKhau size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+              </tr>
+            </table>
+          </form>  
+               
+
+              <form name=f2 action="session07_04.html" method="POST">
+                <table border=0 cellspacing=5 cellpadding=5 width=600 align=center>
+                        
+          <b>
+            <p align=left style="color: blue;"> Customer Infomation</p>
+          </b>
+          <tr>
+            <td align=right>Fullname*</td>
+            <td><input type=text name="txtHoVaTen" size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+            <td><input type=radio name=rdGioiTinh value=Male>
+                </td>
+                <td>Male </td>
+          <td>
+            <input type=radio name=rdGioiTinh value=Female>
+          </td>
+          <td>Female</td>
+        </tr>
+        <tr>
+          <td align=right>Email*</td>
+          <td><input type="email"required name="txtHoVaTen" size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+      </tr>
+                <tr>
+                    <td align=right>Address: </td>
+                    <td><input type=text name=txtDiaChi size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                
+                <tr>
+                    <td align=right> Birthday: </td>
+                    <td>
+                        <select name=Ngay>
+                           <option selected="selected">1 </option> 
+                           <option value="1" >1</option>  
+                           <option value="2">2</option> 
+                           <option value="3">3</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <select name=Thang>
+                           <option selected="selected">1 </option> 
+                           <option value="1" >1</option>  
+                           <option value="2">2</option> 
+                           <option value="3">3</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <select name=Nam>
+                           <option selected="selected">1982 </option> 
+                           <option value="1" >1982</option>  
+                           <option value="2">1983</option> 
+                           <option value="3">1984</option>
+                        </select>
+                    </td>
+
+                    </tr>
+
+                <tr>
+                    <td align=right>Home phone: </td>
+                    <td><input type=text name=txtDiaChi size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                
+                    <td align=right>Mobile: </td>
+                    <td><input type=text name=txtDiaChi size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+             </table>
+             </form>   
+                
+                <b>
+                    <p align=left > <strong>*Note:</strong> all of the fields that have "*" must be inputted</p>
+                  </b>
+                <tr>
+                    <div align= center  class="register__button">
+                        <button type="button" class="btn" onclick="Register(this)">
+                            Register
+                        </button>
+                        <button type="button" class="btn" onclick="ClearData(this)">
+                            Clear
+                        </button>
+                    </div>
+                </tr>
+            </table>
+        </form>  
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>Trang Chủ</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0px;
+            }
+            button{
+                width: 95%;
+                text-align: center;
+            }
+            header{
+                text-align:center;
+            }
+            
+            .navbar{
+                background-color:rgb(176, 146, 204);
+                height: 50px;
+            }
+            
+            .box{
+                display: inline-block;
+            }
+            
+            #box1{
+                float:left; 
+            }
+            
+            #box2{
+                align-items: center;
+                text-align: center;
+            }
+            #box3{
+                float:right;
+            }
+            
+            #box2 table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+    
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+    
+            th {
+                background-color: green;
+                color: white;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: Aqua;
+            }
+    
+            .delete-button {
+                width: 95%;
+                padding: 5px;
+                background-color: #ff0000;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            .odd{
+                background-color: aqua;
+            }
+            footer{
+                display: block;
+                clear: both;
+                background-color: lightgray;
+                text-align:center; 
+                padding: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="anh1.jpg" height="222px" width="1203px">
+        </header>
+        
+        <nav class="navbar">
+
+        </nav>
+
+        <main>
+            <div class="box" id="box1">
+                <img src="anh2.jpg" width="240px" height="700px">
+            </div>
+            <div class="box" id="box2">
+                <p style="font-size: 20px; text-align: center;">TECHNICAL LIST</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>ICQ</th>
+                            <th>DISPLAY NAME</th>
+                            <th>WEBSITE</th>
+                            <th>LOCATION</th>
+                            <th>AIM NUMBER</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>123456</td>
+                            <td>User1</td>
+                            <td>www.user1.com</td>
+                            <td>Location1</td>
+                            <td>AIM123</td>
+                            <td><button class="delete-button">Xóa</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>789012</td>
+                            <td>User2</td>
+                            <td>www.user2.com</td>
+                            <td>Location2</td>
+                            <td>AIM456</td>
+                            <td><button class="delete-button">Xóa</button></td>
+                        </tr>
+                       
+                        <tr>
+                            <td>3</td>
+                            <td>345678</td>
+                            <td>User3</td>
+                            <td>www.user3.com</td>
+                            <td>Location3</td>
+                            <td>AIM789</td>
+                            <td><button class="delete-button">Xóa</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>901234</td>
+                            <td>User4</td>
+                            <td>www.user4.com</td>
+                            <td>Location4</td>
+                            <td>AIM012</td>
+                            <td><button class="delete-button">Xóa</button></td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div class="box" id="box3">
+                <img src="anh3.jpg" width="240px" height="700px">
+            </div>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>

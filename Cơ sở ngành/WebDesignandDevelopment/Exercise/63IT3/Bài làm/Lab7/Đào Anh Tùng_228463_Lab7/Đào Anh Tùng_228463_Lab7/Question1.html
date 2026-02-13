@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 5px;
+        }
+        table, th, td{
+            border: 1px solid #000;
+        }
+        th, td {  
+            padding: 5px;
+        }
+        p{
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+    function check(){
+         
+            if (textEmail.value==""){
+                alert("Bạn chưa nhập email");
+                textEmail.focus();
+                return false;
+            }
+            if (textPass.value==""){
+                alert("Bạn chưa nhập pass");
+                txtPass.focus();
+                return false;
+            }  
+          
+            r = /\w\@\w/   
+            if (r.test(textEmail.value)==false){
+                alert("Bạn nhập sai định dạng email! Ví dụ: admin@aptech.vn");
+                textEmail.focus();
+                return false;
+                }             
+    } 
+    </script>
+    <table>  
+        <tr><td colspan="2" bgcolor="#ddd" style="text-align: center;"><b>Admistrator</b></td></tr>  
+        <tr><td>Email:</td><td>
+            <input id="textEmail" type="text" style="background-color: #ddd;" >
+            <p style="color: red;">(*)</p><br>
+            <p><i>(example:home@aptech.vn)</i></p>
+
+        </td></tr>  
+        <tr><td>Password:</td><td>
+            <input id="textPass" type="text" style="background-color: #ddd;" >
+            <p style="color: red;">(*)</p>
+        </td></tr>  
+        <tr><td></td>
+        <td>
+            <button type="submit" onclick="return check()">Submit</button>
+            <button type="reset">Reset</button>
+        </td>         
+        </tr>  
+    </table> 
+</body>
+</html>

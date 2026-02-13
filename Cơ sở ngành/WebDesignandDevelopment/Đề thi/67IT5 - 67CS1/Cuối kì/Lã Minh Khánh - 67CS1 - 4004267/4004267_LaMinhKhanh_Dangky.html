@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhanPaVang-0287867-67CS1_DangKy.html</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input:required {
+            border: 1px solid #ccc;
+        }
+
+        input:focus {
+            background-color: yellow;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 align = "center">Technology Disscussion Forum Registration </h1>
+    </div>
+    <form id="registrationForm" action="" onsubmit="return validateForm()">
+        <table>
+            <label for=""> <strong>Registration Information</strong>
+                <tr>
+                    <td>E-Mail Adress:</td>
+                    <td><input type="email" name="Email" id="" value="" placeholder="mymail@mail.com" required></td>
+                    <td>*</td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td>Display Name:</td>
+                    <td><input type="text" name="Name" id="" value="" placeholder="yourBoardName" required></td>
+                    <td>*</td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="Password" id="" value="" required></td>
+                    <td>*</td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td> Confirm Password:</td>
+                    <td><input type="password" name="ConfirmPassword" id="" value="" required></td>
+                    <td>*</td>
+                </tr>
+            </label>
+            <th><strong>Profile Information </strong></th>
+            <label for="">
+                <tr>
+                    <td>ICQ Number:</td>
+                    <td><input type="number" name="ICQNumber" id="" value=""></td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td>AIM Number:</td>
+                    <td><input type="number" name="AIMNumber" id="" value=""></td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td>Website:</td>
+                    <td><input type="text" name="Website" id="" value=""></td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td>Location:</td>
+                    <td><input type="text" name="Location" id="" value=""></td>
+                </tr>
+            </label>
+            <label for="">
+                <tr>
+                    <td>Ocupation:</td>
+                    <td><input type="text" name="Ocupation" id="" value=""></td>
+                </tr>
+            </label>
+            <th align="left"><strong>Preferences:</strong></th>
+            <tr>
+                <td>Newsletter:</td>
+                <td></td>
+                <td><input type="checkbox" name="Newsletter" id="" value="">Like to receive a regular Newsletters</td>
+            </tr>
+            <tr>
+                <td>Always notify me of repies :</td>
+                <td>
+                    <input type="radio" value="Ra" name="Ra">Yes
+                    <input type="radio" value="Ra" name="Ra">No
+                </td>
+            </tr>
+            <tr>
+                <td>Always attach my signature :</td>
+                <td>
+                    <input type="radio" value="Ra" name="Ra">Yes
+                    <input type="radio" value="Ra" name="Ra">No
+                </td>
+            </tr>
+            <tr>
+                <td>Always allow HTML:</td>
+                <td>
+                    <input type="radio" value="Ra" name="Ra">Yes
+                    <input type="radio" value="Ra" name="Ra"> No
+                </td>
+            </tr>
+            <tr>
+                <td>Board Language :</td>
+                <td>
+                    <select name="" id="">
+                        <option value="Language" selected>English</option>
+                        <option value="Language">French</option>
+                        <option value="Language">China</option>
+                        <option value="Language">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Board Style:</td>
+                <td>
+                    <select name="" id="">
+                        <option value="Style" selected>digestTheme</option>
+                        <option value="Style">lowTheme</option>
+                        <option value="Style">upTheme</option>
+                        <option value="Style">standTheme</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Time Zone :</td>
+                <td>
+                    <select name="" id="">
+                        <option value="" selected>GMT+1</option>
+                        <option value="">GMT+2</option>
+                        <option value="">GMT+3</option>
+                        <option value="">GMT+4</option>
+                        <option value="">GMT+5</option>
+                        <option value="">GMT+6</option>
+                        <option value="">GMT+7</option>
+                        <option value="">GMT+8</option>
+                        <option value="">GMT+9</option>
+                        <option value="">GMT+10</option>
+                        <option value="">GMT+11</option>
+                        <option value="">GMT+12</option>
+                        <option value="">GMT+13</option>
+                        <option value="">GMT+14</option>
+                        <option value="">GMT+15</option>
+                        <option value="">GMT+16</option>
+                        <option value="">GMT+17</option>
+                        <option value="">GMT+18</option>
+                        <option value="">GMT+19</option>
+                        <option value="">GMT+20</option>
+                        <option value="">GMT+21</option>
+                        <option value="">GMT+22</option>
+                        <option value="">GMT+23</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <strong>Security Control Panel</strong></label>
+            <p><strong>It is important you think before filling this in. You will not be able to change these at will.
+                    You will need an admins appro val to change them, for security purpoces.</strong></p>
+            <tr>
+                <td>Security Quetstion :</td>
+                <td><input type="text" name="Security" id="" value="" required placeholder="My security Quetstion"></td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td>Security Answer :</td>
+                <td><input type="text" name="Security" id="" value="" required placeholder="answer"></td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Submit" onclick="submitForm()" disabled>
+                    <input type="reset" name="" id="">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        // script.js
+        document.addEventListener("DOMContentLoaded", function () {
+            const requiredInputs = document.querySelectorAll("#registrationForm input:required");
+            const submitButton = document.querySelector("#registrationForm input[type='submit']");
+
+            requiredInputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    checkRequiredInputs();
+                });
+                input.addEventListener("focus", function () {
+                    input.style.backgroundColor = "yellow";
+                });
+                input.addEventListener("blur", function () {
+                    input.style.backgroundColor = "white";
+                });
+            });
+
+            function checkRequiredInputs() {
+                let allFilled = true;
+                requiredInputs.forEach(input => {
+                    if (input.value.trim() === "") {
+                        allFilled = false;
+                    }
+                });
+
+                submitButton.disabled = !allFilled;
+            }
+
+            const emailInput = document.querySelector("#registrationForm input[name='Email']");
+            emailInput.addEventListener("blur", function () {
+                validateEmail();
+            });
+
+            function validateEmail() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const isValid = emailRegex.test(emailInput.value);
+                if (!isValid) {
+                    alert("Vui lòng nhập địa chỉ email hợp lệ !");
+                    emailInput.focus();
+                }
+            }
+
+            const nameInput = document.querySelector("#registrationForm input[name='Name']");
+            nameInput.addEventListener("blur", function () {
+                validateDisplayName();
+            });
+
+            function validateDisplayName() {
+                const masv = 123; 
+                const isValid = /^[a-zA-Z0-9]+$/.test(nameInput.value) && nameInput.value.length === masv % 12;
+                if (!isValid) {
+                    alert("Tên hiển thị phải chứa chữ cái và số và có độ dài bằng Masv% 12");
+                    nameInput.focus();
+                }
+            }
+
+            const passwordInput = document.querySelector("#registrationForm input[name='Password']");
+            const confirmPasswordInput = document.querySelector("#registrationForm input[name='ConfirmPassword']");
+            passwordInput.addEventListener("input", function () {
+                validatePassword();
+            });
+            confirmPasswordInput.addEventListener("input", function () {
+                validatePassword();
+            });
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+
+                if (password !== confirmPassword) {
+                    alert("Mật khẩu và Xác nhận mật khẩu phải khớp nhau");
+                    confirmPasswordInput.focus();
+                    return;
+                }
+
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+                if (!passwordRegex.test(password)) {
+                    alert("Mật khẩu phải chứa ít nhất một chữ cái, một chữ số và một ký tự đặc biệt !");
+                    passwordInput.focus();
+                }
+            }
+
+            const icqInput = document.querySelector("#registrationForm input[name='ICQNumber']");
+            icqInput.addEventListener("blur", function () {
+                validateICQNumber();
+            });
+
+            function validateICQNumber() {
+                const icqNumber = icqInput.value;
+                const icqRegex = /^\d{6,12}$/;
+
+                if (!icqRegex.test(icqNumber)) {
+                    alert("Số ICQ phải là số có từ 6 đến 12 chữ số");
+                    icqInput.focus();
+                }
+            }
+
+            const masinhvien = 567; 
+            const yesInput = document.querySelector("#registrationForm input[name='Newsletter']");
+            const yesValue = masinhvien % 4;
+
+            if (yesValue !== 0) {
+                yesInput.disabled = true;
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>

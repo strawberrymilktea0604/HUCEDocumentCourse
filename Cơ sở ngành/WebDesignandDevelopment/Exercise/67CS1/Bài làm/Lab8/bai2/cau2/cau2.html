@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Q2.css">
+</head>
+<body>
+
+    <h2 id="formTitle">Registration Form</h2>
+
+    <form id="myForm" onsubmit="validateForm()">
+        <label for="name">Name</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input type="text" id="name" required style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+        <br><br>
+
+        <label for="address">Address</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <textarea id="diachi" name="diachi" cols="50" rows="10" style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;"></textarea>
+        <br><br>
+
+        <label for="company">Company</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input type="company" id="company" required style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+        <br><br>
+
+        <label for="email">Email:</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input type="email" id="email" required style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+        <br><br>
+
+        <label for="password">Password</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input type="password" id="password" required style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+        <br><br>
+
+        <label for="confirmPassword">Confirm-Password</label> &ensp;&ensp;&ensp;&ensp;
+        <input type="password" id="confirmPassword" required style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+        <br><br>
+
+        <label for="telNumber">Tel Number</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input type="tel" id="telNumber" pattern="\([0-9]\d{0,1}\)\d{7}|\((0\d{2})\)\d{6}|\d{7}" required style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+        <br><br>
+
+        <label for="ageGroup">Age Group:</label> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <select id="ageGroup" style="border: 2px black;
+        box-shadow: inset 2px 2px 3px black;">
+            <option value="group1">15-25</option>
+            <option value="group2">25-35</option>
+            <option value="group3">35-45</option>
+            <option value="group4">45-55</option>
+            <option value="group5">55-65</option>
+            <option value="group6">>65</option>
+        </select>
+        <br><br>
+
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input type="radio" id="male" name="gender" value="male" onclick="updateNamePrefix('Mr.')">Male
+        <input type="radio" id="female" name="gender" value="female" onclick="updateNamePrefix('Ms.')">Female
+        <br><br>
+
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input type="submit" value="Submit" id="sumbit" 
+        style="border: 2px black;
+        box-shadow: inset -2px -2px 3px black;">  &ensp;&ensp;&ensp;
+
+        <input type="reset" value="Reset" id="reset" style="border: 2px black;
+        box-shadow: inset -2px -2px 3px black;">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

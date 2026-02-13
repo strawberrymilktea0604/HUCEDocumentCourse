@@ -1,0 +1,59 @@
+<html>
+<head>
+    <style>
+        .class1 .class2{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var count_fail = 0;
+
+        function enable_form() {
+            document.getElementById("txt_test").disabled = false;
+            document.getElementById("btn_dangnhap").disabled = false;
+        }
+
+        function check_login() {
+
+            //B1: Lấy về giá trị trên txt_test
+            var txt_test = document.getElementById("txt_test");
+
+            if (count_fail < 3  ) {
+                
+                //B2: Kiểm tra xem txt_test có dữ liệu không
+                if (txt_test.value) {
+                    //trường hợp có dữ liệu
+                    if (txt_test.value == "duongnh") {
+                        //trường hợp đăng nhập thành công
+                        alert("Đăng nhập thành công");
+                    }
+                    else {
+                        count_fail++;
+                    }
+                }
+                else {
+                    //trường hợp không có dữ liệu
+                    count_fail++;
+                    alert("Vui lòng nhập đầy đủ dữ liệu");
+                }
+            }
+            else {
+                alert("Đăng nhập sai quá 3 lần");
+                txt_test.disabled = true;
+                document.getElementById("btn_dangnhap").disabled = true;
+
+                setTimeout(enable_form, 30000);
+            }
+            
+        }
+
+        
+    </script>
+
+    <input type="text" id="txt_test" />
+    <button type="button" id="btn_dangnhap" onclick="check_login()">Đăng nhập</button>
+
+</body>
+</html>

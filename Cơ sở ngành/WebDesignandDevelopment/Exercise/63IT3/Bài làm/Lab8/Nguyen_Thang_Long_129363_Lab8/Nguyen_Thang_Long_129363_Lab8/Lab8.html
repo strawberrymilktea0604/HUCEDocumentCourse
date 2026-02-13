@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+    }
+    .a1{
+        position: relative;
+        width: 100%;
+        left:350px;
+        top:100px;
+        
+    }
+    .a2{
+        position: relative;
+        width: 100%;
+        left:350px;
+        top:50px;
+    }
+    .t1{
+        
+    }
+    .p1{
+        margin-top: 60px;
+        margin-left: 100px;
+    }
+    .p2{
+        margin-left: 100px;
+        margin-top: 200px;
+    }
+</style>
+<body>
+    <form method="POST"  name="f1">
+        <p class="p1">Information for play game</p>
+        <article class="a1">
+            
+            <table class="t1" cellspacing="5px">
+                <tr>
+                    <td>User name*:</td>
+                    <td><input type="text" name="txtuser" ></td>
+                </tr>
+                <tr>
+                    <td>Password level 1*:</td>
+                    <td><input type="text" name="txtpass1" ></td>
+                </tr>
+                <tr>
+                    <td>Re-enter password-level 1*:</td>
+                    <td><input type="text" name="txtrepass1" ></td>
+                </tr>
+                <tr>
+                    <td>Password level 2*:</td>
+                    <td><input type="text" name="txtpass2" ></td>
+                </tr>
+                <tr>
+                    <td>Re-enter password-level 2*:</td>
+                    <td><input type="text" name="txtrepass2" ></td>
+                </tr>
+                <tr>
+                    <td>Security Question*:</td>
+                    <td>
+                        <select name="security">
+                            <option>Choose a question</option>
+                            <option>What is your library card number</option>
+                            <option>What was your first phone number</option>
+                            <option>What was your first teacher name</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Answer*:</td>
+                    <td><input type="text" name="txtanswer" ></td>
+                </tr>
+            </table>
+        </article>
+        <p class="p2">Customer Information</p>
+        <article class="a2">
+            
+            <table class="t2" cellspacing="5px">
+                <tr>
+                    <td>Full name*:</td>
+                    <td><input type="text" name="txtfullname"></td> &nbsp;
+                    <td><input type="radio" value="Male">Male</td>
+                    <td><input type="radio" value="Female">Female</td>
+                </tr>
+                <tr>
+                    <td>Email*:</td>
+                    <td><input type="text" name="txtmail"></td>
+                </tr>
+                <tr>
+                    <td>Birth day:</td>
+                    <td>
+                    <select>
+                        <option>1</option>
+                        <script>
+                            for(i=2;i<=31;i++){
+                                document.write("<option>" + i + "</option>");
+                            }     
+                        </script>
+                    </select>
+                    
+                    
+                        <select>
+                            <option>1</option>
+                            <script>
+                                for(i=2;i<=12;i++){
+                                    document.write("<option>" + i + "</option>");
+                                }     
+                            </script>
+                        </select>
+                   
+                        <select>
+                            <option>1940</option>
+                            <script>
+                                //  d=new Date();
+                                for(i=1941;i<=2000;i++){
+                                    document.write("<option>" + i + "</option>");
+                                }     
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="txtaddress"></td>
+                </tr>
+                <tr>
+                    <td>Home phone:</td>
+                    <td><input type="text" name="txthp"></td>
+                    <td>Mobile:</td>
+                    <td><input type="text" name="txtmb"></td>
+                </tr>
+            </table>
+            <br> <p>&nbsp;</p>
+            <!-- <Center> -->
+                <div style="position: relative;left:155px" >
+                <input type="submit" value="Register" name="submit" onclick="return check()">
+                <button type="reset">Clear</button>
+            </div>
+            <!-- </Center> -->
+        </article>
+      
+    </form>
+    <script>
+        function check(){
+        with(document){
+        if(f1.txtuser.value==""){
+            alert("User name không được để trống nhé UwU !")
+            f1.txtuser.focus();
+            return false;
+        }
+        if(f1.txtpass1.value==""){
+            alert("Password lv 1 không được để trống nhé UwU !")
+            f1.txtpass1.focus();
+            return false;
+        }
+        if(f1.txtrepass1.value==""){
+            alert("Re-enter password lv 1 không được để trống nhé UwU !")
+            f1.txtrepass1.focus();
+            return false;
+        }
+        if(f1.txtpass2.value==""){
+            alert("Password lv 2 không được để trống nhé UwU !")
+            f1.txtpass2.focus();
+            return false;
+        }
+        if(f1.txtrepass2.value==""){
+            alert("Re-enter password lv 2 không được để trống nhé UwU !")
+            f1.txtrepass2.focus();
+            return false;
+        }
+        t = 0;
+                    for(i=0;i<f1.security.check;i++){
+                        if (f1.security[i].checked) t++;
+                    }
+        if(t=0){
+            alert("Bạn phải chọn một trong các security")
+            f1.security.focus();
+            return false;
+        }
+        if(f1.txtanswer.value==""){
+            alert("Answer không được để trống nhé UwU !")
+            f1.txtanswer.focus();
+            return false;
+        }
+        if(f1.txtfullname.value==""){
+            alert("Fullname không được để trống nhé UwU !")
+            f1.txtfullname.focus();
+            return false;
+        }
+        if(f1.txtmail.value==""){
+            alert("Email không được để trống nhé UwU !")
+            f1.txtmail.focus();
+            return false;
+        }
+        if(f1.txtuser.value.length<6){
+            alert("User name phải trên 6 ký tự nhé UwU !")
+            f1.txtuser.focus();
+            return false;
+        }
+        if(f1.txtuser.value.length>12){
+            alert("User name phải nhỏ hơn 12 ký tự nhé UwU !")
+            f1.txtuser.focus();
+            return false;
+        }
+        if(f1.txtpass1.value.length<6){
+            alert("Password lv 1 phải trên 6 ký tự nhé UwU !")
+            f1.txtpass1.focus();
+            return false;
+        }
+        if(f1.txtpass1.value.length>12){
+            alert("Password lv 1 phải nhỏ hơn 12 ký tự nhé UwU !")
+            f1.txtpass1.focus();
+            return false;
+        }
+        if(f1.txtpass2.value.length<6){
+            alert("Password lv 2 phải trên 6 ký tự nhé UwU !")
+            f1.txtpass2.focus();
+            return false;
+        }
+        if(f1.txtpass2.value.length>12){
+            alert("Password lv 2 phải nhỏ hơn 12 ký tự nhé UwU !")
+            f1.txtpass2.focus();
+            return false;
+        }
+        if(f1.txtpass1.value !== f1.txtrepass1.value){
+            alert("Password lv 1 phải giống với Re-password lv 1 nhé UwU")
+            f1.txtpass1.focus();
+            return false;
+        }
+        if(f1.txtpass2.value !== f1.txtrepass2.value){
+            alert("Password lv 2 phải giống với Re-password lv 2 nhé UwU")
+            f1.txtpass2.focus();
+            return false;
+        }
+        if(f1.txtpass1.value == f1.txtrepass2.value){
+            alert("Password lv 1 phải khác với password lv 2 nhé UwU")
+            f1.txtpass1.focus();
+            return false;
+        }
+        r=/\D+\d*@{1,1}\D+\d*.{1,1}\D+/
+        if(r.test(f1.txtmail.value)==false){
+            alert("Email sai định dạng rồi oni-chan ơi! Xem lại đi nhé !");
+            f1.txtmail.focus();
+            return false;
+    }
+    }
+}
+    </script>
+</body>
+</html>

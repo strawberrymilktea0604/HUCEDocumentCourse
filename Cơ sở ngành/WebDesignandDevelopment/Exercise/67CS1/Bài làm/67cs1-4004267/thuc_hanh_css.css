@@ -1,0 +1,249 @@
+.top {
+    #txt1 {
+        position: absolute;
+        font-size: 20px;
+        left: 120px;
+    }
+
+    #icon1 {
+        position: absolute;
+        left: 370px;
+        top: 28px;
+    }
+
+    #txt2 {
+        position: absolute;
+        left: 400px;
+        top: 11px;
+    }
+
+    #txt3 {
+        position: absolute;
+        left: 1100px;
+        top: 11px;
+    }
+    
+    #icon3 {
+        position: absolute;
+        left: 1300px;
+        top: 28px;
+    }
+
+    #icon2 {
+        position: absolute;
+        left: 1070px;
+        top: 28px;
+    }
+}
+
+.middle {
+    #middle-txt1 {
+        position: absolute;
+        top: 60px;
+        left: 50px;
+    }
+    #middle-icon1 {
+        position: absolute;
+        top: 76px;
+        left: 28px;
+        
+    }
+    #middle-txt2 {
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+    #middle-icon2 {
+        position: absolute;
+        top: 116px;
+        left: 28px;
+        
+    }
+    #middle-icon3 {
+        position: absolute;
+        top: 116px;
+        left: 300px;
+        
+    }
+    #middle-txt3 {
+        position: absolute;
+        top: 140px;
+        left: 50px;
+    }
+    #middle-icon4 {
+        position: absolute;
+        top: 156px;
+        left: 28px;
+        
+    }
+    #middle-icon5 {
+        position: absolute;
+        top: 156px;
+        left: 300px;
+    }
+    #middle-txt4 {
+        position: absolute;
+        top: 180px;
+        left: 50px;
+    }
+    #middle-icon6 {
+        position: absolute;
+        top: 196px;
+        left: 28px;
+    }
+    #middle-icon7 {
+        position: absolute;
+        top: 196px;
+        left: 300px;
+        
+    }
+    #middle-txt5 {
+        position: absolute;
+        top: 220px;
+        left: 50px;
+    }
+    #middle-icon8 {
+        position: absolute;
+        top: 236px;
+        left: 28px;
+    }
+    #middle-icon9 {
+        position: absolute;
+        top: 236px;
+        left: 300px;
+        
+    }
+    #middle-txt6 {
+        position: absolute;
+        top: 260px;
+        left: 50px;
+    }
+    #middle-icon10 {
+        position: absolute;
+        top: 276px;
+        left: 28px;
+    }
+    #middle-icon11 {
+        position: absolute;
+        top: 276px;
+        left: 300px;
+        
+    }
+    #middle-txt7 {
+        position: absolute;
+        top: 300px;
+        left: 50px;
+    }
+    #middle-icon12 {
+        position: absolute;
+        top: 316px;
+        left: 28px;
+    }
+    #middle-icon13 {
+        position: absolute;
+        top: 356px;
+        left: 28px;
+    }
+    #middle-icon14 {
+        position: absolute;
+        top: 356px;
+        left: 300px;
+        
+    }
+    #middle-txt8 {
+        position: absolute;
+        top: 340px;
+        left: 50px;
+    }
+
+    #middle-txt9 {
+        position: absolute;
+        font-size: 20px;
+        top: 70px;
+        left: 390px;
+    }
+
+    #middle-txt10 {
+        position: absolute;
+        font-size: 15px;
+        font-weight: bold;
+        top: 120px;
+        left: 390px;
+    }
+
+    #middle-icon15 {
+        position: absolute;
+        top: 162px;
+        left: 390px;
+    }
+
+    #middle-txt11 {
+        position: absolute;
+        top: 145px;
+        left: 410px;
+    }
+
+    #middle-icon16 {
+        position: absolute;
+        top: 186px;
+        left: 390px;
+    }
+
+    #middle-txt12 {
+        position: absolute;
+        top: 170px;
+        left: 410px;
+    }
+
+    #middle-txt13 {
+        position: absolute;
+        top: 145px;
+        left: 810px;
+    }
+
+    #middle-txt14 {
+        position: absolute;
+        top: 170px;
+        left: 810px;
+    }
+}
+
+.khoi1 {
+    position: absolute;
+    top: 225px;
+    left: 360px;
+}
+.khoi2 {
+    position: absolute;
+    top: 225px;
+    left: 620px;
+}
+.khoi3 {
+    position: absolute;
+    top: 225px;
+    left: 860px;
+}
+.khoi4 {
+    position: absolute;
+    top: 225px;
+    left: 1044px;
+}
+.Hr {
+    #Hr1 {
+        position: absolute;
+        top: 340px;
+        font-weight: bold;
+        left: 360px;
+        height: 2px;
+        border-left: 400px solid green;
+    }
+    #Hr2 {
+        position: absolute;
+        top: 340px;
+        font-weight: bold;
+        left: 860px;
+        height: 2px;
+        border-left:400px solid blue;
+    }
+    
+}

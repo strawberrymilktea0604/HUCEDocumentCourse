@@ -1,0 +1,69 @@
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        function btn_dangnhap_click() {
+            //alert("click");
+            var tk_input = document.getElementById("txt_tk");
+            var mk_input = document.getElementById("txt_mk");
+
+            if (tk_input.value && mk_input.value) {
+                //trường hợp đã điền đầy đủ cả tk và mk
+                var tk = tk_input.value;
+                var mk = mk_input.value;
+                if (tk == "duongnh" && mk == "123456") {
+                    alert("Đăng nhập thành công");
+                }
+                else {
+                    alert("Đăng nhập thất bại do sai thông tin đăng nhập");
+                }
+            }
+            else {
+                //trường hợp chưa điền đủ dữ liệu tk và mk
+                //alert("Vui lòng điền đầy đủ tài khoản và mật khẩu");
+                if (!tk_input.value) {
+                    alert("Vui lòng nhập vào tài khoản");
+                    tk_input.focus();
+                    tk_input.style.backgroundColor = "aqua";
+                }
+                else {
+                    if (!mk_input.value) {
+                        alert("Vui lòng nhập vào mật khẩu");
+                        mk_input.focus();
+                        mk_input.style.backgroundColor = "aqua";
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <form action="" method="post">
+        <table align="center">
+            <caption>Đăng nhập hệ thống</caption>
+            <tr>
+                <td>Tài khoản: </td>
+                <td>
+                    <input type="text" name="txt_tk" id="txt_tk" />
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu: </td>
+                <td>
+                    <input type="password" name="txt_mk" id="txt_mk" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="button" name="btn_dangnhap" id="btn_dangnhap" value="Đăng nhập" onclick="btn_dangnhap_click()" />
+                    <input type="reset" value="Hủy" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+</html>

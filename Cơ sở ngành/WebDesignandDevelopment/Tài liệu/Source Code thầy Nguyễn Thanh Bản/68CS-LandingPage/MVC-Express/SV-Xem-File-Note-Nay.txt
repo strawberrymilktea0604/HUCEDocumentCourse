@@ -1,0 +1,2 @@
+Đây là project trên lớp về cách tổ chức mã nguồn dự án Express theo mô hình MVC.
+Trong đó còn thieu tầng Model (do không làm việc với cơ sở dữ lieu)

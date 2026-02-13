@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .textnumber{
+                display: inline-block;
+                width: 103px;
+              }
+              button {
+                padding: 5px 15px;
+                border: 2px black;
+                box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.6);
+                display: inline-block;
+                cursor: pointer;
+              }
+        </style>
+    </head>
+    <body>
+            <label for="num1">1. Number</label> &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;
+            <label for="num2">2. Number</label>
+
+            <br>
+
+            <input class="textnumber" type="text" id="num1" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;"> &ensp;
+            <input class="textnumber" type="text" id="num2" style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;">
+
+            <br><br>
+
+
+            <input type="radio" name="calculator" value="add">&ensp; Add &ensp;
+            <input type="radio" name="calculator" value="sub">&ensp; Sub<br>
+            <input type="radio" name="calculator" value="mul">&ensp; Mul &ensp;
+            <input type="radio" name="calculator" value="div">&ensp; Div
+
+            <br><br>
+            
+
+            <button onclick="calculateResult()">
+                <span style="border:1px dotted;">Result</span>
+            </button> &ensp;
+            <input type="text" id="result" readonly style="border: 2px black;
+            box-shadow: inset 2px 2px 3px black;">
+        <script>
+            function calculateResult() {
+                var num1 = parseFloat(document.getElementById("num1").value);
+                var num2 = parseFloat(document.getElementById("num2").value);
+                var operation = document.querySelector('input[name="calculator"]:checked').value;
+            
+                if (isNaN(num1) || isNaN(num2)) {
+                  alert("Gia tri nhap khong hop le");
+                  return;
+                }
+            
+                if (operation === "div" && num2 === 0) {
+                  alert("Khong the chia cho 0");
+                  return;
+                }
+
+                var result;
+
+                switch (operation) {
+                  case "add":
+                    result = num1 + num2;
+                    break;
+                  case "sub":
+                    result = num1 - num2;
+                    break;
+                  case "mul":
+                    result = num1 * num2;
+                    break;
+                  case "div":
+                    result = num1 / num2;
+                    break;
+                }
+                document.getElementById("result").value = result;
+              }
+        </script>
+    </body>
+</html>

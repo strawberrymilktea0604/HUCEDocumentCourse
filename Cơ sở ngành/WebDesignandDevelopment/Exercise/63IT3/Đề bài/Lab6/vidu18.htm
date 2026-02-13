@@ -1,0 +1,26 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+<script>
+ function doloop()
+ {
+ 	var String1='<hr align="center" width=';
+ 	document.open();
+ 	for(var size=5;size<=100;size+=5)
+ 	  document.write(String1+size+'%>');
+ 	  document.close();
+ }
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Test the loop" onclick="doloop()">
+</form>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"java.debug.settings.onBuildFailureProceed": true,
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar",
+			"c:\\Users\\minhk\\Downloads\\commons-codec-1.7.jar\\commons-codec-1.7.jar"
+		]
+	}
+}

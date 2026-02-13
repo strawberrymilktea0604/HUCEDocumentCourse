@@ -1,0 +1,113 @@
+<style>
+    .leftColumnText{
+        text-align: right;
+        padding-right: 20px;
+        width: 40%;
+    }
+</style>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function validateProductName(productName){
+                re = ^[a-zA-Z0-9]{4,10}$;
+                return re.test(String(productName).toLowerCase());
+            }
+
+            function validateProductQuantity(productQuantity){
+                re = /^(?:-?\d+)?$/;
+                return re.test(String(productQuantity));
+            }
+        </script>
+        <form name="mainFormQ2">
+            <table id="borderTable" border="1" style="width: 40%;">
+                <tr>
+                    <td>
+                        <table id="formTable" border="1" style="width: 100%;" cellpadding="2    px;">
+                            <tr id="Form Title">
+                                <td align="center" colspan="2">
+                                    ADDNEW PRODUCTION
+                                </td>
+                            </tr>
+                            <tr id="catergoryRow">
+                                <td class="leftColumnText">
+                                    Category Choose: 
+                                </td>
+                                <td>
+                                    <select name="slcCategory" id="Category">
+                                        <option value="Nokia">Nokia</option>
+                                        <option value="Samsung">Samsung</option>
+                                        <option value="GL">GL</option>
+                                        <option value="Sony">Sony</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="productNameRow">
+                                <td class="leftColumnText">
+                                    Product Name:
+                                </td>
+                                <td>
+                                    <input type="text" name="txtProductName" size="40px">
+                                </td>
+                            </tr>
+                            <tr id="productDescriptionRow">
+                                <td class="leftColumnText">
+                                    Product Description: 
+                                </td>
+                                <td>
+                                    <textarea rows="2" cols="40">
+                                        nhập thông tin.
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr id="productQuantitiveRow">
+                                <td class="leftColumnText">
+                                    Product Quantity:
+                                </td>
+                                <td>
+                                    <input type="text" name="txtQuantity" size="30px"><span style="color: brown;"> (positive)</span>
+                                </td>
+                            </tr>
+                            <tr id="productPriceRow">
+                                <td class="leftColumnText">
+                                    Product Price:
+                                </td>
+                                <td>
+                                    <input type="text" name="txtPrice" size="30px"><span style="color: brown;"> ($)</span>
+                                </td>
+                            </tr>
+                            <tr id="productImageRow">
+                                <td class="leftColumnText">
+                                    Product Image: 
+                                </td>
+                                <td>
+                                    <input type="image">
+                                </td>
+                            </tr>
+                            <tr id="productInfoRow">
+                                <td class="leftColumnText">
+                                    Product Description: 
+                                </td>
+                                <td>
+                                    <textarea rows="5" cols="40">
+                                        nhập thông tin.
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr id="productStatus">
+                                <td class="leftColumnText">
+                                    Product Status:
+                                </td>
+                                <td>
+                                    <input type="checkbox"> Show
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+        </form>
+    </body>
+</html>

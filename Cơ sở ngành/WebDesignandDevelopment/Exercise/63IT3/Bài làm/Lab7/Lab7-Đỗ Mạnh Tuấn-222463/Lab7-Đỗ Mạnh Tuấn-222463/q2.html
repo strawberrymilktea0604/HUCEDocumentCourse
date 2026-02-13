@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <script>
+        function changebg(id, color, color1) {
+            id.style.backgroundColor = color;
+            id.style.color = color1
+        }
+
+        function check() {
+            with(document) {
+                if (form.slhang.value = "") {
+                    alert("Category choose must select");
+                    form.slhang.focus();
+                    return false;
+                }
+            }
+        }
+    </script>
+    <h1 align="center"> ADDNEW PRODUCTION</h1>
+    <form name=form action="D:\HocTap\Nam4_ki1\WEB\Lab4\ss5\bai1.html" method="post">
+        <table border="0" cellspacing=5 cellpadding=5 width=600 align=center>
+            <tr>
+                <td align="right">Category choose:
+                    <select name="slhang" id="hang">
+                        <option value="nokia">Nokia</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="lg">LG</option>
+                        <option value="sony">Sony</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Product Name:</td>
+                <td align="left"><input type="text" name=txtProductName size=30 onFocus="changebg(this,'black','white');" onBlur="changebg(this,'white','black');"></td>
+            </tr>
+            <tr>
+                <td align="right">Product Description:</td>
+                <td>
+                    <textarea name="taProductDescription" cols="30" rows="10" onFocus="changebg(this,'black','white');" onBlur="changebg(this,'white','black');"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Product Quantity</td>
+                <td align="left"><input type="text" name=txtProductQuantity onFocus="changebg(this,'black','white');" onBlur="changebg(this,'white','black');"><i style="color: red;">(positive)</i></td>
+            </tr>
+            <tr>
+                <td align="right">Product Price</td>
+                <td align="left"><input type="text" name=txtProductPrice onFocus="changebg(this,'black','white');" onBlur="changebg(this,'white','black');"><i style="color: red;">($)</i></td>
+            </tr>
+            <tr>
+                <td align="right">Product Image:</td>
+                <td>
+                    <input type=file name=fAnh>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Product Info:</td>
+                <td><textarea name="taProductInfo" cols="30" rows="10" onFocus="changebg(this,'black','white');" onBlur="changebg(this,'white','black');"></textarea></td>
+            </tr>
+            <tr>
+                <td align="right">Product Status:</td>
+                <td>
+                    <input type="checkbox" name="cbProductStatus" value="show">Show
+                </td>
+            </tr>
+            <hr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" onclick="return check();" name=cmdAddnew value="Addnew">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

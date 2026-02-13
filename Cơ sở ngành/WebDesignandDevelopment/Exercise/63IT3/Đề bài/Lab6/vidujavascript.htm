@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+<script language="javascript">
+function hienthi()
+{
+	document.write("<font color='red' face='Arial' size='40'>Hello World!!</font>");
+	document.write("<table border=1><tr><td>data1<td>Data2<tr><td>data3<td>Data4</table>");
+}
+function check()
+{
+	if(window.document.myform.age.value<18)
+		{
+			document.writeln("<P><H4><I> You are not eligible</I></H4></P>"+myform.name.value);
+		}
+	else
+		{
+			document.writeln("<H4><I>You are eligible</I></H4>"+myform.name.value);
+		}	
+}
+
+function losefocus()
+{
+	if(myform.name.value=="")
+	{
+	 alert("you can not leave the name field balnk");
+	 myform.name.focus();
+	 return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<form name="myform" onchange="losefocus()">
+<p><h5><i>Enter Name:</i></h5>
+    <input  name="name" size="35" onBlur="losefocus()">
+ </p>
+ <h5><i>Enter age:</i></h5>
+ <input name="age" type="text" size="5" </p>
+ <input type="button" value="Check" onclick="check()">
+ <input type="reset" value="Clear">  
+  </form>  
+</body>
+
+</html>

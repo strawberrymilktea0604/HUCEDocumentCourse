@@ -1,0 +1,33 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            
+    </head>
+    <body style="background-color: chartreuse;">
+        <script language="Javascript">
+            function check(a){
+                if (a==""){
+                    alert("Phải nhập vào 1 số!");
+                    return false;
+                } else {
+                    alert("Cảm ơn! Số bạn nhập là " + a);
+                }
+
+            }
+            function doimau(id,color){
+                id.style.backgroundColor=color;
+            }
+        </script>
+        
+        Nhập vào một số: <input type=text onchange="check(this.value)"> <br>
+        Nhập vào họ tên: <input type=text onFocus = "doimau(this,'yellow');"
+                                          onBlur="doimau(this,'white');"
+                                          onkeyup = "doimau(this,'white');"
+                                          onkeypress = "doimau(this,'white');"
+                                          >
+        <br>
+                <input type="button" onclick="alert('Ví dụ click vào nút lệnh');" value="Nút lệnh">
+    </body>
+</html>

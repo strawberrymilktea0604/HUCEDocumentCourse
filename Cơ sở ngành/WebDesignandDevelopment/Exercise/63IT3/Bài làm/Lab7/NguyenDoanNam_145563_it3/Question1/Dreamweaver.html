@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 5px;
+        }
+        table, th, td{
+            border: 1px solid #000;
+        }
+        th, td {  
+            padding: 5px;
+        }
+        p{
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+    function check(){
+         
+            if (txtEmail.value==""){
+                alert("vui lòng nhập email");
+                f.txtEmail.focus();
+                return false;
+            }
+            if (txtPass.value==""){
+                alert("vui lòng nhập pass");
+                f.txtPass.focus();
+                return false;
+            }  
+          
+            d = /\w\@\w/   
+            if (d.test(txtEmail.value)==false){
+                alert("sai định dạng email!");
+                f.txtEmail.focus();
+                return false;
+            }     
+            d = /((?=.*[a-z])(?=.*[0-9])(?=.*[~@#$%])(?=.*[A-Z]))/
+  
+            if (d.test(txtPass.value)==false){
+                alert("pass phải đủ các kí tự a-z,A-Z,1-9,~@,#,$,?");
+                f.txtPass.focus();
+                return false;
+            }       
+    } 
+    </script>
+    <table>  
+        <tr><td colspan="2" bgcolor="#ddd" style="text-align: center;"><b>Admistrator</b></td></tr>  
+        <tr><td>Email:</td><td>
+            <input type="text" style="background-color: #ddd;" id="txtEmail">
+            <p style="color: red;">(*)</p><br>
+            <p><i>(example:home@aptech.vn)</i></p>
+
+        </td></tr>  
+        <tr><td>Password:</td><td>
+            <input type="text" style="background-color: #ddd;" id="txtPass">
+            <p style="color: red;">(*)</p>
+        </td></tr>  
+        <tr>
+        <td>
+            <button type="submit" onclick="return check()">Submit</button>
+            <button type="reset">Reset</button>
+             <form  name=f  onSubmit="return check();" method=Post action="productadnew.html"></form>
+        </td>         
+        </tr>  
+    </table> 
+</body>
+</html>

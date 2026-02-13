@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 10px;
+        }
+
+        p {
+            display: inline-block;
+        }
+    </style>
+    <div class="main">
+        <form name=f onSubmit="return check();" method=Post action="">
+            <h1 style="background-color: #000; color:#fff; text-align: center;">
+                ADDNEW PRODUCTION
+            </h1>
+            Category Choose: <select name="category" id="">
+                <option value="">[Select]</option>
+                <option value="">Nokia</option>
+                <option value="">Samsung</option>
+                <option value="">LG</option>
+                <option value="">Sony</option>
+            </select><br>
+            Product Name: <input name="txtInput" class="input" type="text" style="width: 200px;"><br>
+            Product Description: <input name="txtDescription" class="input" type="text" style="width: 250px; height: 50px;"><br>
+            Product Quantity: <input name="txtQuantity" class="input" type="text" style="width: 100px;">
+            <p style="color: red;">(positive)</p><br>
+            Product Price: <input name="txtPrice" class="input" type="text" style="width: 100px;">
+            <p style="color: red">($)</p><br>
+            Product Image: <input class="input" type="text" style="width: 200px" ;><button
+                type="button">Browser</button><br>
+            Product Info: <input class="input" type="text" style="width: 250px; height: 70px;"
+                placeholder="Enter your Product Info ..."><br>
+            Product Status:
+            <input type="checkbox" onclick="checkshow();" name=rdcheck><label id=check>Hidden</label>
+            <hr>
+            <input type="submit"  value="Add New" name=addNew onclick="return check();">
+            <input type=reset>
+        </form>
+        <script>
+            function checkshow() {
+                if (document.f.rdcheck.checked == true) {
+                    document.getElementById("check").innerHTML = "Show";
+                } else {
+                    document.getElementById("check").innerHTML = "Hidden";
+                }
+            }
+            function check(){
+                            with (document){
+                                d = /^[a-zA-Z]+[A-Za-z] +[0-9]*$/
+                                if (d.test(f.txtInput.value)==false){
+                                    alert("Product only contain characters, digits, minus sign , space and not empty ");
+                                    f.txtInput.focus();
+                                    return false;
+                                }
+                                if (f.txtQuantity.value==""){
+                                    alert("Quantity must be inputed.");
+                                    f.txtQuantity.focus();
+                                    return false;
+                                }
+                                if (f.txtQuantity.value <0 || f.txtQuantity.value >100){
+                                    alert("Product Quantity is value ranges from 1-100.");
+                                    f.txtQuantity.focus();
+                                    return false;
+                                }
+                                if (f.txtPrice.value==""){
+                                    alert("Price must be inputed.");
+                                    f.txtPrice.focus();
+                                    return false;
+                                }
+                                if (f.txtPrice.value <0 ){
+                                    alert("Product Price must be greater than 0.");
+                                    f.txtPrice.focus();
+                                    return false;
+                                }
+                                if (f.txtDescription.value==""){
+                                    alert("Product Description must be inputed.");
+                                    f.txtDescription.focus();
+                                    return false;
+                                }
+                                alert("Message");
+                            }
+                        }
+        </script>
+
+
+</body>
+
+</html>

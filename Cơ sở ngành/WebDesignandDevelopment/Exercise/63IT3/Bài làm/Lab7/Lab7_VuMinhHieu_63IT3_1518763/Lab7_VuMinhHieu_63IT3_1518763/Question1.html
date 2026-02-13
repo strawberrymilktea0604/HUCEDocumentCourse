@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="charset=utf8">
+    <title>Câu 1</title>
+    <script>
+        function check() {
+            with (document) {
+                if (f.mail.value == "") {
+                    alert("bạn chưa nhập email")
+                    return false;
+                } else {
+                    str = /^\w[\w|\d]*@(\w)+\.\w+$/
+                    if (str.test(f.mail.value) == false) {
+                        alert("Email không đúng định dạng");
+                        return false;
+
+                    }
+                    else
+                        if (f.pass.value == "") {
+                            alert("bạn chưa nhập mật khẩu")
+                            return false;
+
+                        } else {
+                            str = /((?=.*[a-z])(?=.*[0-9])(?=.*[~@#$%])(?=.*[A-Z]))/
+                            if (str.test(f.pass.value) == false) {
+                                return false;
+
+                                alert("mật khẩu phải chưa cả chữ hoa,chữ thường,số và ký tự đặc biệt")
+                            } else return true;
+                        }
+                }
+               
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="f" method="get" action="productadnew.html">
+        <table name="tb" width=300 border=1>
+            <tr>
+                <td colspan="3" align=center style="background-color: grey;"> <b>Admistrator</b> </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td colspan="2"><input name="mail" type="text"  /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td colspan="2"><input name="pass" type="text" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" name="sm" onclick="return check();"  >Submit</button>
+                <button type="reset" name="rs" onclick="">Reset</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

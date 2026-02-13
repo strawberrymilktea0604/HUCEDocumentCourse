@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="content-type" content="charset=utf8">
+    <title>Lab8</title>
+</head>
+<body>
+    <script>
+        function changebg(id,color){
+                id.style.backgroundColor=color;
+            }
+            function check(){
+                with(document){
+                    if (f1.txtusername.value==""){
+                        alert("Phải nhập vào User name");
+                        f1.txtusername.focus();
+                        return false;
+                    }
+                    if (f1.txtpasswordlevel1.value==""){
+                        alert("Phải nhập vào Password Level1");
+                        f1.txtpasswordlevel1.focus();
+                        return false;
+                    }
+                    if (f1.txtpasswordlevel1.value.length<6){
+                        alert("Phải từ 6 ký tự trở lên!");
+                        return false;
+                    }
+                    if (f1.txtrepassword1.value==""){
+                        alert("Phải nhập vào Re-enter password level1");
+                        f1.txttrepassword1.focus();
+                        return false;
+                    }
+                    if (f1.txtrepasswordlevel1.value.length<6){
+                        alert("Phải từ 6 ký tự trở lên!");
+                        return false;
+                    }
+                    if (f1.txtpasswordlevel2.value==""){
+                        alert("Phải nhập vào Password Level2");
+                        f1.txtpasswordlevel2.focus();
+                        return false;
+                    }
+                    if (f1.txtpasswordlevel2.value.length<6){
+                        alert("Phải từ 6 ký tự trở lên!");
+                        return false;
+                    }
+                    if (f1.txtrepassword2.value==""){
+                        alert("Phải nhập vào Re-enter password level2");
+                        f1.txttrepassword2.focus();
+                        return false;
+                    }
+                    if (f1.txtrepasswordlevel2.value.length<6){
+                        alert("Phải từ 6 ký tự trở lên!");
+                        return false;
+                    }
+                    if (f1.txtsecurityquestion.value==""){
+                        alert("Phải nhập vào Security Question");
+                        f1.securityquestion.focus();
+                        return false;
+                    }
+                    if (f1.txtanswer.value==""){
+                        alert("Phải nhập vào Answer");
+                        f1.answer.focus();
+                        return false;
+                    }
+                }
+            }
+    </script>
+    <form name=f1 action="lab8.01.html" method="POST">
+        <b>
+            <p align=left style="color: blue;"> Infomation for play game</p>
+          </b>
+        <table border=0 cellspacing=5 cellpadding=5 width=600 align=center>
+            <tr>
+                <td align=right>User name*:</td>
+                <td><input type=text name="txtusername" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Password level1*:</td>
+                <td><input type=text name="txtpasswordlevel1" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Re-enter password level1*:</td>
+                <td><input type=text name="txtrepasswordlevel1" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Password level2*:</td>
+                <td><input type=text name="txtpasswordlevel2" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Re-enter password level2*:</td>
+                <td><input type=text name="txtrepasswordlevel2" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Security Question*:</td>
+                <td>
+                    <select name=slsecurityquestion>
+                       <option value="Choose a question">Choose a question</option> 
+                       <option value="What is your library card number" selected>What is your library card number</option>  
+                       <option value="What was your first phone number">What was your first phone number</option> 
+                       <option value="What was your first teacher number">What was your first teacher number</option> 
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>Answer:</td>
+                <td><input type=text name="txtanswer" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            </table>
+    </form>
+    <form name=f1 action="lab8.01.html" method="POST">
+        <b>
+            <p align=left style="color: blue;"> Infomation for play game</p>
+          </b>
+        <table border=0 cellspacing=5 cellpadding=5 width=600 align=center>   
+            <tr>
+                <td align=right>Full name*:</td>
+                <td><input type=text name="txtfullname" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+                <td><input type=radio name=rdMale value=Male></td>
+                <td>Male </td>
+                <td><input type=radio name=rdFemale value=Female></td>
+                <td>Female </td>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>Email*:</td>
+                <td><input type=text name="txtemail" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Birthday:</td>
+                <td>
+                    <select name=slthang>
+                       <option value="1"  size=20 selected>1</option> 
+                       <option value="2">2</option>  
+                       <option value="3">3</option> 
+                       <option value="4">4</option>
+                       <option value="5">5</option> 
+                       <option value="6">6</option> 
+                       <option value="7">7</option> 
+                       <option value="8">8</option> 
+                       <option value="9">9</option> 
+                       <option value="10">10</option> 
+                       <option value="11">11</option>
+                       <option value="12">12</option>   
+                    </select>
+                    <select name=slngay>
+                        <option value="1"  size=20 selected>1</option> 
+                        <option value="2">2</option>  
+                        <option value="3">3</option> 
+                        <option value="4">4</option>
+                        <option value="5">5</option> 
+                        <option value="6">6</option> 
+                        <option value="7">7</option> 
+                        <option value="8">8</option> 
+                        <option value="9">9</option> 
+                        <option value="10">10</option> 
+                        <option value="11">11</option>
+                        <option value="12">12</option>   
+                     </select>
+                     <select name=slnam>
+                        <option value="1"  size=20 selected>1</option> 
+                        <option value="2">2</option>  
+                        <option value="3">3</option> 
+                        <option value="4">4</option>
+                        <option value="5">5</option> 
+                        <option value="6">6</option> 
+                        <option value="7">7</option> 
+                        <option value="8">8</option> 
+                        <option value="9">9</option> 
+                        <option value="10">10</option> 
+                        <option value="11">11</option>
+                        <option value="12">12</option>   
+                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>Address:</td>
+                <td><input type=text name="txtaddress" size=30 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+            <tr>
+                <td align=right>Home phone:</td>
+                <td><input type=text name="txthomephone" size=15 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+                
+                <td align=right>Mobile: </td>
+                <td><input type=text name=txtDiaChi size=15 onFocus="changebg(this,'blue');" onBlur="changebg(this,'white');"></td>
+            </tr>
+        </table>
+    </form>
+            
+    <b>
+        <p align=left > <strong>*Note:</strong> all of the fields that have "*" must be inputted</p>
+      </b>
+    <tr>
+        <div align= center  class="register__button">
+            <button type="button" class="btn" onclick="Register(this)">
+                Register
+            </button>
+            <button type="button" class="btn" onclick="ClearData(this)">
+                Clear
+            </button>
+        </div>
+    </tr>
+            
+</body>
+</html>

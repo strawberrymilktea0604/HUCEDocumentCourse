@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bai2</title>
+    <script type="text/javascript">
+      function submit_1() {
+        regex_1 = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[~@#$?])([a-zA-Z0-9~@#$?]+)$/;
+        regex_2 = /^([a-zA-Z0-9]+)@([a-zA-Z0-9.]+\w+)$/;
+        if (!regex_2.test(document.getElementById("email_1").value)) {
+          alert("email syntax error");
+        }
+        if (!regex_1.test(document.getElementById("pwd_1").value)) {
+          alert("password syntax error");
+        }
+        if (
+          regex_1.test(document.getElementById("pwd_1").value) &&
+          regex_2.test(document.getElementById("email_1").value)
+        ) {
+          alert("submitted");
+        }
+      }
+      function submit_2() {
+        regex_1 = /^[a-zA-Z0-9]|[-]+|(\s)$/;
+        regex_2 = /^[0-9]{0,2}$|^100$/;
+        regex_3 = /^[1-9]+$/;
+        regex_4 = /^.{0,200}$/;
+        if (
+          document.getElementById("prdslect").value != "[select]" &&
+          regex_1.test(document.getElementById("prdname").value) &&
+          regex_2.test(document.getElementById("prdquan")) &&
+          regex_3.test(document.getElementById("prdpr")) &&
+          regex_4.test(document.getElementById("prddes"))
+        ) {
+          alert("submitted");
+        } else {
+          alert("error");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form border="1">
+      <table align="center">
+        <tr colspan="2">
+          <td style="background-color:black;color:white">Adminstrator</td>
+        </tr>
+        <tr>
+          <td>Category Choose</td>
+          <td>
+            <select id="prdslect">
+              <option value="asd">[select]</option>
+              <option value="Nokia">Nokia</option>
+              <option value="Samdung">Samsung</option>
+              <option value="Nokia">GL</option>
+              <option value="Nokia">Sony</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Product name</td>
+          <td>
+            <input type="text" id="prdname" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product description</td>
+          <td>
+            <input type="textarea" id="prddes" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product quantity</td>
+          <td>
+            <input type="text" id="prdquan" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product price</td>
+          <td>
+            <input type="text" id="prdpr" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product image</td>
+          <td>
+            <input type="file" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product info</td>
+          <td>
+            <input type="textarea" id="prdinfo" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product status</td>
+          <td>
+            <input type="checkbox" id="prdstt" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button type="button" onclick="submit_2()">Submit</button>
+            <input type="reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
+    <style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial;
+            font-size: 13px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            /*background: blue;*/
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .div-header {
+            height: 120px;
+            width: 100%;
+            background: #f94f2f;
+        }
+
+            .div-header .div-menu-top {
+                height: 34px;
+                width: 100%;
+                /*background: yellow;*/
+            }
+
+                .div-header .div-menu-top a {
+                    color: white;
+                }
+
+                    .div-header .div-menu-top a:hover {
+                        color: #fdbf9b;
+                    }
+
+                .div-header .div-menu-top .panel-left {
+                    float: left;
+                    height: 100%;
+                    width: 60%;
+                    /*background: pink;*/
+                    color: white;
+                }
+
+                    .div-header .div-menu-top .panel-left .menu-left {
+                        list-style-type: none;
+                    }
+
+                        .div-header .div-menu-top .panel-left .menu-left li {
+                            float: left;
+                            padding: 8px 11px;
+                            border-right: 1px solid #f56a5b;
+                        }
+
+                            .div-header .div-menu-top .panel-left .menu-left li:first-child {
+                                padding-left: 0px;
+                            }
+
+                .div-header .div-menu-top .panel-right .menu-right {
+                    list-style-type: none;
+                }
+
+                    .div-header .div-menu-top .panel-right .menu-right li {
+                        float: right;
+                        padding: 8px 11px;
+                        border-right: 1px solid #f56a5b;
+                    }
+
+                        .div-header .div-menu-top .panel-right .menu-right li:first-child {
+                            padding-right: 0px;
+                        }
+
+                .div-header .div-menu-top .panel-right {
+                    float: right;
+                    height: 100%;
+                    width: 40%;
+                    /*background: aqua;*/
+                }
+
+            .div-header .header-content .logo {
+                padding: 8px;
+                float: left;
+            }
+
+            .div-header .header-content .search-bar {
+                float: left;
+                width: 70%;
+                /*background: yellow;*/
+                height: 100%;
+                padding: 15px;
+                position: relative;
+            }
+
+                .div-header .header-content .search-bar #txt_search {
+                    width: 100%;
+                    padding: 10px 6px;
+                    border-radius: 5px;
+                    position: absolute;
+                    border: 0px;
+                }
+
+                .div-header .header-content .search-bar .div-search-bar {
+                    position: relative;
+                    width: 96%;
+                }
+
+                    .div-header .header-content .search-bar .div-search-bar #btn-search {
+                        z-index: 100;
+                        position: absolute;
+                        right: 4px;
+                        padding: 8px 20px;
+                        top: 3px;
+                        background: #f94f2f;
+                        border: 0px;
+                        color: white;
+                    }
+
+                .div-header .header-content .search-bar .div-suggest {
+                    float: left;
+                    /*width: 70%;*/
+                    /*background: yellow;*/
+                    height: 100%;
+                    /*padding: 15px;*/
+                    position: relative;
+                    top: 34px;
+                }
+
+                    .div-header .header-content .search-bar .div-suggest ul {
+                        list-style-type: none;
+                    }
+
+                        .div-header .header-content .search-bar .div-suggest ul li {
+                            float: left;
+                            padding: 3px;
+                            color: white;
+                        }
+
+        .div-content {
+            /*height: 300px;*/
+            width: 100%;
+            background: #f5f5f5;
+            padding-top: 30px;
+        }
+
+            .div-content .div-slides {
+                height: 235px;
+                background: yellow;
+                /*margin-top: 30px;*/
+            }
+
+                .div-content .div-slides .div-slide-left {
+                    width: 65%;
+                    height: 100%;
+                    background: green;
+                    float: left;
+                }
+                .div-content .div-slides .div-slide-right {
+                    width: 35%;
+                    height: 100%;
+                    background: orange;
+                    float: left;
+                }
+                    .div-content .div-slides .div-slide-right .div-news-top {
+                        height: 50%;
+                        background: red;
+                        width: 100%;
+                    }
+                    .div-content .div-slides .div-slide-right .div-news-bottom {
+                        height: 50%;
+                        background: blue;
+                        width: 100%;
+                    }
+
+            .div-content .quick-menu {
+                height: 108px;
+                background: orange;
+                margin-top: 30px;
+            }
+
+        .div-footer {
+            height: 300px;
+            width: 100%;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-header">
+        <div class="container">
+            <div class="div-menu-top">
+                <div class="panel-left">
+                    <ul class="menu-left">
+                        <li><a href="">Kênh người bán</a></li>
+                        <li><a href="">Trở thành người bán Shopee</a></li>
+                        <li><a href="">Tải ứng dụng</a></li>
+                        <li>
+                            Kết nối <a href="">
+                                <i class="fa fa-facebook-official" aria-hidden="true" style="font-size: 16px;"></i> &nbsp; <i class="fa fa-instagram" aria-hidden="true" style="font-size: 16px;"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-right">
+                    <ul class="menu-right">
+                        <li><a href="">Đăng nhập</a></li>
+                        <li><a href="">Đăng ký</a></li>
+                        <li><a href=""><i class="fa fa-globe" aria-hidden="true"></i>Tiếng Việt</a></li>
+                        <li><a href=""><i class="fa fa-question-circle" aria-hidden="true"></i>Hỗ trợ</a></li>
+                        <li><a href=""><i class="fa fa-bell-o" aria-hidden="true"></i> Thông báo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./imgs/logo.png" />
+                </div>
+                <div class="search-bar">
+                    <div class="div-search-bar">
+
+                        <button type="button" id="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <input type="text" id="txt_search" />
+                    </div>
+                    <div class="div-suggest">
+                        <ul>
+                            <li>
+                                Săn Sale iPhone 14 Pro Max 1k
+                            </li>
+                            <li>
+                                Áo Khoác 1k Freeship
+                            </li>
+                            <li>
+                                Pot Điện Tử Hút
+                            </li>
+                            <li>
+                                Áo 0đ
+                            </li>
+                            <li>
+                                Vợt Cầu Lông
+                            </li>
+                            <li>
+                                Dép 0đ
+                            </li>
+                            <li>
+                                Set Đồ
+                            </li>
+                            <li>
+                                Hàng 0 Đồng
+                            </li>
+                            <li>
+                                Gấu Bông 1k
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cart"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="div-content">
+        <div class="container">
+            <div class="div-slides">
+                <div class="div-slide-left"></div>
+                <div class="div-slide-right">
+                    <div class="div-news-top"></div>
+                    <div class="div-news-bottom"></div>
+                </div>
+            </div>
+
+            <div class="quick-menu"></div>
+        </div>
+    </div>
+    <div class="div-footer">
+        <div class="container">
+            <!--<div class="div-menu-top">
+            </div>-->
+        </div>
+    </div>
+</body>
+</html>

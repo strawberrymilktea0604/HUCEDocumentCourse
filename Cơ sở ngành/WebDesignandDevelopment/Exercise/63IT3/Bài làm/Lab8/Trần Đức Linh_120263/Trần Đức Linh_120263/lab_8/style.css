@@ -1,0 +1,62 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+fieldset {
+  border-radius: 10px;
+  border-color: rgb(0, 162, 255);
+}
+legend {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: rgb(0, 162, 255);
+}
+.form-group {
+  margin: 20px;
+  width: 60%;
+  text-align: right;
+}
+.row-flex {
+  position: relative;
+}
+.row-flex .gender {
+  position: absolute;
+  top: -90%;
+  right: 150px;
+}
+.form-group.birthday {
+  margin-left: -46px;
+}
+input {
+  width: 40%;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 162, 255);
+  height: 2rem;
+}
+input:focus {
+  background: rgba(0, 162, 255, 0.5);
+  outline: none;
+}
+input[type="radio"] {
+  width: 20px;
+}
+select {
+  height: 2rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+}
+label {
+  font-weight: bold;
+  width: 200px;
+}
+#secuques {
+  width: 41%;
+}
+.btn-group {
+  text-align: center;
+}

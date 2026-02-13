@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script>
+            
+
+			function check(){
+                var numberofmagazines = 0;
+                var magazine = ""
+
+                for(i = 0; i < f.rdMagazine.length;i++) 
+                {
+                    if(f.rdMagazine[i].checked) 
+                    {    
+                        numberofmagazines++; 
+                        magazine += f.rdMagazine[i].value + " ";
+                    }
+                }
+
+				if (f.lname.value==""){
+					alert("The last name field can not be empty!");
+					f.lname.focus();
+					return false; 
+				}
+				else if (f.fname.value==""){
+					alert("The first name field can not be empty!");
+					f.fname.focus();
+					return false; 
+				}
+				else if (f.diachi.value==""){
+					alert("The address field can not be empty!");
+					f.diachi.focus();
+					return false; 
+				}
+                else if (numberofmagazines == 0) {
+                    alert("Choose atleast one magazines!");
+                    return false;
+                }
+                else if(f.rdDuration.value=="")
+                {
+                    alert("Please choose one of three durations!");
+                    return false;
+                }
+                else if(f.rdPayment.value=="")
+                {
+                    alert("Please choose one of two ways to pay!");
+                    return false;
+                }
+                else{
+                    if(f.rdGioiTinh.value == 0) {
+                        gioitinh = "Mr.";
+                    }
+                    else {
+                        gioitinh = "Miss.";
+                    }
+                    
+
+                if(confirm("Do you want to order " + magazine + "magazins for " + f.rdDuration.value + " and to pay with " + f.rdPayment.value + "?"))
+                {
+                    alert("Thank you very much for your order, we will suply as soon as possible the magazins for you to the address: \n" + gioitinh + f.lname.value + " " + f.fname.value + "\n" + f.diachi.value);
+                    return true;
+                }
+                else {
+                    return false;
+                }
+              }
+			}
+		</script>
+	</head>
+	<body>
+		<h1 align=center style="color:green">Subscription Form</h1>
+		<form method="GET" name=f onSubmit="return check()">
+			<table border=0 cellspacing=5 align=center>
+                <fieldset>
+                    <legend> Personal Information</legend>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" size=30 align=right placeholder="Ho Va"> &ensp;
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" size=30 align=left placeholder="Ten"><br><br>
+                    <label for="gioitinh"></label>
+                    <input type=radio name=rdGioiTinh value=0 align=right>Male &ensp;
+                    <input type=radio name=rdGioiTinh value=1 align=left>Female<br><br>
+                    <label for="diachi"> Address:</label><br>
+                    <textarea id="diachi" name="diachi" cols="50" rows="10" placeholder="somewhere in Hanoi"></textarea>
+                </fieldset>
+                <br><br>
+                <fieldset>
+                    <p>Magazines subscription for</p>
+                    <label for="magazine"></label>
+                    <input type=checkbox name=rdMagazine value="TIME">&ensp; TIME &ensp;
+                    <input type=checkbox name=rdMagazine value="NewsWeek">&ensp; NewsWeek &ensp;
+                    <input type=checkbox name=rdMagazine value="Sunday">&ensp; Sunday &ensp;
+                    <input type=checkbox name=rdMagazine value="Vogue">&ensp; Vogue &ensp;
+                    <input type=checkbox name=rdMagazine value="People">&ensp; People
+                </fieldset>
+                <br><br>
+                <fieldset>
+                    <legend> Duration </legend>
+                    <label for="duration"></label>
+                    <input type=radio name="rdDuration" id="duration" value="1 Year">1 Year &ensp;
+                    <input type=radio name="rdDuration" id="duration" value="3 Years">3 Years &ensp;
+                    <input type=radio name="rdDuration" id="duration" value="5 Years">5 Years
+                </fieldset>
+                <br><br>
+                <fieldset>
+                    <legend> Payment options </legend>
+                    <label for="payment"></label>
+                    <input type=radio name="rdPayment" id="payment" value="Demand Draft" align=right>Demand Draft &ensp;
+                    <input type=radio name="rdPayment" id="payment" value= "Credit Card" align=left>Credit Card
+                </fieldset>
+                <br><br>
+                <button>Process</button> &ensp;&ensp;
+                <input type=reset value="Reset">
+			</table>
+		</form>
+	</body>
+</html>

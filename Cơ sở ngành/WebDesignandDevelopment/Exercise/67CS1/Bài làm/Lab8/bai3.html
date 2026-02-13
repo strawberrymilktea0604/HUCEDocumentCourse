@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                margin:0px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:14pt;
+            }
+            
+
+            .box {
+                width:800px; height:1000px; border:1px solid black; 
+            }
+            .rectangle {
+                width: 500;
+                height: 10px;
+                background-color: #FE0000;
+                display: inline-block;
+                transform: translateY(100%);
+              }
+
+            form {
+                margin-top:10px; width:550px; height:1000px; text-align:center; margin: 0 auto; background-color: #9A9AFB;
+            }
+            #main{
+                margin:0px auto;
+                width: 800px;
+                height:1000px;
+                background-color:#99FE99;
+            }
+            #main li{list-style-type: none;}
+            #content{
+                position:relative;
+                float:right;
+                width:650px;
+                height:150px;
+                background-color: #CCFECC;
+            }
+            #footer{
+                position:relative;
+                float:left;
+                width:150px;
+                height:150px;
+                background-color: #FECC99;
+            }
+            h1 {
+              padding-top: 50px;
+              background-color: #CCFE99;
+              font-weight: bold;
+            }
+            .error {
+                background-color: pink;
+              }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header"></div>
+            <div id="content">
+                <h1 align="center">HN-Aptech</h1>
+            </div>
+            <div id="footer">
+                <p align="center"> Trung tâm đào tạo Lập trình viên Quốc tế HN-Aptech</p>
+            </div>
+
+
+            <div id="box">
+                <form id="myForm" onsubmit="validateForm(); return false;">
+                    <br><br><label class="rectangle"></label> <br>
+
+                    <h2 align="center"><b>Phiếu đăng ký tham dự hội thảo</b></h2> <br><br>
+
+                    <fieldset>
+                        <legend align="left" style="color: blue">Thông tin cá nhân</legend>
+                        <label for="name">Tên</label> &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                        <input type="text" id="name" name="name"> <br><br>
+
+                        <label for="mssv">Mã sinh viên</label> &ensp;&ensp;&ensp;&ensp;&ensp;
+                        <input type="text" id="mssv" name="mssv"> <br><br>
+
+                        <label for="class">Lớp</label> &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                        <input type="text" id="class" name="class">
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend align="left" style="color: blue">Thông tin khác</legend>
+                        <label for="dob">Ngày sinh</label>&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;
+                        <input type="text" id="dob" name="dob" onchange="calculateAge()"> <br><br>
+
+                        <label for="age">Tuổi:</label> &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                        <input type="text" id="age" name="age" readonly>
+                    </fieldset>
+                
+                    <br><button>Sumbit</button>&ensp;&ensp;&ensp;&ensp;
+                    <input type="reset" value="Reset">
+                  </form>
+            </div>
+
+            <script>
+
+                function validateForm() {
+                    var name = document.getElementById("name").value;
+                    var mssv = document.getElementById("mssv").value;
+                    var className = document.getElementById("class").value;
+                    var dob = document.getElementById("dob").value;
+                    var age = document.getElementById("age").value;
+              
+                    // Reset background color
+                    document.getElementById("name").classList.remove("error");
+                    document.getElementById("mssv").classList.remove("error");
+                    document.getElementById("class").classList.remove("error");
+                    document.getElementById("dob").classList.remove("error");
+                    document.getElementById("age").classList.remove("error");
+              
+                    // Validate non-empty fields
+                    var fields = ["name", "mssv", "class", "dob", "age"];
+                    fields.forEach(function(field) {
+                      var element = document.getElementById(field);
+                      if (element.value.trim() === "") {
+                        element.classList.add("error");
+                    }
+                    });
+                    var nameWords = name.split(" ");
+                    var dieukienname = nameWords.length >= 2 && !/\d/.test(name);
+
+                    if (!dieukienname) {
+                        document.getElementById("name").classList.add("error");
+                    }
+
+                    else if (!/^[0-9]+$/i.test(mssv)) {
+                        document.getElementById("mssv").classList.add("error");
+                    }
+
+                    else if (!/^[a-zA-Z0-9]+$/.test(className)) {
+                        document.getElementById("class").classList.add("error");
+                    }
+
+                    else if (!/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/.test(dob)) {
+                        document.getElementById("dob").classList.add("error");
+                    }
+
+                    else if (age < 0) {
+                        document.getElementById("age").classList.add("error");
+                    }
+                    else {
+                        alert('Form submitted successfully!');
+                        window.location.href = window.location.href;
+                        return true;
+                    }
+                }
+    
+                function calculateAge() {
+                    var dobInput = document.getElementById('dob');
+                    var ageInput = document.getElementById('age');
+              
+                    var dob = new Date(dobInput.value);
+                    var currentDate = new Date();
+    
+    
+                    var age = currentDate.getFullYear() - dob.getFullYear();
+                    if (currentDate.getMonth() < dob.getMonth() || (currentDate.getMonth() === dob.getMonth() && currentDate.getDate() < dob.getDate())) {
+                      age--;
+                    }
+              
+                    ageInput.value = age;
+                  }
+                  document.getElementById('dob').addEventListener('change', calculateAge);
+
+                  var formLabels = document.querySelectorAll('label');
+                  var h2Labels = document.querySelectorAll('h2');
+                  var legendLabels = document.querySelectorAll('legend');
+
+                  formLabels.forEach(function(label) {
+                    label.addEventListener('mouseover', function() {
+                      this.style.color = 'yellow';
+                    });
+              
+                    label.addEventListener('mouseout', function() {
+                      this.style.color = '';
+                    });
+                  });
+
+                  h2Labels.forEach(function(h2) {
+                    h2.addEventListener('mouseover', function() {
+                      this.style.color = 'yellow';
+                    });
+              
+                    h2.addEventListener('mouseout', function() {
+                      this.style.color = '';
+                    });
+                  });
+
+                  legendLabels.forEach(function(legend) {
+                    legend.addEventListener('mouseover', function() {
+                      this.style.color = 'yellow';
+                    });
+              
+                    legend.addEventListener('mouseout', function() {
+                      this.style.color = 'blue';
+                    });
+                  });
+
+            </script>
+
+    </body>
+</html>

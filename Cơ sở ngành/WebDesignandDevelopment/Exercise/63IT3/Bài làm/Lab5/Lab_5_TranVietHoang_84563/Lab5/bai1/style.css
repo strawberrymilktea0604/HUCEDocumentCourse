@@ -1,0 +1,16 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+h3 {
+    color: palevioletred;
+    z-index: 2;
+}
+
+img {
+    max-width: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}

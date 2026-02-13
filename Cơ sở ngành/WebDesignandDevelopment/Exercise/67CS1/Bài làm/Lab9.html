@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title Login></title>
+    <meta charset="utf-8">
+    <script>
+        function check() {
+            if(f.email.value == "") {
+                alert("Complete the form!");
+                return false;
+            }
+        
+            emailformat = /^[a-zA-Z0-9]+@[a-z]+\.[a-zA-Z]{2,}$/
+            if (emailformat.test(f.email.value) == false) {
+                alert("Invalid email!");
+                return false;
+            }
+        
+            if(f.password.value == "") {
+                alert("Complete the form!");
+                return false;
+            }
+        
+            passwordformat = /[a-z]+[A-Z]+[1-9]+[~]+[@]+[#]+[$]+[?]+/
+            if (passwordformat.test(f.password.value) == false) {
+                alert("Invalid password!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <style>
+        i {
+            color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="GET" action="../QUESTION2/shopping.html" onsubmit="return check()" name="f">
+        <table align="center" border="4" cellspacing="5" cellpading="6" width="400px">
+            <tr>
+                <td align="center" colspan="2" style="background-color: gray;" height="40"><b>Administrator</b></td>
+            </tr>
+            <tr>
+                <td align="right">Email</td>
+                <td><input type="text" id="email" style="background-color: #cccccc;"><i>(*)</i>
+                    <br><i style="color: black;">(example: home@aptech.vn)</i></td>
+            </tr>
+            <tr> 
+                <td align="right">Password</td>
+                <td><input type="password" id="password" style="background-color: #cccccc;"><i>(*)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="reset">&nbsp;&nbsp;&nbsp;<input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

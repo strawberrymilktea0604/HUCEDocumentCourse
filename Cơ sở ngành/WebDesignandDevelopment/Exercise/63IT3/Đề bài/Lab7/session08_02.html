@@ -1,0 +1,31 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            
+    </head>
+    <body>
+        <script>
+           function check(){
+                with(document){
+                    if (f.txtText1.value==""){
+                        alert("Mời nhập vào dữ liệu");
+                        f.txtText1.focus();
+                        return false;
+                    }
+                   // r = /^[-]{0,1}\d+$/  //Nhập vào số
+                   r = /^\d{1,2}\/\d{1,2}\/\d{4}$/      // Ngày tháng theo dạng dd/mm/yyyy
+                    if (r.test(f.txtText1.value)==false){
+                        alert("Bạn phải nhập vào một số!");
+                        f.txtText1.focus();
+                        return false;
+                    }
+                }
+           } 
+        </script>
+        <form name=f  onSubmit="return check();" method=Post action="session08_03.html">
+            Nhập vào: <input type=text name=txtText1> <input type=submit value="Kiểm tra">
+        </form>
+    </body>
+</html>

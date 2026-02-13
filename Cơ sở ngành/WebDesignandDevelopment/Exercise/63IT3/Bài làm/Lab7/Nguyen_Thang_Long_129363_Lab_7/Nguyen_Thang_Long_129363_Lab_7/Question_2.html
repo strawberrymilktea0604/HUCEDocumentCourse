@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+<style>
+    #head:hover{
+        background-color: red;
+        line-height: 67.833px;
+    }
+    .table{
+        border: 0px;
+    }
+    #hr{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <center>
+        <form>
+            <table width="700px" class="table" cellpadding="2" cellspacing="2">
+                <tr>
+                    <td style="background-color: black;color: white;" align="center" colspan="3"><h2  id="head">ADDNEW PRODUCTION</h2></td>
+                </tr>
+                <tr>
+                    <td align="right">Category Choose:</td>
+                    <td align="left">
+                        <select name="combobox">
+                            <option><checked>[Select]</checked></option>
+                            <option>Nokia</option>
+                            <option>Samsung</option>
+                            <option>LG</option>
+                            <option>Sony</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Product name:</td>
+                    <td><input type="text" name="Product" size=30></td>
+                </tr>
+                <tr>
+                    <td align="right">Product Description:</td>
+                    <td>
+                        <textarea cols="30" rows="5" name="Description"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product Quantity:</td>
+                    <td><input type="text" name="Quantity" size="15">&nbsp;&nbsp;<i style="color: red;">positive</i></td>
+                </tr>
+                <tr>
+                    <td align="right">Product Price:</td>
+                    <td><input type="text" name="Price" size="15">&nbsp;&nbsp;<i style="color:red;">$</i></td>
+                </tr>
+                <tr>
+                    <td align="right">Product Image:</td>
+                    <td><input type="text" name="Image" size="30"></td>
+                    <td align="left"><input type="file" name="fAnh"></td>
+                </tr>
+                <tr>
+                    <td align="right">Product Info</td>
+                    <td>
+                        <textarea name="Info" cols="30" rows="6">Enter your Product Info...</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product Status:</td>
+                    <td><input type="checkbox" style="color: red;">Show</td>
+                </tr>
+                <hr id="hr" class="hrr">
+                <tr>
+                    <td align="center"><button type="reset">Reset</button></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <script>
+        t=0;
+        for(i<0;i<f1.combobox.length;i++){
+            if(f1.combobox[i].checked) t++;
+        }
+        if(t==0){
+            alert("Bạn phải pick một 'Category Choose' bạn âii");
+            return false;
+        }
+    </script>
+</body>
+</html>

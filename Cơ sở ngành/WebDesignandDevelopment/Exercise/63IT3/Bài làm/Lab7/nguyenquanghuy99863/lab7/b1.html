@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+          text-align: left;    
+        }
+        input{
+            background-color: gray;
+        }
+        </style>   
+</head>
+<body>
+    <table>
+        <tr>
+        <th colspan="4">Adminstrator</th>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td colspan="3"><input id="email"></td>
+       
+        
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td colspan="3"><input id="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <button onclick="submit()">Submit</button>
+                <button onclick="reset()">Reset</button>
+               </td>
+        </tr>
+
+
+    </table>
+    <script>
+        var email=document.getElementById('email');
+        var password=document.getElementById('password');
+function reset(){
+    location.reload()
+}
+function  submit(){
+   if(email==''||password==''){
+       alert("nhâp email và password")
+   }else{
+       console.log(email.value )
+       var pattenEmail=/^(\w+)@(\w+){2,6}\.[a-z\.]{2,9}$/
+       console.log(pattenEmail)
+      console.log( pattenEmail.test(email.value))
+      console.log(password.value)
+      var pattenPass=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*~)(?=.*@)(?=.*#)(?=.*\?)(?=.*\$)[a-zA-Z\d~@#?$]{7,}$/
+      console.log(pattenPass.test(password.value))
+      if(pattenPass.test(password.value)&&pattenEmail.test(email.value)){
+          window.open('./productadnew.html','_blank')
+      }
+   }
+  
+}
+
+    </script>
+</body>
+</html>

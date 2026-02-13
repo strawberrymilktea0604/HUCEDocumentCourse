@@ -1,0 +1,73 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Question 1</title>
+    </head>
+<body>
+    <form name = f method="POST" action="Question 2.html">
+    <style>
+        *{
+            margin: 5px;
+        }
+        table, th, td{
+            border: 1px solid #000;
+        }
+        th, td {  
+            padding: 5px;
+        }
+        p{
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+    function check(){
+         
+            if (txtEmail.value==""){
+                alert("Bạn chưa nhập email");
+                txtEmail.focus();
+                return false;
+            }
+            if (txtPass.value==""){
+                alert("Bạn chưa nhập pass");
+                txtPass.focus();
+                return false;
+            }  
+          
+            r1 = /\w\@\w/   
+            if (r1.test(txtEmail.value)==false){
+                alert("Bạn nhập sai định dạng email!");
+                txtEmail.focus();
+                return false;
+            }     
+            r2 = /((?=.*[a-z])(?=.*[0-9])(?=.*[~@#$%])(?=.*[A-Z]))/
+  
+            if (r2.test(txtPass.value)==false){
+                alert("Bạn nhập sai định dạng pass");
+                txtPass.focus();
+                return false;
+            }       
+    } 
+    </script>
+    <table>  
+        <tr><td colspan="2" bgcolor="#ddd" style="text-align: center;"><b>Admistrator</b></td></tr>  
+        <tr><td>Email:</td><td>
+            <input type="text" style="background-color: #ddd;" id="txtEmail">
+            <p style="color: red;">(*)</p><br>
+            <p><i>(example:home@aptech.vn)</i></p>
+
+        </td></tr>  
+        <tr><td>Password:</td><td>
+            <input type="text" style="background-color: #ddd;" id="txtPass">
+            <p style="color: red;">(*)</p>
+        </td></tr>  
+        <tr><td></td>
+        <td>
+            <button type="submit" onclick="return check()">Submit</button>
+            <button type="reset">Reset</button>
+        </td>         
+        </tr>  
+    </table> 
+</form>
+</body>
+</html>

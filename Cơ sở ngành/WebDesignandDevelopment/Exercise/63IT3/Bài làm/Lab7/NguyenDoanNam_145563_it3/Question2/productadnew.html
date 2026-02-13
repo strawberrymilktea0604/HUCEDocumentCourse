@@ -1,0 +1,70 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Lab7</title>
+    </head>
+    <body>
+        <fieldset>
+        <table align=center width=40% border = 0 cellspacing=2>
+            <tr>
+                <h1 align=center style="background-color: rgb(53, 179, 63);" valign=middle align=center>ADDNEW PRODUCTION</h1>
+            </tr>
+            <tr>
+                <td align=right>Category Choose:</td>
+                <td><select name = slCategoryChoose>
+                        <option>Select</option>
+                        <option>Nokia</option>
+                        <option>Samsung</option>
+                        <option>GL</option>
+                        <option>Sony</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>Product Name:</td>
+                <td><input type=text name=txtproductname></td>
+            </tr>
+            <tr>
+                <td align=right>Product Description:</td>
+                <td><textarea cols=30 rows=5 name=taproductdescription></textarea></td>
+            </tr>
+            <tr>
+                <td align=right>Product Quantity:</td>
+                <td><input type=text name=txtproductquantity></td>
+            </tr>
+            <tr>
+                <td align=right>Product Price:</td>
+                <td><input type=text name=txtproductprice></td>
+            </tr>
+            <tr>
+                <td align=right>Product Image:</td>
+                <td><input type=text name=txtproductimage></td>
+            </tr>
+            <tr>
+                <td align=right>Product Info:</td>
+                <td><textarea cols=30 rows=5 name=taproductinfo>Enter your Product Info…</textarea></td>
+            </tr>
+            <tr>
+                <td align=right>Product Status:</td>
+                <td></td><td><input type="checkbox" onclick="checkshow();" name=rdcheck><label id=check>Hidden</label></td>
+            </tr>
+            <tr>
+            <td>
+                <button type="addnew" onclick="return check()">Addnew</button>
+                <button type="reset">Reset</button>
+            </td>         
+            </tr>  
+        </table>
+    </fieldset>
+
+    <script>
+         function checkshow(){
+                            if (document.f.rdcheck.checked==true){
+                                document.getElementById("check").innerHTML="Show";
+                            } else {
+                                document.getElementById("check").innerHTML="Hidden";
+                            }
+                        }
+    </script>
+    </body>
+</html>

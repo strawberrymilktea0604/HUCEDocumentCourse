@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Lab8</title>
+    <script language="javascript">
+        function validatePassword(password){
+                const re = /^{6,12}$/;
+                return re.test(String(password));
+            }
+        function validateEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+        function check(){
+            with(document){
+                if(gameinformation.pass1text.value != gameinformation.repass1text.value){
+                    alert("Mật khẩu 1 phải trùng nhau");
+                        return false;
+                }
+                if(gameinformation.pass2text.value != gameinformation.repass2text.value){
+                    alert("Mật khẩu 2 phải trùng nhau");
+                        return false;
+                }
+                if(gameinformation.pass1text.value != gameinformation.pass2text.value){
+                    alert("Hai mật khẩu phải khác nhau phải trùng nhau");
+                        return false;
+                }
+                if(gameinformation.securityQuestion.value != Q0){
+                    alert("Phải chọn câu hỏi bảo mật");
+                        return false;
+                }
+                if(validateEmail(customerinformation.email.value)==false){
+                        alert("Email không hợp lệ, vui lòng nhập lại!!");
+                        return false;
+                    }
+                if(validatePassword(gameinformation.pass1text.value)==false||validatePassword(gameinformation.pass2text.value)==false){
+                     alert("Mật khẩu không hợp lệ!!");
+                     return false;
+                }
+                if(gameinformation.nametext.value == ""){
+                    alert("Tên dang nhap không được bỏ trống!");
+                     return false;
+                }
+                if(gameinformation.pass1text.value == ""){
+                    alert("Pass1 không được bỏ trống!");
+                     return false;
+                }
+                if(gameinformation.pass2text.value == ""){
+                    alert("Pass2 không được bỏ trống!");
+                     return false;
+                }
+                if(gameinformation.answertext.value == ""){
+                    alert("Answer không được bỏ trống!");
+                     return false;
+                }
+                if(customerinformation.nametext.value == ""){
+                    alert("Tên ng chơi không được bỏ trống!");
+                     return false;
+                }
+                if(customerinformation.email.value==""){
+                        alert("Vui lòng nhập Email"); 
+                        return false;
+                    }
+                    
+            }
+            
+        }
+        function changebg(x,color) {
+                    x.style.background = "yellow";
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend style="color: blue;">Information for play game</legend>
+        <form name="gameinformation" >
+            <table align="center">
+                <tr>
+                  <td align="right">Username*</td>
+                  <td align="left"><input type="text" name="nametext" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');" /></td>
+                </tr>
+                <tr>
+                  <td align="right">Password Level 1*</td>
+                  <td align="left"><input type="text" name="pass1text" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');" /></td>
+                </tr>
+                <tr>
+                  <td align="right">Re-enter Password Level 1*</td>
+                  <td align="left"><input type="text" name="repass1text" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align="right">Password Level 2*</td>
+                    <td align="left"><input type="text" name="pass2text" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                  </tr>
+                  <tr>
+                    <td align="right">Re-enter Password Level 2*</td>
+                    <td align="left"><input type="text" name="repass2text" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                  </tr>
+                  <tr>
+                    <td align="right">Security Question</td>
+                    <td align="left"><select name="securityQuestion">
+                        <option value="Q0">Choose a question…</option>
+                        <option value="Q1">What is your library card number</option>
+                        <option value="Q2">What was your first phone number</option>
+                        <option value="Q3">What was your first teacher name</option>
+                      </select></td>
+                  </tr>
+                  <tr>
+                    <td align="right">Answer*</td>
+                    <td align="left"><input type="text" name="answertext" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                  </tr>
+              </table>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend style="color: blue;">Customer Information</legend>
+        <form name="customerinformation" align="center">
+            <table align="center">
+                <tr>
+                    <td align="right">Fullname*</td>
+                    <td align="left"><input type="text" name="nametext" OnFocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                    <td>
+                        <input type="radio" name="male" checked>Male
+                        <input type="radio" name="female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Email*</td>
+                    <td align="left"><input type="text" name="email" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align="right">Birthday</td>
+                    <td align="left"><input type="datetime-local" name="birthday" /></td>
+                </tr>
+                <tr>
+                    <td align="right">Address</td>
+                    <td align="left"><input type="text" name="address" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align="right">Homephone</td>
+                    <td align="left"><input type="text" name="phone" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                    <td align="right">Mobile</td>
+                    <td align="left"><input type="text" name="moblie" onfocus="changebg(this,'yellow');" onblur="changebg(this,'white');"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+    <p>*Note: all of the field that have "*" must be inputted</p><br>
+    <div align="center">
+        <input type="button" name="Register" value="Register" onclick="check()">
+        <input type="reset" value="Clear">
+    </div>
+    
+</body>
+</html>

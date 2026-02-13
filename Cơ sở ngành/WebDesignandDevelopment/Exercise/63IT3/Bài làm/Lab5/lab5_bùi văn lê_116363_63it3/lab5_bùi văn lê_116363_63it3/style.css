@@ -1,0 +1,11 @@
+h2{
+    color: red;
+    font: bold;
+    text-decoration:underline;
+}
+.changebody{
+    background-color: cyan ;
+    font: Arial;
+    font-size: 14;
+    color: yellow;
+}

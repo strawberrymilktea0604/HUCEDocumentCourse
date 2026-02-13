@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td {
+            border:2px solid rgb(190, 41, 190);
+        }
+        #reason {
+            margin: 0 auto; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center" style="color:blue">BẢNG ĐIỀU TRA VẬT NUÔI YÊU THÍCH</h1>
+    <table align="center">
+        <caption style="color:blue"><b>Trả lời các câu hỏi về các con vật yêu thích của bạn</b></caption>
+        <tr>
+          <th></th>
+          <th>CHÓ</th>
+          <th>MÈO</th>
+        </tr>
+        <tr>
+          <td>BẠN NUÔI</td>
+          <td><input type="checkbox" >Có</td>
+          <td><input type="checkbox" >Có</td>
+        </tr>
+        <tr>
+          <td>TÊN</td>
+          <td align="center"><input type="text" ></td>
+          <td align="center"><input type="text" ></td>
+        </tr>
+        <tr>
+          <td>MÀU LÔNG</td>
+          <td align="center">
+            <input type="radio" id="dogblack" name="dogcolor" value="black">
+            <label for="dogblack">Đen</label>
+            <input type="radio" id="dogwhite" name="dogcolor" value="white">
+            <label for="dogwhite">Trắng</label>
+            <input type="radio" id="dogother" name="dogcolor" value="other">
+            <label for="dogother">Khác</label>
+          </td>
+          <td align="center">
+            <input type="radio" id="catblack" name="catcolor" value="black">
+            <label for="catblack">Đen</label>
+            <input type="radio" id="catwhite" name="catcolor" value="white">
+            <label for="catwhite">Trắng</label>
+            <input type="radio" id="catother" name="catcolor" value="other">
+            <label for="catother">Khác</label>
+          </td>
+        </tr>
+      </table>
+      <p align="center" style="color:rgb(190, 41, 190)"><i><u>Lý do bạn yêu quý nó</u></i></a></p>
+      <textarea name="reason" id="reason" cols="30" rows="5"></textarea>
+
+      <div style="text-align: center;">
+        <button type="button">Xoa</button>
+        <button type="button">Huy</button>
+    </div>
+    
+      <div style="text-align: center;">
+        <button type="button">Gui</button>
+      </div>
+</body>
+</html>

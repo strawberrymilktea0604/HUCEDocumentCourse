@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>    
+</head>
+<body>
+    <script>
+        function check(){
+            var txt1 = document.getElementById("txt1");
+            var txt2 = document.getElementById("txt2");
+            var p = /((?=.*[a-z])(?=.*[0-9])(?=.*[~@#$%])(?=.*[A-Z]))/;
+            var e = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (txt1.value==""){
+                     alert("Nhập email");
+                     txt1.focus();
+                     return false;
+                }  
+                else if(!e.test(txt1.value)){
+                     alert("Nhập lại email");
+                     tx1.focus();
+                     return false;
+                }
+                if (txt2.value==""){
+                     alert("Nhập password");
+                     txt2.focus();
+                     return false;  
+                }
+                else if(!p.test(txt2.value)){
+                     alert("Nhập lại password")
+                     txt2.focus();
+                     return false;
+                 }
+                }
+                     
+        
+    </script>
+    <form action="" name="f1">
+     <table border="1"  width="400" height="250" cellspacing="5"  >
+        <tr align="center" style="background-color: darkgray;">
+            <td colspan="2"><strong>Administrator</strong></td>
+        </tr>
+        <tr >
+            <td align="right">Email</td>
+            <td><input type="text" id="txt1" style="background-color:rgba(169, 169, 169, 0.466);"><span style="color: red;">(*)</span><br><span><em>(example:home@aptech.vn)</em></span></td>
+        </tr>
+        <tr>
+            <td align="right">Password:</td>
+            <td><input type="text" id="txt2" style="background-color:rgba(169, 169, 169, 0.466)"><span style="color: red;">(*)</span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input  type="submit" value="submit" onclick="return check();" style="width:70px">
+                <input type="reset" value="reset" style="width: 70px;">
+            </td>
+        </tr>
+    </table>
+    </form>
+    
+</body>
+</html>

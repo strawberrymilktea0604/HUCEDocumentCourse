@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function fcolor(id,bgcolor,tcolor) {
+            id.style.backgroundColor = bgcolor;
+            id.style.color = tcolor;
+        }
+      
+
+            function ProductQuantity(productQuantity){
+                re = /^(?:-?\d+)?$/;
+                return re.test(String(productQuantity));
+            }
+      
+    </script>
+   
+ 
+</head>
+<body>
+    <form name="form" action="productadnew.html" method="POST">
+        
+        <table>
+            <tr><td align="center" >ADDNEW PRODUCTION</td></tr>
+            <tr>
+                <td >Category Choose</td>
+                <td >
+                    <select>
+                        <option>Nokia</option>
+                        <option>Samsung</option>
+                        <option>LG</option>
+                        <option>Sony</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Product Name</td>
+                <td ><input type="text" name="name" onfocus="fcolor(this,'gray','white');" onblur="fcolor(this,'white','black');"/></td>
+            </tr>
+            <tr>
+                <td >Product Description</td>
+                <td ><textarea rows="3" name="description"  onfocus="fcolor(this,'gray','white');" onblur="fcolor(this,'white','black');"></textarea></td>
+            </tr>
+            <tr>
+                <td>Product Quantity</td>
+                <td><input name="quantity" type="text"  onfocus="fcolor(this,'gray','white');" onblur="fcolor(this,'white','black');" />(positive)</td>
+            </tr>
+            <tr>
+                <td>Product Price</td>
+                <td><input name="price" type="text"  onfocus="fcolor(this,'gray','white');" onblur="fcolor(this,'white','black');" />($)</td>
+            </tr>
+            <tr>
+                <td>Product Image</td>
+                <td><input name="image" type="file" accept="image/*"/></td>
+            </tr>
+            <tr>
+                <td >Product Info</td>
+                <td><textarea rows="5" name="info" onfocus="fcolor(this,'gray','white');" onblur="fcolor(this,'white','black');" ></textarea></td>
+            </tr>
+            <tr>
+                <td>Product Status</td>
+                <td><input type="checkbox" /> Show</td>
+            </tr>
+            <tr><td><button type="submit">Addnew</button> <button type="reset">Reset</button></td></tr>
+        </table>
+
+    </form>
+</body>
+</html>

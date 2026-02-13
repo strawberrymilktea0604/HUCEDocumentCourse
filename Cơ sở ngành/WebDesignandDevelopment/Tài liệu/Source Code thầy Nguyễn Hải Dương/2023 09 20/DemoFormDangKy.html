@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="url_server" method="post">
+        <table align="center">
+            <caption>Đăng ký tài khoản</caption>
+            <tr>
+                <td>Họ tên:</td>
+                <td><input type="text" name="txt_hoten" maxlength="5"  /></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh:</td>
+                <td><input type="date" name="txt_ngaysinh" readonly /></td>
+            </tr>
+            <tr>
+                <td>Giới tính:</td>
+                <td>
+                    <input type="radio" name="rdb_gioitinh" value="nam" /> Nam
+                    <input type="radio" name="rdb_gioitinh" value="nu" checked /> Nữ
+                    <input type="radio" name="rdb_gioitinh" value="khac" checked /> Khác
+                </td>
+                <td>
+                    <select name="slc_gioitinh">
+                        <option value="nam">Nam</option>
+                        <option value="nu" selected>Nữ</option>
+                        <option value="khac" selected>Khác</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Địa chỉ:</td>
+                <td><textarea name="txt_diachi"></textarea></td>
+            </tr>
+            <tr>
+                <td>Sở thích:</td>
+                <td>
+                    <input type="checkbox" name="cbx_sothich_choigame" checked id="id1" class="cungten class1 class2"/> Chơi game <br />
+                    <input type="checkbox" name="cbx_sothich_docsach" checked id="id1" /> Đọc sách <br />
+                    <input type="checkbox" name="cbx_sothich_nghenhac" /> Nghe nhạc <br />
+                </td>
+            </tr>
+            <tr>
+                <td>Tuổi: </td>
+                <td>
+                    <input type="number" name="num_tuoi" max="10" min="0" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" name="btn_01">Nút để tạo sự kiện</button>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2">
+                    <input type="submit" value="Đăng ký" />
+                    <input type="reset" value="Hủy" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

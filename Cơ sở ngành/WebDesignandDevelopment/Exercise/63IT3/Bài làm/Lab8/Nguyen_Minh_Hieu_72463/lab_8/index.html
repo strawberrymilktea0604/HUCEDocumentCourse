@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Lab 8</title>
+  </head>
+  <body>
+    <form action="" id="form">
+      <fieldset>
+        <legend>Infomation for play game</legend>
+        <div class="form-group">
+          <label for="username">User Name *:</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div class="form-group">
+          <label for="password1">Password level 1 *:</label>
+          <input type="password" name="password1" id="password1" />
+        </div>
+        <div class="form-group">
+          <label for="repassword1">Re-enter password level 1 *:</label>
+          <input type="password" name="repassword1" id="repassword1" />
+        </div>
+        <div class="form-group">
+          <label for="password2">Password level 2 *:</label>
+          <input type="password" name="password2" id="password2" />
+        </div>
+        <div class="form-group">
+          <label for="repassword2">Re-enter password level 2 *:</label>
+          <input type="password" name="repassword2" id="repassword2" />
+        </div>
+        <div class="form-group">
+          <label for="secuques">Security Question *:</label>
+          <select name="secuques" id="secuques">
+            <option value="0" selected>Choose a question</option>
+            <option value="1">What is your library card number</option>
+            <option value="2">What was your fist phone number</option>
+            <option value="3">What was your first teacher name</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="answer">Answer *:</label>
+          <input type="text" name="answer" id="answer" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Customer infomation</legend>
+        <div class="row-flex">
+          <div class="form-group">
+            <label for="fullname">Full name *:</label>
+            <input type="text" name="fullname" id="fullname" />
+          </div>
+          <div class="form-group gender">
+            <input type="radio" name="gender" value="male" />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="female" />
+            <label for="female">Female</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *:</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="form-group birthday">
+          <label for="birthday">Birthday :</label>
+
+          <select name="date" id="date"></select>
+          <select name="month" id="month"></select>
+          <select name="year" id="year"></select>
+        </div>
+        <div class="form-group">
+          <label for="address">Address :</label>
+          <input type="text" name="address" id="address" />
+        </div>
+        <div class="row-flex">
+          <div class="form-group">
+            <label for="homephone">Home phone :</label>
+            <input type="text" name="homephone" id="homephone" />
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile :</label>
+            <input type="text" name="mobile" id="mobile" />
+          </div>
+        </div>
+      </fieldset>
+      <p>*Note: All of the fields that have "*" must be inputted</p>
+      <div class="btn-group">
+        <button type="submit">Register</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

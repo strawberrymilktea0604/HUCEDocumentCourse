@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <script>
+            function check(){
+                with(document){
+                    if(c.txtEmail.value==""){
+                        alert("Bạn chưa nhập Email");
+                        c.txtEmail.focus();
+                        return false;
+                    }
+                    if(c.txtPassword.value==""){
+                        alert("Bạn chưa nhập Password");
+                        c.txtPassword.focus();
+                        return false;
+                    }
+                    r=/[+a-z][+A-Z][+0-9]+~+#+$+@+?/
+                    if(r.test(c.txtPassword.value)==false){
+                        alert("Bạn nhập thiếu kí tự");
+                        c.txtPassword.focus();
+                        return false;
+                    }
+                }
+            }
+        </script>
+    <form name= c onSubmit="return check();" method="POST" action="Lab7-1.html">
+        <table border=1 width = 300 height = 200 align= center>
+            <tr>
+                <td colspan=2 align = center bgcolor="grey"><b>Admistrator</b></td>
+            </tr>
+            <tr>
+                <td align=right>Email:</td>
+                <td>
+                    <input type="email" name=txtEmail><i style="color: red">(*)</i></p>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>Password:</td>
+                <td><input type="password" name=txtPassword><i style="color: red">(*)</i></td>
+                
+            </tr>
+            <tr style="height:30px">
+                <td></td>
+                <td>
+                    <input onSubmit="return check();" type="submit" name = next value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

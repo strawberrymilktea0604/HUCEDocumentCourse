@@ -1,0 +1,28 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            
+    </head>
+    <body style="background-color: chartreuse;">
+        <script language="Javascript">
+                
+                confirm("Bạn đã tiêm vacxin Covid chưa?");
+                alert("Bạn đã được bảo vệ trước Covid 19");
+                document.write("<h1 align=center>Chúc các bạn mạnh khoẻ!</h1>");
+                
+                var a = 10;
+                var b = "Phan Hữu Trung";
+                var c = true; 
+                document.write("<br>" + typeof(a) +  " a = " + a);
+                document.write("<br>" + typeof(b) + " b = " + b);
+                //document.write("<br>" + typeof(c) + " c = " + c);
+                var arr = new Array("Chủ nhật","Thứ hai","Thứ ba","Thứ tư","Thứ năm","Thứ sáu","Thứ bảy");
+                var d = new Date();
+                document.write("<br>Hôm nay là " + arr[d.getDay()]);
+                status = (confirm("Bạn đã đủ tuổi lập gia đình chưa?"))?"trưởng thành":"vị thành niên";
+                document.write("<br>Bạn là " + status);
+        </script>
+    </body>
+</html>

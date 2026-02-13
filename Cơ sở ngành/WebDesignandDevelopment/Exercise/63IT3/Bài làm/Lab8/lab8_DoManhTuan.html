@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function check() {
+            with(document) {
+                if (f1.txtUserName.value == "") {
+                    alert("User name không được bỏ trống!");
+                    f1.txtUserName.focus();
+                    return false;
+                }
+                if (f1.psPasswordLv1.value == "") {
+                    alert("Password level 1 không được bỏ trống");
+                    f1.psPasswordLv1.focus();
+                    return false;
+                }
+                if (f1.psPasswordLv2.value == "") {
+                    alert("Password level 2 không được bỏ trống");
+                    f1.psPasswordLv2.focus();
+                    return false;
+                }
+                if (f1.psReEnterPasswordLv1.value == "") {
+                    alert("Re-enter password level 1 không được bỏ trống");
+                    f1.psReEnterPasswordLv1.focus();
+                    return false;
+                }
+                if (f1.psReEnterPasswordLv2.value == "") {
+                    alert("Re-enter password level 2 không được bỏ trống");
+                    f1.psReEnterPasswordLv2.focus();
+                    return false;
+                }
+                if (f1.slSQ.value == "q1") {
+                    alert("Bạn phải chọn 1 câu hỏi")
+                    f1.slSQ.focus();
+                    return false;
+                }
+                if (f1.txtAnswer.value == "") {
+                    alert("Bạn phải nhập vào câu trả lời");
+                    f1.slSQ.focus();
+                    return false;
+                }
+                if (f1.txtFullname, value = "") {
+                    alert("Full name cannot be empty!")
+                    f1.txtFullname.focus();
+                    return false;
+                }
+                if (f1.txtEmail.value == "") {
+                    alert("Email cannot be empty!")
+                    f1.txtEmail.focus();
+                    return false;
+                }
+                r = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+                if (r.test(f1.txtEmail.value) == false) {
+                    alert("Email must be format.(example: aptech@sun.com.uk)")
+                    f1.txtEmail.focus();
+                    return false;
+                }
+
+            }
+        }
+    </script>
+    <form name=f1 action="D:\HocTap\Nam4_ki1\WEB\Lab4\ss5\bai1.html" method="post">
+        <fieldset>
+            <legend>Information for play game</legend>
+            <table align=center>
+                <tr>
+                    <td align="right">User name *:</td>
+                    <td align="left"><input type="text" name="txtUserName" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="right">Password lever 1*:</td>
+                    <td align="left"><input type="password" name="psPasswordLv1" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="right">Re-enter password lever 1*:</td>
+                    <td align="left"><input type="password" name="psReEnterPasswordLv1" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="right">Password lever 2*:</td>
+                    <td align="left"><input type="password" name="psPasswordLv2" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="right">Re-enter password lever 2*:</td>
+                    <td align="left"><input type="password" name="psReEnterPasswordLv2" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="right">Security Question *:</td>
+                    <td align="left">
+                        <select name="slSQ" id="sq">
+                                <option value="q1">Chosse a question...</option>
+                                <option value="q2">What is your library card number</option>
+                                <option value="q3">What was your first phone number</option>
+                                <option value="q4">What was your first teacher name</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Answer *:</td>
+                    <td align="left"><input type="text" name="txtAnswer" size="30"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Customer Information</legend>
+            <table align=center>
+                <tr>
+                    <td align="right">Full name *:</td>
+                    <td align="left"><input type="text" name=txtFullname size="30"></td>
+                    <td align="left">
+                        <input type=radio name=rdGioiTinh value=Male>Male
+                        <input type=radio name=rdGioiTinh value=Female>Female
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Email *:</td>
+                    <td align="left"><input type="text" name="txtEmail" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="right">Birthday *:</td>
+                    <td>
+                        <select id="month" name="month"></select>
+                        <script>
+                            (function() {
+                                let month_satart = 1;
+                                let month_end = 12;
+                                let month_selected = 1;
+
+                                let option = '';
+                                option = '<option>Month</option>';
+
+                                for (let i = month_satart; i <= month_end; i++) {
+                                    let selected = (i === month_selected ? ' selected' : '');
+                                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                                }
+
+                                document.getElementById("month").innerHTML = option;
+                            })();
+                        </script>
+                        <select id="day" name="day"></select>
+
+                        <script>
+                            (function() {
+                                let day_selected = 1;
+                                let option = '';
+                                option = '<option>Day</option>';
+
+                                for (let i = 1; i < 32; i++) {
+                                    let day = (i <= 9) ? '0' + i : i;
+                                    let selected = (i === day_selected ? ' selected' : '');
+                                    option += '<option value="' + day + '"' + selected + '>' + day + '</option>';
+                                }
+                                document.getElementById("day").innerHTML = option;
+                            })();
+                        </script>
+
+                        <select id="year" name="year"></select>
+                        <script>
+                            (function() {
+                                let year_satart = 1940;
+                                let year_end = 2000;
+                                let year_selected = 1982;
+
+                                let option = '';
+                                option = '<option>Year</option>';
+
+                                for (let i = year_satart; i <= year_end; i++) {
+                                    let selected = (i === year_selected ? ' selected' : '');
+                                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                                }
+
+                                document.getElementById("year").innerHTML = option;
+                            })();
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Address:</td>
+                    <td align="left"><input type="text" name="txtAddress" size="60"></td>
+                </tr>
+                <tr>
+                    <td>Home phone:</td>
+                    <td><input type="text" name="txtHomephone"></td>
+                    <td>Mobile:</td>
+                    <td><input type="text" name="txtMobile"></td>
+                </tr>
+
+            </table>
+        </fieldset>
+
+        <p><strong>*Note:</strong> all of the fields that have "*" must be inputted</p>
+        <div align="center">
+            <input type="button" name="Register" value="Register" onclick="check()">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+</body>
+
+</html>

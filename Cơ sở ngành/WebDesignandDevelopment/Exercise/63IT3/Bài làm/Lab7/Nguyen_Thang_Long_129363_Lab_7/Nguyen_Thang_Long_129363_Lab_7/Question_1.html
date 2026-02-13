@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<style>
+</style>
+<body>
+    <form name="f1"  action="Question_2.html" method="POST">
+        <table width="350px" border="2" cellspacing="5" cellpadding="5">
+            <tr align="center">
+                <td colspan="3" style="background-color: gray;">Admistrator</td>
+            </tr>
+            <tr>
+                <td align="right">Email:</td>
+                <td colspan="2"><input type="text" name="txtemail"><sub style="color:red">(*)</sub>
+                <br>
+                (exemple:home@aptech.vn)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Password:</td>
+                <td colspan="2"><input type="text" name="txtpassword"><sub style="color:red">(*)</sub></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"><input type="submit" name="txtsubmit" value="Submit" onclick="return check()">&nbsp;&nbsp;&nbsp;
+                   <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function check(){
+            with(document){
+                if(f1.txtemail.value==""){
+                alert("Email không được để trống nhé UwU");
+                f1.txtemail.focus();
+                return false;
+            }
+            r=/\D+\d*@{1,1}\D+\d*.{1,1}\D+/
+        if(r.test(f1.txtemail.value)==false){
+            alert("Email sai định dạng rồi oni-chan ơi! Xem lại đi nhé !");
+            f1.txtemail.focus();
+            return false;
+        }
+        if(f1.txtpassword.value==""){
+                alert("Password không được để trống nhé oni-chan");
+                f1.txtpassword.focus();
+                return false;
+        }
+        q=/([\D][A-Z][\d][~][@][#][$][?])+/
+        if(q.test(f1.txtpassword.value)==false){
+            alert("Password sai định dạng rồi oni-chan ơi! Xem lại đi nhé !");
+            f1.txtpassword.focus();
+            return false;
+        }
+        // if(f1.txtemail.value=="admin@aptech.vn"){
+        //     if(f1.txtpassword.value=="aA1~@#$?"){
+
+        //     }
+        // } 
+        }
+        }
+    </script>
+</body>
+</html>

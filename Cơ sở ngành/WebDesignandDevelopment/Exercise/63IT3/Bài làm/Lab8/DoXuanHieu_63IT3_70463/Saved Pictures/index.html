@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .row {
+            margin-left: 0!important;
+            margin-right: 0!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="border: 1px solid rgb(218, 216, 216);padding: 5px;position: relative;margin-top: 50px;border-radius: 10px;">
+        <div class="texxt" style="display: inline; background: white;position: absolute;top: -15px;left: 10px;color: blue; font-weight: bold;">
+            <span>Information for play game</span>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>User name*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="userName" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Password level1*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="pw1" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Re-endter password level1*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="rePw1" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Password level2*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="pw2" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Re-endter password level2*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="rePw2" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Security question*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><select id="chooseQ" name=""><option value="0">Choose a question...</option><option value="1">What is your library card number</option><option value="2">What was your first phone number</option><option value="3">What was your first teacher name</option></select></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Anwser*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="anwser" type="text" name="" id=""></div>
+        </div>
+    </div>
+    <div class="container" style="margin-top:20px;border: 1px solid rgb(218, 216, 216);padding: 5px;position: relative;border-radius: 10px;">
+        <div class="texxt" style="display: inline; background: white;position: absolute;top: -15px;left: 10px;color: blue; font-weight: bold;">
+            <span>Information for play game</span>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Fullname*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="fullName" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Email*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;"><input id="email" type="text" name="" id=""></div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Birthday*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;">
+                <div><select id="selectDay" name="" style="margin-left:10px"></select></div>
+                <div><select id="selectMonth" name="" style="margin-left:10px"></select></div>
+                <div><select id="selectYear" name="" style="margin-left:10px"></select></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Address*:</span></div>
+            <div class="col-6" style="display: flex;justify-content: flex-start;padding-right;: 0"><input id="addr" type="text" name="" id="" style="width: 100%"></div>
+        </div>
+        <div class="row" style="margin-top: 10px;display: flex;justify-content: flex-end;">
+            <div class="col-6" style="display: flex;justify-content: flex-end;"><span>Home phone*:</span></div>
+            <div class="col-6">
+                <div class="row">
+                    <div style="display: flex;justify-content: flex-end;width: 100%;"><input id="homePhone" style="margin-left: 10px;" type="text" name="" id=""><span style="margin-left: 10px;">Phone*:</span><input id="cellPhone" style="margin-left: 10px;width: 100%;" type="text" name="" id=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-top: 10px;"><span><b>Note</b>all of fields that have "*" must be inputted</span></div>
+        <div style="display:flex;justify-content: space-around;margin-top: 10px;"><button class="btn btn-success" onclick="regiterr()">Regiter</button><button class="btn btn-success" onclick="clearr()">Clear</button></div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+             
+                if (txtEmail.value==""){
+                    alert("Bạn chưa nhập Email");
+                    txtEmail.focus();
+                    return false;
+                }
+                if (txtPass.value==""){
+                    alert("Bạn chưa nhập Pass");
+                    txtPass.focus();
+                    return false;
+                }                 
+        } 
+        </script>
+</head>
+<body>
+    <form>
+        <table  border="1px" cellspacing=1px>
+            <tr bgcolor="Silver">
+                <th colspan="2" align="center">Admistrator</th>
+            </tr>
+            <tr>
+                <th align="right">Email:</th>
+                <th align="left">
+                    <input id="txtEmail" type="text" pattern="[a-z]+@aptech\.vn"><i >(*)</i> 
+                    <br>
+                    <i>(example:home@aptech.vn)</i>
+                </th>
+            </tr>
+            <tr>
+                <th align="right">Password:</th>
+                <th align="left"><input id="txtPass" type="text" pattern="[a-z]+[A-Z]+[1-9]+~+@+#+\$+\?+"><i >(*)</i></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th align="left">
+                    <input type="submit" name="Submit" onclick="return check()" value="Submit">
+                    <input type="reset" name="Reset" value="Reset">
+                </th>
+            </tr>
+        </table>
+    </form> 
+</body>
+</html>

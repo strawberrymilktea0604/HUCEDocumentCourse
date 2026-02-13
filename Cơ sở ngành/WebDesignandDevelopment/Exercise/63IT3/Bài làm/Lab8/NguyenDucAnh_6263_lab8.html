@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <title>btap</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend style="color: blue;">Information for play game</legend>
+            
+                <table border=0 cellspacing=5 cellpadding=5 width=600 align="center">
+                    <tr>
+                        <td>Name*:</td>
+                        <td><input type="text" name=name onFocus="doimau(this,'yellow');" onBlur="doimau(this,'white');"></td>
+                    </tr>
+                    <tr>
+                        <td>Password level 1*:</td>
+                        <td><input  type="password" name=pwd1 ></td>
+                    </tr>
+                    <tr>
+                        <td>Re-enter password level 1*:</td>
+                        <td><input  type="password" name=pwd3></td>
+                    </tr>
+                    <tr>
+                        <td>Password level 2*:</td>
+                        <td><input  type="password" name=pwd2></td>
+                    </tr>
+                    <tr>
+                        <td>Re-enter password level 2*:</td>
+                        <td><input  type="password" name=pwd4></td>
+                    </tr>
+                    <tr>
+                        <td >Security Question*:</td>
+                        <td>
+                        <select>
+                            <option value="select" selected>Choose a question…</option>
+                            <option value=lnmb>What is your library card number?</option>
+                            <option value=pnmb>What was your first phone number?</option>
+                            <option value=tname>What was your first teacher name?</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td class=cls2>Answer*:</td>
+                        <td><input class=cls1 type="text" name=ans></td>
+                    </tr>
+
+                </table>
+            </fieldset>
+          <fieldset>
+              <legend style="color: blue;">Customer Information</legend>
+                  <table border="0" cellspacing=5 cellpadding=1 width=800 align=center>
+                      <tr>
+                          <td>Full name*:</td>
+                          <td><input type="text" name="fn"></td>
+                          <td><input type="radio" name="sex" value="Male" /> Male
+                            <input type="radio" name="sex" value="female" /> Female </td>
+                      </tr>
+                      <tr>
+                            <td>Email*:</td>
+                            <td><input type="text" name="email"></td>
+                      </tr>
+                      <tr>
+                          <td>Birth day:</td>
+                          <td>
+                            <input type="date" name="txt_BirthDay" id="txt_BirthDay" min="01-01-1940" max="31-12-2000">
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Address:</td>
+                          <td colspan="2">
+                            <input type="text" name="address" width="200px">
+                          </td>
+                          <td></td>
+                      </tr>
+                      <tr>
+                          <td>Home phone:</td>
+                          <td><input type="text" name="phone"></td>
+                          <td align="center">Mobile:</td>
+                          <td align="left"><input type="text" name="Mobie"></td>
+                      </tr>
+                  </table>
+
+          </fieldset>
+        </form>
+    </div>
+    <div class="register__footer">
+        <p><strong>*Note:</strong> all of the fields that have "*" must be inputted</p>
+        <div  align="center">
+            <td align="center">
+                <input type="submit" onClick="return Register();" name=register value="Register">
+                <input type="reset" value="Reset">
+            </td>
+        </div>
+    </div>
+    <script>
+        function Register
+        {
+            with(document){
+                    if(c1.name.value==""){
+                        alert("Bạn chưa nhập tên!");
+                        c1.name.focus();
+                        return false;
+                    }
+                    if(c1.pwd1.value==""){
+                        alert("Bạn chưa nhập mật khẩu cấp 1!");
+                        c1.pwd1.focus();
+                        return false;
+                    }
+                    if (c1.pwd1.value.length<6 && c1.pwd1.value.length>12 ){
+                        alert("Mật Khẩu phải từ 6 đến 12 ký tự!");
+                        return false;
+                    }
+                    if(c1.pwd3.value==""){
+                        alert("Bạn chưa nhập lại mật khẩu cấp 1!");
+                        c1.pwd3.focus();
+                        return false;
+                    }
+                    if(c1.pwd3.value!= c1.pwd1.value){
+                        alert("Bạn nhập sai mật khẩu cấp 1!")
+                        c1.pwd3.focus();
+                        return false;
+                    }
+                    if(c1.pwd2.value==""){
+                        alert("Bạn chưa nhập mật khẩu cấp 2!");
+                        c1.pwd2.focus();
+                        return false;
+                    }
+                    if (c1.pwd2.value.length<6 && c1.pwd2.value.length>12 ){
+                        alert("Mật Khẩu phải từ 6 đến 12 ký tự!");
+                        return false;
+                    }
+                    if(c1.pwd2.value== c1.pwd1.value){
+                        alert("Mật khẩu cấp 2 bị trùng mật khẩu cấp 1!")
+                        c1.pwd2.focus();
+                        return false;
+                    }
+                    if(c1.pwd4.value==""){
+                        alert("Bạn chưa nhập lại mật khẩu cấp 2!");
+                        c1.pwd4.focus();
+                        return false;
+                    }
+                    if(c1.pwd4.value!= c1.pwd2.value){
+                        alert("Bạn nhập sai mật khẩu cấp 2!");
+                        c1.pwd4.focus();
+                        return false;
+                    }
+                    
+                    if(c1.ques.value=""){
+                        alert("Bạn chưa chọn câu hỏi!")
+                        c1.ques.focus();
+                        return false;
+                    }
+                    if(c1.ans.value==""){
+                        alert("Bạn chưa nhập câu trả lời!");
+                        c1.ans.focus();
+                        return false;
+                    }
+                    if(c1.fn.value==""){
+                        alert("Bạn chưa nhập họ và tên!");
+                        c1.fn.focus();
+                        return false;
+                    }
+                    if(c1.email.value==""){
+                        alert("Bạn chưa nhập email!");
+                        c1.email.focus();
+                        return false;
+                    }
+                }
+            }
+        }
+        </script>
+    </body>
+
+</html>

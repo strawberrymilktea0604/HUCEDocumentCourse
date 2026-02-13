@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bai1</title>
+  </head>
+
+  <body>
+    <form
+      method="Post"
+      action="productadnew.html"
+      id="Myform"
+      onSubmit="return check();"
+    >
+      <table BORDER="5" align="center" CELLPADDING="6">
+        <td colspan="3" align="center">Admintrator</td>
+        <tr>
+          <td>Email</td>
+          <td>
+            <div><INPUT TYPE="TEXT" NAME="TextField_1" /> (*)</div>
+            (example: admin@aptech.vn)
+          </td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>
+            <div id="TB"><INPUT TYPE="TEXT" NAME="TextField_2" /> (*)</div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <p>
+              <INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Submit" />
+              <input type="button" onclick="ResetForm()" value="Reset" />
+            </p>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function ResetForm() {
+        document.getElementById("Myform").reset();
+      }
+
+      function check() {
+        with (document) {
+          if (
+            Myform.TextField_1.value == "" ||
+            Myform.TextField_2.value == ""
+          ) {
+            alert("Mời nhập vào dữ liệu");
+            Myform.TextField_1.focus();
+            return false;
+          }
+          r1 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (r1.test(Myform.TextField_1.value) == false) {
+            alert("Email must be format.(example: admin@aptech.vn).");
+            Myform.TextField_1.focus();
+            return false;
+          }
+          r2 =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~@$%?&])[A-Za-z\d~@$%?&]{8,}$/;
+          if (r2.test(Myform.TextField_2.value) == false) {
+            alert(
+              "Password  must include full character as: a-z; A-Z;1-9, ~;@;#;$;?;  (each character appears at least 1 times)",
+            );
+            Myform.TextField_2.focus();
+            return false;
+          }
+          Valid();
+        }
+      }
+
+      function Valid() {
+        alert("valid input");
+      }
+    </script>
+  </body>
+</html>

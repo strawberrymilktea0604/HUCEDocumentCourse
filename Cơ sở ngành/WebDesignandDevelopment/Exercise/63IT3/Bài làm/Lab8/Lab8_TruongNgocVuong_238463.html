@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changebg(id,color){
+            id.style.backgroundColor=color;
+        }
+        function check(){
+            with(Document){
+                if(v1.username.value==""){
+                alert("Phải nhập vào tên người dùng");
+                    v1.username.focus();
+                    return false;
+                }
+                if(v1.pass1.value == ""){
+                    alert("Vui long nhap Password level 1");
+                    return false;
+                }
+                if(v1.repass1.value == ""){
+                    alert("Vui long nhap lai Password level 1");
+                    return false;
+                }
+                if(v1.pass2.value == ""){
+                    alert("Vui long nhap Password level 2");
+                    return false;
+                }
+                if(v1.repass2.value == ""){
+                    alert("Vui long nhap lai Password level 2");
+                    return false;
+                }
+                if(v1.squestion.value == ""){
+                    alert("Vui long Chon cau hoi");
+                    return false;
+                }
+                if(v1.answer.value == ""){
+                    alert("Vui long nhap Answer");
+                    return false;
+                }
+                if(v1.fullname.value == ""){
+                    alert("Vui long nhap Fullname");
+                    return false;
+                }
+                if(v1.email.value == ""){
+                    alert("Vui long nhap Email");
+                    return false;
+                }
+            }
+        }
+        function checkRegEx(){
+                with(document){
+                    const reUsername, rePassword;
+                    reUsername = /\d{6,12}/;
+                    rePassword = /\d{6,12}/;
+                    if(reUsername.test(v1.username.value) == false)
+                    {
+                        alert("Username quá dài, vui lòng nhập lại!");
+                        return false;
+                    }
+                    if(rePassword.test(v1.pass1.value) == false || rePassword.test(v1.pass2.value) == false){
+                        alert("Mật khẩu quá dài, vui lòng nhập lại!");
+                        return false;
+                    }
+                    if(validateEmail(v1.email.value) == false){
+                        alert("Email không hợp lệ, vui lòng nhập lại");
+                        return false;
+                    }
+                }     
+            }
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }      
+    </script>
+    
+    <form name="v1" action="">
+            <fieldset style="border-radius: 10px;" >
+                <legend style="color: blue;">Information for play game</legend>
+                    <table border=0 cellspacing=5 cellpadding=5 width=800 align=center>
+                        <tr>
+                            <td align="right">User name*.</td>
+                            <td><input type="text" name="username" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Password level 1*.</td>
+                            <td><input type="text" name="pass1" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Re-enter password level 1*.</td>
+                            <td><input type="text" name="repass1" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Password level 2*.</td>
+                            <td><input type="text" name="pass2" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Re-enter password level 2*.</td>
+                            <td><input type="text" name="repass2" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Security Question*.</td>
+                            <td>
+                                <select name="squestion" id="">
+                                    <option value="Choose a question...">Choose a question...</option>
+                                    <option value="What is your library card number">What is your library card number</option>
+                                    <option value="What was your first phone number">What was your first phone number</option>
+                                    <option value="What was your first teacher name">What was your first teacher name</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="rigt">Answer*</td>
+                            <td><input type="text" name="answer" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                        </tr>
+                    </table>
+            </fieldset>
+        
+        
+        <fieldset style="border-radius: 10px; ">
+            <legend style="color: blue;">Customer information</legend>
+                <table border=0 cellspacing=5 cellpadding=5 width=800 align=center>
+                    <tr>
+                        <td align="right">Full name*.</td>
+                        <td>
+                            <input type="text" name="fullname" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');">
+                            <input type="radio" name="GioiTinh" id="nam">Male
+                            <input type="radio" name="GioiTinh" id="nu">Female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Email*.</td>
+                        <td><input type="text" name="email" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Birthday*:
+                        </tdx>
+                        <td id="birthday"></td>
+                        <script type="text/javascript">
+    
+                            var bounder = document.getElementById("birthday");
+                            var date_list = document.createElement("select");
+                            var month_list = document.createElement("select");
+                            var year_list = document.createElement("select");
+                            bounder.appendChild(date_list)
+                            bounder.appendChild(month_list)
+                            bounder.appendChild(year_list)
+                            
+                            for (var i = 0; i < 31; i++){
+                                    var item = document.createElement("option");
+                                    item.text = i+1;
+                                    date_list.appendChild(item)
+                                }
+                            for (var i = 0; i < 12; i++) {
+                                    var item = document.createElement("option");
+                                    item.text = i+1;
+                                    month_list.appendChild(item)
+                                }
+                            year = 1940;
+                            for (var i = 0; i < 61; i++) {
+                                    var item = document.createElement("option");
+                                    item.text = year ++;
+                                    year_list.appendChild(item)
+                                }
+                        </script>
+                    </tr>
+                    <tr>
+                        <td align="right">Address:</td>
+                        <td><input type="text" name="address" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Home phone:</td>
+                        <td>
+                            <input type="text" name="phone" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');">
+                            Mobile:<input type="text" name="mobile" size="30" onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');">
+                        </td>
+                    </tr>
+                </table>
+        </fieldset>
+        <p>
+            <b>*Node</b>:all of the fields that have"*"must be inputted
+        </p>
+        <div style="text-align:center">
+            <input onclick="return (checkFill() && checkPasswordisEqual() && checkRegEx());" type="submit" name="btnSubmit" value="Register">
+            <input type="reset" name="btnReset" value="Clear">
+        </div>
+    </form>
+</body>
+</html>

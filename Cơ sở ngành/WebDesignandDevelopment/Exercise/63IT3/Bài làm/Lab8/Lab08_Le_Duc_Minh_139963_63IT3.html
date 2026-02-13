@@ -1,0 +1,244 @@
+<html>
+    <head>
+        <title>Tiêu đề WEBSITE</title>
+        
+    </head>
+    <body>
+        <div class="register">
+        <div>
+            <form id="rs_form" onsubmit="return false;">
+                <fieldset>
+                    <legend><font style="color: deepskyblue;"><b>Information for play game</b></font></legend>
+                    <table align="center">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="txt_UserName">User name *:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" required name="txt_UserName" id="txt_UserName" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_Password1">Password level 1 *:</label>
+                                </td>
+                                <td>
+                                    <input type="password" class="form-control" required name="txt_Password1" id="txt_Password1" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_RePassword1">Re-enter password level 1 *:</label>
+                                </td>
+                                <td>
+                                    <input type="password" class="form-control" required name="txt_RePassword1" id="txt_RePassword1" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_Password2">Password level 2 *:</label>
+                                </td>
+                                <td>
+                                    <input type="password" class="form-control" required name="txt_Password2" id="txt_Password2" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_RePassword2">Re-enter password level 2 *:</label>
+                                </td>
+                                <td>
+                                    <input type="password" class="form-control" required name="txt_RePassword2" id="txt_RePassword2" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <label for="sel_Question">Security Question *:</label>
+                                </td>
+                                <td>
+                                    <select name="sel_Question" required id="sel_Question">
+                                        <option value='' selected>Choose a question ...</option> 
+                                        <option value='1'>What is your library card number</option>
+                                        <option value='2'>What was your first phone number</option>
+                                        <option value='3'>What was your first teacher name</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_Answer">Answer *:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" required name="txt_Answer" id="txt_Answer" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+
+                <fieldset>
+                    <legend><font style="color: deepskyblue;"><b>Customer information</b></font></legend>
+                    <table style="margin-left: 40%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="txt_FullName">Full name *:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" required name="txt_FullName" id="txt_FullName" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                    <input type="radio" name="rd_Sex" value="0" checked> Male
+                                    <input type="radio" name="rd_Sex" value="1">Female
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_Email">Email *:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" required name="txt_Email" id="txt_Email" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_BirthDay">Birthday:</label>
+                                </td>
+                                <td id="birthday"></td>
+                        <script type="text/javascript">
+                            var bounder = document.getElementById("birthday");
+                            var date_list = document.createElement("select");
+                            var month_list = document.createElement("select");
+                            var year_list = document.createElement("select");
+                            bounder.appendChild(date_list)
+                            bounder.appendChild(month_list)
+                            bounder.appendChild(year_list)
+                            
+                            for (var i = 1; i <= 31; i++){
+                                    var item = document.createElement("option");
+                                    item.text = i;
+                                    date_list.appendChild(item)
+                                }
+                            for (var i = 1; i <= 12; i++) {
+                                    var item = document.createElement("option");
+                                    item.text = i;
+                                    month_list.appendChild(item)
+                                }
+                            for (var i = 1940; i <= 2000; i++) {
+                                    var item = document.createElement("option");
+                                    item.text = i;
+                                    year_list.appendChild(item)
+                                }
+                        </script>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_Address">Address:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="txt_Address" id="txt_Address" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="txt_HomePhone">Home phone:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="txt_HomePhone" id="txt_HomePhone" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                    <label for="txt_MobilePhone">Mobile:</label>
+                                    <input type="text" class="form-control" name="txt_MobilePhone" id="txt_MobilePhone" onfocus="fcolor(this,'blue','white');" onblur="fcolor(this,'white','blue');">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+
+        <div>
+            <p><strong>*Note:</strong> all of the fields that have "*" must be inputted</p>
+            <div align ="center">
+                <button type="button"  onclick="Register(this)">
+                    Register
+                </button>
+                <button type="button"  onclick="ClearData(this)">
+                    Clear
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function fcolor(id,bgcolor,tcolor) {
+        id.style.backgroundColor = bgcolor;
+        id.style.color = tcolor;
+    }
+    function ClearData(ele){
+            let input = document.getElementsByTagName("input");
+            for(let i=0;i<input.length;i++){
+                input[i].value = "";
+            }
+
+            let selInput = document.getElementsByTagName("select");
+            for(let i=0;i<selInput.length;i++){
+                selInput[i].value = 0;
+            }
+
+            let rd_Sex = document.getElementsByName("rd_Sex");
+            rd_Sex[0].checked = true;
+        }
+
+        function Register(ele){
+            let isPass = true;
+            let input = document.querySelectorAll("[required]");
+            for(let i=0;i<input.length;i++){
+                if(input[i].value == ""){
+                    let value = input[i].labels[0].textContent;
+                    let displayValue = value.substring(0, value.length - 3);
+                    alert("Your " + displayValue + " must be inputted");
+                    isPass = false;
+                    break;
+                }
+            }
+
+            if(isPass){
+                let userName = document.getElementById("txt_UserName").value;
+                let password1 = document.getElementById("txt_Password1").value;
+                let rePassword1 = document.getElementById("txt_RePassword1").value;
+                let password2 = document.getElementById("txt_Password2").value;
+                let rePassword2 = document.getElementById("txt_RePassword2").value;
+
+
+                if((userName.length < 6 || userName.length > 12) || (password1.length < 6 || password1.length > 12) || (password2.length < 6 || password2.length > 12)){
+                    isPass = false;
+                    alert("The length of userName and all password from 6 to 12 characters.");
+                }
+
+                if(isPass && (password1 != rePassword1)){
+                    isPass = false;
+                    alert("Password level 1 and re-enter password level 1 is the same.");
+                }
+
+                if(isPass && (password2 != rePassword2)){
+                    isPass = false;
+                    alert("Password level 2 and re-enter password level 2 is the same.");
+                }
+
+                if(isPass && (password1 == password2)){
+                    isPass = false;
+                    alert("Password level 1 and  password level 2 must be differented.");
+                }
+
+                if(isPass){
+                    let email = document.getElementById("txt_Email");
+                    let test = '^[a-z]+@[a-z]+(\.[a-z]+)+$';
+                    let regex = new RegExp(test);
+                    if(!regex.test(email)){
+                        isPass = false;
+                        alert("Email must in correct format: userName@domainName (Example : aptech@sun.com.uk");
+                    }
+                }
+            }
+        }
+    </script>
+    </body>
+</html>

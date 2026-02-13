@@ -1,0 +1,21 @@
+<html>
+<head>
+    <script>
+        function onclick_btn02() {
+            alert('Bạn vừa click vào button 02 đấy');
+        }
+    </script>
+
+    <script src="./site.js"></script>
+</head>
+<body>
+    <!--Inline-->
+    <button type="button" onclick="alert('Bạn vừa click vào button 01 đấy');"> Click me 1! </button>
+
+    <!--Internal-->
+    <button type="button" onclick="onclick_btn02()"> Click me 2! </button>
+
+    <!--External-->
+    <button type="button" onclick="onclick_btn03()"> Click me 3! </button>
+</body>
+</html>

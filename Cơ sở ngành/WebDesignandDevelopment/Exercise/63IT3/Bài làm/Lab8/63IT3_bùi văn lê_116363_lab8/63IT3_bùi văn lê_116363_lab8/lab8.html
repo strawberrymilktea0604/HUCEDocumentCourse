@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<script type="text/javascript">
+    function checkFill(){
+        with(document){
+            if(lab8.txtUserName.value == ""){
+                alert("Vui long nhap Username");
+                return false;
+            }
+            if(lab8.txtPasswordLv1.value == ""){
+                alert("Vui long nhap Password level 1");
+                return false;
+            }
+            if(lab8.txtReEnterPasswordLv1.value == ""){
+                alert("Vui long nhap lai Password level 1");
+                return false;
+            }
+            if(lab8.txtPasswordLv1.value == ""){
+                alert("Vui long nhap Password level 2");
+                return false;
+            }
+            if(lab8.txtReEnterPasswordLv2.value == ""){
+                alert("Vui long nhap lai Password level 2");
+                return false;
+            }
+            if(lab8.slcSecurityQuestion.value == ""){
+                alert("Vui long Chon cau hoi");
+                return false;
+            }
+            if(lab8.txtSecQuestionAnswer.value == ""){
+                alert("Vui long nhap Answer");
+                return false;
+            }
+            if(lab8.txtFullName.value == ""){
+                alert("Vui long nhap Fullname");
+                return false;
+            }
+            if(lab8.txtEmail.value == ""){
+                alert("Vui long nhap Email");
+                return false;
+            }
+            
+        }
+    }
+
+    function checkRegEx(){
+        with(document){
+            //Username and All Password
+            const reUsername, rePassword;
+            reUsername = /\d{6,12}/;
+            rePassword = /\d{6,12}/;
+            if(reUsername.test(lab8.txtUserName.value) == false)
+            {
+                alert("Username quá dài, vui lòng nhập lại!");
+                return false;
+            }
+            if(rePassword.test(lab8.txtPasswordLv1.value) == false || rePassword.test(lab8.txtPasswordLv2.value) == false){
+                alert("Mật khẩu quá dài, vui lòng nhập lại!");
+                return false;
+            }
+            if(validateEmail(f1.txtEmail.value) == false){
+                alert("Email không hợp lệ, vui lòng nhập lại");
+                return false;
+            }
+        }
+        
+    }
+
+    function checkPasswordisEqual(){
+        with(document){
+            if(lab8.txtPasswordLv1.value == lab8.txtPasswordLv2.value){
+                alert("Mật khẩu 1 và 2 không được giống nhau");
+                return false;
+            }
+        }
+    }
+
+    function validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+</script>
+<body>
+   
+   <form name="lab8" action="/action_page.php">
+    <fieldset>
+        <legend>Information for play game</legend>
+        <table align="center">
+            <tr>
+              <td align="right">Username*</td>
+              <td align="left"><input type="text" name="txtUserName" /></td>
+            </tr>
+            <tr>
+              <td align="right">Password Level 1*</td>
+              <td align="left"><input type="text" name="txtPasswordLv1" /></td>
+            </tr>
+            <tr>
+              <td align="right">Re-enter Password Level 1*</td>
+              <td align="left"><input type="text" name="txtReEnterPasswordLv1" /></td>
+            </tr>
+            <tr>
+                <td align="right">Password Level 2*</td>
+                <td align="left"><input type="text" name="txtPasswordLv2" /></td>
+              </tr>
+              <tr>
+                <td align="right">Re-enter Password Level 2*</td>
+                <td align="left"><input type="text" name="txtReEnterPasswordLv2" /></td>
+              </tr>
+              <tr>
+                <td align="right">Security Question</td>
+                <td align="left"><select name="slcSecurityQuestion" id="SecQuestion">
+                    <option value="catName">What is your library card number
+                    </option>
+                    <option value="dogName">What was your first phone number
+                    </option>
+                    <option value="pigName">What was your first teacher name
+                    </option>
+                </select></td>
+              </tr>
+              <tr>
+                <td align="right">Answer*</td>
+                <td align="left"><input type="text" name="txtSecQuestionAnswer" /></td>
+              </tr>
+          </table>
+    </fieldset>
+    <fieldset>
+        <legend>Customer Information</legend>
+        <table align="center">
+            <tr>
+                <td align="right">Fullname*</td>
+                <td align="left"><input type="text" name="txtFullName" /></td>
+                <td>
+                    <input type="radio" name="rdGender">Male
+                    <input type="radio" name="rdGender">Female
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Email*</td>
+                <td align="left"><input type="text" name="txtEmail" /></td>
+            </tr>
+            <tr>
+                <td align="right">Birthday</td>
+                <td align="left"><input type="datetime-local" name="inputDate" /></td>
+            </tr>
+            <tr>
+                <td align="right">Address</td>
+                <td align="left"><input type="text" name="txtAddress" /></td>
+            </tr>
+            <tr>
+                <td align="right">Homephone</td>
+                <td align="left"><input type="text" name="txtHomephone" /></td>
+                <td align="right">Mobile</td>
+                <td align="left"><input type="text" name="txtMobile" /></td>
+            </tr>
+        </table>
+    </fieldset>
+    <div>
+        <p>*<b>Note:</b> all of the field that have "*" must be inputted</p>
+    </div>
+    <div style="text-align:center">
+        <input onclick="return (checkFill() && checkPasswordisEqual() && checkRegEx());" type="submit" name="btnSubmit">
+        <input type="reset" name="btnReset">
+    </div>
+</body>
+
+</html>

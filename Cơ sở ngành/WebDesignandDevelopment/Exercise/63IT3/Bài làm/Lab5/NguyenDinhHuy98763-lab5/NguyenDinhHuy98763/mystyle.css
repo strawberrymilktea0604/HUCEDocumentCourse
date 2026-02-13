@@ -1,0 +1,35 @@
+body
+    {
+        margin: 0px,10px;
+    }
+    h2
+    {
+        color: red;
+        font-weight: bold;
+        text-decoration-line: underline;
+
+    }
+    .chagebody
+    {
+        background-color:cyan;
+        font-size: 14px;
+        color: yellow;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1
+    {
+        color: red;
+        font-weight: bold;
+        font-family: monospace;
+        text-align: center;
+        font-size: 60px;
+    }
+    p
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        color: hotpink;
+        background-image: url(./God_Smile.bmp);
+        
+    }

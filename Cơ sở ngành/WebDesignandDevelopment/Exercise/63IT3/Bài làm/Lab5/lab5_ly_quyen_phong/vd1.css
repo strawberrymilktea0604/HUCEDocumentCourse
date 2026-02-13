@@ -1,0 +1,14 @@
+h2{
+    text-align: center;
+    color: red;
+}
+pre{
+    color: palevioletred;
+    margin: auto;
+    padding: 5px;
+}
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsd3KykJmFdvCV0LwQWZ2_-wGLqOULjo8OCw&usqp=CAU') ;
+background-repeat: no-repeat;
+background-size: cover;
+}

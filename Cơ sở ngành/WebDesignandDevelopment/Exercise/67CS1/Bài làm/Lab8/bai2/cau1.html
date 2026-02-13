@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('reserveStringBtn').addEventListener('click', function () {
+                var inputString = document.getElementById('inputString').value;
+                var processedString = inputString.replace(/[\s_]/g, '')
+                alert(processedString);
+            });
+
+            var reserveStringText = document.getElementById('reserveStringText');
+            reserveStringText.addEventListener('mouseover', function () {
+                reserveStringText.style.color = 'red';
+            });
+
+            reserveStringText.addEventListener('mouseout', function () {
+                reserveStringText.style.color = 'black';
+            });
+
+            var contactUsLink = document.getElementById('contactUsLink');
+            contactUsLink.addEventListener('mouseout', function () {
+                // Trả lại màu ban đầu khi di chuột ra ngoài
+                if (!contactUsLink.classList.contains('visited') && !contactUsLink.classList.contains('active')) {
+                    contactUsLink.style.color = '#0077cc'; // Màu xanh nước biển
+                }
+            });
+
+            contactUsLink.addEventListener('click', function () {
+                // Đánh dấu link là đã truy cập khi được nhấn
+                contactUsLink.classList.add('visited');
+            });
+
+            window.addEventListener('mousedown', function () {
+                // Đánh dấu link là đang active khi được nhấn chuột
+                contactUsLink.classList.add('active');
+            });
+
+            window.addEventListener('mouseup', function () {
+                // Bỏ đánh dấu active khi nhả chuột
+                contactUsLink.classList.remove('active');
+            });
+        });
+    </script>
+    <style>
+        #contactUsLink {
+            color: #0077cc; 
+        }
+
+        #contactUsLink:visited {
+            color: red; 
+        }
+
+        #contactUsLink:active {
+            color: green; 
+        }
+
+        #contactUsLink:hover {
+            color: yellow; 
+        }
+
+        #contactUsLink.visited {
+            color: black; 
+        }
+
+        #contactUsLink.active {
+            color: purple; 
+        }
+
+        button {
+            box-shadow:
+                  inset -2px -2px 3px black;
+                  border: 2px black;
+
+        }
+        input {
+            background-color: yellow;
+            padding: 5px 50px;
+            box-shadow:
+                  inset 2px 2px 3px black;
+            border: 2px black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="reserveStringText"><b>Reserve String</b></h1>
+
+
+    <label for="inputString"></label>
+    <input type="text" id="inputString"> <br>
+    <button id="reserveStringBtn">Reserve String</button>
+
+    <br><br>
+    <a href="#" id="contactUsLink">Contact us</a>
+</body>
+</html>

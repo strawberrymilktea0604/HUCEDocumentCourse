@@ -1,0 +1,137 @@
+<html>
+    <head>
+            <meta http-equiv="content-type" content="charset=utf8">
+            <title>Tiêu đề của website</title>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            
+    </head>
+    <body>
+        <script>
+            function changebg(id,color){
+                id.style.backgroundColor=color;
+            }
+            function check(){
+                with(document){
+                    if (f1.txtHoVaTen.value==""){
+                        alert("Phải nhập vào Họ Và Tên");
+                        f1.txtHoVaTen.focus();
+                        return false;
+                    }
+                    if (f1.txtTenDangNhap.value==""){
+                        alert("Phải nhập vào tên đăng nhập!");
+                        f1.txtTenDangNhap.focus();
+                        return false;
+                    }
+                    if (f1.txtMatKhau.value==""){
+                        alert("Phải nhập vào Mật Khẩu");
+                        f1.txtMatKhau.focus();
+                        return false;
+                    }
+                    //kiểm tra mật khẩu phải lớn hơn hoặc bằng 8 ký tự
+                    if (f1.txtMatKhau.value.length<8){
+                        alert("Mật Khẩu phải từ 8 ký tự trở lên!");
+                        return false;
+                    }
+                    //phải chọn 1 giới tính 
+                    t = 0;
+                    for(i=0;i<f1.rdGioiTinh.length;i++){
+                        if (f1.rdGioiTinh[i].checked==true) t++;
+                    }
+                    if (t==0){
+                        alert("Bạn phải chọn 1 giới tính!");
+                        return false;
+                    }
+                    //phải chọn ít nhất 2 sở thích
+                    t = 0;
+                    for(i=0;i<f1.ckSoThich.length;i++){
+                        if (f1.ckSoThich[i].checked) t++;
+                    }
+                    if (t<=1){
+                        alert("Bạn phải chọn từ 2 sở thích trở lên!");
+                        return false;
+                    }
+                }
+            }
+        </script>
+        <h1 align=center>Thông tin đăng ký CLB Tình Nguyện FIT</h1>
+        <form name=f1 action="session07_04.html" method="POST">
+            <table border=0 cellspacing=5 cellpadding=5 width=600 align=center>
+                <tr>
+                    <td align=right>Họ và tên:</td>
+                    <td><input type=text name="txtHoVaTen" size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align=right>Tên đăng nhập:</td>
+                    <td><Input type=text name=txtTenDangNhap size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align=right>Mật khẩu:</td>
+                    <td><input type=password name=txtMatKhau size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align=right>Giới tính:</td>
+                    <td><input type=radio name=rdGioiTinh value=Nam>Nam 
+                        <input type=radio name=rdGioiTinh value=Nữ>Nữ
+                        <input type=radio name=rdGioiTinh value=Khác>Khác
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Sở thích:</td>
+                    <td><input type=checkbox name=ckSoThich value="Âm nhạc">Âm nhạc
+                        <input type=checkbox name=ckSoThich value="Thể thao">Thể thao
+                        <input type=checkbox name=ckSoThich value="Du lịch">Du lịch
+                        <input type=checkbox name=ckSoThich value="Mua sắm">Mua sắm
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Ảnh:</td>
+                    <td>
+                        <input type=file name=fAnh>
+                    </td>    
+                </tr>
+                <tr>
+                    <td align=right>Địa chỉ: </td>
+                    <td><input type=text name=txtDiaChi size=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');"></td>
+                </tr>
+                <tr>
+                    <td align=right>Ngôn ngữ chính:</td>
+                    <td>
+                        <select name=slNgonNgu>
+                           <option value="Tiếng Việt">Tiếng Việt</option> 
+                           <option value="Tiếng Anh" selected>Tiếng Anh</option>  
+                           <option value="Tiếng Tàu">Tiếng Tàu</option> 
+                           <option value="Khác">Khác</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Câu lạc bộ nào mà em thích:</td>
+                    <td>
+                        <select name=slCLB multiple>
+                            <option>CLB X50</option>
+                            <option>CLB Tình Nguyện FIT</option>
+                            <option>CLB Toeic</option>
+                            <option>CLB Kiến Trúc</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td align=right>Giới thiệu bản thân:</td>
+                    <td>
+                        <textarea name=taGioiThieu rows=10 cols=30 onFocus="changebg(this,'yellow');" onBlur="changebg(this,'white');">Nhập thông tin vào đây</textarea>
+                    </td>  
+                </tr>
+                <tr>
+                    <td align=right><input type=hidden name=hdKey value="1231232@123">
+                        <input type=submit onclick="return check();" name=cmdGuiDi value="Đăng ký">
+                    </td>
+                    <td>
+                        <input type=reset value="Làm lại"> <input type=button value="Về trang chủ" name="btHome">
+
+                    </td>    
+                </tr>
+            </table>
+        </form>  
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head>
+
+</head>
+<body>
+    <p id="p1"></p>
+    <button onclick="window.location.href = 'https://tinhte.vn'" >Chuyển trang tinh tế</button>
+    <img src="./anh.jpg" onclick="window.location.href = 'https://facebook.com'" />
+    <script>
+        var p1 = document.getElementById("p1");
+        p1.innerHTML = "URL: " + window.location.href + "<br>Hostname: " + window.location.hostname + "<br>Pathname: " + window.location.pathname;
+
+
+    </script>
+</body>
+</html>

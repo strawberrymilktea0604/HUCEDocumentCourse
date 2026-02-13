@@ -1,0 +1,137 @@
+<html>
+<head>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #txt_show
+        {
+            padding: 5px 10px;
+            text-align: right;
+        }
+
+        button
+        {
+            width: 100%;
+        }
+        table
+        {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function btn_number_click(num) {
+            //lấy về giá trị đang có trên txt_show
+            var txt_show = document.getElementById("txt_show");
+            var crr_val = txt_show.value;
+            var new_val = crr_val + num.toString();
+            txt_show.value = new_val;
+        }
+
+        var sohang1;
+        var pheptinh;
+        var sohang2;
+
+        function btn_opr_click(opr) {
+            //b1: lấy về số hạng thứ nhất
+            var txt_show = document.getElementById("txt_show");
+            var crr_val = txt_show.value;
+            sohang1 = crr_val;
+
+            //b2: lưu phép tính
+            pheptinh = opr;
+
+            //b3: Xóa txt_show để chuẩn bị cho số hạng thứ 2
+            document.getElementById("txt_show").value = "";
+        }
+
+        function btn_cancel_click() {
+            //hủy toàn bộ dữ liệu hiện tại
+            sohang1 = "";
+            pheptinh = "";
+            sohang2 = "";
+
+            //xóa txt_show 
+            document.getElementById("txt_show").value = "";
+        }
+
+        function btn_cal_click() {
+            if (sohang1 && pheptinh) {
+                //trường hợp đã có đủ sohang1 và pheptinh
+                var txt_show = document.getElementById("txt_show");
+                var crr_val = txt_show.value;
+                sohang2 = crr_val;
+
+                if (sohang2) {
+                    //số hạng 2 có giá trị 
+                    switch (pheptinh) {
+                        case "+":
+                            txt_show.value = Number(sohang1) + Number(sohang2);
+                            break;
+                        case "-":
+                            txt_show.value = Number(sohang1) - Number(sohang2);
+                            break;
+                        case "x":
+                            txt_show.value = Number(sohang1) * Number(sohang2);
+                            break;
+                        case ":":
+                            if (sohang2 != 0) {
+                                txt_show.value = Number(sohang1) / Number(sohang2);
+                            }
+                            else {
+                                txt_show.value = "Không chia được cho 0";
+                            }
+                            break;
+                    }
+                }
+                else {
+                    //số hạng 2 rỗng
+                    txt_show.value = sohang1;
+                }
+            }
+            else {
+                //trường hợp chưa có đủ dữ liệu để xử lý
+                alert("Vui lòng nhập đầy đủ số hạng 1 và phép tính cần thực hiện");
+            }
+        }
+    </script>
+</head>
+<body>
+    <table align="center">
+        <caption>Máy tính cầm tay</caption>
+        <tr>
+            <td colspan="4">
+                <input type="text" readonly id="txt_show" />
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn_1" onclick="btn_number_click(1)">1</button></td>
+            <td><button type="button" id="btn_2" onclick="btn_number_click(2)">2</button></td>
+            <td><button type="button" id="btn_3" onclick="btn_number_click(3)">3</button></td>
+            <td><button type="button" id="btn_cong" onclick="btn_opr_click('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn_4" onclick="btn_number_click(4)">4</button></td>
+            <td><button type="button" id="btn_5" onclick="btn_number_click(5)">5</button></td>
+            <td><button type="button" id="btn_6" onclick="btn_number_click(6)">6</button></td>
+            <td><button type="button" id="btn_tru" onclick="btn_opr_click('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn_7" onclick="btn_number_click(7)">7</button></td>
+            <td><button type="button" id="btn_8" onclick="btn_number_click(8)">8</button></td>
+            <td><button type="button" id="btn_9" onclick="btn_number_click(9)">9</button></td>
+            <td><button type="button" id="btn_nhan" onclick="btn_opr_click('x')">x</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn_huy" onclick="btn_cancel_click()">C</button></td>
+            <td><button type="button" id="btn_0" onclick="btn_number_click(0)">0</button></td>
+            <td><button type="button" id="btn_tinhtoan" onclick="btn_cal_click()">=</button></td>
+            <td><button type="button" id="btn_chia" onclick="btn_opr_click(':')">:</button></td>
+        </tr>
+    </table>
+</body>
+</html>
