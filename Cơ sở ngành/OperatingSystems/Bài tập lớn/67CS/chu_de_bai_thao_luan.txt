@@ -1,0 +1,21 @@
+
+Chủ đề Thảo Luận môn học 
+Lớp chia làm 4 nhóm ( các em tự chọn các bạn trong nhóm và viết tên danh sách các bạn trong nhóm của mình và nội dung phân công rõ ràng bạn nào làm 
+nội dung gì) 
+
+- Báo cáo nội dung Một chức năng nào đó của hệ điều hành cụ thể
++ Quản lý bộ nhớ 
+hoặc
++ Quản lý tiến trình
+
+- Hoặc Tìm hiểu về lý thuyết của một số nôi dung
+mà Cô chưa trình bày trên lớp của quyển sách mà Cô gửi.
+
+Báo cáo gồm có :
++ Báo cáo file word với số trang <= 20 trang
+  
++ Slide powerpoint <=20 slide
+
+
+Thời gian nộp báo cáo 29/11/2023 gửi vào mail dungvt2@huce.edu.vn
+Thời gian báo cáo trên lớp: Buổi học cuối cùng của môn học (30/11/2023)
