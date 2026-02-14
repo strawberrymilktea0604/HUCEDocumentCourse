@@ -1,0 +1,120 @@
+1) Trong MIPS assembly language, asciiz không phải là một lệnh hay một hướng dẫn cụ thể. Tuy nhiên, có vẻ bạn đang nhắc đến cách mà chuỗi ký tự ASCII kết thúc bằng ký tự null ('\0') được biểu diễn trong ngôn ngữ lập trình assembly MIPS.
+
+Trong MIPS, chuỗi ký tự ASCII thường được biểu diễn bằng cách đặt ký tự null (0x00) ở cuối chuỗi để chỉ ra sự kết thúc của chuỗi. Kỹ thuật này giúp chương trình có thể xác định độ dài của chuỗi một cách dễ dàng bằng cách duyệt qua từng ký tự cho đến khi gặp ký tự null.
+
+2) ASCII:
+
+Ý nghĩa: ASCII là một bộ mã ký tự được sử dụng để biểu diễn các ký tự trong máy tính, gồm 128 ký tự bao gồm chữ cái, số, dấu chấm câu, và các ký tự đặc biệt khác.
+Sử dụng trong MIPS: Trong MIPS, khi bạn làm việc với chuỗi ký tự, bạn thường cần biết cách mã hóa ASCII của các ký tự để thực hiện các thao tác như so sánh hay xử lý các ký tự.
+asciiz:
+
+Ý nghĩa: Trong MIPS assembly, asciiz không phải là một mã hóa ký tự, mà là một quy ước đặc biệt để kết thúc chuỗi ký tự. Khi bạn khai báo một chuỗi với .asciiz, hệ thống tự động thêm ký tự null ('\0') vào cuối chuỗi để đánh dấu sự kết thúc của nó.
+Sử dụng trong MIPS: Đối với việc xử lý chuỗi trong MIPS, việc sử dụng asciiz giúp dễ dàng xác định độ dài của chuỗi và kết thúc chuỗi một cách rõ ràng.
+Tương đồng:
+
+Cả hai đều liên quan đến xử lý ký tự và chuỗi trong ngôn ngữ lập trình assembly MIPS.
+Cả hai đều được sử dụng khi làm việc với dữ liệu chuỗi và cần quyết định sự kết thúc của chuỗi.
+Khác biệt:
+
+ASCII là một bộ mã hóa ký tự, trong khi asciiz là một quy ước đặc biệt để kết thúc chuỗi.
+ASCII đại diện cho các giá trị số được gán cho các ký tự, trong khi asciiz chỉ là một phần của quy ước lưu trữ chuỗi trong môi trường MIPS.
+3) Trong kiến trúc MIPS, syscall là một hướng dẫn (instruction) được sử dụng để tạo ra một trap vào hệ điều hành. Hướng dẫn này được sử dụng để thực hiện các dịch vụ hệ thống, chẳng hạn như in ra màn hình, đọc dữ liệu từ bàn phím, kết thúc chương trình, và các chức năng hệ thống khác.
+
+Khi một chương trình MIPS sử dụng syscall, nó thông báo cho hệ điều hành rằng cần thực hiện một hoạt động cụ thể. Các dịch vụ hệ thống được xác định thông qua thanh ghi $v0 (ví dụ: $v0 = 10 để kết thúc chương trình), và các tham số cần thiết được đặt trong các thanh ghi $a0, $a1,..., $a3 tùy thuộc vào loại dịch vụ.
+4) Trong ngôn ngữ lập trình Assembly MIPS, hướng dẫn la (load address) được sử dụng để đưa địa chỉ của một nhãn hoặc biến vào một thanh ghi. la không thực sự đưa giá trị tại địa chỉ đó vào thanh ghi, mà chỉ đưa chính địa chỉ đó vào thanh ghi.
+
+
+Trong ngôn ngữ lập trình Assembly MIPS, hướng dẫn la (load address) được sử dụng để đưa địa chỉ của một nhãn hoặc biến vào một thanh ghi. la không thực sự đưa giá trị tại địa chỉ đó vào thanh ghi, mà chỉ đưa chính địa chỉ đó vào thanh ghi.
+
+Cú pháp của la như sau:
+la $t0, label_or_variable
+Trong đó:
+$t0 là thanh ghi nơi địa chỉ sẽ được đưa vào.
+label_or_variable là nhãn hoặc biến mà bạn muốn đưa địa chỉ của nó vào thanh ghi.
+Ví dụ, giả sử bạn có một nhãn myArray đại diện cho một mảng trong phần dữ liệu, bạn có thể sử dụng la để đưa địa chỉ của mảng đó vào một thanh ghi:
+
+.data
+myArray:    .word 1, 2, 3, 4, 5
+
+.text
+main:
+    # Load address of myArray into $t0
+    la $t0, myArray
+
+    # Bây giờ $t0 chứa địa chỉ của myArray
+    # Có thể sử dụng $t0 để truy cập các phần tử của mảng
+    ...
+
+
+Sau khi la $t0, myArray được thực hiện, thanh ghi $t0 sẽ chứa địa chỉ của myArray. Điều này thường được sử dụng khi bạn cần thực hiện các hoạt động trên mảng hoặc chuỗi dữ liệu trong chương trình của bạn.
+
+
+5) Trong ngôn ngữ lập trình Assembly MIPS, hướng dẫn li (load immediate) được sử dụng để đặt một giá trị ngay lập tức (immediate value) vào một thanh ghi. Hướng dẫn này giúp gán giá trị cụ thể cho một thanh ghi một cách nhanh chóng và tiện lợi.
+
+Cú pháp của li như sau:
+li $t0, immediate_value
+
+Trong đó:
+
+$t0 là thanh ghi mà bạn muốn gán giá trị.
+immediate_value là giá trị cụ thể mà bạn muốn gán vào thanh ghi.
+Ví dụ, nếu bạn muốn gán giá trị 42 vào thanh ghi $t1, bạn có thể sử dụng hướng dẫn li như sau:
+
+li $t1, 42
+Sau khi thực hiện hướng dẫn này, thanh ghi $t1 sẽ chứa giá trị 42.
+
+Lưu ý rằng li là một pseudo-hướng dẫn (pseudo-instruction), có nghĩa là nó không phải là một hướng dẫn thực sự của kiến trúc MIPS, mà thay vào đó nó được tự động chuyển đổi thành một số hướng dẫn khác bởi trình biên dịch. Trong trường hợp của li, nó thường được chuyển đổi thành một dãy các hướng dẫn MIPS thực tế để thực hiện việc đặt giá trị immediate vào thanh ghi.
+
+
+
+6) .data: Khai báo phần dữ liệu.
+s1: Nhãn của một chuỗi ký tự ASCII kết thúc bằng null (asciiz) có giá trị là "Nhap mot chuoi: ".
+s2: Khai báo một không gian (space) 30 byte để lưu trữ chuỗi nhập từ bàn phím.
+s3: Nhãn của một chuỗi ký tự ASCII kết thúc bằng null có giá trị là "Chuoi da nhap: ".
+
+
+.text: Bắt đầu phần mã lệnh.
+la $a0, s1: Đưa địa chỉ của chuỗi s1 vào thanh ghi $a0.
+li $v0, 4: Đặt giá trị 4 vào thanh ghi $v0 để chọn dịch vụ in chuỗi.
+syscall: Gọi hệ thống để in chuỗi "Nhap mot chuoi: ".
+
+li $v0, 8: Đặt giá trị 8 vào thanh ghi $v0 để chọn dịch vụ đọc chuỗi từ bàn phím.
+la $a0, s2: Đưa địa chỉ của s2 (không gian 30 byte) vào thanh ghi $a0 để lưu trữ chuỗi nhập.
+li $a1, 30: Đặt giá trị 30 vào thanh ghi $a1 để xác định độ dài tối đa của chuỗi nhập.
+syscall: Gọi hệ thống để đọc chuỗi từ bàn phím.
+
+li $v0, 4: Đặt giá trị 4 vào thanh ghi $v0 để chọn dịch vụ in chuỗi.
+la $a0, s2: Đưa địa chỉ của s2 (nơi lưu trữ chuỗi đã nhập) vào thanh ghi $a0.
+syscall: Gọi hệ thống để in ra chuỗi đã nhập từ bàn phím.
+
+li $v0, 10: Đặt giá trị 10 vào thanh ghi $v0 để chọn dịch vụ kết thúc chương trình.
+syscall: Gọi hệ thống để kết thúc chương trình.
+
+7) Trong kiến trúc MIPS, thanh ghi $v0 là một thanh ghi đặc biệt được sử dụng để chứa mã dịch vụ (system call code) khi chương trình cần gọi các hệ thống (system calls). Cụ thể, giá trị trong thanh ghi $v0 xác định loại dịch vụ hệ thống mà chương trình muốn thực hiện khi gọi hệ thống.
+
+Mỗi loại dịch vụ hệ thống có một mã số cụ thể, và khi bạn muốn thực hiện một dịch vụ hệ thống, bạn đặt giá trị tương ứng vào thanh ghi $v0 và sau đó gọi hệ thống bằng cách sử dụng hướng dẫn syscall.
+
+Ví dụ, một số giá trị phổ biến trong thanh ghi $v0 bao gồm:
+
+10: Dịch vụ kết thúc chương trình.
+4: Dịch vụ in chuỗi.
+8: Dịch vụ đọc chuỗi từ bàn phím.
+Ví dụ sử dụng thanh ghi $v0 trong mã lệnh MIPS:
+
+
+
+# In ra chuỗi "Hello, MIPS!"
+li $v0, 4         # Chọn dịch vụ in chuỗi
+la $a0, myString  # Đưa địa chỉ của chuỗi vào $a0
+syscall
+
+
+Trong đoạn mã này, li $v0, 4 chọn dịch vụ in chuỗi, và la $a0, myString đưa địa chỉ của chuỗi cần in vào thanh ghi $a0. Sau đó, syscall được gọi để thực hiện in chuỗi.
+
+8) Trong kiến trúc MIPS, thanh ghi $a0 là một trong các thanh ghi (register) được sử dụng để truyền tham số vào các hàm khi chúng được gọi. Cụ thể, $a0 là thanh ghi đầu tiên trong tập các thanh ghi được sử dụng để truyền tham số.
+
+Khi một hàm được gọi, các giá trị của tham số thường được đặt trong các thanh ghi $a0, $a1, $a2, và $a3. Đối với các tham số nhiều hơn, có thể sử dụng thanh ghi $a0 đến $a3 cho các giá trị đầu tiên, và các giá trị tham số còn lại có thể được đặt trong bộ nhớ và truy cập thông qua địa chỉ bộ nhớ được truyền trong thanh ghi $sp (thanh ghi con trỏ ngăn xếp).
+
+Ví dụ, nếu bạn muốn truyền một giá trị nguyên vào một hàm, bạn có thể đặt giá trị đó trong thanh ghi $a0 trước khi gọi hàm.
+
+

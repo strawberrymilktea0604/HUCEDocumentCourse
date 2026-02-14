@@ -1,0 +1,95 @@
+1) Trong kiến trúc MIPS, giai đoạn IF (Instruction Fetch) thực hiện nhiệm vụ lấy lệnh từ bộ nhớ chương trình. Dưới đây là mô tả cụ thể về cách giai đoạn IF hoạt động:
+
+1. **Lấy địa chỉ lệnh (PC - Program Counter):**
+   - Chức năng: Địa chỉ của lệnh tiếp theo cần được thực thi được lấy từ thanh ghi chương trình (PC).
+   - Hoạt động: Địa chỉ trong PC được sử dụng để truy xuất lệnh từ bộ nhớ chương trình.
+
+2. **Truy xuất lệnh từ bộ nhớ:**
+   - Chức năng: Lệnh được đọc từ vị trí bộ nhớ được chỉ định bởi địa chỉ lệnh.
+   - Hoạt động: Bộ nhớ chương trình được truy xuất với địa chỉ lệnh hiện tại từ PC. Lệnh được đọc từ bộ nhớ và chuyển đến giai đoạn ID (Instruction Decode) để tiếp tục quá trình thực hiện lệnh.
+
+3. **Cập nhật PC:**
+   - Chức năng: Cập nhật giá trị của PC để trỏ đến lệnh tiếp theo.
+   - Hoạt động: Giá trị của PC được cập nhật bằng cách thêm một giá trị cố định (thường là 4, vì lệnh trong MIPS thường có kích thước 4 byte) để trỏ đến địa chỉ của lệnh tiếp theo.
+
+Quá trình này xảy ra trong mỗi chu kỳ xung đồng hồ, và mỗi lệnh trong chương trình sẽ trải qua giai đoạn IF trước khi chuyển đến giai đoạn ID. Giai đoạn IF thường là giai đoạn đầu tiên của mỗi chu kỳ xung đồng hồ trong kiến trúc Single Cycle Processor Design.
+
+2) Giai đoạn ID (Instruction Decode) trong kiến trúc MIPS thực hiện các hoạt động giải mã lệnh và truy xuất giá trị cần thiết từ thanh ghi và/hoặc bộ nhớ. Dưới đây là mô tả chi tiết về cách giai đoạn ID hoạt động:
+
+1. **Giải mã lệnh (Instruction Decode):**
+   - **Chức năng:** Xác định loại lệnh và ý nghĩa của nó.
+   - **Hoạt động:** Định dạng lệnh được giải mã để xác định loại lệnh, các toán hạng, và các trường thông tin khác. Dựa vào loại lệnh, giai đoạn ID xác định loại thao tác cần thực hiện và chuẩn bị dữ liệu cho giai đoạn thực hiện (Execution).
+
+2. **Truy xuất giá trị từ thanh ghi (Register File):**
+   - **Chức năng:** Truy xuất giá trị từ thanh ghi để sử dụng trong việc thực hiện lệnh.
+   - **Hoạt động:** Dựa vào thông tin từ giai đoạn giải mã, giải đoạn ID xác định các thanh ghi cần truy xuất và lấy giá trị từ chúng. Các giá trị này thường được chuyển đến giai đoạn thực hiện để thực hiện các phép tính.
+
+3. **Chuẩn bị dữ liệu cho giai đoạn thực hiện (Execution):**
+   - **Chức năng:** Chuẩn bị dữ liệu cần thiết cho giai đoạn thực hiện, bao gồm các giá trị từ thanh ghi và giá trị ngay lập tức.
+   - **Hoạt động:** Các giá trị từ thanh ghi và các trường ngay lập tức của lệnh được chuyển đến giai đoạn thực hiện để thực hiện các phép tính.
+
+4. **Chuyển giao thông tin điều khiển:**
+   - **Chức năng:** Chuyển thông tin điều khiển cần thiết cho giai đoạn thực hiện và các giai đoạn tiếp theo.
+   - **Hoạt động:** Giai đoạn ID chuyển các tín hiệu điều khiển (control signals) và thông tin về lệnh cho các giai đoạn tiếp theo, bao gồm giai đoạn thực hiện, giai đoạn truy cập bộ nhớ (MEM), và giai đoạn ghi kết quả (Write Back).
+
+Quá trình này giúp chuẩn bị dữ liệu cần thiết và thông tin điều khiển cho giai đoạn thực hiện tiếp theo của lệnh. Giai đoạn ID là giai đoạn quan trọng trong quá trình thực hiện mỗi lệnh và chuyển đến các giai đoạn khác để hoàn thành việc thực thi lệnh đó.
+
+3) Giai đoạn EX (Execution) trong kiến trúc MIPS thực hiện các phép tính, tính toán địa chỉ, hoặc thực hiện các hoạt động khác tùy thuộc vào loại lệnh. Dưới đây là mô tả chi tiết về cách giai đoạn EX hoạt động:
+
+1. **Chuẩn bị dữ liệu và tín hiệu điều khiển:**
+   - **Chức năng:** Chuẩn bị dữ liệu cần thiết và tín hiệu điều khiển cho việc thực hiện lệnh.
+   - **Hoạt động:** Dữ liệu từ giai đoạn ID (Instruction Decode) được chuyển đến giai đoạn EX. Các tín hiệu điều khiển cũng được chuyển để kiểm soát quá trình thực hiện lệnh.
+
+2. **Thực hiện các phép tính hoặc hoạt động:**
+   - **Chức năng:** Thực hiện các phép tính cơ bản như cộng, trừ, nhân, chia, hoặc thực hiện các hoạt động khác tùy thuộc vào loại lệnh.
+   - **Hoạt động:** Dữ liệu được đưa vào ALU (Arithmetic Logic Unit) hoặc các mạch thực hiện, và các phép tính hoặc hoạt động được thực hiện tại đây. Ví dụ, nếu lệnh là một phép cộng, giá trị hai toán hạng sẽ được cộng lại với nhau.
+
+3. **Tính toán địa chỉ (nếu có):**
+   - **Chức năng:** Nếu lệnh liên quan đến bộ nhớ, giai đoạn EX có thể tính toán địa chỉ thực tế của bộ nhớ cần truy cập.
+   - **Hoạt động:** Địa chỉ được tính toán dựa trên giá trị từ giai đoạn ID và có thể liên quan đến các phép tính như cộng thêm một giá trị offset vào địa chỉ cơ sở.
+
+4. **Chuẩn bị dữ liệu cho giai đoạn MEM (Memory Access):**
+   - **Chức năng:** Chuẩn bị dữ liệu cần thiết để truy cập bộ nhớ nếu lệnh yêu cầu.
+   - **Hoạt động:** Nếu lệnh là một lệnh đọc/ghi từ bộ nhớ, dữ liệu và địa chỉ tính toán được chuyển đến giai đoạn MEM.
+
+5. **Chuẩn bị dữ liệu và tín hiệu điều khiển cho giai đoạn WB (Write Back):**
+   - **Chức năng:** Chuẩn bị dữ liệu và tín hiệu điều khiển để ghi kết quả vào thanh ghi.
+   - **Hoạt động:** Kết quả của lệnh và các tín hiệu điều khiển cần thiết để ghi vào thanh ghi được chuyển đến giai đoạn WB.
+
+Quá trình này giúp thực hiện lệnh, tính toán kết quả, và chuẩn bị dữ liệu cần thiết cho các giai đoạn tiếp theo của quá trình thực thi lệnh MIPS.
+
+4) Giai đoạn MEM (Memory Access) trong kiến trúc MIPS thực hiện các hoạt động liên quan đến truy cập bộ nhớ, bao gồm đọc dữ liệu từ bộ nhớ hoặc ghi dữ liệu vào bộ nhớ. Dưới đây là mô tả chi tiết về cách giai đoạn MEM hoạt động:
+
+1. **Chuẩn bị dữ liệu và tín hiệu điều khiển:**
+   - **Chức năng:** Chuẩn bị dữ liệu cần thiết và tín hiệu điều khiển cho việc truy cập bộ nhớ.
+   - **Hoạt động:** Dữ liệu và tín hiệu điều khiển từ giai đoạn EX (Execution) được chuyển đến giai đoạn MEM để chuẩn bị cho truy cập bộ nhớ.
+
+2. **Truy cập bộ nhớ:**
+   - **Chức năng:** Thực hiện truy cập bộ nhớ, bao gồm đọc dữ liệu từ bộ nhớ hoặc ghi dữ liệu vào bộ nhớ.
+   - **Hoạt động:** Nếu lệnh là một lệnh đọc từ bộ nhớ (ví dụ: load), địa chỉ và dữ liệu được truy cập từ bộ nhớ. Nếu lệnh là một lệnh ghi vào bộ nhớ (ví dụ: store), dữ liệu được ghi vào địa chỉ được tính toán.
+
+3. **Chuẩn bị dữ liệu cho giai đoạn WB (Write Back):**
+   - **Chức năng:** Chuẩn bị dữ liệu và tín hiệu điều khiển để ghi kết quả vào thanh ghi nếu cần.
+   - **Hoạt động:** Dữ liệu được trả về từ bộ nhớ hoặc kết quả truy cập bộ nhớ được chuẩn bị để được ghi vào thanh ghi trong giai đoạn WB.
+
+4. **Truyền tín hiệu điều khiển cho giai đoạn WB:**
+   - **Chức năng:** Chuyển các tín hiệu điều khiển cần thiết cho việc ghi kết quả vào thanh ghi.
+   - **Hoạt động:** Các tín hiệu điều khiển được chuyển đến giai đoạn WB để kiểm soát quá trình ghi kết quả vào thanh ghi.
+
+Quá trình này giúp thực hiện truy cập bộ nhớ dựa trên lệnh và chuẩn bị dữ liệu để chuyển đến giai đoạn WB để ghi kết quả vào thanh ghi hoặc thực hiện các công việc khác tùy thuộc vào loại lệnh.
+
+5) Giai đoạn WB (Write Back) trong kiến trúc MIPS thực hiện việc ghi kết quả của lệnh vào thanh ghi. Dưới đây là mô tả chi tiết về cách giai đoạn WB hoạt động:
+
+1. **Chuẩn bị dữ liệu và tín hiệu điều khiển:**
+   - **Chức năng:** Chuẩn bị dữ liệu cần ghi vào thanh ghi và tín hiệu điều khiển cần thiết.
+   - **Hoạt động:** Dữ liệu và tín hiệu điều khiển từ giai đoạn MEM (Memory Access) hoặc giai đoạn EX (Execution) được chuyển đến giai đoạn WB để chuẩn bị cho quá trình ghi vào thanh ghi.
+
+2. **Ghi kết quả vào thanh ghi:**
+   - **Chức năng:** Ghi kết quả của lệnh vào thanh ghi.
+   - **Hoạt động:** Dữ liệu được chuyển từ giai đoạn MEM hoặc giai đoạn EX vào thanh ghi được chỉ định bởi lệnh. Quá trình này là quá trình cuối cùng trong chu kỳ xung đồng hồ của mỗi lệnh, và nó hoàn thành quá trình thực hiện lệnh.
+
+3. **Cập nhật tình trạng điều khiển (nếu cần):**
+   - **Chức năng:** Cập nhật tình trạng điều khiển của bộ xử lý nếu cần thiết.
+   - **Hoạt động:** Các tình trạng điều khiển, chẳng hạn như cờ trạng thái (status flags) hoặc các thanh ghi khác, có thể được cập nhật dựa trên kết quả của lệnh.
+
+Giai đoạn WB là giai đoạn kết thúc của mỗi lệnh trong kiến trúc MIPS và là giai đoạn cuối cùng trong chu kỳ xung đồng hồ của lệnh đó. Quá trình này đảm bảo rằng kết quả của lệnh đã được tính toán được chuyển đến thanh ghi phù hợp để có sẵn cho lệnh tiếp theo trong chương trình.
