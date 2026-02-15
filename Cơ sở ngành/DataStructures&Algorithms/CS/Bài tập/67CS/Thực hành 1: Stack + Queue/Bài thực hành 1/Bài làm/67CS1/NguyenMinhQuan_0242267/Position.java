@@ -1,0 +1,43 @@
+public class Position {
+    private int x; 
+    private int y;
+    private int dist; 
+
+    public Position() 
+    {
+        this.x = 0; 
+        this.y = 0;
+    }
+
+    public Position(int x, int y) 
+    {
+        this.x = x; 
+        this.y = y; 
+    }
+
+    public int getx() 
+    {
+        return x;
+    }
+
+    public void setx(int x) 
+    {
+        this.x = x;
+    }
+
+    public int gety() 
+    {
+        return y;
+    }
+
+    public void sety(int y) 
+    {
+        this.y = y;
+    } 
+
+    public int getdist() 
+    {
+        return this.dist;
+    }
+    
+}

@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    cout << "Hello World!\n";
+    
+    //khai báo biến
+    //[datatype] [name] = [value];
+    int x = 5;
+    cout << "x=" << x << endl;
+    x = 10;
+    cout << "x=" << x << endl;
+
+    cout << "Dia chi cua x: " << & x << endl;
+
+    float y = 2.5;
+    cout << "y=" << y << endl;
+
+    //khai báo mảng
+    //datatype name[số lượng phần tử của mảng]
+    int A[10];
+
+    cout << "Dia chi co so cua A: " << &A << endl;
+    cout << "Dia chi cua phan tu A[1]" << &A[1] << endl;
+
+    A[0] = 1;
+    A[1] = 2;
+
+    cout << "A[0]=" << A[0] << endl;
+    cout << "A[1]=" << A[1] << endl;
+
+    //thực hiện phép tính
+    float z = x / y; // + - * /
+    cout << "z=" << z << endl;
+
+    //câu lệnh rẽ nhánh
+    y = 10;
+    if (x == y)
+    {
+        cout << "x=y" << endl;
+    }
+    else
+    {
+        cout << "x!=y" << endl;
+    }
+
+    /*Bài tập :
+    1. Làm quen với NNLT C++ bằng các câu lệnh cơ bản: in ra màn hình, khai báo biến, khai báo mảng 1 chiều, 
+    gán giá trị cho biến, gán giá trị cho các phần tử trong mảng 1 chiều, lấy giá trị của biến/của các phần tử 
+    trong mảng 1 chiều
+    2. Thực hiện các phép tính cơ bản: + - * /
+    3. Lập trình phần mềm tìm số lớn nhất/nhỏ nhất trong 3 số cho trước và in kết quả ra màn hình.
+    4. Lập trình phần mềm giải phương trình bậc 2: ax2 + bx + c = 0;
+    */
+}

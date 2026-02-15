@@ -1,0 +1,81 @@
+﻿#include<iostream>
+using namespace std;
+int sz;			// size ngăn xếp
+int stack[100];
+int top = -1;     // vị trí ban đầu của phần tử trên cùng 
+
+void display();
+bool full(int sz);
+bool empty();
+void push(int val);   //push : thêm 
+void pop();			  // pop :bỏ đi phần tử trên cùng
+int peek();			// trả về giá trị trên cùng 
+int main() {
+	cout << "Nhap size cua stack : ";
+	cin >> sz;
+	int x;
+	cout << "Nhap so phan tu muon nhap : "; cin >> x;
+	if (x <= 0) {						// số phần tử muốn nhập phải hợp lí
+		cout << "Ham rong khong the tiep tuc tuong tac voi stack  ";
+		return 0;
+	}
+	else {
+		for (int i = 0;i < x; i++) {
+			int a;
+			cout << "Phan tu thu " << i + 1 << " muon them : "; cin >> a;
+			push(a);
+			cout << "Cac phan tu trong stack hien tai la ";
+			display();
+			cout << endl;
+		}
+		cout << endl;
+		cout << "Phan tu o dinh stack : " << peek() << endl;
+
+		cout << endl;
+		pop();
+		cout << "Phan tu trong stack sau khi pop la : ";
+		display();
+		cout << endl;
+		if (empty()) {
+			cout << "Sau khi pop stack rong ";
+		}
+		else {
+			cout << "Phan tu dinh stack sau khi pop: " << peek() << endl;
+		}
+	}
+	return 0;
+}
+bool full(int sz) {
+	if (top == sz - 1) return true;
+	return false;
+}
+bool empty() {
+	if (top == -1) return true;
+	return false;
+}
+void push(int val) {
+	if (full(sz)) {
+		cout << "Stack da day khong the them phan tu " << endl;
+		return;
+	}
+	else {
+		top++;    
+		stack[top] = val;
+	}
+}
+
+void pop() {
+	if (empty()) cout << "Stack rong khong co phan tu de xoa " << endl;
+	top--;
+}
+int peek() {
+	if (empty()) cout << "Stack rong khong co phan tu tren cung de hien thi " << endl;
+	else {
+		return stack[top];
+	}
+}
+void display() {
+	for (int i = 0; i <= top;i++) {
+		cout << stack[i] << " ";
+	}
+}

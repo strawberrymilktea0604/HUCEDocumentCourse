@@ -1,0 +1,103 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LinearProbingMap<Key, Value> implements Map<Key,Value> {
+    
+    public class Entry {
+        public Key key;
+        public Value value;
+        public Entry (Key k, Value v) {
+            key = k;
+            value = v;
+        }
+    }
+    
+    public int N; // number of key-value pairs
+    public int M; // hash table size
+    
+    public LinkedList<Entry>[] entries;
+    
+    public LinearProbingMap() {
+        this(997);
+    }
+    
+    public LinearProbingMap(int M) {
+        this.N = 0;
+        this.M = M;
+        entries = new LinkedList[M];
+        for (int i = 0; i < M; i++)
+            entries[i] = new LinkedList<LinearProbingMap<Key, Value>.Entry>();
+    }
+	
+	
+	
+	private int hash(Key key, int collisions) {
+		return ((key.hashCode() & 0x7fffffff) + collisions) % M;
+	}
+	
+	public void put( Key key, Value val ) {
+        int numCollisions = 0;
+        
+        if( N == M )
+        	return;
+        
+        while(!entries[hash(key,numCollisions)].isEmpty() && entries[hash(key,numCollisions)].getFirst().key != null) {
+        	numCollisions++;
+        }
+		N++;
+		entries[hash(key,numCollisions)].addFirst(new Entry(key,val));
+		return;
+		
+	}
+    public Value get(Key key) {
+        int numCollisions = 0;
+    
+        if (entries[hash(key,numCollisions)].isEmpty()) {
+        	return null;
+        }
+        
+        while(entries[hash(key,numCollisions)].getFirst().key.hashCode() != key.hashCode()
+    		&& entries[hash(key,numCollisions)].getFirst().key != null){
+        		numCollisions++;
+        		if(numCollisions == 997)
+        			return null;
+        }
+    
+        return entries[hash(key,numCollisions)].getFirst().value;                
+    }
+    
+    public void remove (Key key) {
+    	if( contains(key) ) {
+    		int numCollisions = 0;
+    		while( entries[hash(key,numCollisions)].getFirst().key.hashCode() != key.hashCode() ) {
+    			numCollisions++;
+    		}
+    		entries[hash(key,numCollisions)].getFirst().key = null;
+    		entries[hash(key,numCollisions)].getFirst().value = null;
+    		N--;
+    	}
+    	else 
+    		return;
+    }
+	
+    public boolean contains (Key key) {
+    	return get(key) != null;
+    }
+    
+    public boolean isEmpty()
+    {
+    	return N==0;
+    }
+    public int size() {
+    	return N;
+    }
+    public Iterable<Key> keys() {        
+        Queue<Key> queue = new LinkedList<Key>();
+        
+        for (int i = 0; i < M; i++)
+            for(Entry e : entries[i])
+                    queue.add(e.key);
+        
+        return queue;
+    }
+}

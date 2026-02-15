@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Giang day\\69IT1\u002B2\\Demo\\2025 08 26\\DemoCayNhiPhan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7799B212-2BC9-4FA2-B9B0-F326566B4166}|DemoCayNhiPhan\\DemoCayNhiPhan.vcxproj|D:\\Giang day\\69IT1\u002B2\\Demo\\2025 08 26\\DemoCayNhiPhan\\DemoCayNhiPhan\\DemoCayNhiPhan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7799B212-2BC9-4FA2-B9B0-F326566B4166}|DemoCayNhiPhan\\DemoCayNhiPhan.vcxproj|solutionrelative:DemoCayNhiPhan\\DemoCayNhiPhan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 303,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoCayNhiPhan.cpp",
+              "DocumentMoniker": "D:\\Giang day\\69IT1\u002B2\\Demo\\2025 08 26\\DemoCayNhiPhan\\DemoCayNhiPhan\\DemoCayNhiPhan.cpp",
+              "RelativeDocumentMoniker": "DemoCayNhiPhan\\DemoCayNhiPhan.cpp",
+              "ToolTip": "D:\\Giang day\\69IT1\u002B2\\Demo\\2025 08 26\\DemoCayNhiPhan\\DemoCayNhiPhan\\DemoCayNhiPhan.cpp",
+              "RelativeToolTip": "DemoCayNhiPhan\\DemoCayNhiPhan.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-26T08:09:23.42Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

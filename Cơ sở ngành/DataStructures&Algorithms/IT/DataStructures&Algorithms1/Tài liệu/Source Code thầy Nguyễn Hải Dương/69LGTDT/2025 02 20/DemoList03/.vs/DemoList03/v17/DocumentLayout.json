@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 02 20\\DemoList03\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C2C03310-19DC-4728-9638-D6962B3849D5}|DemoList03\\DemoList03.vcxproj|D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 02 20\\DemoList03\\DemoList03\\DemoList03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C2C03310-19DC-4728-9638-D6962B3849D5}|DemoList03\\DemoList03.vcxproj|solutionrelative:DemoList03\\DemoList03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoList03.cpp",
+              "DocumentMoniker": "D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 02 20\\DemoList03\\DemoList03\\DemoList03.cpp",
+              "RelativeDocumentMoniker": "DemoList03\\DemoList03.cpp",
+              "ToolTip": "D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 02 20\\DemoList03\\DemoList03\\DemoList03.cpp",
+              "RelativeToolTip": "DemoList03\\DemoList03.cpp",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-20T09:25:21.224Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

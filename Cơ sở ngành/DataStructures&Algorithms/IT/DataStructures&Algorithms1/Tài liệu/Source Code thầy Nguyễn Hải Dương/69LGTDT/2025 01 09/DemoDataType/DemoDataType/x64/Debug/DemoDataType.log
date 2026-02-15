@@ -1,0 +1,6 @@
+﻿  DemoDataType.cpp
+D:\Giang day\2024-2025\HK2\69LGTDT\2025 01 09\DemoDataType\DemoDataType\DemoDataType.cpp(11,9): warning C4101: 'x1': unreferenced local variable
+D:\Giang day\2024-2025\HK2\69LGTDT\2025 01 09\DemoDataType\DemoDataType\DemoDataType.cpp(14,10): warning C4101: 'x4': unreferenced local variable
+D:\Giang day\2024-2025\HK2\69LGTDT\2025 01 09\DemoDataType\DemoDataType\DemoDataType.cpp(13,12): warning C4101: 'x3': unreferenced local variable
+D:\Giang day\2024-2025\HK2\69LGTDT\2025 01 09\DemoDataType\DemoDataType\DemoDataType.cpp(12,11): warning C4101: 'x2': unreferenced local variable
+  DemoDataType.vcxproj -> D:\Giang day\2024-2025\HK2\69LGTDT\2025 01 09\DemoDataType\x64\Debug\DemoDataType.exe

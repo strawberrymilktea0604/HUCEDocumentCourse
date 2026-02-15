@@ -1,0 +1,131 @@
+// Java Program to sort a linked list
+// using bubble sort by swapping nodes
+ 
+// Node class
+class Node {
+    int data;
+    Node next;
+    
+    // Constructor to initialize the node object
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+ 
+// LinkedList class
+class LinkedList {
+    Node head;
+    
+    // Function to swap nodes x and y in linked list by changing links
+    public void swapNodes(int x, int y) {
+        // Nothing to do if x and y are the same
+        if (x == y) {
+            return;
+        }
+    
+        // Search for x (keep track of prevX and currX)
+        Node prevX = null, currX = head;
+        while (currX != null && currX.data != x) {
+            prevX = currX;
+            currX = currX.next;
+        }
+    
+        // Search for y (keep track of prevY and currY)
+        Node prevY = null, currY = head;
+        while (currY != null && currY.data != y) {
+            prevY = currY;
+            currY = currY.next;
+        }
+    
+        // If either x or y is not present, nothing to do
+        if (currX == null || currY == null) {
+            return;
+        }
+    
+        // If x is not head of linked list
+        if (prevX != null) {
+            prevX.next = currY;
+        } else {
+            // Else make y as new head
+            head = currY;
+        }
+    
+        // If y is not head of linked list
+        if (prevY != null) {
+            prevY.next = currX;
+        } else {
+            // Else make x as new head
+            head = currX;
+        }
+    
+        // Swap next pointers
+        Node temp = currX.next;
+        currX.next = currY.next;
+        currY.next = temp;
+    }
+ 
+    // Function to sort the linked list using bubble sort
+    public void bubbleSort() {
+        if (head == null) {
+            return;
+        }
+ 
+        int count = 0;
+        Node start = head;
+        while (start != null) {
+            count++;
+            start = start.next;
+        }
+ 
+        // Traverse through all nodes of linked list
+        for (int i = 0; i < count; i++) {
+            // Last i elements are already in place
+            Node curr = head;
+            while (curr != null && curr.next != null) {
+                // Swap adjacent nodes
+                if (curr.data > curr.next.data) {
+                    swapNodes(curr.data, curr.next.data);
+                }
+                curr = curr.next;
+            }
+        }
+    }
+ 
+    // Function to print the linked list
+    public void printList() {
+        Node tmp = head;
+        while (tmp != null) {
+            System.out.print(tmp.data + " -> ");
+            tmp = tmp.next;
+        }
+        System.out.println("None");
+    }
+}
+ 
+// Driver Code
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {78, 20, 10, 32, 1, 5};
+ 
+        // Create a linked list from the array
+        LinkedList llist = new LinkedList();
+        llist.head = new Node(arr[0]);
+        Node start = llist.head;
+        for (int i = 1; i < arr.length; i++) {
+            start.next = new Node(arr[i]);
+            start = start.next;
+        }
+ 
+        // Print the list before sorting
+        System.out.println("Linked list before sorting");
+        llist.printList();
+ 
+        // Sort the list
+        llist.bubbleSort();
+ 
+        // Print the list after sorting
+        System.out.println("Linked list after sorting");
+        llist.printList();
+    }
+}

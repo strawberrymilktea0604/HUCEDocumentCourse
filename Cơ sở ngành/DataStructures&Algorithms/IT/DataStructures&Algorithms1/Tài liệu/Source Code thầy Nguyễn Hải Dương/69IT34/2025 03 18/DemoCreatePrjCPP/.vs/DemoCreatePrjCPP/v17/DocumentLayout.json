@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 03 18\\DemoCreatePrjCPP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D3721F98-796D-4911-B782-FD3AFE581FDF}|DemoCreatePrjCPP\\DemoCreatePrjCPP.vcxproj|D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 03 18\\DemoCreatePrjCPP\\DemoCreatePrjCPP\\DemoCreatePrjCPP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D3721F98-796D-4911-B782-FD3AFE581FDF}|DemoCreatePrjCPP\\DemoCreatePrjCPP.vcxproj|solutionrelative:DemoCreatePrjCPP\\DemoCreatePrjCPP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoCreatePrjCPP.cpp",
+              "DocumentMoniker": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 03 18\\DemoCreatePrjCPP\\DemoCreatePrjCPP\\DemoCreatePrjCPP.cpp",
+              "RelativeDocumentMoniker": "DemoCreatePrjCPP\\DemoCreatePrjCPP.cpp",
+              "ToolTip": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 03 18\\DemoCreatePrjCPP\\DemoCreatePrjCPP\\DemoCreatePrjCPP.cpp",
+              "RelativeToolTip": "DemoCreatePrjCPP\\DemoCreatePrjCPP.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-18T09:34:29.548Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 01 09\\DemoDataType\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A583861-0CA1-45D4-8F4B-1BAF5B51F886}|DemoDataType\\DemoDataType.vcxproj|D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 01 09\\DemoDataType\\DemoDataType\\DemoDataType.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1A583861-0CA1-45D4-8F4B-1BAF5B51F886}|DemoDataType\\DemoDataType.vcxproj|solutionrelative:DemoDataType\\DemoDataType.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoDataType.cpp",
+              "DocumentMoniker": "D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 01 09\\DemoDataType\\DemoDataType\\DemoDataType.cpp",
+              "RelativeDocumentMoniker": "DemoDataType\\DemoDataType.cpp",
+              "ToolTip": "D:\\Giang day\\2024-2025\\HK2\\69LGTDT\\2025 01 09\\DemoDataType\\DemoDataType\\DemoDataType.cpp*",
+              "RelativeToolTip": "DemoDataType\\DemoDataType.cpp*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-09T08:18:43.584Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

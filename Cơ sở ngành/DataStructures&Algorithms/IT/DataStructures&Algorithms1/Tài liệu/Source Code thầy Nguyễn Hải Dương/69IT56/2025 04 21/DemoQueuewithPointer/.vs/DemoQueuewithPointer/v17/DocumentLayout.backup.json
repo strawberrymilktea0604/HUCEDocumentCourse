@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT5\u002B6\\Share cho SV\\2025 04 21\\DemoQueuewithPointer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73B0F524-1E30-4EFE-9447-67C2BF511F45}|DemoQueuewithPointer\\DemoQueuewithPointer.vcxproj|D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT5\u002B6\\Share cho SV\\2025 04 21\\DemoQueuewithPointer\\DemoQueuewithPointer\\DemoQueuewithPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{73B0F524-1E30-4EFE-9447-67C2BF511F45}|DemoQueuewithPointer\\DemoQueuewithPointer.vcxproj|solutionrelative:DemoQueuewithPointer\\DemoQueuewithPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoQueuewithPointer.cpp",
+              "DocumentMoniker": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT5\u002B6\\Share cho SV\\2025 04 21\\DemoQueuewithPointer\\DemoQueuewithPointer\\DemoQueuewithPointer.cpp",
+              "RelativeDocumentMoniker": "DemoQueuewithPointer\\DemoQueuewithPointer.cpp",
+              "ToolTip": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT5\u002B6\\Share cho SV\\2025 04 21\\DemoQueuewithPointer\\DemoQueuewithPointer\\DemoQueuewithPointer.cpp*",
+              "RelativeToolTip": "DemoQueuewithPointer\\DemoQueuewithPointer.cpp*",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAAALUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-21T09:04:02.467Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

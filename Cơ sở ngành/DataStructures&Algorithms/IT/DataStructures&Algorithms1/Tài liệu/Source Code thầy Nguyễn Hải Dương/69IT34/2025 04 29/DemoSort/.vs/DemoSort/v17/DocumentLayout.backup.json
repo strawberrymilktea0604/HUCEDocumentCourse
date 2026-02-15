@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 04 29\\DemoSort\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BC5E7179-F591-4060-8DDA-314EDA0F6277}|DemoSort\\DemoSort.vcxproj|D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 04 29\\DemoSort\\DemoSort\\DemoSort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BC5E7179-F591-4060-8DDA-314EDA0F6277}|DemoSort\\DemoSort.vcxproj|solutionrelative:DemoSort\\DemoSort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoSort.cpp",
+              "DocumentMoniker": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 04 29\\DemoSort\\DemoSort\\DemoSort.cpp",
+              "RelativeDocumentMoniker": "DemoSort\\DemoSort.cpp",
+              "ToolTip": "D:\\Huce\\Giang day\\2024-2025\\HK2\\Block 2\\CTDL TT 1\\69IT3\u002B4\\Share cho SV\\2025 04 29\\DemoSort\\DemoSort\\DemoSort.cpp",
+              "RelativeToolTip": "DemoSort\\DemoSort.cpp",
+              "ViewState": "AgIAADoAAAAAAAAAAAAwwEQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-29T09:26:37.186Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

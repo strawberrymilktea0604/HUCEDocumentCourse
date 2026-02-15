@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Demo\\2025 03 24\\DemoArrayBasic\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D5BAA826-2D7C-46E9-83C7-BDC34404759A}|DemoArrayBasic\\DemoArrayBasic.vcxproj|F:\\Demo\\2025 03 24\\DemoArrayBasic\\DemoArrayBasic\\DemoArrayBasic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D5BAA826-2D7C-46E9-83C7-BDC34404759A}|DemoArrayBasic\\DemoArrayBasic.vcxproj|solutionrelative:DemoArrayBasic\\DemoArrayBasic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 303,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DemoArrayBasic.cpp",
+              "DocumentMoniker": "F:\\Demo\\2025 03 24\\DemoArrayBasic\\DemoArrayBasic\\DemoArrayBasic.cpp",
+              "RelativeDocumentMoniker": "DemoArrayBasic\\DemoArrayBasic.cpp",
+              "ToolTip": "F:\\Demo\\2025 03 24\\DemoArrayBasic\\DemoArrayBasic\\DemoArrayBasic.cpp",
+              "RelativeToolTip": "DemoArrayBasic\\DemoArrayBasic.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-24T10:08:27.532Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
