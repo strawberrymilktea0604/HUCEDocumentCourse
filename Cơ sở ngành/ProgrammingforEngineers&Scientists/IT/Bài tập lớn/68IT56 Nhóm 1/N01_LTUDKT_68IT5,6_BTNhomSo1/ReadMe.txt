@@ -1,0 +1,1 @@
+Run app.py và vào link http://127.0.0.1:8000/views/

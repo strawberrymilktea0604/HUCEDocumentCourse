@@ -1,0 +1,177 @@
+:root {
+  --primary: #007bff;
+  --secondary: #f0f8ff;
+  --accent: #00bfa6;
+  --danger: #dc3545;
+  --success: #28a745;
+  --light: #ffffffcc;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #d0e8f2, #f0f8ff);
+  color: #333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #007bff, #00bfa6);
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #ffffff33;
+}
+
+.navbar-left h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: white;
+  color: #007bff;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  border: var(--primary) 1px solid;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.revenue-dropdown {
+  position: relative;
+}
+
+.revenue-list {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  z-index: 10;
+}
+
+.revenue-dropdown:hover .revenue-list {
+  display: block;
+}
+
+.revenue-list li {
+  padding: 6px 0;
+  font-weight: 500;
+  border-bottom: solid 0.01px rgb(204, 204, 204);
+  list-style: none;
+}
+
+.container {
+  margin-top: 5vh;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+form input,
+form select,
+form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #00a896;
+}
+
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.room-card {
+  background-color: var(--light);
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-card p {
+  margin: 5px 0;
+}
+
+.room-id,
+.room-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.room-name {
+  color: var(--primary);
+}
+
+.room-price {
+  color: var(--success);
+}
+
+.room-status {
+  color: var(--danger);
+}
+
+.room-card form {
+  margin: 0;
+}
+
+.room-card .btn {
+  margin: 5px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+#sua {
+  margin-top: auto;
+}

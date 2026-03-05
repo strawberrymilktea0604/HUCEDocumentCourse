@@ -1,0 +1,5 @@
+Standard,P001,500000,available,25.0,1
+Standard,P002,450000,booked,20.0,1
+Deluxe,P101,800000,available,30.0,2,Bữa sáng miễn phí;Dọn phòng hằng ngày
+Deluxe,P102,1000000,booked,35.0,2,Spa;Đưa đón sân bay;Minibar
+Deluxe,101,2000,booked,20.0,2,efkoef

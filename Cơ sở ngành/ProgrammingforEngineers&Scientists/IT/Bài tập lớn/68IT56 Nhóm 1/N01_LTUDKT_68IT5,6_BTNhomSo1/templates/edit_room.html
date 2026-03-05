@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sửa Thông Tin Phòng</title>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .edit-room-btn {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .edit-room-btn .btn-edit-room {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      form label {
+        margin-bottom: 10px;
+      }
+
+      form input,
+      form select,
+      form button {
+        padding: 8px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+
+      form button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sửa Thông Tin Phòng</h2>
+      <form action="{{ url_for('views.edit_room', rid=room['rid']) }}" method="POST">
+        <label for="rid">Mã phòng:</label>
+        <input type="text" name="rid" id="rid" value="{{ room['rid'] }}" readonly />
+
+        <label for="type">Loại phòng:</label>
+        <select name="type" id="type">
+          <option value="Phòng thường" {% if room['type'] == 'Phòng thường' %} selected {% endif %}>Phòng thường</option>
+          <option value="Phòng cao cấp" {% if room['type'] == 'Phòng cao cấp' %} selected {% endif %}>Phòng cao cấp</option>
+        </select>
+
+        <label for="price">Giá phòng (VND):</label>
+        <input type="number" name="price" id="price" value="{{ room['price'] }}" required />
+
+        <label for="status">Trạng thái phòng:</label>
+        <select name="status" id="status">
+          <option value="Còn trống" {% if room['status'] == 'Còn trống' %} selected {% endif %}>Còn trống</option>
+          <option value="Đã đặt" {% if room['status'] == 'Đã đặt' %} selected {% endif %}>Đã đặt</option>
+        </select>
+
+        <label for="area">Diện tích (m²):</label>
+        <input type="number" name="area" id="area" value="{{ room['area'] }}" required />
+
+        <label for="bed_count">Số giường:</label>
+        <input type="number" name="bed_count" id="bed_count" value="{{ room['bed_count'] }}" required />
+
+        <label for="services">Dịch vụ (nhập dịch vụ, cách nhau bằng dấu phẩy):</label>
+        <input type="text" name="services" id="services" value="{{ ', '.join(room['services']) }}" placeholder="Ví dụ: Ăn sáng miễn phí, Hồ bơi, Giặt ủi" />
+        <button type="submit">Lưu Thay Đổi</button>
+      </form>
+    </div>
+  </body>
+</html>

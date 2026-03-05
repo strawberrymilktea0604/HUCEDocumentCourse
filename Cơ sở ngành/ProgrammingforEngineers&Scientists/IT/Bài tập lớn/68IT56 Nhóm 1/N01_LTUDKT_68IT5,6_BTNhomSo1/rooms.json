@@ -1,0 +1,13 @@
+[
+    {
+        "rid": "R002",
+        "type": "Phòng cao cấp",
+        "price": 12239.0,
+        "status": "Đã đặt",
+        "area": 17,
+        "bed_count": 2,
+        "services": [
+            "Ăn sáng miễn phí"
+        ]
+    }
+]

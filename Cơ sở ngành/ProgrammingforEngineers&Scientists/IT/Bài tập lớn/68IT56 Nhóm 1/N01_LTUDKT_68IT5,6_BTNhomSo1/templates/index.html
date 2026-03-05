@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depth Sea Hotel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <h2>Depth Sea Hotel</h2>
+      </div>
+      <div class="navbar-right">
+        <a href="{{ url_for('views.add_room') }}" class="btn">Thêm Phòng</a>
+        <div class="revenue-dropdown">
+          <span class="btn">Doanh thu</span>
+          <ul class="revenue-list">
+            <li>Tổng doanh thu toàn bộ khách sạn: {{ total_revenue | int | string | replace(",", ".") }} VND</li>
+            <li>Doanh thu Phòng thường: {{ standard_revenue | int | string | replace(",", ".") }} VND</li>
+            <li>Doanh thu Phòng cao cấp: {{ deluxe_revenue | int | string | replace(",", ".") }} VND</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- Filter -->
+      <form method="GET" action="{{ url_for('views.home') }}">
+        <input type="text" name="search" placeholder="Tìm mã phòng..." value="{{ request.args.get('search', '') }}" />
+        <select name="type">
+          <option value="">Tất cả loại phòng</option>
+          <option value="Phòng thường" {% if request.args.get('type') == 'Phòng thường' %}selected{% endif %}>Phòng thường</option>
+          <option value="Phòng cao cấp" {% if request.args.get('type') == 'Phòng cao cấp' %}selected{% endif %}>Phòng cao cấp</option>
+        </select>
+        <select name="status">
+          <option value="">Tất cả trạng thái</option>
+          <option value="Còn trống" {% if request.args.get('status') == 'Còn trống' %}selected{% endif %}>Còn trống</option>
+          <option value="Đã đặt" {% if request.args.get('status') == 'Đã đặt' %}selected{% endif %}>Đã đặt</option>
+        </select>
+        <button type="submit">Lọc</button>
+      </form>
+
+      <!-- Danh sach phong -->
+      <section class="room-list">
+        {% for room in rooms %}
+        <div class="room-card">
+          <p class="room-id">Mã Phòng: {{ room['rid'] }}</p>
+          <p class="room-name">{{ room.type }}</p>
+          <p class="room-price">Giá: {{ "{:,.0f}".format(room.price) }} VND</p>
+          <p class="room-status">Trạng thái: {{ room.status }}</p>
+          <p>Diện tích: {{ room.area }} m²</p>
+          <p>Số giường: {{ room.bed_count }}</p>
+          {% if room.type == "Phòng cao cấp" %}
+          <p>Dịch vụ: {{ room.services | join(", ") }}</p>
+          {% endif %}
+          <a id="sua" href="{{ url_for('views.edit_room', rid=room.rid) }}" class="btn">Sửa Phòng</a>
+          <form action="{{ url_for('views.delete_room', rid=room.rid) }}" method="POST">
+            <button type="submit" class="btn">Xóa Phòng</button>
+          </form>
+        </div>
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>
