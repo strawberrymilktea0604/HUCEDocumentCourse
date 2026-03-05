@@ -1,0 +1,33 @@
+Các bạn xem video hướng dẫn cho các chương như sau:
+
+Chương 1: Tổng quan mạng máy tính và internet (Phần 1):
+
+https://youtu.be/6KcFTGP3ufc
+
+Chương 1: Tổng quan mạng máy tính và internet (Phần 2):
+
+https://youtu.be/XaQY3flEUyM
+
+Chương 2: Mô hình OSI và TCP/IP (Phần 1):
+
+https://youtu.be/_qS3CtBztY8
+
+Chương 2: Mô hình OSI và TCP/IP (Phần 2):
+
+https://youtu.be/N0bfTSpsuSM
+
+Chương 3: Application
+
+https://youtu.be/A_g1gQV9qj8
+
+Chương 4: Transport (Phần 1)
+
+https://youtu.be/pEItebq5LL0
+
+Chương 4: Transport (Phần 2)
+
+https://www.youtube.com/watch?v=0rIE2Qd5hS4
+
+Chương 5: IP Subnet cơ bản
+
+https://youtu.be/-AbOiZ4Rc74
