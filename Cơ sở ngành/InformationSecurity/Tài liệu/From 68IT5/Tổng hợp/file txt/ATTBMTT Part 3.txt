@@ -1,0 +1,278 @@
+Ảnh 1: 23.jpg
+
+B1. Biểu diễn 644 dưới dạng nhị phân: 644 = (1010000100)_2
+Suy ra 644 = 2^9 + 2^7 + 2^2
+Từ đó suy ra 3^644 = 3^512 * 3^128 * 3^4
+
+B2. Lập bảng
+
+B3. Từ bảng suy ra kết quả
+3^644 = 111 * 396 * 81 (mod 645)
+= 36
+
+Bảng:
+i | a_i | 3^(2^i)
+--|-----|--------------------------------
+0 | 0   | 3^(2^0) mod 645 = 3
+1 | 0   | 3^(2^1) mod 645 = 9
+2 | 1   | 3^(2^2) mod 645 = 81
+3 | 0   | 3^(2^3) = 81^2 mod 645 = 111
+4 | 0   | 3^(2^4) = 111^2 mod 645 = 66
+5 | 0   | 3^(2^5) = 66^2 mod 645 = 486
+6 | 0   | 3^(2^6) = 486^2 mod 645 = 126
+7 | 1   | 3^(2^7) = 126^2 mod 645 = 396
+8 | 0   | 3^(2^8) = 396^2 mod 645 = 81
+9 | 1   | 3^(2^9) = 81^2 mod 645 = 111
+
+Thuật toán mã hoá RSA
+1. Thuật toán mã hoá RSA thoả mãn 5 yêu cầu của một hệ mã hiện đại:
+    1. Độ bảo mật cao (nghĩa là để giải mã được mã không biết khoá mật thì phải tốn hàng triệu năm)
+    2. Thao tác nhanh (thao tác mã hoá và giải mã tốn ít thời gian)
+    3. Dùng chung được
+    4. Có ứng dụng rộng rãi
+    5. Có thể dùng để xác định chủ nhân (dùng làm chữ ký điện tử)
+2. Mô tả hoạt động
+Thuật toán RSA có hai khoá:
+
+---
+Ảnh 2: 24.jpg
+
+Bước 4. Tính d = e^(-1) bằng cách dùng thuật toán Euclid mở rộng
+
+Bước 5:
+- n và e làm khoá công khai (public key)
+- d làm khoá bí mật (private key)
+
+Bước 4. Dùng thuật toán Euclid tìm ra d=503
+
+Bước 5.
+- Khoá công khai n=943 và e=7.
+- Khoá bí mật d=503.
+
+Ví dụ RSA. Để minh họa ta sẽ thực hiện một ví dụ về mã hoá RSA với kích thước khoá là 6 bit.
+1. Chọn p=11 và q=3, do đó N = pq = 33 (2^5 = 32 < 33 < 64 = 2^6)
+2. phi(n) = (p-1)(q-1) = 20
+3. Chọn e=3 nguyên tố cùng nhau với n (Lưu ý: e=3 nguyên tố cùng nhau với phi(n)=20, không phải n=33)
+4. Tính nghịch đảo của e trong phép modulo n được d=7 (3 * 7 = 21 đồng dư 1 (mod 20))
+5. Khoá công khai K_U = (e,N) = (3,33). Khoá bí mật K_R = (d,N) = (7,33).
+
+Theo phương án 1 (mã hoá bảo mật):
+6. Mã hoá bản rõ M=15:
+   C = M^e mod N = 15^3 mod 33 = 9 (vì 15^3 = 3375 = 102 * 33 + 9)
+7. Giải mã bản mã C=9:
+   M = C^d mod N = 9^7 mod 33 = 15 (Lưu ý: phép tính trong ngoặc của ảnh gốc 9^7 = 4782696 = 144930 * 33 + 6 dẫn đến kết quả 6 là không chính xác. Thực tế 9^7 mod 33 = 15)
+
+---
+Ảnh 3: 25.jpg
+
+- Khoá công khai (Public key): được công bố rộng rãi cho mọi người và được dùng để mã hoá.
+- Khoá bí mật (Private key): Nơi thông tin được mã hoá bằng khoá công khai chỉ có thể được giải mã bằng khoá bí mật tương ứng.
+
+2.1 Tạo khoá
+Lý thuyết
+Bước 1: B (người nhận) tạo hai số nguyên tố lớn ngẫu nhiên p và q.
+Bước 2: Tính n = p * q và phi(n) = (p-1)(q-1).
+Bước 3: Chọn một số ngẫu nhiên e (0 < e < phi(n)) sao cho UCLN(e, phi(n))=1.
+
+Ví dụ
+Bước 1: Chọn số p=23 và q=41 (hai số này là 2 số nguyên tố).
+Bước 2: n = 23 * 41 = 943.
+phi(n) = (23-1)(41-1) = 22 * 40 = 880.
+Bước 3: Chọn e=7 vì UCLN(7, 880)=1.
+
+---
+Ảnh 4: 26.jpg
+
+- Khoá công khai dùng để thẩm định CKS -> xác thực
+
+D. Hàm băm mật mã
+- Là 1 hàm biến đổi
+- Input: bản tin M có độ dài bất kì
+- Output: chuỗi bit h có kích thước xác định
+  h = H(M)
+
+Tính chất
+1. Từ giá trị băm h, không thể xác định bản tin gốc M -> tính chất một chiều.
+2. Nếu sửa đổi bản tin M, giá trị băm thu được cũng sẽ thay đổi -> tính toàn vẹn.
+3. Gần như không thể tìm được hai bản tin khác nhau có cùng một giá trị băm h -> tính không xung đột.
+   M != M' => H(M') != H(M) (Lưu ý: Phát biểu M != M' => H(M') != H(M) là tính chất của hàm đơn ánh, hàm băm nói chung không đơn ánh. Tính không xung đột thường được hiểu là khó tìm M != M' sao cho H(M)=H(M').)
+
+"Chữ ký để làm gì?"
+- Chữ ký nhằm xác nhận vai trò trách nhiệm của chủ thể lên một văn bản.
+
+* Chữ ký số
+- Là 1 ứng dụng quan trọng của hệ mật mã PKC
+- Được sử dụng trong các giao dịch, số hoá trực tuyến, thay thế cho giao dịch qua giấy tờ truyền thống
+- Sử dụng chữ ký số thay... (văn bản bị cắt)
+
+---
+Ảnh 5: 27.jpg
+
+3. Độ an toàn mã hoá RSA
+- Độ an toàn của hệ thống RSA dựa trên bài toán phân tích số nguyên lớn thành thừa số nguyên tố.
+- Vì vậy muốn xây dựng hệ RSA an toàn thì n = p * q phải là một số đủ lớn, để không có khả năng phân tích nó về mặt tính toán. Để đảm bảo an toàn nên chọn các số nguyên tố p và q từ 100 chữ số trở lên.
+- Dưới đây là bảng thời gian phân tích mã RSA.
+
+Bảng thời gian phân tích mã RSA:
+Số các chữ số trong số được phân tích | Thời gian phân tích
+---------------------------------------|----------------------
+50                                     | 4 giờ
+75                                     | 104 giờ (Lưu ý: Trong ảnh ghi 104 giờ)
+100                                    | 74 năm
+200                                    | 4000 năm
+300                                    | 500.000 năm
+500                                    | 4 * 10^15 năm
+
+4. Ứng dụng của RSA vào chữ ký điện tử
+- Thông tin truyền đi trên mạng cũng cần thiết phải được xác nhận người gửi.
+- Các văn bản truyền trên mạng (dưới dạng số hoá) cần phải có chữ ký của người gửi để xác nhận trách nhiệm của người gửi.
+- Chữ ký dùng ở đây là một dãy bit và được gọi là "chữ ký điện tử".
+- Mỗi người cầm 1 cặp khoá gồm khoá công khai & khoá bí mật
+    - Khoá bí mật dùng để tạo chữ ký số (CKS)
+
+Ảnh 28.jpg
+
+Bài tập
+1) Tìm cặp khoá bí mật và công khai với p = 7 và q = 19. Thực hiện mã hoá và giải mã với M = HELLO, đảm bảo tính bí mật, tính toàn vẹn / chứng thực cả hai.
+2) Demo thuật toán RSA trên CRYPTOOL2.
+
+1)
+p = 7, q = 19 do đó
+B1: N = p * q = 7 * 19 = 133
+B2: Φ(n) = (p-1)(q-1) = 6 * 18 = 108
+B3: Chọn e = 5 (nguyên tố cùng nhau) vì UCLN(5, 108) = 1
+B4: Tìm d sao cho
+    (d * e) mod Φ(n) = 1
+    (d * 5) mod 108 = 1
+    Vì UCLN(5, 108) = 1
+    (Sử dụng thuật toán Euclid mở rộng, tìm được d = 65, vì 5 * 65 = 325 = 3 * 108 + 1, nên 325 mod 108 = 1)
+    => d = 65
+
+B5: Thông điệp HELLO
+    H = 7
+    E = 4
+    L = 11
+    L = 11
+    O = 14
+
+Mã hoá:
+    C = M^e mod n
+    H': 7^5 mod 133 = 16807 mod 133 = 49
+
+---
+Ảnh 29.jpg
+
+(Sơ đồ quy trình chữ ký số)
+
+Quy trình tạo chữ ký số (Bên gửi):
+1. Thông điệp dữ liệu  -> [Đưa qua Hàm băm] -> Bản tóm lược (Message Digest)
+2. Bản tóm lược -> [Mã hoá bằng Khoá bí mật của người gửi] -> Chữ ký số
+3. Chữ ký số + Thông điệp dữ liệu gốc -> Gắn lại -> Thông điệp dữ liệu đã ký.
+
+Quy trình thẩm định/kiểm tra chữ ký số (Bên nhận):
+1. Nhận Thông điệp dữ liệu đã ký.
+2. Tách Chữ ký số và Thông điệp dữ liệu gốc.
+3. Xử lý Thông điệp dữ liệu gốc:
+   Thông điệp dữ liệu gốc -> [Đưa qua Hàm băm (cùng hàm băm người gửi đã dùng)] -> Bản tóm lược 1.
+4. Xử lý Chữ ký số:
+   Chữ ký số -> [Giải mã bằng Khoá công khai của người gửi] -> Bản tóm lược 2.
+5. So sánh Bản tóm lược 1 và Bản tóm lược 2:
+   - Nếu Giống nhau: Thông điệp toàn vẹn và xác thực đúng người gửi.
+   - Nếu Khác nhau: Thông điệp đã bị thay đổi hoặc không phải từ người gửi dự kiến.
+
+(Chú thích trên sơ đồ: "k^o đúng người gửi" nghĩa là khẳng định đúng người gửi, "Nội dung thông điệp toàn vẹn" nghĩa là nội dung không bị thay đổi).
+
+---
+Ảnh 30.jpg
+
+(Tiếp tục mã hoá HELLO từ Ảnh 28.jpg)
+E': 4^5 mod 133 = 1024 mod 133 = 93
+L': 11^5 mod 133 = 161051 mod 133 = 121
+L': 11^5 mod 133 = 121
+O': 14^5 mod 133 = 537824 mod 133 = 105
+
+=> Bản mã C = [49, 93, 121, 121, 105]
+
+B6: Giải mã M' = C^d (mod n)
+(Với d = 65, n = 133)
+M'_H = 49^65 mod 133 = 7
+M'_E = 93^65 mod 133 = 4
+M'_L = 121^65 mod 133 = 11
+M'_O = 105^65 mod 133 = 14 (Trong ảnh gốc có một chữ L bị thiếu dấu phẩy, đây là chữ O)
+
+=> Bản rõ thu được M' = [7, 4, 11, 11, 14] (Tương ứng với HELLO)
+
+(Ví dụ tính 49^65 mod 133 bằng phương pháp lũy thừa nhị phân:
+65 (hệ 10) = 1000001 (hệ 2)
+49^65 = 49^(64+1) = 49^64 * 49^1
+49^1 mod 133 = 49
+49^2 mod 133 = 2401 mod 133 = 7
+49^4 mod 133 = 7^2 mod 133 = 49
+49^8 mod 133 = 49^2 mod 133 = 7
+49^16 mod 133 = 7^2 mod 133 = 49
+49^32 mod 133 = 49^2 mod 133 = 7
+49^64 mod 133 = 7^2 mod 133 = 49
+Vậy, 49^65 mod 133 = (49 * 49) mod 133 = 2401 mod 133 = 7. Kết quả trong ảnh là đúng.)
+
+1) Khái niệm mã độc
+- Mã độc (Malware) là những chương trình máy tính được tạo ra với mục đích làm hại đến tính bí mật, tính toàn vẹn hoặc tính sẵn sàng của dữ liệu, ứng dụng và hệ điều hành của hệ thống.
+- Mã độc (malware) là những chương trình máy tính được tạo ra với mục đích xấu.
+
+---
+Ảnh 31.jpg
+
+* Phân loại mã độc
+  - Căn cứ vào vật chủ:
+    + Logic Bomb: Mã độc được chèn vào một chương trình hợp pháp và chỉ kích hoạt khi điều kiện nào đó xảy ra (ví dụ: đến một ngày cụ thể).
+    + Trojan (Trojan Horse): Ẩn mình trong phần mềm hợp pháp, đánh lừa người dùng cài đặt, sau đó thực hiện hành vi độc hại như đánh cắp dữ liệu.
+    + Backdoor: Tạo lỗ hổng cho hacker truy cập từ xa vào hệ thống mà không cần xác thực.
+    + Exploit: Tận dụng lỗ hổng phần mềm/hệ điều hành để xâm nhập, chiếm quyền điều khiển hệ thống.
+    + Virus: Lây lan bằng cách gắn mã độc vào file hợp pháp (vật chủ), khi file đó được mở thì virus thực thi và lan rộng.
+  - Là phần mềm độc lập:
+    + Worm (Sâu máy tính): Tự nhân bản và lan truyền qua mạng mà không cần người dùng can thiệp hay vật chủ. Thường gây nghẽn mạng hoặc làm sập hệ thống.
+    + Zombie: Máy tính bị chiếm quyền kiểm soát từ xa và trở thành "máy ma" trong mạng botnet, thực hiện lệnh từ hacker mà người dùng không biết.
+
+* Mục đích của mã độc
+  - Thu thập dữ liệu trên máy tính
+  - Ăn cắp thông tin như mật khẩu, mã bảo mật thẻ tín dụng
+  - Nghe lén thông tin như chụp màn hình, ghi âm, quay màn hình, keylogger.
+
+---
+Ảnh 32.jpg
+
+  (Tiếp tục Mục đích của mã độc:)
+  - Sử dụng máy tính của nạn nhân để tạo một mạng botnet phục vụ cho các tấn công DDOS.
+  - Sử dụng máy tính của nạn nhân để phát tán thư rác.
+  - Sử dụng tài nguyên trên máy nạn nhân (để "đào" Bitcoin).
+  - Mã hoá dữ liệu và đòi tiền chuộc (Ransomware).
+  - Phá huỷ dữ liệu trên máy nạn nhân.
+  - Làm hư hại thiết bị phần cứng (Ví dụ: Chernobyl, Stuxnet).
+
+2. Con đường lây nhiễm mã độc
+  - Cài đặt trực tiếp
+    + Cho người khác mượn máy tính, smartphone.
+    + Rời khỏi máy tính, smartphone mà không khoá hệ thống.
+    + Máy bị nhiễm mã độc từ nhà sản xuất (hiếm gặp).
+  - Phần mềm lậu, bẻ khoá.
+    + Ngỡ bẻ khoá tưởng là thành viên của những nhóm cracker, hacker (có thể hiểu là người dùng tải nhầm phần mềm giả mạo từ các nguồn không tin cậy).
+    + Phần mềm bẻ khoá thường bị nhúng mã độc để phục vụ mục đích của tin tặc.
+    + Khi sử dụng những phần mềm như thế, mã độc sẽ phát tán vào máy và lây lan.
+  - Qua thiết bị lưu trữ di động
+    + Khi cắm USB, thẻ nhớ,... vào máy bị nhiễm mã độc, chúng sẽ bị nhiễm.
+    + Cắm USB, thẻ nhớ,... đó (đã bị nhiễm) vào máy khác, mã độc có thể được kích hoạt và lây nhiễm vào máy đó.
+    + Kích hoạt tính năng autorun (tự chạy), ... (hành) động của người dùng (vô tình kích hoạt).
+  - Khai thác lỗi phần mềm
+    + Phần mềm hệ điều hành, phần mềm văn phòng,
+
+---
+Ảnh 33.jpg
+
+    (Tiếp tục Khai thác lỗi phần mềm:)
+    trình duyệt web, phần mềm chơi nhạc và video, game,...
+    + Những phần mềm có lỗi!
+    + Hacker tạo ra những đầu vào đặc biệt cho phần mềm (văn bản, trang web, file ..., gói tin ...) trong đó có mã độc.
+    + Khi phần mềm xử lý đầu vào đặc biệt đó thì mã độc được thực thi.
+
+1. Nhận tố xác thực (Đây có vẻ là một tiêu đề cho phần mới)
+  - Định danh là việc gán định danh cho người dùng và kiểm tra sự tồn tại của định danh đó.
+  - Qua ... (văn bản bị cắt)

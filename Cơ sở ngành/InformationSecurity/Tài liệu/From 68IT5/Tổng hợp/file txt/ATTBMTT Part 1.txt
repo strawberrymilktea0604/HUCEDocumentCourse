@@ -1,0 +1,261 @@
+1. 
+Tinh hinh an toàn thông tin gần đây 
+za 
+2. Dôi tượng an toàn thông tin 
+3 khai niệm an toàn thông tin 
+Là sự bảo vệ thông tin và các hệ thống thông tin tránh bị truy nhập, sử dụng, tiết lộ, gián đoạn, sửa đổi hoặc phá hoại. trái phép nhám bảo đảm tính nguyên vẹn, tính bảo mật và tin (72/2013/ND-CP) 
+tính khả dụng của thông Ba tính chất an toàn của thông tin 
++ Tính bí mật 
++ Tính toàn vẹn 
++ Tính khả dụng 
+* Tính bí mật 
+KN thông tin chỉ cung cấp cho nhí ng có thẩm quyền 
+Nguyên nhân phá vỡ tinh bí mật 
++ Nghe lén, xem lén, đọc lén 
++ Đánh cắp vật mang 
++ Xâm nhập trái phép 
++ Sư bất cẩn 
++ Gián điệp 
+* Tinh toàn vẹn 
+-KN. đảm bảo thông tin không bị thay đối một cách trái phép hoài thay đổi không như ý muốn. 
+Nguyên nhân phá vớ 
+
++ Lối đã truyền 
++ Lới phát sinh khi lưu trữ 
++ Tâm công sửa đổi, phá khuy 
+* Tính khả dụng ( 
+KN đám báo khả năng truy cập thông tin, tính năng của hệ thống thông tin mới khi ng dùng hợp lệ có nhu cầu 
+Nguyên nhân phá vỡ. 
++ Tấn công DoS, DDOS 
++ Cấu hình sai 
++ Tính toàn vẹn bị phá vỡ 
++ Hông học 
++ Mát điên, thiên tai, hỏa hoạn 
+An ninh thông tin là việc bảo đảm thông tin trên mang không gây phương hại đến an xã hội, bị mát nhà ó, quyền cá nhân (72/2013/ND-CP) ninh quốc gia. quốc gia, trật tự an toàn và lợi ích hợp pháp của tổ chứ 
+II. Hiệm hoa ATTT 
+1 khái niệm hiểm hoa an toàn thông tin 
+* Hiểm hoạ 
+Hiếm hoa ATTT của HTTT là nhi khả năng tác động lên TT, HTTT dẫn tới sự thay đổi, hư hại, sao chép, sự ngăn chăn tiếp tận tới TT, tới sự phá huỷ hoại sự ngừng trệ hà của vật màng TI VD 
+Lỗ hổng 
+Lố hồng của HITI là nh khiếm khuyết trong chức năng 10
+
+thành phần nào đó của HTTT mà có thể bị lợi dụng để gây hại cho hệ thống 
+VD 
++ Không có cơ chế ngăn chân duyệt mật khẩu 
++ Luật lọc của tường lửa không được cập nhật 
++ Không có UPS 
+3 Điểm yếu 7 Lỗ hổng 
+- Lô hông 
++ Thực tế đã bị khai thác 
++ https. llcve mitre ong 1 
++ CVE = Common Vulnerabilities and Exposures 
+Điểm yếu 
++ Có thể bị khai thác 
++ https://cwe mitre ang! 
++ CWE = Common Weakness Enumeration 
+Rủi ro 
+Rủi ro của HTTT là nh khả năng xấu có thể xảy ra đối với hệ thống 
+VD 
++ Rúi ro là bí mật 
++ Rú ro mất dữ liệu 
++ Rủi ro hóng thiết bị 
+Phân loại hiếm hoa ATIT 
+- Theo bản chất xuất hiện 
++ Hiểm họa tự nhiên thiên tai, mối mọt, ẩm mốc, 
++ Hiểm họo nhân tạo phá hoại, thao tác sau, 
+Theo mức độ định trước 
+KOKUYO
+N 
+NORY 
++ Hiểm họa từ hành động vó ý 
++ Hiểm họa từ hành động có chủ ý 
+Theo nguồn trực tiếp sinh ra 
++ Nguồn sinh trực tiếp là con ng 
++ Nguồn sinh là các phần mềm hợp lệ 
++ Nguồn sịnh là các phần mềm trái phép 
+- Theo vị trí của nguồn sinh ra 
++ Nguồn sinh rã năm ngoài vùng kiểm soát 
++ Nguồn sinh ra năm trong vùng kiểm soát 
++ Nguồn sinh có tiếp cận thiết bị đầu cuối 
+Nguồn sinh năm ngay trong hệ thống Theo mức độ hoạt động của HITT 
++ Không phụ thuộc vào hoạt động của hệ thống 
++ Chỉ xuất hiện khi hệ thống hoạt động 
+- Theo mức độ tác động lên HITT 
++ Hiểm họa thị đông, không làm thay đổi cấu trúc, nội dụng của hệ thống 
++ Hiểm hoạ tích cực, gây ra nh thay đổi nhất định trong hệ thống 
+Xác định danh sách hiểm hoa đối với HTTT là khâu quan trong trong đảm bảo ATTT cho hệ thống, bới nó cho biết cân phải áp dụng nh biên pháp bảo vệ nào! 
+Nguyên tắc đảm bảo ATTT 
+1. Nguyên tắc tính hệ thống 
+Các yếu tố, các điều kiện và các nhận tố, có quan hệ với nhau, có tương tác với nhau và có biến đổi theo thời gian 
+Chống lại cả nhĩ kênh truy cập trái phép tiềm tàng (chưa biết)
+
+2. Nguyên tắc tông thể 
+Các biện pháp phải thống nhất, đồng bộ 
+Phái tổ chức phòng ngư nh lớp 
+3. Nguyên tắc báo về lien tuc 
+Đảm bảo ATTT là quá trình liên tục 
+Xuyên suốt chu kỳ sống của hệ thống, từ thiết kế cho đến loại bỏ 
+4. Nguyên tác đầy đủ hợp lý 
+Không có an toàn tuyệt đối 
+Biện pháp bảo vệ có ảnh hưởng ứ nh đến hoạt động của hệ thống 
+Biện pháp bảo vệ thường tốn kém 
+Chi phí cho việc bảo vệ không lớn hơn gtrị của hệ thống 
+Mục tiêu của bảo vệ là đưa rủi ro về mức chấp nhận được 
+5. Nguyên tác mềm dẻo hệ thông 
+- Phân hệ an toàn được thiết lập trong điều kiện có nh bất định 
+Phải cho phép nâng cấp, cập nhật 
+6. Nguyên tắc đơn giản trong sử dụng 
+20 Cơ chế bảo về không được gây khó khăn cho ng dùng hợp lệ 
+7 Nguyên tác công khai thuật toán và cơ chế báo về 
+Biết được thuật toán, cơ chế bảo về cũng không thể vượt qua được 
+Chính tác giả cũng không thể vượt qua 
+không có nghĩa là phái công khai thuật toán và cơ chế bảo vệ 
+Phương pháp chung dám bảo an toàn thông tin 
+KOKUYO
+
+THO 
+Ngay 
+Ngăn cản 
+Kiểm soát 
+truy cập 
+Mã hóa 
+Quy chế 
+Cưỡng chế 
+Giáo dục 
+Ngăn cản không cho phép tiếp cận khu vực được bảo vệ Kiểm soát truy cập điều khiển, kiểm soát mọi thành phần của hệ thống 
+Mật mã (che giấu): biến đổi thông tin về dạng khác 
+Quy chế đưa ra các quy tắc xác định nhì việc mà con ng đc làm, k đc làm, phải làm 
+- Cưỡng chế gắn liền với quy chế, là việc đưa vào nh cơ chế mà khiến con ng phải thực hiện đúng theo quy tác đã định 
+Giáo dục tác động lên ý thức, đạo đức con ng 
+- Phương tiện chính tác (formal): thực hiện các chức năng bảo vệ theo đúng các thủ tục được xác định trước mà không cần sự can thiệp của con ng 
+Phương tiên phi chính tác (informal): quy định hành
+
+vị của con ng 
+(B) Giải pháp ATTT 
+Phân tích 
+Threats 
+Chính sách 
+nguy cơ 
+Policy 
+Đặc tả yêu cầu 
+Specification 
+Thiết kế 
+Design 
+Triển khai 
+Implementation 
+Operation 
+Vận hành 
+Giải pháp an toàn thông tin là một tập hợp bao gồm 
+(1) Chính sách về an toàn thông tin 
+Nguyên tắc cơ bản về an toàn thông tin bao gồm các yêu cầu và mục tiêu cần đạt được về an toàn thông tin..... 
+Danh sách các tài sản là tài nguyên thông tin cần bảo vê, nguy cơ và rúi ro với từng tải sán 
+Quyền và nghĩa vụ của các chủ thể có liên quan như ng sở hữu, ng quản trị, ng sử dụng, 
+2) Các biện pháp bảo vệ an toàn thông tin gồm 
+- Biên pháp kỹ thuật (áp dụng công nghệ) 
+Biện pháp về thủ tục (quy định trong quản lý) 
+3 
+) Quản lý vận hành và cập nhật giải pháp 
+Hướng dẫn, đào tạo cho các thành viên tha thực hiện đúng các biện pháp 
+Giám sát việc thực hiện và lịcu lại các dữ liệu 
+Phân tích dữ liệu để đánh giá kết quả vận hành 
+KOKUYO
+
+S 
+Bài toán bảo mật truyền tin 
+5 cần uyền bản tin M cho R trong điều kiện kinh truyền tin giữa 5 và R có thể bị tấn công bới A 
+Mục tiêu Đảm báo tính bí mật của bán tin M 
+Giải pháp 
+Sử dụng phép mã hóa E biến M thành C 
+Trong sơ đồ, khóa k là tham số quan trong điều khiển. quá trình mã hóa và giải mã 
+Kẻ tấn công A được xem như biết phép mã hóa E và giải má D nhưng không biết khoá K 
+Do đó, khóa k giữ một vai trò quyết định đối với mục tiêu bảo vệ tính bị mặt của giải pháp mật mã 
+Một số thuật ngữ và ký hiệu viết tắt 
+M: bản rõ (plaintext) 
+C. bản mã (ciphertext) 
+E phép mã hóa (encryption) 
+D. phép giải mã (decryption) 
+K khoá (Key) 
+5. ng gúi (Sender) 
+R: ng nhân (Receiver). 10 
+13 
+20 
+KOKUYO
+
+S 
+Bài toán bảo mật truyền tin 
+5 cần uyền bản tin M cho R trong điều kiện kinh truyền tin giữa 5 và R có thể bị tấn công bới A 
+Mục tiêu Đảm báo tính bí mật của bán tin M 
+Giải pháp 
+Sử dụng phép mã hóa E biến M thành C 
+Trong sơ đồ, khóa k là tham số quan trong điều khiển. quá trình mã hóa và giải mã 
+Kẻ tấn công A được xem như biết phép mã hóa E và giải má D nhưng không biết khoá K 
+Do đó, khóa k giữ một vai trò quyết định đối với mục tiêu bảo vệ tính bị mặt của giải pháp mật mã 
+Một số thuật ngữ và ký hiệu viết tắt 
+M: bản rõ (plaintext) 
+C. bản mã (ciphertext) 
+E phép mã hóa (encryption) 
+D. phép giải mã (decryption) 
+K khoá (Key) 
+5. ng gúi (Sender) 
+R: ng nhân (Receiver). 10 
+13 
+20 
+KOKUYO
+
+The 
+Noay 
+Điều chính lại giải pháp để đảm bảo mục tiêu và đáp ứng các thay đổi 
+Xay dúng giải pháp ATTT 
+Là một quá trình liên tục và xuyên suốt sự tồn tại của hệ thống 
+Đi theo vòng đời với nhi bước tạo thành một quy trình thống nhất 
+An ninh mạng chuyên về 
+và giao thức mạng Các lồ hồng hệ thống và gia 
+Các dạng tân công hệ thống mạng 
+Các giao thức bảo mật 
+Chương 2 cơ sở mặt mã 
+2.1 Các khái niệm có bán 
+- Mật mã (Cryptology) là lĩnh vực nghiên cứu về các phương pháp mã hóa thông tin 
+- Thuật ngữ Cryptology xuất phát từ krypto, trong tiếng Hy Lạp nghĩa là che đc giấu 
+- Mật mã bao gồm 2 lĩnh vực con 
++ (Cryptography) sáng tạo kỹ thuật mã hóa để Lập mã (0 bảo vệ tính bảo mật của thông ing tin 
++ Thám mă (Cryptanalysis) nghiên cứu các kỹ thuật phân tích để phá vỡ cơ chế lập mã, tiết lộ bí mật của thông tin đã được mà hóa 
+A) Mô hình truyền tin mật mã cơ bản
+
+Thu 
+Ngay 
+Hệ mát mã (cryptosystem): là một hệ thống bao gồm phá má hóa E, phép giải mã D, cách thức sinh khoa K, cach que lý và phân phối khóa cho cái ng gửi 5 và ng nhân R tăn cứ đặc tính và cách tổ chức quản lý khoa K, có hai loại hệ mật mã khác nhau 
+Hệ mật mã khóa đối xứng ( 
+Hệ mật mã khóa công khai ( 
+B. Độ bảo mật của hệ mật mã 
+- Độ bảo mật (hay độ an toàn) của hè mặt mà là khả năng đứng vững của hệ mật mã trí nguy mã cơ tấn công thán 
+Mục tiêu thám mã thu thập dữ liệu, phân tích và truy tìm ra khoá k 
+Mức độ bảo mặt được đánh giá thông qua 
++) Chứng minh làng toán học 
++) Thử nghiêm tấn công thám mà vào hệ mật mã 
+Độ an toàn được xác nếu 
++) Chứng minh được độ khó của mật mã thỏa mãn điều +)C kiện đặt ra 
++) Thử nghiêm tấn công mà không phá vỡ đc mặt mã trong điều kiện cho phép 
+Các mô hình đánh giá mức đó bảo mật hiện nay 
+1. Bảo mật vô điều kiện (tuyệt đối) kẻ tấn công dù thu thập được tất cả bản mà và bản rồ trước đây, đồng thời có năng lực tính toán vô tận cùng k thể tham mà và truy ba được khóa k 
+2. Bảo mật chứng minh được chứng minh đc cụ thể mức độ phức tạp của việc thám mã tương đương đơ phức tạp của một bài toán khó đã biết
+
+3. Bảo mật thực tế. Không chứng minh bằng toán học nhưng có thể đứng vững trẻ mọi thứ nghiêm tấn công thám mà trong thực tế 
+Ví du: sau khi thử nghiệm cho thấy siêu máy tính mạnh nhất với các dạng thảm mà từ thấp đến cao cần khoáng 
+10000 năm mới phá vỡ được mật mã 
+Do đó, có thể xem như đạt độ an toàn thực tế 
+Mô hình số 1 chỉ mang tính tham chiếu vì không thực té 
+-Mô hình số 2 phù hợp với các hệ mặt mà dựa trên lý thuyết số (toán học) 
+Mô hình số 3 mang tính thực nghiệm và phù hợp với mọi hệ mát mà 
+Các tiêu chí lựa chọn hè mật mã 
+(1) Mức độ an toàn tin cây và chấp nhận được 
+2) Có hiệu quả trong ứng dụng thực tế 
+- Có thế cài đặt phép mà hóa và. giải mã trên hardware! 
+software 
+Tốc độ xử lý của thuật toán mã hóa đạt yêu cầu thực 
+tế 
+2.2. Một số hệ mặt mã có điến 
+Lịch sử mật mã được chia thành 2 thời kỳ 
++ Mật mã cổ điển: xuất hiện từ trước Công nguyên cho đến cuối thế kỷ 19 
++ Mật mã hiện đại trở thành 1 ngành khoa học chính thức từ giữa thế kỷ 20 
+→ 
+KOKUYO

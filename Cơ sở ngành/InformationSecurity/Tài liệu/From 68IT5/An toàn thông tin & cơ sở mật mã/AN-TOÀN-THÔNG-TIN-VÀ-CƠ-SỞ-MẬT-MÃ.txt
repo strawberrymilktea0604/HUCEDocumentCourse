@@ -1,0 +1,1049 @@
+AN TOÀN THÔNG TIN VÀ CƠ SỞ MẬT MÃ
+
+Lời mở đầu: Tình hình an toàn thông tin gần đây
+(Phần này mang tính chất giới thiệu chung, tùy thuộc vào bối cảnh cụ thể để bổ sung thông tin về các xu hướng, thách thức và tầm quan trọng của an toàn thông tin trong giai đoạn hiện tại.)
+
+Chương 1: Tổng Quan về An Toàn Thông Tin
+
+I. Các Khái Niệm Cơ Bản
+
+1.  Đối tượng của An toàn thông tin:
+    * Thông tin: Dữ liệu dưới mọi hình thức (văn bản, hình ảnh, âm thanh, video, cơ sở dữ liệu,...) được lưu trữ, xử lý, và truyền tải.
+    * Hệ thống thông tin: Bao gồm phần cứng, phần mềm, mạng máy tính, quy trình và con người liên quan đến việc tạo lập, xử lý, lưu trữ, và truyền tải thông tin.
+
+2.  Khái niệm An toàn thông tin (ATTT):
+    Theo Nghị định 72/2013/NĐ-CP của Chính phủ Việt Nam: "An toàn thông tin là sự bảo vệ thông tin và các hệ thống thông tin tránh bị truy nhập, sử dụng, tiết lộ, gián đoạn, sửa đổi hoặc phá hoại trái phép nhằm bảo đảm tính nguyên vẹn, tính bảo mật và tính khả dụng của thông tin."
+
+3.  Ba thuộc tính cơ bản của An toàn thông tin:
+    * Tính bí mật (Confidentiality): Đảm bảo rằng thông tin chỉ được tiếp cận bởi những người (hoặc hệ thống) được ủy quyền.
+    * Tính toàn vẹn (Integrity): Đảm bảo rằng thông tin không bị thay đổi, sửa đổi hoặc phá hủy một cách trái phép hoặc không mong muốn, duy trì sự chính xác và đầy đủ của thông tin.
+    * Tính khả dụng (Availability): Đảm bảo rằng thông tin và các dịch vụ hệ thống luôn sẵn sàng để được truy cập và sử dụng bởi những người dùng hợp lệ khi họ có nhu cầu.
+
+4.  Chi tiết về các thuộc tính ATTT:
+
+    * Tính bí mật (Confidentiality):
+        * Khái niệm: Thông tin chỉ được cung cấp hoặc tiết lộ cho những cá nhân, thực thể hoặc quy trình đã được cấp phép.
+        * Nguyên nhân phá vỡ tính bí mật:
+            * Nghe lén, xem lén, đọc lén thông tin.
+            * Đánh cắp vật mang tin (USB, ổ cứng, tài liệu giấy).
+            * Xâm nhập trái phép vào hệ thống.
+            * Sự bất cẩn của người dùng (ví dụ: để lộ mật khẩu, gửi nhầm thông tin).
+            * Hoạt động gián điệp.
+
+    * Tính toàn vẹn (Integrity):
+        * Khái niệm: Đảm bảo thông tin giữ được sự chính xác, đầy đủ và không bị thay đổi một cách trái phép hoặc không như ý muốn trong suốt vòng đời của nó.
+        * Nguyên nhân phá vỡ tính toàn vẹn:
+            * Lỗi trong quá trình truyền dữ liệu (lỗi đường truyền).
+            * Lỗi phát sinh trong quá trình lưu trữ dữ liệu.
+            * Tấn công sửa đổi dữ liệu (ví dụ: thay đổi nội dung file, cơ sở dữ liệu).
+            * Tấn công phá hủy dữ liệu.
+            * Lỗi phần mềm hoặc phần cứng.
+            * Hành động vô ý của người dùng.
+
+    * Tính khả dụng (Availability):
+        * Khái niệm: Đảm bảo khả năng truy cập thông tin và các chức năng của hệ thống thông tin mỗi khi người dùng hợp lệ có nhu cầu.
+        * Nguyên nhân phá vỡ tính khả dụng:
+            * Tấn công từ chối dịch vụ (DoS – Denial of Service) hoặc từ chối dịch vụ phân tán (DDoS – Distributed Denial of Service).
+            * Cấu hình sai hệ thống hoặc ứng dụng.
+            * Tính toàn vẹn của hệ thống bị phá vỡ (ví dụ: hệ điều hành bị lỗi).
+            * Hỏng hóc phần cứng.
+            * Mất điện, thiên tai (lũ lụt, động đất), hỏa hoạn.
+
+5.  An ninh thông tin:
+    Theo Nghị định 72/2013/NĐ-CP: "An ninh thông tin là việc bảo đảm thông tin trên mạng không gây phương hại đến an ninh quốc gia, trật tự an toàn xã hội, bí mật nhà nước, quyền và lợi ích hợp pháp của tổ chức, cá nhân."
+    *Lưu ý: An toàn thông tin tập trung vào việc bảo vệ thông tin và hệ thống thông tin ở cấp độ kỹ thuật và vận hành. An ninh thông tin có phạm vi rộng hơn, bao gồm cả các khía cạnh pháp lý, chính trị và xã hội liên quan đến thông tin, đặc biệt là thông tin trên không gian mạng.*
+
+II. Hiểm Họa An Toàn Thông Tin (ATTT)
+
+1.  Khái niệm hiểm họa an toàn thông tin:
+    * Hiểm họa (Threat): Là những khả năng hoặc nguồn tiềm ẩn có thể tác động lên thông tin hoặc hệ thống thông tin, dẫn tới sự thay đổi, hư hỏng, mất mát, sao chép trái phép, ngăn chặn tiếp cận thông tin, hoặc gây phá hủy, ngưng trệ hoạt động của hệ thống thông tin.
+        * Ví dụ:* Virus máy tính, hacker tấn công, lỗi phần mềm, thiên tai.
+
+    * Lỗ hổng (Vulnerability): Là những khiếm khuyết, điểm yếu trong thiết kế, cài đặt, vận hành hoặc quản lý của một chức năng hay thành phần nào đó của hệ thống thông tin mà có thể bị hiểm họa lợi dụng để gây hại cho hệ thống.
+        * Ví dụ:
+            * Không có cơ chế ngăn chặn việc dò mật khẩu yếu.
+            * Luật lọc của tường lửa không được cập nhật thường xuyên.
+            * Thiếu hệ thống lưu điện dự phòng (UPS) cho các thiết bị quan trọng.
+            * Người dùng sử dụng mật khẩu mặc định hoặc dễ đoán.
+
+    * Phân biệt Lỗ hổng và Điểm yếu:
+        * Lỗ hổng (Vulnerability - CVE): Là một điểm yếu cụ thể đã được xác định, công nhận và thường đã có trường hợp bị khai thác trong thực tế. Các lỗ hổng đã biết thường được định danh bằng mã CVE (Common Vulnerabilities and Exposures). (Tham khảo: https://cve.mitre.org/)
+        * Điểm yếu (Weakness - CWE): Là một loại lỗi hoặc khiếm khuyết trong phần mềm hoặc phần cứng mà có thể dẫn đến một lỗ hổng. Đây là khái niệm trừu tượng hơn, mô tả các dạng lỗi thường gặp. Các loại điểm yếu thường được phân loại theo CWE (Common Weakness Enumeration). (Tham khảo: https://cwe.mitre.org/)
+        *Nói cách khác, một hoặc nhiều điểm yếu có thể tạo ra một lỗ hổng cụ thể.*
+
+    * Rủi ro (Risk): Là khả năng một hiểm họa cụ thể sẽ khai thác một lỗ hổng cụ thể và mức độ thiệt hại có thể xảy ra đối với hệ thống thông tin hoặc tổ chức. Rủi ro thường được đánh giá bằng cách kết hợp xác suất xảy ra của một sự cố và tác động/hậu quả của sự cố đó.
+        * Ví dụ:
+            * Rủi ro lộ bí mật kinh doanh do nhân viên bất cẩn.
+            * Rủi ro mất dữ liệu khách hàng do tấn công ransomware.
+            * Rủi ro hỏng thiết bị máy chủ do sự cố điện.
+
+2.  Phân loại hiểm họa ATTT:
+    Hiểm họa có thể được phân loại theo nhiều tiêu chí khác nhau để giúp nhận diện và quản lý tốt hơn:
+
+    * Theo bản chất xuất hiện:
+        * Hiểm họa tự nhiên: Thiên tai (bão, lũ, động đất), sét đánh, mối mọt, ẩm mốc phá hủy thiết bị hoặc dữ liệu.
+        * Hiểm họa nhân tạo (do con người):
+            * Vô ý: Thao tác sai của người dùng, cấu hình nhầm, xóa nhầm dữ liệu.
+            * Có chủ ý: Hành động phá hoại, tấn công từ bên trong hoặc bên ngoài (virus, hacker, gián điệp).
+
+    * Theo mức độ định trước của hành động (nguồn gốc từ con người):
+        * Hiểm họa do hành động vô ý: Lỗi do sơ suất, thiếu hiểu biết.
+        * Hiểm họa do hành động có chủ ý: Cố ý gây hại, tấn công có mục tiêu.
+
+    * Theo nguồn trực tiếp sinh ra:
+        * Nguồn sinh trực tiếp là con người: Người dùng nội bộ, quản trị viên, đối tác, hacker.
+        * Nguồn sinh là các phần mềm hợp lệ (nhưng có lỗi hoặc bị lợi dụng): Lỗi trong hệ điều hành, ứng dụng.
+        * Nguồn sinh là các phần mềm trái phép (mã độc): Virus, worm, trojan, spyware.
+
+    * Theo vị trí của nguồn sinh ra:
+        * Nguồn sinh ra nằm ngoài vùng kiểm soát của hệ thống: Hacker từ trên mạng Internet, thiên tai.
+        * Nguồn sinh ra nằm trong vùng kiểm soát của hệ thống: Người dùng nội bộ, lỗi phần mềm cài đặt trong hệ thống.
+        * Nguồn sinh có tiếp cận thiết bị đầu cuối: Tấn công vào máy tính cá nhân, thiết bị di động.
+        * Nguồn sinh nằm ngay trong hệ thống: Mã độc đã cài đặt, lỗi logic của hệ thống.
+
+    * Theo mức độ hoạt động của Hệ thống thông tin (HTTT):
+        * Không phụ thuộc vào hoạt động của hệ thống: Thiên tai, mất cắp vật lý.
+        * Chỉ xuất hiện khi hệ thống hoạt động: Tấn công mạng, lỗi phần mềm khi chạy.
+
+    * Theo mức độ tác động lên HTTT:
+        * Hiểm họa thụ động: Không làm thay đổi cấu trúc, nội dung của hệ thống nhưng thu thập thông tin (ví dụ: nghe lén).
+        * Hiểm họa chủ động (tích cực): Gây ra những thay đổi nhất định trong hệ thống (ví dụ: sửa đổi dữ liệu, cài cắm mã độc, phá hủy hệ thống).
+
+    *Quan trọng: Việc xác định danh sách các hiểm họa tiềm ẩn đối với hệ thống thông tin là một khâu cực kỳ quan trọng trong quy trình đảm bảo an toàn thông tin. Từ đó mới có thể đưa ra các biện pháp bảo vệ phù hợp và hiệu quả.*
+
+III. Nguyên Tắc Đảm Bảo An Toàn Thông Tin
+
+Để xây dựng một hệ thống phòng thủ ATTT hiệu quả, cần tuân thủ các nguyên tắc sau:
+
+1.  Nguyên tắc tính hệ thống:
+    * Xem xét ATTT như một hệ thống bao gồm nhiều yếu tố, điều kiện, nhân tố có mối quan hệ tương tác và biến đổi theo thời gian.
+    * Các biện pháp bảo vệ phải được thiết kế để chống lại không chỉ các kênh truy cập trái phép đã biết mà cả những kênh tiềm tàng (chưa được phát hiện).
+
+2.  Nguyên tắc tổng thể (Phòng thủ theo chiều sâu - Defense in Depth):
+    * Các biện pháp bảo vệ phải thống nhất, đồng bộ và toàn diện trên mọi khía cạnh của hệ thống (con người, quy trình, công nghệ).
+    * Phải tổ chức phòng ngự nhiều lớp, nhiều tầng. Nếu một lớp bị vượt qua, các lớp khác vẫn còn tác dụng bảo vệ.
+
+3.  Nguyên tắc bảo vệ liên tục:
+    * Đảm bảo ATTT là một quá trình liên tục, không phải là một hành động đơn lẻ hay một dự án có điểm kết thúc.
+    * Các biện pháp bảo vệ phải được duy trì, giám sát và cập nhật xuyên suốt chu kỳ sống của hệ thống, từ khâu thiết kế, triển khai, vận hành cho đến khi loại bỏ hệ thống.
+
+4.  Nguyên tắc đối xử hợp lý (Cân bằng giữa an toàn và chi phí/hiệu quả):
+    * Không có khái niệm "an toàn tuyệt đối". Mọi hệ thống đều có thể có rủi ro.
+    * Các biện pháp bảo vệ thường có ảnh hưởng ít nhiều đến hoạt động và sự tiện dụng của hệ thống.
+    * Biện pháp bảo vệ thường tốn kém về mặt tài chính và nguồn lực.
+    * Chi phí cho việc bảo vệ không nên lớn hơn giá trị của thông tin và hệ thống cần bảo vệ, hoặc thiệt hại tiềm năng nếu xảy ra sự cố.
+    * Mục tiêu của bảo vệ là đưa rủi ro về mức chấp nhận được, chứ không phải loại bỏ hoàn toàn rủi ro.
+
+5.  Nguyên tắc tính mềm dẻo của hệ thống (Flexibility):
+    * Các phẩm chất an toàn và biện pháp bảo vệ được thiết lập trong điều kiện có những bất định và thay đổi liên tục của môi trường công nghệ cũng như các mối đe dọa.
+    * Hệ thống bảo vệ phải cho phép dễ dàng nâng cấp, cập nhật, điều chỉnh để đối phó với các hiểm họa mới và yêu cầu thay đổi.
+
+6.  Nguyên tắc đơn giản trong sử dụng (Usability):
+    * Cơ chế bảo vệ không được gây quá nhiều khó khăn, phiền phức cho người dùng hợp lệ trong quá trình sử dụng hệ thống. Nếu quá phức tạp, người dùng có xu hướng tìm cách bỏ qua hoặc làm suy yếu các biện pháp bảo vệ.
+
+7.  Nguyên tắc công khai thuật toán và cơ chế bảo vệ (Kerckhoffs's Principle):
+    * Độ an toàn của một hệ thống mật mã không nên phụ thuộc vào việc giữ bí mật thuật toán hay cơ chế bảo vệ, mà nên phụ thuộc vào việc giữ bí mật khóa.
+    * Ngay cả khi kẻ tấn công biết rõ thuật toán và cơ chế bảo vệ đang được sử dụng, họ cũng không thể vượt qua được nếu không có khóa bí mật.
+    * Thậm chí, chính tác giả của thuật toán cũng không thể dễ dàng phá vỡ hệ thống nếu không có khóa.
+    * *Lưu ý:* Nguyên tắc này không có nghĩa là bắt buộc phải công khai mọi thuật toán và cơ chế, nhưng nhấn mạnh rằng sự an toàn thực sự không nên dựa vào sự bí mật của thiết kế (security through obscurity).
+
+IV. Phương Pháp Chung Đảm Bảo An Toàn Thông Tin
+
+Có nhiều phương pháp và công cụ được sử dụng để đảm bảo ATTT, có thể phân thành các nhóm chính:
+
+1.  Ngăn cản (Deterrence):
+    * Mục đích: Làm nản lòng kẻ tấn công tiềm tàng bằng cách cho thấy rõ sự tồn tại của các biện pháp bảo vệ và hậu quả nếu cố tình vi phạm.
+    * *Ví dụ:* Biển cảnh báo, chính sách phạt nặng, công khai các vụ bắt giữ hacker.
+
+2.  Kiểm soát truy cập (Access Control):
+    * Mục đích: Điều khiển và kiểm soát chặt chẽ quyền truy cập của người dùng và tiến trình vào các tài nguyên của hệ thống (dữ liệu, ứng dụng, thiết bị).
+    * *Ví dụ:* Xác thực người dùng (tên đăng nhập, mật khẩu, sinh trắc học), phân quyền dựa trên vai trò, danh sách kiểm soát truy cập (ACLs).
+
+3.  Mã hóa (Encryption - Che giấu thông tin):
+    * Mục đích: Biến đổi thông tin từ dạng rõ (có thể đọc hiểu) sang dạng mã (khó đọc, khó hiểu) để bảo vệ tính bí mật của thông tin khi lưu trữ hoặc truyền tải.
+    * *Ví dụ:* Mã hóa email, mã hóa ổ cứng, sử dụng giao thức HTTPS.
+
+4.  Quy chế (Policies and Procedures):
+    * Mục đích: Đưa ra các quy tắc, quy định, hướng dẫn rõ ràng xác định những việc mà con người (người dùng, quản trị viên) được làm, không được làm, và phải làm liên quan đến ATTT.
+    * *Ví dụ:* Chính sách mật khẩu, quy định sử dụng email, quy trình sao lưu dữ liệu.
+
+5.  Cưỡng chế (Enforcement):
+    * Mục đích: Gắn liền với quy chế, là việc đưa vào các cơ chế kỹ thuật hoặc quản lý để đảm bảo con người phải thực hiện đúng theo các quy tắc đã định, hoặc tự động ngăn chặn các hành vi vi phạm.
+    * *Ví dụ:* Hệ thống tự động khóa tài khoản sau nhiều lần nhập sai mật khẩu, phần mềm giám sát tuân thủ.
+
+6.  Giáo dục và Nâng cao nhận thức (Education and Awareness):
+    * Mục đích: Tác động lên ý thức, hiểu biết và đạo đức của con người về tầm quan trọng của ATTT và cách hành xử an toàn. Con người thường là mắt xích yếu nhất trong hệ thống bảo vệ.
+    * *Ví dụ:* Tổ chức các buổi đào tạo về ATTT, gửi email cảnh báo về các hình thức lừa đảo mới.
+
+Phân loại phương tiện đảm bảo ATTT:
+
+* Phương tiện chính xác (Formal means): Các cơ chế kỹ thuật, tự động thực hiện các chức năng bảo vệ theo đúng các thủ tục được xác định trước mà không cần hoặc ít cần sự can thiệp của con người.
+    * Ví dụ:* Tường lửa, hệ thống phát hiện xâm nhập (IDS), phần mềm diệt virus, cơ chế mã hóa tự động.
+* Phương tiện phi chính xác (Informal means): Các quy định, chính sách, quy trình, hướng dẫn về hành vi của con người. Sự hiệu quả phụ thuộc vào ý thức tuân thủ của con người.
+    * Ví dụ:* Chính sách bảo mật, nội quy sử dụng tài sản công nghệ thông tin, các chương trình đào tạo nhận thức.
+
+V. Quy Trình Xây Dựng Giải Pháp An Toàn Thông Tin
+
+Việc xây dựng một giải pháp ATTT hiệu quả là một quy trình lặp đi lặp lại và cần được quản lý chặt chẽ, thường bao gồm các bước sau (có thể điều chỉnh tùy theo mô hình cụ thể):
+
+1.  Phân tích nguy cơ (Risk Analysis) / Đánh giá mối đe dọa (Threat Assessment): Xác định các tài sản thông tin quan trọng, các lỗ hổng tiềm ẩn, các mối đe dọa có thể xảy ra và đánh giá rủi ro.
+2.  Xây dựng Chính sách (Policy Development): Thiết lập các quy tắc, định hướng và mục tiêu tổng thể về ATTT cho tổ chức.
+3.  Đặc tả yêu cầu (Requirements Specification): Xác định chi tiết các yêu cầu về bảo mật cần phải đáp ứng cho hệ thống.
+4.  Thiết kế giải pháp (Solution Design): Lựa chọn và thiết kế các biện pháp kiểm soát (kỹ thuật, quản lý, vận hành) để đáp ứng các yêu cầu đã đặt ra.
+5.  Triển khai (Implementation): Cài đặt, cấu hình và đưa các biện pháp bảo vệ vào hoạt động.
+6.  Vận hành và Giám sát (Operation and Monitoring): Duy trì hoạt động của các biện pháp bảo vệ, theo dõi các sự kiện an ninh, phát hiện và ứng phó với các sự cố.
+7.  Đánh giá và Cập nhật (Evaluation and Update): Định kỳ xem xét, đánh giá hiệu quả của giải pháp, kiểm tra tuân thủ, và điều chỉnh, cập nhật giải pháp để phù hợp với những thay đổi về công nghệ, mối đe dọa và môi trường kinh doanh.
+
+Một giải pháp an toàn thông tin toàn diện thường bao gồm các thành phần:
+
+1.  Chính sách về an toàn thông tin:
+    * Các nguyên tắc cơ bản về ATTT, bao gồm các yêu cầu và mục tiêu cần đạt được.
+    * Danh sách các tài sản thông tin cần bảo vệ, các nguy cơ và rủi ro đối với từng tài sản.
+    * Quyền hạn và nghĩa vụ của các chủ thể có liên quan như người sở hữu thông tin, người quản trị hệ thống, và người sử dụng.
+
+2.  Các biện pháp bảo vệ an toàn thông tin:
+    * Biện pháp kỹ thuật: Áp dụng công nghệ để bảo vệ (ví dụ: tường lửa, mã hóa, phần mềm diệt virus, hệ thống phát hiện xâm nhập).
+    * Biện pháp về thủ tục (hành chính - quản lý): Các quy định, quy trình trong quản lý và vận hành (ví dụ: quy trình quản lý mật khẩu, quy trình sao lưu dữ liệu, quy trình ứng phó sự cố).
+    * Biện pháp vật lý: Bảo vệ cơ sở hạ tầng vật chất (ví dụ: kiểm soát ra vào trung tâm dữ liệu, camera giám sát, hệ thống phòng cháy chữa cháy).
+
+3.  Quản lý vận hành và cập nhật giải pháp:
+    * Hướng dẫn, đào tạo cho các thành viên để thực hiện đúng các biện pháp đã đề ra.
+    * Giám sát việc thực hiện các biện pháp bảo vệ và lưu lại các dữ liệu nhật ký (log) liên quan.
+    * Phân tích dữ liệu giám sát để đánh giá kết quả vận hành, phát hiện các dấu hiệu bất thường và đưa ra các điều chỉnh cần thiết.
+    * Điều chỉnh lại giải pháp để đảm bảo đạt được mục tiêu và đáp ứng các thay đổi về mối đe dọa, công nghệ hoặc yêu cầu nghiệp vụ.
+
+VI. Bài Toán Bảo Mật Truyền Tin Cơ Bản
+
+Một trong những vấn đề cốt lõi của an toàn thông tin là bảo mật thông tin khi được truyền đi.
+* Bối cảnh: Người gửi (S) muốn truyền một bản tin (M) cho người nhận (R) qua một kênh truyền tin. Kênh truyền này có thể bị kẻ tấn công (A) nghe lén hoặc can thiệp.
+* Mục tiêu chính (trong ví dụ này): Đảm bảo tính bí mật của bản tin M, tức là A không thể đọc hiểu được nội dung M ngay cả khi A chặn được bản tin trên đường truyền.
+* Giải pháp cơ bản: Sử dụng phép mã hóa (Encryption - E). Người gửi S sẽ dùng một thuật toán mã hóa E và một khóa (K) để biến bản tin gốc M (plaintext - bản rõ) thành một bản tin đã mã hóa C (ciphertext - bản mã).
+    C = E_K(M)
+    Người nhận R, khi nhận được C, sẽ sử dụng một thuật toán giải mã D và khóa K (hoặc một khóa liên quan đến K) để khôi phục lại bản tin gốc M.
+    M = D_K(C)
+* Vai trò của khóa (K): Khóa K là một tham số cực kỳ quan trọng, điều khiển quá trình mã hóa và giải mã. Kẻ tấn công A được giả định là có thể biết được thuật toán mã hóa E và giải mã D, nhưng không biết được khóa K. Do đó, việc giữ bí mật khóa K (trong hầu hết các trường hợp) quyết định đến sự an toàn của giải pháp mật mã.
+
+Một số thuật ngữ và ký hiệu viết tắt thường dùng:
+* M: Bản rõ (Plaintext) - thông tin gốc trước khi mã hóa.
+* C: Bản mã (Ciphertext) - thông tin sau khi đã mã hóa.
+* E: Phép mã hóa (Encryption) - quy trình chuyển bản rõ thành bản mã.
+* D: Phép giải mã (Decryption) - quy trình chuyển bản mã về lại bản rõ.
+* K: Khóa (Key) - thông tin bí mật dùng trong quá trình mã hóa và giải mã.
+* S: Người gửi (Sender).
+* R: Người nhận (Receiver).
+
+VII. An Ninh Mạng
+An ninh mạng (Network Security) là một lĩnh vực chuyên sâu trong an toàn thông tin, tập trung vào việc bảo vệ cơ sở hạ tầng mạng máy tính và dữ liệu truyền trên mạng. Các chủ đề chính của an ninh mạng bao gồm:
+* Các lỗ hổng của hệ thống mạng và giao thức mạng.
+* Các dạng tấn công vào hệ thống mạng (ví dụ: DoS/DDoS, Man-in-the-Middle, Sniffing).
+* Các giao thức bảo mật mạng (ví dụ: SSL/TLS, IPsec, WPA2/3).
+* Thiết kế và cấu hình các thiết bị an ninh mạng (ví dụ: tường lửa, IDS/IPS, VPN gateway).
+
+---
+
+Chương 2: Cơ Sở Mật Mã Học
+
+2.1. Các Khái Niệm Cơ Bản
+
+* Mật mã học (Cryptology): Là lĩnh vực khoa học nghiên cứu về các phương pháp bảo mật thông tin, đặc biệt là việc biến đổi thông tin sang một dạng không thể hiểu được nếu không có kiến thức đặc biệt (thường là khóa). Thuật ngữ "Cryptology" xuất phát từ tiếng Hy Lạp: "kryptos" (che đậy, giấu kín) và "logos" (lời nói, học thuyết).
+* Mật mã học bao gồm hai lĩnh vực con chính:
+    * Lập mã (Cryptography): Nghiên cứu và sáng tạo ra các kỹ thuật, thuật toán mã hóa để bảo vệ tính bí mật, toàn vẹn, xác thực của thông tin.
+    * Thám mã (Cryptanalysis): Nghiên cứu các kỹ thuật phân tích, tấn công để phá vỡ các cơ chế lập mã, nhằm mục đích đọc hiểu thông tin đã mã hóa mà không biết khóa, hoặc tìm ra khóa bí mật.
+
+A. Mô Hình Truyền Tin Mật Mã Cơ Bản:
+(Đã được mô tả trong phần "Bài Toán Bảo Mật Truyền Tin Cơ Bản" ở Chương 1)
+
+* Hệ mật mã (Cryptosystem): Là một hệ thống hoàn chỉnh bao gồm:
+    * Không gian các bản rõ (Plaintext space).
+    * Không gian các bản mã (Ciphertext space).
+    * Không gian các khóa (Key space).
+    * Thuật toán mã hóa (Encryption algorithm E).
+    * Thuật toán giải mã (Decryption algorithm D).
+    * Cách thức sinh khóa K, quản lý và phân phối khóa cho người gửi S và người nhận R.
+
+* Phân loại hệ mật mã (căn cứ vào đặc tính và cách tổ chức quản lý khóa K):
+    * Hệ mật mã khóa đối xứng (Symmetric Key Cryptosystem): Sử dụng cùng một khóa (hoặc các khóa dễ dàng suy ra từ nhau) cho cả quá trình mã hóa và giải mã. Khóa này phải được giữ bí mật tuyệt đối giữa người gửi và người nhận.
+    * Hệ mật mã khóa công khai (Asymmetric Key Cryptosystem / Public Key Cryptosystem): Sử dụng một cặp khóa có quan hệ toán học với nhau: một khóa công khai (public key) để mã hóa và một khóa bí mật (private key) để giải mã (hoặc ngược lại, tùy ứng dụng). Khóa công khai có thể phổ biến rộng rãi, trong khi khóa bí mật phải được giữ kín bởi chủ sở hữu.
+
+B. Độ Bảo Mật của Hệ Mật Mã:
+
+* Độ bảo mật (hay độ an toàn - Security Strength) của một hệ mật mã: Là khả năng của hệ mật mã đó chống chịu được các cuộc tấn công thám mã.
+* Mục tiêu của thám mã: Thu thập các bản mã (và có thể cả một số cặp bản rõ - bản mã tương ứng), phân tích chúng để cố gắng tìm ra bản rõ gốc từ bản mã mà không biết khóa, hoặc nghiêm trọng hơn là tìm ra khóa bí mật K.
+* Mức độ bảo mật thường được đánh giá thông qua:
+    * Chứng minh bằng toán học: Dựa trên độ khó của các bài toán toán học cơ sở (ví dụ: phân tích một số lớn ra thừa số nguyên tố, bài toán logarit rời rạc).
+    * Thử nghiệm tấn công thám mã thực tế: Cho các chuyên gia cố gắng phá vỡ hệ mật mã trong những điều kiện nhất định.
+* Độ an toàn của một hệ mật mã được xác định nếu:
+    * Chứng minh được rằng độ khó của việc phá mã (thám mã) thỏa mãn các điều kiện an toàn đã đặt ra (ví dụ: cần một lượng tài nguyên tính toán khổng lồ hoặc thời gian rất dài).
+    * Các thử nghiệm tấn công thám mã không phá vỡ được hệ mật mã trong những điều kiện cho phép (về thời gian, tài nguyên).
+
+* Các mô hình đánh giá mức độ bảo mật hiện nay:
+    * Bảo mật vô điều kiện (Unconditional Security / Perfect Security - Bảo mật tuyệt đối): Kẻ tấn công, ngay cả khi thu thập được tất cả các bản mã (và có thể cả bản rõ tương ứng trước đó) và có năng lực tính toán vô hạn, cũng không thể tìm ra khóa K hoặc suy ra thông tin về bản rõ từ bản mã với xác suất thành công cao hơn đoán mò. Hệ mật mã One-Time Pad là một ví dụ đạt được bảo mật vô điều kiện.
+    * Bảo mật chứng minh được (Provable Security): Chứng minh được một cách chặt chẽ rằng mức độ phức tạp của việc thám mã một hệ mật mã là tương đương với độ phức tạp của một bài toán toán học nổi tiếng được cho là khó (ví dụ: việc phá mã RSA tương đương với việc phân tích số nguyên lớn ra thừa số).
+    * Bảo mật thực tế (Practical Security / Computational Security): Hệ mật mã không (hoặc chưa) được chứng minh an toàn về mặt toán học một cách tuyệt đối, nhưng có thể đứng vững trước mọi thử nghiệm tấn công thám mã đã biết trong thực tế với nguồn lực tính toán hiện tại và dự kiến trong tương lai gần.
+        * Ví dụ: Sau khi thử nghiệm cho thấy siêu máy tính mạnh nhất hiện nay với các dạng thuật toán thám mã từ thấp đến cao cũng cần khoảng hàng ngàn hoặc hàng triệu năm mới có thể phá vỡ được hệ mật mã. Do đó, có thể xem hệ mật mã đó đạt độ an toàn thực tế cho các ứng dụng cụ thể.
+
+* Nhận xét về các mô hình:
+    * Mô hình 1 (Bảo mật vô điều kiện) rất lý tưởng nhưng khó đạt được trong thực tế cho hầu hết các ứng dụng do yêu cầu về khóa (khóa phải dài bằng bản rõ và dùng một lần). Chủ yếu mang tính tham chiếu lý thuyết.
+    * Mô hình 2 (Bảo mật chứng minh được) rất quan trọng và là mục tiêu của nhiều hệ mật mã hiện đại, đặc biệt là các hệ mật mã dựa trên lý thuyết số (toán học).
+    * Mô hình 3 (Bảo mật thực tế) mang tính thực nghiệm cao và phù hợp để đánh giá nhiều hệ mật mã đang được sử dụng rộng rãi, nơi mà việc chứng minh toán học hoàn toàn là rất khó khăn.
+
+* Các tiêu chí lựa chọn hệ mật mã:
+    * Mức độ an toàn: Đảm bảo tin cậy và chấp nhận được cho ứng dụng cụ thể.
+    * Hiệu quả trong ứng dụng thực tế:
+        * Tốc độ xử lý: Thuật toán mã hóa và giải mã phải đạt yêu cầu về tốc độ trong môi trường thực tế.
+        * Tài nguyên yêu cầu: Lượng bộ nhớ, năng lượng tiêu thụ (đặc biệt quan trọng cho thiết bị di động, IoT).
+    * Khả năng cài đặt: Cơ chế cài đặt phép mã hóa và giải mã trên phần cứng (hardware) hoặc phần mềm (software) có phức tạp không, có dễ tích hợp không.
+    * Quản lý khóa: Quy trình sinh khóa, phân phối khóa, lưu trữ khóa, thu hồi khóa có phức tạp và an toàn không.
+    * Tính chuẩn hóa và chấp nhận rộng rãi: Các thuật toán đã được chuẩn hóa và kiểm chứng bởi cộng đồng thường đáng tin cậy hơn.
+
+2.2. Một Số Hệ Mật Mã Cổ Điển
+Lịch sử mật mã có thể được chia thành hai thời kỳ chính:
+* Mật mã cổ điển: Xuất hiện từ thời cổ đại (trước Công nguyên) cho đến khoảng cuối thế kỷ 19. Các phương pháp thường dựa trên thao tác ký tự (thay thế, hoán vị) và thực hiện bằng tay hoặc các thiết bị cơ khí đơn giản.
+* Mật mã hiện đại: Bắt đầu phát triển mạnh mẽ và trở thành một ngành khoa học chính thức từ giữa thế kỷ 20, đặc biệt với sự ra đời của máy tính điện tử và các lý thuyết toán học phức tạp.
+
+Một số kỹ thuật cơ bản trong mật mã cổ điển:
+
+* Gán giá trị số cho chữ cái: Để thuận tiện cho các phép toán, mỗi chữ cái trong bảng chữ cái được gán một giá trị số tương ứng. Ví dụ, với bảng chữ cái tiếng Anh (26 chữ cái):
+    A=0, B=1, C=2, D=3, E=4, ..., Z=25
+
+A. Mã Caesar (Caesar Cipher):
+* Nguồn gốc: Được cho là do Hoàng đế La Mã Julius Caesar tạo ra và sử dụng để trao đổi thư quân sự.
+* Nguyên lý: Là một dạng mã hóa thay thế đơn giản, trong đó mỗi ký tự của bản rõ được thay thế bằng một ký tự khác cách nó một khoảng cố định trong bảng chữ cái. Khoảng cố định này chính là khóa K.
+* Bảng thế: Bảng chữ cái gốc được "dịch chuyển" một số vị trí. Ví dụ, với K=3 (dịch sang phải 3 vị trí, hoặc trong một số quy ước là dịch sang trái):
+    * Bảng gốc: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+    * Bảng thế (K=3): D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+* Công thức mã hóa (với phép dịch phải K vị trí và bảng chữ cái 26 chữ):
+    C_i = (M_i + K) mod 26
+    Trong đó:
+    * M_i là giá trị số của ký tự thứ i trong bản rõ.
+    * K là khóa dịch chuyển.
+    * C_i là giá trị số của ký tự thứ i trong bản mã.
+    * mod 26 là phép chia lấy phần dư cho 26.
+* Công thức giải mã:
+    M_i = (C_i - K) mod 26 (Nếu kết quả âm thì cộng thêm 26).
+* Đặc điểm mã Caesar:
+    * Còn được gọi là mã cộng (additive cipher) do bản chất phép toán.
+    * Rất đơn giản, dễ hiểu và dễ thực hiện.
+    * Độ an toàn rất thấp do không gian khóa nhỏ (chỉ có 25 khóa khả dĩ cho bảng chữ cái tiếng Anh). Dễ dàng bị phá bằng phương pháp thử duyệt toàn bộ khóa (brute-force attack) hoặc phân tích tần suất ký tự.
+* Ví dụ mã hóa và giải mã Caesar:
+    * Mã hóa bản tin "HELLO IT WORLD" bằng mã Caesar với K=3:
+        H(7) + 3 = 10 (K)
+        E(4) + 3 = 7 (H)
+        L(11) + 3 = 14 (O)
+        L(11) + 3 = 14 (O)
+        O(14) + 3 = 17 (R)
+        I(8) + 3 = 11 (L)
+        T(19) + 3 = 22 (W)
+        W(22) + 3 = 25 (Z)
+        O(14) + 3 = 17 (R)
+        R(17) + 3 = 20 (U)
+        L(11) + 3 = 14 (O)
+        D(3) + 3 = 6 (G)
+        => Bản mã: "KHOOR LW ZRUOG"
+    * Mã hóa bản tin "SECURITY" với mã Caesar khi K=15:
+        S(18) + 15 = 33 = 7 (H) mod 26
+        E(4) + 15 = 19 (T) mod 26
+        C(2) + 15 = 17 (R) mod 26
+        U(20) + 15 = 35 = 9 (J) mod 26
+        R(17) + 15 = 32 = 6 (G) mod 26
+        I(8) + 15 = 23 (X) mod 26
+        T(19) + 15 = 34 = 8 (I) mod 26
+        Y(24) + 15 = 39 = 13 (N) mod 26
+        => Bản mã: "HTRJGXIN"
+
+B. Mã Hóa Bằng Bảng Thế Tổng Quát (General Monoalphabetic Substitution Cipher):
+* Cách mã hóa: Mỗi ký tự trong bảng chữ cái gốc được thay thế bằng một ký tự tương ứng trong một bảng thế (hoán vị) tùy ý của bảng chữ cái.
+    * Ví dụ: Cho bản rõ M="A DAY", sử dụng bảng thế dưới đây:
+        * Bảng gốc:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+        * Bảng thế: F G N T K J L P Q W E R A S D Z X C V B M Y U I O H
+        (Giả sử bảng thế trong ví dụ gốc là: A->F, B->G, C->N, D->T, ..., Y->P, Z->L. Với M="A DAY", A->F, D->T (giả định), Y->P (giả định). Vậy C="FTFP")
+        Dựa trên ví dụ của bạn: Bảng gốc A B C D ... W X Y Z; Bảng thế F G N T ... U K P L.
+        M="A DAY" -> C="F TFP" (A->F, D->T (giả định), Y->P (giả định)). Cần một bảng thế đầy đủ để xác định chính xác.
+* Khóa (K): Chính là bảng thế (hoặc quy tắc tạo ra bảng thế).
+* Số lượng khóa khả dĩ: Với bảng chữ cái gồm 26 ký tự, tổng số bảng thế (khóa K) có thể có là 26! (26 giai thừa), một con số rất lớn (26! ~ 4 x 10^26). Điều này làm cho việc tấn công bằng cách thử duyệt toàn bộ khóa trở nên không khả thi.
+* Thám mã: Mặc dù không gian khóa lớn, mã thay thế tổng quát vẫn dễ bị phá bằng phương pháp phân tích tần suất xuất hiện của các ký tự, cặp ký tự, bộ ba ký tự trong bản mã và so sánh với tần suất tương ứng trong ngôn ngữ của bản rõ.
+
+---
+
+Chương 3: Hệ Mật Mã Khóa Đối Xứng (Symmetric Key Cryptography)
+
+3.1. Đặc Điểm và Nguyên Lý
+
+* Định nghĩa: Hệ mật mã khóa đối xứng (còn gọi là mật mã khóa bí mật hoặc mật mã một khóa) là một hệ thống mật mã trong đó một khóa duy nhất (hoặc các khóa dễ dàng suy ra từ nhau) được sử dụng cho cả quá trình mã hóa bản rõ và giải mã bản mã.
+* A. Đặc điểm chính:
+    * Khóa bí mật chung: Cả người gửi và người nhận phải cùng sở hữu và giữ bí mật khóa K này. An toàn của hệ thống phụ thuộc hoàn toàn vào việc giữ bí mật khóa.
+    * Mã hóa dữ liệu nhị phân: Các thuật toán hiện đại thường xử lý dữ liệu dưới dạng khối nhị phân (binary data blocks).
+    * Hiệu quả: Thường nhanh hơn và yêu cầu ít tài nguyên tính toán hơn so với các hệ mật mã khóa công khai, phù hợp để mã hóa lượng lớn dữ liệu.
+    * Thách thức: Vấn đề phân phối khóa an toàn. Làm thế nào để người gửi và người nhận trao đổi khóa bí mật một cách an toàn qua một kênh có thể không an toàn là một thách thức lớn.
+
+* Mã khối (Block Cipher):
+    * Là một loại hệ thống mã hóa đối xứng phổ biến.
+    * Dữ liệu đầu vào (bản rõ) được chia thành các khối (block) có kích thước cố định (ví dụ: 64 bit, 128 bit, 256 bit).
+    * Mỗi khối dữ liệu được mã hóa (hoặc giải mã) riêng lẻ bằng cách sử dụng cùng một khóa bí mật.
+    * Nếu khối dữ liệu cuối cùng không đủ kích thước, cần phải có cơ chế đệm (padding) để làm đầy khối.
+
+* Nguyên lý thiết kế Mã khối (theo Claude Shannon): Để đạt được độ bảo mật cao, các mã khối thường được thiết kế dựa trên hai nguyên tắc cơ bản:
+    * Tính khuếch tán (Diffusion): Làm cho ảnh hưởng của mỗi bit trong bản rõ lan tỏa ra nhiều bit trong bản mã. Điều này có nghĩa là nếu thay đổi một bit của bản rõ, thì khoảng một nửa số bit của bản mã sẽ thay đổi, và ngược lại. Mục đích là để che giấu mối quan hệ thống kê giữa bản rõ và bản mã, gây khó khăn cho việc suy ra khóa từ các cặp bản rõ - bản mã.
+    * Tính xáo trộn (Confusion): Làm cho mối quan hệ giữa khóa và bản mã trở nên phức tạp nhất có thể. Mục đích là để ngăn chặn kẻ tấn công suy luận ra khóa ngay cả khi họ biết được một phần lớn thông tin về cấu trúc của bản mã.
+    * Kỹ thuật thực hiện: Thông thường, các mã khối hiện đại thực hiện một chuỗi lặp đi lặp lại (gọi là các "vòng" - rounds) các phép biến đổi dữ liệu. Mỗi vòng bao gồm các phép toán cơ bản như:
+        * Thay thế (Substitution): Thay thế một khối bit nhỏ bằng một khối bit khác dựa trên một bảng thay thế (S-box).
+        * Hoán vị (Permutation): Xáo trộn vị trí các bit trong một khối (P-box).
+        * Kết hợp với khóa (Key mixing): Sử dụng các phép toán như XOR với một phần của khóa (khóa con).
+
+* Quy trình mã hóa theo thiết kế với nhiều vòng lặp:
+    * Tại mỗi vòng (round i), dữ liệu đầu vào của vòng đó sẽ được biến đổi bằng một hàm f (thường bao gồm các phép thay thế, hoán vị và kết hợp với khóa con).
+    * Đầu ra (output) của vòng i sẽ trở thành đầu vào (input) cho vòng i+1.
+    * Mỗi vòng i sử dụng một khóa con (subkey) K_i, được sinh ra từ khóa gốc (master key) K thông qua một quy trình sinh khóa (key schedule algorithm).
+* Giải mã: Là quy trình ngược lại với mã hóa. Thường sử dụng cùng một sơ đồ thuật toán, cùng số vòng và cùng hàm f. Các khóa con K_i được áp dụng theo thứ tự ngược lại so với quá trình mã hóa.
+
+3.2. Chuẩn Mật Mã Dữ Liệu DES (Data Encryption Standard)
+
+* Lịch sử:
+    * DES được phát triển bởi IBM vào những năm 1970 (cụ thể là năm 1973-1974) dựa trên thuật toán Lucifer, với sự tham gia và điều chỉnh từ Cơ quan An ninh Quốc gia Hoa Kỳ (NSA).
+    * Năm 1977, DES được Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ (NIST, khi đó là NBS) công nhận là một tiêu chuẩn mã hóa liên bang (FIPS PUB 46) và được sử dụng rộng rãi trên toàn thế giới trong nhiều năm, mặc dù có nhiều tranh cãi về sự can thiệp của NSA và độ dài khóa tương đối ngắn.
+* Đặc điểm của thuật toán DES:
+    * Là một thuật toán mã khối đối xứng.
+    * Kích thước khối dữ liệu (Block size): 64 bit (tức là mã hóa và giải mã từng khối 64 bit dữ liệu).
+    * Kích thước khóa (Key size): Khóa ban đầu có độ dài 64 bit. Tuy nhiên, chỉ có 56 bit được sử dụng thực tế cho quá trình mã hóa, 8 bit còn lại được dùng để kiểm tra tính chẵn lẻ (parity bits) và không đóng góp vào độ bảo mật của thuật toán. Điều này làm cho không gian khóa hiệu dụng của DES là 2^56.
+    * Cấu trúc: Sử dụng cấu trúc Feistel, một cấu trúc lặp đối xứng cho phép cùng một thuật toán (với các khóa con khác nhau) được sử dụng cho cả mã hóa và giải mã.
+    * Số vòng lặp (Number of rounds): Thực hiện 16 vòng biến đổi dữ liệu.
+    * Đầu ra: Bản mã 64 bit.
+
+* A) Khối dữ liệu của DES:
+    * Đầu vào là một khối dữ liệu M (bản rõ) 64 bit.
+    * Sử dụng một khóa K 64 bit (trong đó 56 bit hiệu dụng).
+    * Đầu ra là một khối dữ liệu C (bản mã) 64 bit.
+    * Sơ đồ minh họa:
+        Khối M (64 bit)  ---[Thuật toán DES với Khóa K (56 bit hiệu dụng)]---> Khối C (64 bit)
+        Ví dụ: 1010...1000 (64 bit) ----> 0010...1101 (64 bit)
+                 Khóa K: 0101...0001 (64 bit, 8 bit parity)
+
+* Cơ chế Đệm (Padding):
+    * Vì DES xử lý dữ liệu theo từng khối 64 bit, nếu dữ liệu gốc cần mã hóa không phải là bội số chẵn của 64 bit, thì khối cuối cùng cần được bổ sung thêm dữ liệu (padding) để đạt đủ 64 bit trước khi mã hóa. Có nhiều phương pháp padding khác nhau.
+    * Minh họa:
+        Dữ liệu gốc: [64 bit] [64 bit] ... [64 bit] [32 bit]
+        Sau khi padding: [64 bit] [64 bit] ... [64 bit] [32 bit + 32 bit padding]
+
+* B) Sơ đồ thuật toán DES (Các pha chính):
+    Thuật toán mã hóa DES là một quy trình gồm các pha theo trình tự sau:
+    1.  Pha khởi tạo (Initial Permutation - IP): Khối bản rõ 64 bit đầu vào được hoán vị theo một bảng hoán vị cố định ban đầu (IP). Phép hoán vị này không tăng cường độ bảo mật mà được cho là để thuận tiện cho việc nạp dữ liệu vào các chip phần cứng thời đó.
+    2.  Pha mã hóa chính (Main Encryption Phase - 16 Vòng lặp Feistel):
+        * Khối dữ liệu 64 bit sau IP được chia thành hai nửa 32 bit: nửa trái L_0 và nửa phải R_0.
+        * Thực hiện 16 vòng lặp biến đổi. Trong mỗi vòng i (từ 1 đến 16):
+            * L_i = R_{i-1}
+            * R_i = L_{i-1} XOR f(R_{i-1}, K_i)
+            Trong đó:
+                * L_{i-1}, R_{i-1} là nửa trái và nửa phải của khối dữ liệu từ vòng trước.
+                * K_i là khóa con 48 bit của vòng thứ i, được sinh ra từ khóa chính 56 bit thông qua thuật toán sinh khóa con.
+                * f là hàm Feistel (hàm vòng), bao gồm các bước:
+                    * Mở rộng (Expansion): Nửa phải R_{i-1} (32 bit) được mở rộng thành 48 bit.
+                    * Kết hợp khóa (Key Mixing): Kết quả 48 bit được XOR với khóa con K_i (48 bit).
+                    * Thay thế (Substitution): Kết quả 48 bit được chia thành tám khối 6 bit, mỗi khối được đưa vào một S-box (Substitution box) khác nhau. Mỗi S-box nhận 6 bit đầu vào và tạo ra 4 bit đầu ra. Tổng cộng tạo ra 32 bit.
+                    * Hoán vị (Permutation): 32 bit kết quả từ các S-box được hoán vị bằng một P-box (Permutation box).
+                * XOR là phép toán XOR.
+    3.  Pha kết thúc (Final Permutation - FP): Sau 16 vòng, hai nửa L_{16} và R_{16} được nối lại (nhưng đảo ngược thứ tự thành R_{16}L_{16}). Khối 64 bit này sau đó được đưa qua một phép hoán vị cuối cùng (FP), là phép hoán vị ngược của phép hoán vị khởi đầu IP (FP = IP^{-1}). Kết quả cuối cùng là bản mã 64 bit.
+
+    *Quá trình giải mã DES sử dụng cùng thuật toán nhưng áp dụng các khóa con K_{16}, K_{15}, ..., K_1 theo thứ tự ngược lại.*
+    *Hiện nay, DES với khóa 56 bit được coi là không còn an toàn trước các cuộc tấn công brute-force do khả năng tính toán của máy tính hiện đại. Thay vào đó, các biến thể như 3DES (Triple DES) hoặc các chuẩn mã hóa mới hơn như AES (Advanced Encryption Standard) được sử dụng.*
+
+---
+
+Chương 4: Hệ Mật Mã Khóa Công Khai (Public Key Cryptography - PKC)
+
+4.1. Giới Thiệu Tổng Quan
+
+* Hệ mật mã khóa công khai (còn gọi là mật mã bất đối xứng) là một thành tựu cách mạng trong lịch sử mật mã hiện đại.
+* Nó đã thay đổi hoàn toàn nguyên tắc truyền thống của mật mã (sử dụng chung một khóa bí mật).
+* Giải quyết được một trong những bài toán khó khăn nhất của mật mã khóa đối xứng: vấn đề chia sẻ và quản lý khóa bí mật một cách an toàn.
+* Tạo ra nền tảng cho nhiều ứng dụng quan trọng, đặc biệt là chữ ký số (digital signature), hiện đang được áp dụng rộng rãi trong hầu hết các dịch vụ và ứng dụng công nghệ thông tin (thương mại điện tử, chính phủ điện tử, giao dịch trực tuyến).
+
+* A) Hoàn cảnh ra đời:
+    * Ý tưởng về mật mã khóa công khai được Whitfield Diffie và Martin Hellman công bố lần đầu tiên vào năm 1976 trong bài báo "New Directions in Cryptography". Họ đã đề xuất một phương pháp trao đổi khóa an toàn (Diffie-Hellman key exchange) mà không cần kênh bí mật từ trước.
+    * Năm 1977, Ronald Rivest, Adi Shamir và Leonard Adleman tại MIT đã phát minh ra hệ mật mã khóa công khai đầu tiên và phổ biến nhất cho đến nay, được đặt tên là RSA (viết tắt từ tên của ba tác giả).
+    * Sau RSA, nhiều hệ mật mã khóa công khai khác đã được phát triển dựa trên các bài toán toán học khó khác nhau, ví dụ: Rabin (dựa trên bài toán lấy căn bậc hai modulo hợp số), ElGamal (dựa trên bài toán logarit rời rạc), và các hệ mật mã dựa trên đường cong Elliptic (Elliptic Curve Cryptography - ECC).
+
+* B) Đặc điểm cơ bản:
+    * Trong hệ mật mã khóa công khai (PKC), mỗi chủ thể (người dùng, tổ chức) cần sở hữu một cặp khóa (key pair) bao gồm:
+        * Khóa công khai (K_{pub} hoặc K_E - Public Key): Khóa này có thể được công bố rộng rãi, chia sẻ cho bất kỳ ai muốn gửi thông tin mật cho chủ thể đó, hoặc muốn xác thực chữ ký số của chủ thể đó.
+        * Khóa riêng/bí mật (K_{priv} hoặc K_D - Private Key): Khóa này phải được chủ thể sở hữu giữ tuyệt đối bí mật.
+    * Mối quan hệ giữa cặp khóa:
+        * Khóa công khai và khóa riêng được tạo ra cùng nhau và có mối quan hệ toán học chặt chẽ.
+        * Thông tin được mã hóa bằng một khóa trong cặp chỉ có thể được giải mã bằng khóa còn lại trong cặp đó.
+        * Cụ thể:
+            1.  M = D(K_{priv}, E(K_{pub}, M)): Bản rõ M được mã hóa bằng khóa công khai K_{pub} của người nhận, kết quả là bản mã C. Chỉ người nhận, người sở hữu khóa riêng K_{priv} tương ứng, mới có thể giải mã C để lấy lại M. Đây là cơ sở cho bảo mật dữ liệu (confidentiality).
+            2.  M' = D(K_{pub}, E(K_{priv}, M)) (Trong trường hợp chữ ký số, M thường là bản tóm tắt/hash của thông điệp): Thông điệp M (hoặc bản tóm lược của nó) được "mã hóa" (ký) bằng khóa riêng K_{priv} của người gửi. Bất kỳ ai cũng có thể dùng khóa công khai K_{pub} của người gửi để "giải mã" (xác thực) và so sánh với M (hoặc bản tóm lược của nó). Nếu khớp, điều này chứng tỏ thông điệp đúng là từ người gửi đó và không bị thay đổi. Đây là cơ sở cho chữ ký số (digital signature), đảm bảo tính xác thực (authenticity) và toàn vẹn (integrity).
+
+* C) Nguyên tắc thiết kế hệ PKC:
+    * Hầu hết các hệ mật mã khóa công khai dựa trên việc sử dụng các hàm một chiều có cửa lật (trapdoor one-way function).
+    * Một hàm f được gọi là hàm một chiều nếu:
+        * Với mọi đầu vào X, việc tính Y = f(X) là dễ dàng (thực hiện nhanh chóng về mặt tính toán).
+        * Ngược lại, nếu biết Y, việc tìm ra X sao cho f(X) = Y (tức là tính hàm ngược f^{-1}(Y)) là cực kỳ khó khăn về mặt tính toán (đòi hỏi thời gian hoặc tài nguyên khổng lồ).
+    * Một hàm một chiều có cửa lật là một hàm một chiều mà việc tính hàm ngược f^{-1}(Y) trở nên dễ dàng nếu biết thêm một thông tin bí mật gọi là "cửa lật" (trapdoor).
+    * Trong PKC:
+        * Khóa công khai dùng để tính hàm f(X) (ví dụ, mã hóa).
+        * Khóa riêng chính là "cửa lật", giúp tính hàm ngược f^{-1}(Y) một cách dễ dàng (ví dụ, giải mã).
+        * Nếu không biết "cửa lật" (khóa riêng), việc phá mã (tính ngược X từ Y) trở nên vô cùng khó khăn, tương đương với việc giải một bài toán toán học khó.
+
+4.2. So Sánh Hệ Mật Mã Khóa Công Khai và Hệ Mật Mã Khóa Đối Xứng
+
+| Đặc điểm                        | Hệ Mật Mã Khóa Công Khai (PKC)                                  | Hệ Mật Mã Khóa Đối Xứng (Symmetric)                             |
+| :------------------------------ | :-------------------------------------------------------------- | :------------------------------------------------------------- |
+| Số lượng khóa                   | Mỗi bên sở hữu 1 cặp khóa (công khai & bí mật) khác nhau.      | Cả hai bên cùng chia sẻ và sở hữu 1 khóa bí mật duy nhất.     |
+| Quan hệ khóa mã hóa/giải mã     | Mã hóa bằng 1 khóa (ví dụ: công khai) và giải mã bằng khóa kia (ví dụ: bí mật) trong cùng một cặp. | Mã hóa và giải mã đều dùng chung 1 khóa bí mật.              |
+| Phân phối khóa                 | Khóa công khai có thể được phân phối công khai, rộng rãi. Khóa bí mật phải được giữ kín. | Cần một kênh bí mật, an toàn để trao đổi khóa bí mật chung.    |
+| Tốc độ xử lý                   | Thường chậm hơn đáng kể.                                        | Thường nhanh hơn nhiều.                                       |
+| Ứng dụng chính                  | Bảo mật truyền tin, Chữ ký điện tử, Xác thực.                   | Mã hóa lượng lớn dữ liệu (bulk data encryption).               |
+| Nền tảng thuật toán            | Dựa trên các hàm toán học một chiều có cửa lật (ví dụ: phân tích thừa số nguyên tố, logarit rời rạc). | Dựa trên các phép biến đổi hoán vị (permutation) và thay thế (substitution). |
+| Quản lý khóa                    | Phức tạp hơn do quản lý cặp khóa, chứng thực khóa công khai.      | Đơn giản hơn về cấu trúc khóa nhưng khó khăn ở khâu phân phối. |
+
+4.3. Nhắc Lại Một Số Kiến Thức Lý Thuyết Số Cơ Bản
+Lý thuyết số là nền tảng toán học cho nhiều hệ mật mã khóa công khai, đặc biệt là RSA.
+
+* Phép chia Modulo (Modular Arithmetic):
+    * Phép chia modulo là phép chia lấy phần dư.
+    * Ký hiệu: a mod n = r (hoặc a = r (mod n)), nghĩa là khi chia số nguyên a cho số nguyên dương n, ta được phần dư là r.
+    * Điều kiện: a >= 0, n > 0, 0 <= r < n.
+    * Ví dụ: 27 mod 8 = 3 (vì 27 = 3 * 8 + 3); 35 mod 9 = 8 (vì 35 = 3 * 9 + 8).
+    * Đồng dư (Congruence): Nếu hai số nguyên a và b có cùng số dư khi chia cho n, ta nói rằng a và b là đồng dư trong phép chia modulo cho n.
+        Ký hiệu: a = b (mod n).
+    * Ví dụ: Với n=4, các lớp tương đương modulo 4 là:
+        * Lớp 0: {..., -8, -4, 0, 4, 8, 12, 16, ...} (các số chia hết cho 4)
+        * Lớp 1: {..., -7, -3, 1, 5, 9, 13, 17, ...} (các số chia 4 dư 1)
+        * Lớp 2: {..., -6, -2, 2, 6, 10, 14, 18, ...} (các số chia 4 dư 2)
+        * Lớp 3: {..., -5, -1, 3, 7, 11, 15, 19, ...} (các số chia 4 dư 3)
+    * Một số tính chất của phép modulo (với a, b, n là các số nguyên):
+        * (a+b) mod n = [(a mod n) + (b mod n)] mod n
+        * (a-b) mod n = [(a mod n) - (b mod n)] mod n
+        * (a * b) mod n = [(a mod n) * (b mod n)] mod n
+
+* Ước số chung lớn nhất (Greatest Common Divisor - GCD):
+    * Ước số của một số nguyên a là một số nguyên d sao cho a chia hết cho d (tức là a mod d = 0).
+    * Ước số chung lớn nhất của hai số nguyên A và B, ký hiệu là GCD(A,B) hoặc (A,B), là số nguyên dương lớn nhất mà cả A và B đều chia hết cho nó.
+    * Thuật toán Euclid để tìm GCD(A,B):
+        Giả sử A > B >= 0.
+        1. Nếu B=0, thì GCD(A,B) = A.
+        2. Ngược lại, GCD(A,B) = GCD(B, A mod B). Lặp lại bước này.
+        * Ví dụ: Tìm GCD(2740, 1760)
+            | q = floor(r1 / r2) | r1   | r2   | r = r1 mod r2 |
+            | :-----------------: | :----: | :----: | :-----------: |
+            |          1          |  2740  |  1760  |      980      |
+            |          1          |  1760  |  980   |      780      |
+            |          1          |  980   |  780   |      200      |
+            |          3          |  780   |  200   |      180      |
+            |          1          |  200   |  180   |       20      |
+            |          9          |  180   |   20   |        0      |
+            |                     |   20   |    0   |               |
+            Vậy, GCD(2740, 1760) = 20.
+
+* Số nguyên tố cùng nhau (Relatively Prime / Coprime):
+    * Hai số nguyên a và b (khác 0) được gọi là nguyên tố cùng nhau nếu ước số chung lớn nhất của chúng là 1, tức là GCD(a,b) = 1.
+    * Ví dụ: (5,8) là cặp nguyên tố cùng nhau vì GCD(5,8)=1. (9,14) là cặp nguyên tố cùng nhau vì GCD(9,14)=1.
+
+* Phần tử nghịch đảo của phép nhân modulo (Modular Multiplicative Inverse):
+    * Cho hai số nguyên a và n (n>0). Nếu a và n nguyên tố cùng nhau (GCD(a,n)=1), thì tồn tại một số nguyên w (gọi là nghịch đảo nhân của a theo modulo n) sao cho:
+        a * w = 1 (mod n)
+    * Ký hiệu nghịch đảo nhân của a modulo n là a^{-1} (mod n).
+    * Điều kiện để số a có nghịch đảo nhân modulo n là GCD(a,n)=1.
+    * Ví dụ: Tìm nghịch đảo nhân của a=22 modulo n=25.
+        GCD(22,25)=1. Vậy nghịch đảo tồn tại.
+        Ta cần tìm w sao cho 22w = 1 (mod 25).
+        Thử các giá trị, ta thấy 8 * 22 = 176.
+        176 mod 25: 176 = 7 * 25 + 1. Vậy 176 = 1 (mod 25).
+        Do đó, 8 là nghịch đảo nhân của 22 modulo 25, hay 22^{-1} = 8 (mod 25).
+
+* Thuật toán Euclid mở rộng (Extended Euclidean Algorithm):
+    * Không chỉ tìm GCD(a,b) mà còn tìm được hai số nguyên x và y sao cho:
+        ax + by = GCD(a,b)
+    * Thuật toán này rất quan trọng để tìm nghịch đảo nhân modulo. Nếu GCD(a,n)=1, thì thuật toán Euclid mở rộng sẽ tìm được x, y sao cho ax + ny = 1.
+        Lấy modulo n cho cả hai vế: (ax + ny) mod n = 1 mod n.
+        Vì ny mod n = 0, ta có ax mod n = 1, hay ax = 1 (mod n).
+        Vậy x chính là nghịch đảo nhân của a modulo n (nếu x âm, có thể cộng n để được giá trị dương).
+    * Ví dụ: Tìm 550^{-1} (mod 1759)
+        Bước 1: Kiểm tra GCD(550, 1759).
+            1759 = 3 * 550 + 109
+            550 = 5 * 109 + 5
+            109 = 21 * 5 + 4
+            5 = 1 * 4 + 1
+            4 = 4 * 1 + 0
+            GCD(550, 1759) = 1. Vậy nghịch đảo tồn tại.
+        Bước 2: Lập bảng theo thuật toán Euclid mở rộng (đi ngược từ dưới lên hoặc sử dụng phương pháp bảng).
+        Sử dụng phương pháp bảng như trong ảnh (với r_0=1759, r_1=550 và các hệ số x_i, y_i sao cho r_i = x_i * r_0 + y_i * r_1. Ta tìm y sao cho y * 550 = 1 (mod 1759)).
+        Hoặc đi ngược:
+        1 = 5 - 1 * 4
+        1 = 5 - 1 * (109 - 21 * 5) = 5 - 109 + 21 * 5 = 22 * 5 - 1 * 109
+        1 = 22 * (550 - 5 * 109) - 1 * 109 = 22 * 550 - 110 * 109 - 1 * 109 = 22 * 550 - 111 * 109
+        1 = 22 * 550 - 111 * (1759 - 3 * 550) = 22 * 550 - 111 * 1759 + 333 * 550
+        1 = (22 + 333) * 550 - 111 * 1759
+        1 = 355 * 550 - 111 * 1759
+        Từ 355 * 550 - 111 * 1759 = 1, suy ra 355 * 550 = 1 (mod 1759).
+        Vậy 550^{-1} = 355 (mod 1759). (Kết quả này khớp với bảng trong ảnh của bạn).
+
+* Tính lũy thừa nhanh (Exponentiation by Squaring / Fast Modular Exponentiation):
+    * Dùng để tính a^b (mod n) một cách hiệu quả, đặc biệt khi b rất lớn.
+    * Nguyên lý: Dựa trên biểu diễn nhị phân của số mũ b.
+        Nếu b = (b_k b_{k-1} ... b_1 b_0)_2 = b_k 2^k + b_{k-1} 2^{k-1} + ... + b_1 2^1 + b_0 2^0.
+        Thì a^b = a^(sum b_i 2^i) = product a^(b_i 2^i) = product_{b_i=1} a^(2^i).
+    * Các bước thực hiện:
+        1.  Chuyển số mũ b sang dạng nhị phân.
+        2.  Tính các giá trị a^(2^0) (mod n), a^(2^1) (mod n), a^(2^2) (mod n), ... bằng cách bình phương kết quả trước đó: a^(2^i) = (a^(2^{i-1}))^2 (mod n).
+        3.  Nhân các giá trị a^(2^i) (mod n) tương ứng với các bit b_i=1 trong biểu diễn nhị phân của b. Tất cả các phép nhân đều thực hiện trong modulo n.
+    * Ví dụ: Tính 3^644 (mod 645)
+        B1. Biểu diễn 644 dưới dạng nhị phân:
+        644 = 512 + 128 + 4 = 2^9 + 2^7 + 2^2.
+        Vậy 644 = (1010000100)_2.
+        Suy ra 3^644 = 3^(2^9) * 3^(2^7) * 3^(2^2) (mod 645).
+
+        B2. Lập bảng tính 3^(2^i) (mod 645):
+        | i | 2^i | Biểu thức tính 3^(2^i) (mod 645)            | Kết quả 3^(2^i) (mod 645) (Bit b_i của 644) |
+        | :-: | :---: | :---------------------------------------------- | :--------------------------------------------: |
+        |  0  |   1   | 3^1 (mod 645)                                | 3  (b_0=0)                                   |
+        |  1  |   2   | 3^2 = 9 (mod 645)                             | 9  (b_1=0)                                   |
+        |  2  |   4   | 9^2 = 81 (mod 645)                            | 81 (b_2=1)                               |
+        |  3  |   8   | 81^2 = 6561 = 111 (mod 645)             | 111 (b_3=0)                                  |
+        |  4  |  16   | 111^2 = 12321 = 66 (mod 645)            | 66 (b_4=0)                                   |
+        |  5  |  32   | 66^2 = 4356 = 486 (mod 645)             | 486 (b_5=0)                                  |
+        |  6  |  64   | 486^2 = 236196 = 126 (mod 645)          | 126 (b_6=0)                                  |
+        |  7  |  128  | 126^2 = 15876 = 396 (mod 645)          | 396 (b_7=1)                              |
+        |  8  |  256  | 396^2 = 156816 = 81 (mod 645)           | 81 (b_8=0)                                   |
+        |  9  |  512  | 81^2 = 6561 = 111 (mod 645)             | 111 (b_9=1)                              |
+
+        B3. Từ bảng suy ra kết quả:
+        3^644 = 3^(2^9) * 3^(2^7) * 3^(2^2) (mod 645)
+        3^644 = 111 * 396 * 81 (mod 645)
+        (111 * 396) mod 645 = 43956 mod 645 = 66 (mod 645).
+        3^644 = 66 * 81 (mod 645)
+        66 * 81 = 5346. 5346 mod 645 = 186 (mod 645).
+        *Kết quả trong ảnh là 36. Có thể có sai sót trong bảng tính 3^(2^i) hoặc phép nhân cuối. Dựa trên tính toán lại, kết quả là 186.*
+
+4.4. Thuật Toán Mã Hóa RSA
+RSA là một trong những hệ mật mã khóa công khai đầu tiên và được sử dụng rộng rãi nhất.
+
+1.  Năm yêu cầu của một hệ mã hiện đại mà RSA cố gắng đáp ứng:
+    1.  Độ bảo mật cao: Việc giải mã bản tin mà không biết khóa bí mật phải cực kỳ khó khăn về mặt tính toán (ví dụ, tốn hàng triệu năm với công nghệ hiện tại).
+    2.  Thao tác nhanh: Quá trình mã hóa và giải mã (khi có khóa) phải tốn ít thời gian và tài nguyên tính toán ở mức chấp nhận được. (Lưu ý: RSA chậm hơn các mã đối xứng).
+    3.  Khả năng tương thích (Dùng chung được): Có thể được triển khai trên nhiều nền tảng, hệ thống khác nhau.
+    4.  Có ứng dụng rộng rãi: Phù hợp cho nhiều mục đích như bảo mật truyền tin, chữ ký số.
+    5.  Có thể dùng để xác định chủ nhân (Chữ ký điện tử): Cho phép xác thực người gửi và đảm bảo tính toàn vẹn của thông điệp.
+
+2.  Mô tả hoạt động của RSA:
+    RSA sử dụng một cặp khóa:
+    * Khóa công khai (Public Key): Được công bố rộng rãi cho mọi người và được dùng để mã hóa thông điệp gửi đến chủ sở hữu khóa, hoặc để xác minh chữ ký số của chủ sở hữu khóa.
+    * Khóa bí mật/riêng (Private Key): Được chủ sở hữu giữ bí mật tuyệt đối. Thông tin được mã hóa bằng khóa công khai chỉ có thể được giải mã bằng khóa bí mật tương ứng (để bảo mật). Hoặc, thông tin được "ký" bằng khóa bí mật chỉ có thể được xác minh bằng khóa công khai tương ứng (cho chữ ký số).
+
+    2.1. Quy trình tạo khóa RSA (cho một người dùng B):
+    * Bước 1 (Lý thuyết): Người dùng B (người nhận) chọn ngẫu nhiên hai số nguyên tố lớn p và q (giữ bí mật p, q). Các số này phải đủ lớn để đảm bảo an toàn.
+        * Ví dụ (minh họa với số nhỏ): Chọn p=23 và q=41. (Đây là hai số nguyên tố).
+
+    * Bước 2 (Lý thuyết): Tính toán:
+        * n = p * q. Số n này được gọi là modulus, là một phần của cả khóa công khai và khóa bí mật.
+        * phi(n) = (p-1)(q-1). Đây là giá trị của hàm Euler totient tại n, cho biết số lượng các số nguyên dương nhỏ hơn n và nguyên tố cùng nhau với n. phi(n) được giữ bí mật và dùng để tính khóa bí mật.
+        * Ví dụ:
+            * n = 23 * 41 = 943.
+            * phi(n) = (23-1)(41-1) = 22 * 40 = 880.
+
+    * Bước 3 (Lý thuyết): Chọn một số nguyên e (encryption exponent) sao cho:
+        * 1 < e < phi(n)
+        * GCD(e, phi(n)) = 1 (tức là e và phi(n) là nguyên tố cùng nhau).
+        Số e là một phần của khóa công khai.
+        * Ví dụ: Chọn e=7.
+            Kiểm tra: 1 < 7 < 880.
+            GCD(7, 880): Vì 7 là số nguyên tố và 880 không chia hết cho 7 (880 = 125 * 7 + 5), nên GCD(7, 880) = 1. Lựa chọn e=7 là hợp lệ.
+
+    * Bước 4 (Lý thuyết): Tính số nguyên d (decryption exponent) là nghịch đảo nhân của e theo modulo phi(n). Tức là tìm d sao cho:
+        * d * e = 1 (mod phi(n))
+        * 1 < d < phi(n)
+        Số d này được tính bằng thuật toán Euclid mở rộng. d là khóa bí mật.
+        * Ví dụ: Tìm d sao cho d * 7 = 1 (mod 880).
+            Sử dụng thuật toán Euclid mở rộng (hoặc thử), ta tìm được d=503.
+            Kiểm tra: 503 * 7 = 3521.
+            3521 mod 880: 3521 = 4 * 880 + 1.
+            Vậy 503 * 7 = 1 (mod 880). d=503 là đúng.
+
+    * Bước 5 (Lý thuyết): Công bố khóa và giữ bí mật khóa:
+        * Khóa công khai (Public Key) K_{pub}: Là cặp (n, e). Trong ví dụ: K_{pub} = (943, 7). Khóa này có thể gửi cho bất kỳ ai.
+        * Khóa bí mật/riêng (Private Key) K_{priv}: Là d (hoặc cặp (n,d)). Trong ví dụ: K_{priv} = 503 (hoặc (943, 503)). Khóa này phải được người dùng B giữ tuyệt đối bí mật.
+        Các số p, q, phi(n) cũng phải được giữ bí mật hoặc hủy đi sau khi tạo khóa.
+
+    2.2. Quy trình Mã hóa và Giải mã RSA (để bảo mật thông điệp):
+    Giả sử người gửi A muốn gửi bản rõ M cho người nhận B.
+    * Mã hóa (thực hiện bởi A, sử dụng khóa công khai của B):
+        Bản rõ M phải được biểu diễn dưới dạng một số nguyên m sao cho 0 <= m < n. Nếu M dài hơn, nó có thể được chia thành nhiều khối nhỏ.
+        Bản mã c được tính bằng công thức:
+        c = m^e (mod n)
+        (Trong đó e và n là khóa công khai của B).
+
+    * Giải mã (thực hiện bởi B, sử dụng khóa bí mật của B):
+        B nhận được bản mã c. Bản rõ m được khôi phục bằng công thức:
+        m = c^d (mod n)
+        (Trong đó d là khóa bí mật của B, n cũng là một phần của khóa).
+
+    * Ví dụ RSA với số nhỏ (để minh họa):
+        1.  Chọn p=11 và q=3. (Hai số nguyên tố).
+        2.  N = p * q = 11 * 3 = 33.
+            phi(N) = (p-1)(q-1) = (11-1)(3-1) = 10 * 2 = 20.
+        3.  Chọn e=3.
+            Kiểm tra: 1 < 3 < 20. GCD(3, 20)=1 (vì 3 là số nguyên tố và 20 không chia hết cho 3). Hợp lệ.
+            (Lưu ý trong ảnh: e nguyên tố cùng nhau với phi(N)=20, không phải với N=33).
+        4.  Tính d sao cho d * e = 1 (mod phi(N)), tức là 3d = 1 (mod 20).
+            Ta thấy 3 * 7 = 21 = 1 (mod 20). Vậy d=7.
+        5.  Khóa công khai K_U = (e, N) = (3, 33).
+            Khóa bí mật K_R = (d, N) = (7, 33). (Hoặc chỉ cần d=7 là khóa bí mật).
+
+        *Theo phương án 1 (mã hóa bảo mật):
+        6.  Giả sử bản rõ M=15 (dưới dạng số m=15, 0 <= 15 < 33).
+            Mã hóa: C = m^e (mod N) = 15^3 (mod 33).
+            15^3 = 3375.
+            3375 mod 33: 3375 = 102 * 33 + 9.
+            Vậy C=9.
+        7.  Người nhận nhận được C=9.
+            Giải mã: M = C^d (mod N) = 9^7 (mod 33).
+            9^1 = 9 (mod 33)
+            9^2 = 81 = 15 (mod 33)
+            9^3 = 9 * 15 = 135 = 3 (mod 33)
+            9^4 = (9^2)^2 = 15^2 = 225 = 27 (mod 33)
+            9^7 = 9^4 * 9^3 = 27 * 3 = 81 = 15 (mod 33).
+            Vậy M=15. Bản rõ đã được khôi phục chính xác.
+            (Lưu ý trong ảnh gốc về phép tính 9^7 = 4782969 (chứ không phải 4782696) và 4782969 = 144938 * 33 + 15. Kết quả M=15 là đúng).
+
+3.  Độ an toàn của mã hóa RSA:
+    * Độ an toàn của hệ thống RSA dựa trên độ khó của bài toán phân tích một số nguyên lớn n thành các thừa số nguyên tố p và q của nó. Nếu một kẻ tấn công có thể phân tích n thành p và q, họ có thể tính được phi(n)=(p-1)(q-1) và từ đó dễ dàng tìm ra khóa bí mật d từ khóa công khai e.
+    * Vì vậy, để xây dựng một hệ RSA an toàn, n = p * q phải là một số rất lớn, sao cho việc phân tích nó thành thừa số nguyên tố là không khả thi về mặt tính toán với công nghệ hiện tại và dự kiến trong tương lai gần.
+    * Để đảm bảo an toàn, người ta thường chọn các số nguyên tố p và q có độ dài hàng trăm chữ số thập phân (ví dụ, mỗi số có 1024 bit hoặc hơn, để n có 2048 bit hoặc hơn).
+    * Bảng thời gian ước tính để phân tích số n (ví dụ, không phải chuẩn mực tuyệt đối, công nghệ thay đổi liên tục):
+        | Số các chữ số thập phân trong số n được phân tích | Thời gian ước tính để phân tích (tham khảo) |
+        | :-------------------------------------------------: | :-------------------------------------------: |
+        |                         50                          |                     4 giờ                     |
+        |                         75                          |                    104 ngày (trong ảnh ghi 104 giờ, có thể là typo, 104 ngày hợp lý hơn)                   |
+        |                         100                         |                    74 năm                     |
+        |                         200                         |                 ~3-4 triệu năm (trong ảnh ghi 4000 năm, đã lỗi thời)                 |
+        |                         300                         |                 ~$5 x 10^8$ năm (trong ảnh ghi 500.000 năm)             |
+        |                         500                         |                ~$4 x 10^{15}$ năm               |
+        *Lưu ý: Các con số về thời gian này chỉ mang tính tham khảo và thay đổi nhanh chóng với sự phát triển của thuật toán phân tích thừa số và sức mạnh tính toán. Các khuyến nghị hiện tại thường yêu cầu khóa RSA có độ dài tối thiểu 2048 bit (khoảng 617 chữ số thập phân cho n).*
+
+4.5. Ứng Dụng Của RSA Vào Chữ Ký Điện Tử (Digital Signature)
+
+* Thông tin truyền đi trên mạng không chỉ cần bảo mật (giữ bí mật) mà còn cần phải xác nhận được người gửi (authenticity) và đảm bảo rằng nội dung không bị thay đổi trên đường truyền (integrity).
+* Các văn bản, giao dịch điện tử (dưới dạng số hóa) cần có một cơ chế tương đương chữ ký tay để người gửi xác nhận trách nhiệm của mình đối với nội dung đó.
+* Chữ ký được sử dụng ở đây là một dãy bit được tạo ra bằng các thuật toán mật mã và được gọi là "chữ ký điện tử" hay "chữ ký số".
+
+* Nguyên lý cơ bản của chữ ký số RSA:
+    * Mỗi người dùng sở hữu một cặp khóa RSA: khóa công khai K_{pub}=(n,e) và khóa bí mật K_{priv}=d.
+    * Để tạo chữ ký số (người gửi thực hiện):
+        1.  Người gửi lấy thông điệp M cần ký.
+        2.  Tính giá trị băm (hash value) của M bằng một hàm băm mật mã an toàn (ví dụ: SHA-256). Gọi giá trị băm này là h = H(M). Bản tóm lược này đại diện duy nhất cho M.
+        3.  Người gửi dùng khóa bí mật d của mình để "mã hóa" (hay đúng hơn là "ký") giá trị băm h. Chữ ký số S được tạo ra là:
+            S = h^d (mod n)
+        4.  Người gửi gửi đi thông điệp M cùng với chữ ký số S (M có thể không cần mã hóa nếu chỉ cần xác thực, hoặc M có thể được mã hóa riêng bằng khóa đối xứng hoặc khóa công khai của người nhận nếu cần cả bảo mật).
+    * Để thẩm định/xác minh chữ ký số (người nhận hoặc bất kỳ ai có khóa công khai của người gửi thực hiện):
+        1.  Người nhận nhận được thông điệp M' và chữ ký số S'.
+        2.  Người nhận sử dụng cùng một hàm băm H mà người gửi đã dùng để tính giá trị băm của thông điệp M' nhận được: h_1 = H(M').
+        3.  Người nhận dùng khóa công khai e và n của người gửi để "giải mã" (xác minh) chữ ký S':
+            h_2 = (S')^e (mod n)
+        4.  So sánh h_1 và h_2:
+            * Nếu h_1 = h_2: Chữ ký hợp lệ. Điều này khẳng định rằng:
+                * Tính xác thực (Authenticity): Thông điệp đúng là từ người gửi (vì chỉ người gửi mới có khóa bí mật để tạo ra chữ ký S' mà có thể giải mã đúng bằng khóa công khai tương ứng).
+                * Tính toàn vẹn (Integrity): Nội dung thông điệp M' không bị thay đổi kể từ khi nó được ký (vì nếu M' bị thay đổi, h_1 sẽ khác h_2).
+                * Tính chống chối bỏ (Non-repudiation): Người gửi không thể chối bỏ việc đã gửi thông điệp (trong một hệ thống có quản lý khóa chặt chẽ).
+            * Nếu h_1 != h_2: Chữ ký không hợp lệ. Thông điệp có thể đã bị thay đổi hoặc không phải từ người gửi dự kiến.
+
+    * Sơ đồ quy trình chữ ký số:
+        Bên Gửi (Tạo chữ ký):
+        1.  Thông điệp dữ liệu (M)  ----[Đưa qua Hàm băm H()]----> Bản tóm lược (h=H(M))
+        2.  Bản tóm lược (h) ----[Mã hóa/Ký bằng Khóa BÍ MẬT của Người Gửi (K_{priv-S})]----> Chữ ký số (S)
+        3.  Chữ ký số (S) + Thông điệp dữ liệu gốc (M) ----[Gắn lại/Gửi đi]----> Thông điệp dữ liệu đã ký.
+
+        Bên Nhận (Thẩm định/Kiểm tra chữ ký):
+        1.  Nhận [Thông điệp dữ liệu đã ký (M', S')].
+        2.  Tách Chữ ký số (S') và Thông điệp dữ liệu gốc (M').
+        3.  Xử lý Thông điệp dữ liệu gốc (M'):
+            M' ----[Đưa qua Hàm băm H() (cùng hàm người gửi dùng)]----> Bản tóm lược 1 (h_1)
+        4.  Xử lý Chữ ký số (S'):
+            S' ----[Giải mã/Xác minh bằng Khóa CÔNG KHAI của Người Gửi (K_{pub-S})]----> Bản tóm lược 2 (h_2)
+        5.  So sánh h_1 và h_2:
+            * Nếu h_1 = h_2: Chữ ký hợp lệ. Khẳng định đúng người gửi. Nội dung thông điệp toàn vẹn.
+            * Nếu h_1 != h_2: Chữ ký không hợp lệ. Thông điệp có thể đã bị thay đổi hoặc không phải từ người gửi dự kiến.
+
+D. Hàm Băm Mật Mã (Cryptographic Hash Function)
+
+* Định nghĩa: Là một hàm toán học đặc biệt biến đổi một đầu vào (input) là một bản tin M có độ dài bất kỳ thành một đầu ra (output) là một chuỗi bit có kích thước cố định, gọi là giá trị băm (hash value), bản tóm lược (message digest), hoặc empreinte (fingerprint).
+    h = H(M)
+* Các tính chất quan trọng của hàm băm mật mã:
+    1.  Tính một chiều (One-way property / Preimage resistance): Từ một giá trị băm h cho trước, rất khó (về mặt tính toán) để tìm ra bản tin gốc M sao cho H(M)=h.
+    2.  Tính kháng tiền ảnh thứ hai (Second preimage resistance): Cho một bản tin M và giá trị băm h=H(M), rất khó để tìm một bản tin M' khác M (tức là M' != M) sao cho H(M')=H(M)=h. Tính chất này đảm bảo tính toàn vẹn của một bản tin cụ thể.
+    3.  Tính kháng xung đột (Collision resistance): Rất khó (gần như không thể về mặt tính toán) để tìm được hai bản tin khác nhau M1 và M2 (M1 != M2) mà có cùng một giá trị băm h (tức là H(M1) = H(M2)).
+        *Lưu ý quan trọng: Phát biểu "M != M' => H(M') != H(M)" (như trong ảnh) mô tả tính chất của một hàm đơn ánh (injective function). Hàm băm mật mã nói chung không phải là hàm đơn ánh vì không gian đầu vào (các bản tin M) lớn hơn nhiều so với không gian đầu ra (các giá trị băm h có độ dài cố định). Do đó, xung đột (collision) chắc chắn tồn tại về mặt lý thuyết. Tuy nhiên, "kháng xung đột" có nghĩa là việc *tìm ra* một cặp xung đột như vậy là cực kỳ khó khăn về mặt tính toán.*
+    4.  Hiệu ứng thác đổ (Avalanche effect): Một thay đổi nhỏ trong bản tin đầu vào (ví dụ, thay đổi chỉ một bit) sẽ dẫn đến sự thay đổi lớn và khó dự đoán ở giá trị băm đầu ra (thường là khoảng một nửa số bit của giá trị băm sẽ thay đổi). Điều này đảm bảo rằng hai bản tin gần giống nhau sẽ có giá trị băm rất khác nhau.
+* Ứng dụng: Kiểm tra tính toàn vẹn dữ liệu, tạo chữ ký số, lưu trữ mật khẩu an toàn (lưu trữ giá trị băm của mật khẩu thay vì mật khẩu gốc),...
+* Ví dụ các hàm băm phổ biến: MD5 (đã lỗi thời, không còn an toàn), SHA-1 (cũng không còn được khuyến nghị cho các ứng dụng bảo mật cao), SHA-2 (SHA-256, SHA-384, SHA-512), SHA-3.
+
+Bài tập ví dụ về RSA (Mã hóa và Giải mã "HELLO"):
+
+1.  Yêu cầu: Tìm cặp khóa bí mật và công khai với p=7 và q=19. Thực hiện mã hóa và giải mã thông điệp M = HELLO, đảm bảo tính bí mật. (Việc đảm bảo tính toàn vẹn/chứng thực thường dùng chữ ký số, nhưng ở đây tập trung vào mã hóa bảo mật).
+    *Giả sử ánh xạ ký tự sang số: A=0, B=1,... Z=25. Hoặc theo giá trị cho sẵn trong bài.*
+    Thông điệp HELLO được cho là tương ứng với các số: H=7, E=4, L=11, L=11, O=14.
+
+    Giải:
+    * Bước 1: Tính N
+        N = p * q = 7 * 19 = 133.
+
+    * Bước 2: Tính phi(N)
+        phi(N) = (p-1)(q-1) = (7-1)(19-1) = 6 * 18 = 108.
+
+    * Bước 3: Chọn e
+        Chọn e sao cho 1 < e < 108 và GCD(e, 108) = 1.
+        Thử chọn e=5.
+        GCD(5, 108):
+        108 = 21 * 5 + 3
+        5 = 1 * 3 + 2
+        3 = 1 * 2 + 1
+        2 = 2 * 1 + 0
+        GCD(5, 108) = 1. Vậy e=5 là hợp lệ.
+
+    * Bước 4: Tìm d
+        Tìm d sao cho d * e = 1 (mod phi(N)), tức là 5d = 1 (mod 108).
+        Sử dụng thuật toán Euclid mở rộng:
+        Từ GCD(5, 108)=1:
+        1 = 3 - 1 * 2
+        1 = 3 - 1 * (5 - 1 * 3) = 3 - 5 + 3 = 2 * 3 - 5
+        1 = 2 * (108 - 21 * 5) - 5 = 2 * 108 - 42 * 5 - 5 = 2 * 108 - 43 * 5
+        Vậy, 2 * 108 - 43 * 5 = 1.
+        Suy ra -43 * 5 = 1 (mod 108).
+        Nghịch đảo là -43. Để có giá trị dương: d = -43 + 108 = 65.
+        Kiểm tra: 65 * 5 = 325. 325 mod 108: 325 = 3 * 108 + 1.
+        Vậy d=65 là đúng.
+
+    * Bước 5: Khóa
+        * Khóa công khai: (N, e) = (133, 5).
+        * Khóa bí mật: d = 65.
+
+    * Mã hóa thông điệp HELLO = [7, 4, 11, 11, 14]:
+        Công thức mã hóa: C = M^e (mod N) = M^5 (mod 133).
+
+        * Với H (M=7):
+            C_H = 7^5 (mod 133)
+            7^1 = 7
+            7^2 = 49
+            7^4 = 49^2 = 2401. 2401 = 18 * 133 + 7 => 7^4 = 7 (mod 133).
+            7^5 = 7^4 * 7^1 = 7 * 7 = 49 (mod 133).
+            C_H = 49.
+
+        * Với E (M=4):
+            C_E = 4^5 (mod 133)
+            4^1 = 4
+            4^2 = 16
+            4^3 = 64
+            4^4 = 256 = 256 - 133 = 123 (mod 133).
+            4^5 = 4^4 * 4^1 = 123 * 4 = 492 (mod 133).
+            492 = 3 * 133 + 93 => 492 = 93 (mod 133).
+            C_E = 93.
+
+        * Với L (M=11):
+            C_L = 11^5 (mod 133)
+            11^1 = 11
+            11^2 = 121
+            11^4 = 121^2 = 14641 (mod 133).
+            14641 = 110 * 133 + 11 => 11^4 = 11 (mod 133).
+            11^5 = 11^4 * 11^1 = 11 * 11 = 121 (mod 133).
+            C_L = 121.
+
+        * Với O (M=14):
+            C_O = 14^5 (mod 133)
+            14^1 = 14
+            14^2 = 196 = 196 - 133 = 63 (mod 133).
+            14^4 = 63^2 = 3969 (mod 133).
+            3969 = 29 * 133 + 112 => 14^4 = 112 (mod 133).
+            14^5 = 14^4 * 14^1 = 112 * 14 = 1568 (mod 133).
+            1568 = 11 * 133 + 105 => 1568 = 105 (mod 133).
+            C_O = 105.
+
+        Bản mã C = [49, 93, 121, 121, 105]. (Kết quả này khớp với ảnh).
+
+    * Bước 6: Giải mã bản mã C = [49, 93, 121, 121, 105]:
+        Công thức giải mã: M' = C^d (mod N) = C^65 (mod 133).
+        Đây là phép tính lũy thừa lớn, cần dùng phương pháp tính lũy thừa nhanh (nhị phân).
+        65 = (1000001)_2 = 2^6 + 2^0 = 64 + 1.
+
+        * Giải mã C_H = 49: M'_H = 49^65 (mod 133) = (49^64 * 49^1) (mod 133).
+            49^1 = 49
+            49^2 = 2401 = 7 (mod 133)
+            49^4 = 7^2 = 49 (mod 133)
+            49^8 = 49^2 = 7 (mod 133)
+            49^16 = 7^2 = 49 (mod 133)
+            49^32 = 49^2 = 7 (mod 133)
+            49^64 = 7^2 = 49 (mod 133)
+            M'_H = 49^64 * 49^1 = 49 * 49 = 7 (mod 133).
+            M'_H = 7 (H). (Khớp với ảnh).
+
+        * Giải mã C_E = 93: M'_E = 93^65 (mod 133).
+            Tương tự, tính 93^64 (mod 133) và 93^1 (mod 133).
+            93^1 = 93
+            93^2 = 8649 = 8649 - 65 * 133 = 8649 - 8645 = 4 (mod 133)
+            93^4 = 4^2 = 16 (mod 133)
+            93^8 = 16^2 = 256 = 123 (mod 133)
+            93^16 = 123^2 = 15129 = 15129 - 113 * 133 = 15129 - 15029 = 100 (mod 133)
+            93^32 = 100^2 = 10000 = 10000 - 75 * 133 = 10000 - 9975 = 25 (mod 133)
+            93^64 = 25^2 = 625 = 625 - 4 * 133 = 625 - 532 = 93 (mod 133)
+            M'_E = 93^64 * 93^1 = 93 * 93 = 4 (mod 133).
+            M'_E = 4 (E). (Khớp với ảnh).
+
+        * Giải mã C_L = 121: M'_L = 121^65 (mod 133).
+            121^1 = 121 = -12 (mod 133)
+            121^2 = (-12)^2 = 144 = 11 (mod 133)
+            121^4 = 11^2 = 121 (mod 133)
+            121^8 = 121^2 = 11 (mod 133)
+            121^16 = 11^2 = 121 (mod 133)
+            121^32 = 121^2 = 11 (mod 133)
+            121^64 = 11^2 = 121 (mod 133)
+            M'_L = 121^64 * 121^1 = 121 * 121 = 11 (mod 133).
+            M'_L = 11 (L). (Khớp với ảnh).
+
+        * Giải mã C_O = 105: M'_O = 105^65 (mod 133).
+            105^1 = 105 = -28 (mod 133)
+            105^2 = (-28)^2 = 784 = 784 - 5 * 133 = 784 - 665 = 119 = -14 (mod 133)
+            105^4 = (-14)^2 = 196 = 63 (mod 133)
+            105^8 = 63^2 = 3969 = 112 (mod 133)
+            105^16 = 112^2 = 12544 = 12544 - 94 * 133 = 12544 - 12502 = 42 (mod 133)
+            105^32 = 42^2 = 1764 = 1764 - 13 * 133 = 1764 - 1729 = 35 (mod 133)
+            105^64 = 35^2 = 1225 = 1225 - 9 * 133 = 1225 - 1197 = 28 (mod 133)
+            M'_O = 105^64 * 105^1 = 28 * 105 = 2940 (mod 133).
+            2940 = 22 * 133 + 14 => 2940 = 14 (mod 133).
+            M'_O = 14 (O). (Khớp với ảnh).
+
+        Bản rõ thu được M' = [7, 4, 11, 11, 14], tương ứng với "HELLO".
+
+2.  Demo thuật toán RSA trên CRYPTOOL2:
+    (Đây là một bài tập thực hành, bạn có thể sử dụng phần mềm CrypTool 2 để trực quan hóa các bước tạo khóa, mã hóa và giải mã RSA với các tham số tùy chọn.)
+
+---
+
+Chương 5 (Đề xuất): Mã Độc và Các Hình Thức Tấn Công Phổ Biến
+
+5.1. Khái Niệm Mã Độc (Malware)
+
+* Mã độc (Malicious Software - Malware): Là bất kỳ loại phần mềm nào được thiết kế và tạo ra với mục đích xấu, nhằm gây hại cho máy tính, hệ thống máy tính, mạng máy tính hoặc người dùng. Mã độc có thể xâm nhập, làm hỏng, vô hiệu hóa hoạt động, đánh cắp dữ liệu, hoặc thực hiện các hành vi không mong muốn khác mà không có sự cho phép hay hiểu biết của người dùng.
+* Nói cách khác, mã độc là những chương trình máy tính được tạo ra với mục đích làm hại đến tính bí mật, tính toàn vẹn hoặc tính khả dụng của dữ liệu, ứng dụng và hệ điều hành của hệ thống.
+
+5.2. Phân Loại Mã Độc
+Mã độc có thể được phân loại theo nhiều cách, ví dụ như cách chúng lây lan, cách chúng hoạt động, hoặc mục tiêu của chúng. Dưới đây là một số loại phổ biến:
+
+* Căn cứ vào việc có cần "vật chủ" (host program) để tồn tại và lây lan hay không:
+    * Cần vật chủ (chương trình hợp pháp để ẩn náu hoặc gắn vào):
+        * Virus: Là một đoạn mã hoặc chương trình máy tính có khả năng tự sao chép và lây nhiễm bằng cách gắn chính nó vào các chương trình, tệp tin hoặc vùng khởi động (boot sector) của ổ đĩa hợp pháp (gọi là vật chủ). Virus cần sự tương tác của người dùng để kích hoạt (ví dụ: chạy một chương trình đã bị nhiễm). Khi được kích hoạt, virus sẽ thực hiện hành vi phá hoại và tiếp tục lây lan sang các vật chủ khác.
+        * Logic Bomb (Bom logic): Là một đoạn mã độc được chèn vào một chương trình phần mềm hợp pháp và được thiết kế để kích hoạt chỉ khi một điều kiện cụ thể nào đó được thỏa mãn (ví dụ: đến một ngày giờ nhất định, một sự kiện hệ thống xảy ra, hoặc một nhân viên bị sa thải xóa một file cụ thể).
+        * Trojan Horse (Ngựa thành Troy): Là loại mã độc ẩn mình dưới vỏ bọc của một phần mềm hữu ích, hợp pháp hoặc một tệp tin có vẻ vô hại để đánh lừa người dùng cài đặt hoặc thực thi nó. Sau khi được cài đặt, Trojan sẽ bí mật thực hiện các hành vi độc hại như đánh cắp dữ liệu (mật khẩu, thông tin tài chính), tạo cửa hậu (backdoor) cho hacker truy cập từ xa, hoặc biến máy tính thành một phần của mạng botnet. Trojan không tự nhân bản như virus hay worm.
+        * Backdoor (Cửa hậu): Là một phương pháp bí mật để vượt qua các cơ chế xác thực hoặc kiểm soát truy cập thông thường của hệ thống. Backdoor có thể được tạo ra bởi Trojan, worm, hoặc do lỗi cấu hình, cho phép hacker truy cập từ xa vào hệ thống mà không bị phát hiện, kiểm soát hệ thống, đánh cắp dữ liệu hoặc cài thêm mã độc khác.
+        * Exploit: Là một đoạn mã, một chuỗi dữ liệu, hoặc một loạt các lệnh được thiết kế để lợi dụng một lỗi (bug), điểm yếu (weakness), hoặc lỗ hổng (vulnerability) cụ thể trong phần mềm, phần cứng hoặc hệ điều hành nhằm mục đích xâm nhập, chiếm quyền điều khiển hệ thống, hoặc gây ra các hành vi không mong muốn.
+
+    * Là phần mềm độc lập (không cần vật chủ để hoạt động và lây lan):
+        * Worm (Sâu máy tính): Là một chương trình độc lập có khả năng tự nhân bản và tự động lan truyền qua các mạng máy tính (ví dụ: qua email, chia sẻ file, lỗ hổng mạng) mà không cần sự can thiệp trực tiếp của người dùng hay một chương trình vật chủ. Worm thường khai thác các lỗ hổng bảo mật để xâm nhập vào các máy tính khác. Mục đích của worm có thể là phá hoại, làm nghẽn băng thông mạng, làm sập hệ thống, hoặc cài đặt các loại mã độc khác (như backdoor, zombie).
+        * Zombie/Bot: Là một máy tính đã bị hacker chiếm quyền kiểm soát từ xa (thường thông qua việc lây nhiễm worm, trojan hoặc exploit) và trở thành một "máy ma" trong một mạng lưới các máy tính bị xâm nhập gọi là botnet. Máy tính zombie sẽ thực hiện các mệnh lệnh từ hacker (botmaster) mà người dùng không hề hay biết, ví dụ như tham gia vào các cuộc tấn công từ chối dịch vụ phân tán (DDoS), gửi thư rác (spam), phát tán mã độc, hoặc thực hiện các hoạt động bất hợp pháp khác.
+
+* Một số loại mã độc khác thường gặp, phân loại theo hành vi hoặc mục đích:
+    * Spyware (Phần mềm gián điệp): Thu thập thông tin cá nhân hoặc thông tin nhạy cảm của người dùng (thói quen duyệt web, tên đăng nhập, mật khẩu, số thẻ tín dụng) mà không có sự cho phép và gửi về cho kẻ tấn công. Keylogger (ghi lại thao tác bàn phím) là một dạng spyware.
+    * Adware (Phần mềm quảng cáo): Tự động hiển thị hoặc tải xuống các quảng cáo không mong muốn trên máy tính của người dùng. Mặc dù không phải lúc nào cũng độc hại, adware có thể gây phiền nhiễu, làm chậm máy, và đôi khi thu thập dữ liệu người dùng.
+    * Ransomware (Mã độc tống tiền): Mã hóa dữ liệu quan trọng trên máy tính của nạn nhân hoặc khóa toàn bộ hệ thống, sau đó yêu cầu nạn nhân trả tiền chuộc (thường bằng tiền điện tử) để lấy lại quyền truy cập hoặc khóa giải mã.
+    * Rootkit: Là một tập hợp các công cụ phần mềm được thiết kế để che giấu sự hiện diện của mã độc và các hoạt động của nó trên hệ thống, cho phép hacker duy trì quyền truy cập trái phép ở mức cao nhất (root/administrator) mà không bị phát hiện bởi người dùng hoặc các phần mềm bảo mật.
+
+5.3. Mục Đích của Mã Độc
+Mã độc được tạo ra với nhiều mục đích khác nhau, thường là bất hợp pháp và gây hại:
+* Thu thập dữ liệu trên máy tính: Trộm cắp tài liệu, hình ảnh, video cá nhân hoặc bí mật kinh doanh.
+* Ăn cắp thông tin nhạy cảm:
+    * Mật khẩu đăng nhập các dịch vụ trực tuyến (email, mạng xã hội, ngân hàng).
+    * Thông tin thẻ tín dụng, tài khoản ngân hàng.
+    * Thông tin định danh cá nhân (PII - Personally Identifiable Information).
+* Nghe lén thông tin:
+    * Chụp ảnh màn hình (Screenshot).
+    * Ghi âm âm thanh từ micro.
+    * Quay video từ webcam.
+    * Ghi lại các thao tác gõ phím (Keylogger).
+* Sử dụng máy tính của nạn nhân cho các mục đích xấu:
+    * Tạo thành một phần của mạng botnet để phục vụ cho các cuộc tấn công từ chối dịch vụ phân tán (DDoS) nhắm vào các mục tiêu khác.
+    * Phát tán thư rác (spam email).
+    * Sử dụng tài nguyên phần cứng trên máy nạn nhân để thực hiện các tác vụ nặng như "đào" tiền điện tử (Cryptojacking/Bitcoin mining).
+* Tống tiền: Mã hóa dữ liệu và đòi tiền chuộc (Ransomware).
+* Phá hủy dữ liệu trên máy nạn nhân: Xóa file, format ổ cứng.
+* Làm hư hại thiết bị phần cứng: Mặc dù hiếm gặp hơn, một số mã độc tinh vi có thể được thiết kế để gây quá tải hoặc thay đổi cài đặt firmware, dẫn đến hỏng hóc vật lý (Ví dụ: Virus Chernobyl (CIH) từng gây hại BIOS, Stuxnet được cho là đã phá hoại các máy ly tâm hạt nhân của Iran).
+* Gây rối, làm phiền, hoặc thể hiện "thành tích" của hacker.
+
+5.4. Con Đường Lây Nhiễm Mã Độc
+Mã độc có thể xâm nhập vào máy tính và hệ thống thông qua nhiều con đường khác nhau:
+
+1.  Cài đặt trực tiếp (bởi người có quyền truy cập vật lý):
+    * Cho người khác mượn máy tính, điện thoại thông minh (smartphone) mà không giám sát.
+    * Rời khỏi máy tính, smartphone mà không khóa màn hình hoặc đăng xuất tài khoản, tạo cơ hội cho người khác cài cắm mã độc.
+    * Trong một số trường hợp rất hiếm, máy tính có thể bị nhiễm mã độc ngay từ nhà sản xuất hoặc trong quá trình vận chuyển (supply chain attack).
+
+2.  Qua phần mềm lậu, phần mềm bẻ khóa (crack), keygen:
+    * Người dùng tải và cài đặt các phần mềm không có bản quyền, phần mềm đã bị "bẻ khóa" từ các nguồn không tin cậy trên Internet.
+    * Các công cụ bẻ khóa (crack, patch, keygen) thường bị các tin tặc nhúng mã độc vào bên trong. Khi người dùng chạy các công cụ này, họ vô tình cài đặt mã độc vào máy.
+    * Nhiều người dùng cả tin rằng họ đang tải phần mềm từ "những nhóm cracker, hacker tốt" nhưng thực tế là đang tự đặt mình vào nguy cơ.
+
+3.  Qua thiết bị lưu trữ di động (USB, thẻ nhớ, ổ cứng ngoài):
+    * Khi cắm một thiết bị lưu trữ di động (ví dụ: USB) vào một máy tính đã bị nhiễm mã độc, mã độc đó có thể tự sao chép vào thiết bị này.
+    * Sau đó, khi cắm USB (đã bị nhiễm) đó vào một máy tính khác, mã độc có thể được kích hoạt (ví dụ, thông qua tính năng AutoRun/AutoPlay nếu được bật, hoặc do người dùng vô tình nhấp vào một tệp tin độc hại trên USB) và lây nhiễm sang máy tính mới.
+
+4.  Qua Email và Tin nhắn:
+    * Tệp đính kèm độc hại (Malicious Attachments): Email hoặc tin nhắn có thể chứa các tệp đính kèm (ví dụ: .exe, .docm, .pdf, .zip) chứa mã độc. Khi người dùng mở tệp này, mã độc sẽ được thực thi.
+    * Liên kết độc hại (Malicious Links): Email hoặc tin nhắn có thể chứa các liên kết dẫn đến các trang web giả mạo hoặc trang web chứa mã độc. Nếu người dùng nhấp vào liên kết, họ có thể bị lừa cung cấp thông tin cá nhân (phishing) hoặc mã độc có thể tự động tải xuống máy tính (drive-by download).
+
+5.  Khai thác lỗ hổng phần mềm (Software Vulnerabilities):
+    * Các phần mềm trên máy tính, bao gồm hệ điều hành (Windows, macOS, Linux), trình duyệt web (Chrome, Firefox), phần mềm văn phòng (Microsoft Office), phần mềm đọc PDF, phần mềm chơi nhạc và video, game, và các ứng dụng khác, đều có thể chứa các lỗi (bugs) hoặc lỗ hổng bảo mật.
+    * Hacker có thể tạo ra các "đầu vào đặc biệt" (ví dụ: một tệp văn bản được chế tạo đặc biệt, một trang web độc hại, một gói tin mạng lạ) chứa mã độc.
+    * Khi phần mềm có lỗ hổng xử lý các đầu vào đặc biệt này, lỗi sẽ bị kích hoạt, tạo điều kiện cho mã độc được thực thi và xâm nhập vào hệ thống. Đây là một trong những con đường lây nhiễm phổ biến và nguy hiểm nhất.
+
+6.  Tải xuống từ các nguồn không đáng tin cậy (Untrusted Downloads):
+    * Tải phần mềm, trò chơi, hoặc các tệp tin khác từ các trang web không chính thức, các mạng chia sẻ ngang hàng (P2P), hoặc các kho ứng dụng không được kiểm duyệt kỹ càng.
+
+7.  Qua các Quảng cáo độc hại (Malvertising):
+    * Hacker có thể mua không gian quảng cáo trên các trang web (kể cả các trang uy tín) và chèn mã độc vào nội dung quảng cáo. Khi người dùng xem hoặc tương tác với quảng cáo đó, mã độc có thể được cài đặt.
+
+---
+
+Chương 6 (Đề xuất): Xác Thực và Quản Lý Truy Cập
+
+6.1. Các Khái Niệm Cơ Bản
+
+* Định danh (Identification): Là quá trình một chủ thể (người dùng, tiến trình) tự khai báo danh tính của mình cho hệ thống. Ví dụ: nhập tên người dùng (username). Định danh trả lời câu hỏi "Bạn là ai?". Hệ thống sẽ kiểm tra xem định danh đó có tồn tại trong cơ sở dữ liệu người dùng hay không.
+
+* Xác thực (Authentication): Là quá trình hệ thống kiểm tra và xác minh tính hợp lệ của danh tính mà chủ thể đã khai báo. Mục đích là để đảm bảo chủ thể đúng là người hoặc tiến trình mà họ tự nhận. Xác thực trả lời câu hỏi "Bạn có thực sự là người bạn nói không?".
+
+* Ủy quyền/Phân quyền (Authorization): Sau khi một chủ thể đã được định danh và xác thực thành công, quá trình ủy quyền sẽ xác định những tài nguyên (dữ liệu, chức năng) nào mà chủ thể đó được phép truy cập và những hành động nào (đọc, ghi, xóa, thực thi) họ được phép thực hiện trên các tài nguyên đó. Ủy quyền trả lời câu hỏi "Bạn được phép làm gì?".
+
+6.2. Các Nhân Tố Xác Thực (Authentication Factors)
+Để xác thực danh tính, hệ thống thường dựa vào một hoặc nhiều nhân tố (yếu tố) sau:
+
+1.  Thứ bạn biết (Something You Know):
+    * Đây là loại thông tin bí mật mà chỉ có người dùng hợp lệ mới biết.
+    * Ví dụ: Mật khẩu (Password), Mã PIN (Personal Identification Number), câu hỏi bí mật, cụm mật khẩu (passphrase).
+    * Ưu điểm: Dễ triển khai, chi phí thấp.
+    * Nhược điểm: Dễ bị đánh cắp (qua lừa đảo, keylogger, đoán mò), người dùng có xu hướng đặt mật khẩu yếu hoặc tái sử dụng mật khẩu.
+
+2.  Thứ bạn có (Something You Have):
+    * Đây là một vật thể vật lý mà người dùng sở hữu.
+    * Ví dụ:
+        * Thẻ thông minh (Smart card), thẻ từ.
+        * Thiết bị token bảo mật (Security token) tạo mã OTP (One-Time Password).
+        * Điện thoại di động (để nhận mã OTP qua SMS hoặc qua ứng dụng xác thực).
+        * Khóa USB bảo mật (ví dụ: YubiKey).
+    * Ưu điểm: Khó bị sao chép hơn mật khẩu.
+    * Nhược điểm: Có thể bị mất, bị đánh cắp, hoặc hỏng.
+
+3.  Thứ là bạn (Something You Are / Something You Do - Sinh trắc học):
+    * Đây là các đặc điểm sinh học hoặc hành vi duy nhất của người dùng.
+    * Ví dụ về đặc điểm sinh học (Biometrics):
+        * Vân tay (Fingerprint).
+        * Nhận dạng khuôn mặt (Facial recognition).
+        * Quét mống mắt (Iris scan).
+        * Quét võng mạc (Retina scan).
+        * Nhận dạng giọng nói (Voice recognition).
+        * Hình dạng bàn tay (Hand geometry).
+    * Ví dụ về đặc điểm hành vi (Behavioral Biometrics):
+        * Cách gõ phím (Keystroke dynamics).
+        * Chữ ký động (Dynamic signature).
+        * Dáng đi (Gait recognition).
+    * Ưu điểm: Rất khó làm giả hoặc đánh cắp, gắn liền với người dùng.
+    * Nhược điểm: Chi phí triển khai có thể cao, có thể bị ảnh hưởng bởi các yếu tố môi trường hoặc thay đổi của cơ thể, lo ngại về quyền riêng tư (lưu trữ dữ liệu sinh trắc học).
+
+(Phần tiếp theo của chương này có thể bao gồm: Xác thực đa yếu tố (MFA), các giao thức xác thực phổ biến, kiểm soát truy cập (DAC, MAC, RBAC), v.v...)
+
+---

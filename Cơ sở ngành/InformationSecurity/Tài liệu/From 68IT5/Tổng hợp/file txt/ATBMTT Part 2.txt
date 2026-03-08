@@ -1,0 +1,307 @@
+Gán cho mỗi chữ cái 1 giá trị số tương ứng 
+A 
+0 
+B 
+1 
+Công thức mã hóa 
+C 
+D 
+2 
+3 
+c=(m+3) mod 26. 
+E 
+4 
+m: kí tự của bản rõ M 
+2 
+25 
+c kí tự của bản mã C 
+Mã hóa và giải mã Ceasar 
+Mà hóa bản tin "HELLO IT WORLD" láng mã Ceasar (K=3) 
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+DEFGHIJ K L M N O P Q R S T U V W X Y Z ABC 
+Mã hóa bản tin "HELLO IT WORLD" lắng mà Ceasar (K=3) 
+HELLO IT WORLD" → "KHOOR LW ZRUOG" 
+Mã hóa bản tin " SECURITY" với mã Ceasar khi k=15 
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+⇒ 
+*SECURITY 
+→ 
+20 
+Thám mã 
+KOKUYO
+
+No 
+A) Mã hóa báng thế tổng quát 
+Cách mà hóa thay thế kí tự trong bảng mà gối băng 
+1 kí tự tương ứng trong một báng the 
+Ví dụ: Chó bản ró M² A DAY", sử dụng báng thế dưới đây thu đc bản mã 
+C="FTFP" 
+Bảng gốc 
+A 
+B 
+C 
+D 
+WXYZ 
+Bảng thế 
+FG 
+N 
+T 
+UKPL 
+Mỗi một báng thế chính là một khoá K để mã hóa và giải mã 
+- Với bảng chữ chi cái gồm 26 kí tự, tổng số khóa k có thể có là bao nhiêu? 
+26*25*24 
+*. 
+*2*1 = 261 
+B. Mã Ceasar 
+- Do hoàng đế La Mã Julius Ceasar tạo ra 
+- Bảng thế là báng chữ cái đã dịch các kí tự sang trái 3 
+vi tri 
+Bảng gốc 
+A 
+B 
+C 
+D 
+W 
+X 
+Y 
+Z 
+Bảng thế 
+D 
+E 
+F 
+G 
+Z 
+A B 
+C 
+Đặc điểm mà Ceasar 
+Mã Ceasar được gọi là mã cộng (additive cipher) theo cách như sau
+
+Ngay 
+Chương 3. Hệ mặt mà 
+khoả đòi xung 
+3.1 Đặc điểm về nguyên lý 
+Hệ mật mà khói đối xứng 
+Hệ mật mã đối xứng là một hệ thống mật mã trong đó một khóa được sử dụng cho cả quá trình má hái và giải mã 
+A. Đặc điểm 
+Mã hóa và giải mã sử dụng chung 1 khóa K, do đó khoa K phải giữ bí mật 
+Mà hóa dạng khối dữ liệu nhị phân (binary) 
+Phù hợp để mã hóa dữ liệu trong máy tính với kích thước dữ liệu tuỳ ý 
+* Mã khói ( Block Cipher) 
+Là một loại hệ thống mã hóa đối xứng, trong đó dữ liệu được chia thành các khối cố định (thg là 64bu, 128, 256 bit) và mỗi khối đc mã hóa riêng lẻ = một khoái bí mật 
+Nguyên lí thiết kế mà khối 
+Theo Shannon có 2 nguyên tắc cơ sở để thiết kế mà khối với độ bảo mật cao 
++ Tính khuếch tán. Mỗi bự của bản rõ sẽ tác động đến các
+
+Thứ 
+Ngay 
++ Là thuật toán mã khói, độ dài mỗi khối 64 bit 
++ Khoa ban đầu có độ dài 64 bit. Tuy nhiên chỉ có 56 bit dc sử dụng thực tế các bịt còn lại kiểm tra tính chán lẻ của 
+khoa 
++ Sử dụng cấu trúc Feistel 
++ Xuất ra bản má 64 bit 
++ Thực hiện 16 vòng, 
+A) Khối dữ liệu của DES 
+Đầu vào là khối dữ liệu M (bán rõ) 64bit 
+Khoá k 64 bit gồm 56 bit sử dụng và 8 bit parity 
+Đầu ra là khối dữ liệu C (bán mã) 64bit 
+Khói M 
+Khôi C 
+10.10. 1000 
+DES 
+00101101 
+64 bit 
+64 bu 
+Khoá K: 01010001 
+Padding 
+Dữ liệu gốc cân mã hóa được chia thành các khối 64 bư 
+64 
+bet 64b 64but 64 bu 
+64 bit 64 bit 64bit 
+Nếu dữ liệu gốc không phải số chắn lần 64 bit thì cần áp dụng cơ chế padding để bổ sung thêm dữ liệu vào khôi cuối cùng 
+64 bit 
+64 bit 
+64 bit 
+32 bit 
+32 bit 
+B) Thuật toán lưu đồ 
+Thuật toán mã hóa DES là một quy trình gồm các pha theo trình tự sau
+
+The 
+bự của bản mã, hay nói cách khác, một bịt của bán mà sẽ chu của tất cả các bịt của trong bán rõ Vc làm như vậy 1 nhám làm giám tối đa mối liên quan giữa bản rõ và bán mã, ngăn chặn vx suy ngc kha 
++ Tính xáo trộn: làm phúc tạp hoá mời liên hệ giữa lán má và khóa gáy khó khăn cho kẻ thám mã có ý định tim quy luật để phá mà 
+2) Kỹ thuật: Thực hiện 1 chuối các phép biến đổi dữ liệu bao gồm hoán vị và thay thế kết hợp nhau 
+(3) Quy trình má khoa đc thiết kế với nhi vòng lặp 
+Tại mỗi vòng thực hiện hàm biến đòi f 
+Đầu ra (output) của vòng i sẽ làm đầu vào (input) cho 
+vong i + 1 
+Vòng i sử dụng 1 khóa con K, sinh ra từ khóa gốc K qua 1 quy trình sinh khóa 
+(4) Giải mã là quy trình ngc với mà hóa 
+Sử dụng cùng so đó, cùng số vòng và hàm f 
+Các khóa con Ki đa cho mỗi vòng đc áp dụng theo thứ 
+tự ngược lại với má hóa 
+32 chuẩn mài má DES 
+-DES (Data Encryption Standard) do IBM phát triển vào năm 1973 cho NSA 
+Thuật toán đc công bố nhưng chi tiết bên trong thiết kế đc NSA giữ bị mặt 
+1977 đc công nhận thành tiêu chuẩn má hóa và đc sửdụng rộng rãi mái dù còn nhi tranh cái 
+Đặc điểm của thuật toán DES. 
+20 
+KOKUYO
+
+THG 
+D 
+Ne 
+Pha khỏi tạo phép hoán vị khói đầu IP 
+Pha mã khóa. Thực hiện 16 vòng láp biến đổi dữ liệu cùng với khóa k 
+Pha kết thúc phép hoán vị kết thúc FP (là đảo ngược của IP) 
+10
+
+Ngay 
+Chương 4. Hệ mật mã 
+khoá công kha 
+1. Giới thiệu tổng quan 
+Hệ mật mó khóa công khai là một thành tựu lớn của mặt mã hiện đại 
+Thay đổi nguyên tốc truyền thông của mật mã 
+Giải quyết bài toán chia sẻ và quản lý khóa của mật mã khóa đối xứng 
+Tạo ra giải pháp chữ ký số (chữ ký điên tử) hiện được áp dụng trong hầu hết các dịch vụ và ứng dụng CNTT 
+A) Hoàn cảnh ra đời 
+Năm 1976, Diffie và Hellman đưa ra ý tướng công khai thông tin tin về khóa mà vẫn đảm bảo tính bí mật của hệ mà mã 
+Năm 1977, Rivest, Shamir uci Adleman phát minh hệ mật mã khóa công khai RSA 
+Các hì mật mã khác xuất hiện sau đó. Rabin, El-Gammal Elliptic Curve 
+B) Đặc điểm 
+Trong hè mát mà khoa công khai (PKC), mồi chủ thể cần 
+sở hữu 1 cặp khóa 
+Khóa công khai K_{E} (public key) 
+Khóa riêng k_{D} (private key) 
+Khóa công khai có thể phổ biến cho tất cả cùng biết 
+Khóa riêng riêng phái được chú thế số hiệu giữ bí mật 
+Cáp khóa K_{D} và K_{E} 
+k_{E} K_{D} nhưng có mối quan hệ 1-1 
+Mã hóa M bằng k_{E} thi giải mã bằng k_{D} và ngc lại 
+M-D(KD, ECKEM)) (1) 
+M = D(K_{E}, E(K_{D}, M)) (2)
+
+Công thức (1) là cơ sở để bảo mật dữ liệu 
+Công thức (2) là cơ sở để tạo ra chứ kí số (chứ kí điện tử) 
+() Nguyên tắc thiết kế hệ PKC 
+Su Sự dung Sau hàm ý một chiều có của lật với tính cơ chế hàm 
+x = f(x) là dễ vào, tính Ỵ = Với mọi đầu vào, 
+Biết Ý, rất khó để tính ngọ x trừ khi biết Của lật 
+"Của lật chính là khóa riêng được quỳ bí mật để có thể giải mã bằng, hàm người f'x X = f(x) 
+Không biết của lật để giải mã, việc phá mã trở ên vô cùng khó khán 
+so sánh 
+Hệ mật mã khóa công khai 
+ì bên truyền tin sở hữu 1 Mỗi cắp khóa khác nhau 
+Mã hóa bằng 1 khóa và giải mã bằng khoa kia 
+Một khóa có thể trao đổi công khai 
+Ứng dụng trong chữ ký điên tứ 
+Hàm mã hóa là hàm toán họa 1 chiều và có cửa bấy 
+Hệ mặt mà khai đối xứng 
+11 - Cả hai bên cùng sở hữu 1 khoá 
+- Mã hóa và giải mã cùng 1 khoá 
+- Cần 1 kênh bí mật an toàn để trao đối khóa 
+- Không thể sử dụng trong chứ ký điện tử
+- Hàm mã hóa là hàm biến đổi với hoán vị và thay thế 
+Nhắc lại lý thuyết số 
+1. Phép chia modulo 
+Phép chia modulo là phép chia lấy phần dư 
+VD 27 mod 8-3 35 mod 9=8 
+KOKUYO
+
+Một cách tổng quát 
+a mod n = r với a >= 0 , n > 0 ; 0 <= n - 1 
+Nếu hai số a, trong phép chia cho n this i số a, b có cùng số dư tron nói rằng a và b là đồng du trong phép chia modulo chon ký hiệu bằng dấu = phép so sánh đồng dư được ký hiệu 
+a equiv b (mod n) hay viết tắt là a equiv b mod n VD với n = 4 ta có 4 lớp tương đương sau. 
+{0,4,8,12,16 } 
+{1,5,9,13, 17.} 
+{2,6,10, 14, 18. } 
+{3,7, 11, 15, 19. } 
+2. Một số tíc của phép modulo 
+Cho a, b và vì là các số nguyên, phép modulo có các the 
+a) (a + b) mod n = [ la mod n) + (b mod n) 1 mod n 
+b) (a - b) mod n = [(a mod n) (b'mod n)] mod n 
+c) (ab) mod n = [(amod n) x (bmod n) I mod n 
+3. ƯỚC SỐ 
+Nếu a mod n = 0 (viết cách khác a equiv0 ) mod n) thì có nghĩa là ạ chia hết cho n, hay n là ước số của a 
+Ước số 
+Thuật toán Euclid tim GCD(A,B)
+
+VD: Tìm GCD (2740, 1760) 
+-
+9 
+1 
+2740 
+1760 
+980 
+11760 
+980 
+780 
+1 
+980 
+780 
+200 
+3 
+1 
+780 
+200 
+180 
+9 
+200 
+180 
+20 
+180 
+20 
+0 
+20 
+0 
+→gcd (2740, 1760) = 20 
+Nguyên tố cùng nhau 
+Hải số nguyên a, bEZ\{0} đc gọi là nguyên tố cùng 
+(a, b) = 1 nhau nếu giả (a, 
+VD (5,8), (9,14) là các cặp nguyên tố cùng nhau 
+Phần tử nghịch đảo của phép nhân modulo 
+- Nếu hai số nguyên a và n nguyên tố cùng nhau, thì tồn tại số nguyên vì sao cho. 
+aw 1 mod n 
+20 
+KOKUYO
+
+Ta gọi w là phần tử nghịch đáo của a trong phép modul cho n và ký hiệu là à¹ 
+Nghịch đáo nhân 
+Nếu tồn tại 1 số b ∈ Zn sao cho a b equiv1 (mod n) thì b được gọi là nghịch đảo nhân của a modulo n 
+Ký hiệu 
+b = a ^ - 1 (modn) 
+Điều kiện để số a có nghịch đáo nhân khi và chỉ khi 
+gcd (a, n) = 1 
+VD. a = 22 , n = 25 
+Gcd (22,25) = 1 a có nghịch đảo nhân 
+8-22 (mod 25) vì 8.22 = 176 = 1 (mod 25) 
+→ 8 là nghịch đảo nhân của 22 modulo 25 
+Thuật Euclid mở rộng 
+VD: tim 550 ^ - 1 (mod 1759) 
+Bước 1. Kiểm tra gcd (550, 1759). Nếu gcd!= 1 thì kết luân không tồn tại nghịch đảo 
+Bước 2: Lập báng 
+Trong đó 
+r 
+9 
+y 
+q i = r i - 2 r i-1 
+1759 
+0 
+r i =r i - 2 mo 
+550 
+1 
+y i =y i - 2 -y i-1 q_{i} 
+109 
+3 
+-3 
+y_{0} = 0 y_{1} =1 lambda hat a gtri khỏi tạo 
+5 
+5 
+16 
+4 
+1 
+21 
+-339 
+1 
+355 
+Tình luỹ thưa nhanh 
+Ví du: tính 3 ^ 644 (mad 645)
