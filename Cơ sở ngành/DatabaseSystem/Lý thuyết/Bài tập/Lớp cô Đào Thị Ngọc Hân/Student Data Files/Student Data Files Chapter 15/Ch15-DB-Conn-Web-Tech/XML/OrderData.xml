@@ -1,0 +1,21 @@
+<?xml version = "1.0"?>
+<!DOCTYPE OrderData SYSTEM "OrderData.dtd">
+<OrderData>
+   <ORD_ID>34583</ORD_ID>
+   <ORD_DATE>12/08/2018</ORD_DATE>
+   <CUS_NAME>Jill Atkins</CUS_NAME>
+   <ORD_SHIPTO>1234 Crown Rd, Chicago, IL34564</ORD_SHIPTO>
+   <ORD_PRODS>
+      <P_CODE>2309-HB</P_CODE>
+      <P_DESCRIPT>Claw Hammer</P_DESCRIPT>	
+      <P_QOH>2</P_QOH>	
+      <P_PRICE>5.95</P_PRICE>
+   </ORD_PRODS>		
+   <ORD_PRODS>
+      <P_CODE>23114-AA</P_CODE>
+      <P_DESCRIPT>Sledge Hammer, 12 lb.</P_DESCRIPT>
+      <P_QOH>1</P_QOH>
+      <P_PRICE>14.40</P_PRICE>
+   </ORD_PRODS>		
+   <ORD_TOT>26.30</ORD_TOT>
+</OrderData>

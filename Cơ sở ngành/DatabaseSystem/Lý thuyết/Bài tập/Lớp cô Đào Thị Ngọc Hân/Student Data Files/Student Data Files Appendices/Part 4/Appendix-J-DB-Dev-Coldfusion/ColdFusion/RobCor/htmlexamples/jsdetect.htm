@@ -1,0 +1,48 @@
+
+<HTML>
+<HEAD>
+<TITLE>
+JavaScript: Detecting your browser
+</title>
+</head>
+<SCRIPT language="JavaScript">
+<!--
+	/* This script displays the browser name and version being used */
+    
+	var browser=navigator.appName; 
+    var version=navigator.appVersion; 
+	var ver1=version.substring(0,1); 
+    
+	/* Write the identity of the browser and version */
+	
+    document.write("<center><h1>JavaScript: Detecting your browser</h1></center>"+ "<br>");
+    document.write("Your browser is " + browser + "<br>");
+	document.write("The version is " + version + "<br>");
+    
+    // check for Netscape 4+
+	
+    if ((browser == "Netscape")  && (ver1 >= 4))
+    {
+	/* write a message to the Netscape crowd */
+	document.write("<b>You are using a great browser!</b>");
+    }	
+    else {checkIE()}	
+	
+    function checkIE()
+    {	
+    // check for IE 4+
+        if ((browser == "Microsoft Internet Explorer") && (ver1 >= 4)) 	{
+     	    document.write("<b>Make sure you apply all Critical Updates and Security Patches!</b>"); 	}	
+        else {tellUser();
+            // otherwise, go to this function	
+            }	
+    }
+    
+	/* the functions writes a different message to the uncool */
+	function tellUser()
+    {
+    document.write("Your browser is old!");
+    }	 
+-->
+</SCRIPT>
+</HTML>

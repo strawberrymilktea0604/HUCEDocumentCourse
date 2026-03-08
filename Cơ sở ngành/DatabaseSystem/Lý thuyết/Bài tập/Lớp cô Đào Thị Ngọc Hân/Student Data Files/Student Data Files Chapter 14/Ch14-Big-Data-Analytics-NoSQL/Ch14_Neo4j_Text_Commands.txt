@@ -1,0 +1,145 @@
+CREATE ( :Member {mid: 1, fname: "Phillip", lname: "Stallings"})
+
+
+MATCH (m) RETURN m
+
+
+CREATE (:Restaurant {rid: 1, name: "Joe’s Eatery", city: "Browningville"})
+
+
+MATCH(r {rid: 1}) 
+SET r.city = "Brownville", r.state = "OH" 
+
+
+MATCH (r {rid: 1}) 
+REMOVE r.city
+
+
+MATCH (m {mid: 1}), (r {rid: 1}) 
+RETURN m, r
+
+
+MATCH (x {mid: 1}), (x {rid: 1}) 
+RETURN x
+
+
+MATCH (x {fname: "Phillip"}), (x {lname: "Stallings"}) 
+RETURN x
+
+
+MATCH (phil :Member) 
+RETURN phil
+
+
+CREATE (new :Member:Owner {mid: 2, fname: "Mo", lname: "Saleem"})
+RETURN new
+
+
+MATCH(m :Member) 
+RETURN m
+
+
+MATCH(o :Owner) 
+RETURN o
+
+MATCH (phil :Member {mid: 1})
+RETURN phil.fname, phil.lname
+
+
+MATCH (mem :Member {mid: 2})
+RETURN mem.fname AS `First Name`, mem.lname AS `Last Name`
+
+**** Following commands require running the script to create the FCC graph database first ****
+
+MATCH (m :Member) 
+WHERE m.birth > 1987
+RETURN m
+
+
+MATCH (m :Member) 
+WHERE (m.state = "TN" or m.state = "KY") and m.birth < 1984 
+RETURN m
+
+
+MATCH (res :Restaurant)
+WHERE lower(res.city) = 'brentwood'
+RETURN res
+
+
+MATCH (res :Restaurant)
+WHERE upper(res.name) STARTS WITH "CHEESE"
+RETURN res.name
+
+
+MATCH (res :Restaurant)
+WHERE upper(res.name) CONTAINS "CHEESE"
+RETURN res.name
+
+
+MATCH (res :Restaurant)
+WHERE substring(res.phone, 1, 3) = '615'
+RETURN res.name, substring(res.phone, 5) as phone
+
+
+MATCH (m :Member) –[r :REVIEWED]-> (res :Restaurant {name: "The Yucatan"}) 
+RETURN m, r, res
+
+
+MATCH (m :Member) –[r :REVIEWED {taste: 4}]-> (res :Restaurant {name: "Tofu for You"})
+RETURN m, r, res
+
+
+MATCH (m: Member) –[r :REVIEWED]-> (res :Restaurant)
+WHERE (r.value > 4 OR r.taste > 4 ) AND res.state = "KY"
+RETURN m, r, res
+
+
+MATCH (res :Restaurant) <-[r :REVIEWED]- (m :Member)
+WHERE (r.value > 4 OR r.taste > 4) AND res.state = "KY"
+RETURN m, r, res
+
+
+MATCH (m :Member) -- (res :Restaurant {name: "The Sicilian"})
+RETURN m, res
+
+
+MATCH (c :Cuisine {name: "Italian"}) <-- (res :Restaurant) <-[:OWNS]- (m :Member)
+RETURN m.fname, m.lname
+
+
+MATCH (sicilian :Restaurant {name: "The Sicilian"}) <-[:OWNS]- (m :Member) –[r :REVIEWED]-> (res :Restaurant)
+RETURN m, r, res
+
+
+MATCH (c :Cuisine {name: "Steakhouse"})  <-- (res :Restaurant) <-[r :REVIEWED]- (m :Member), 
+(res) <-[dr :REVIEWED]- (dirk :Member {fname: "Dirk", lname: "Gray"})
+RETURN res, r, m, dirk, dr
+
+
+MATCH (dirk :Member {fname: "Dirk", lname: "Gray"}) –[*2]- (node)
+RETURN node
+
+
+MATCH (dirk :Member {fname: "Dirk", lname: "Gray"}) -[r *1..3]- (node)
+RETURN dirk, r, node
+
+
+MATCH (dirk :Member {fname: "Dirk", lname: "Gray"}) -[r :REVIEWED *1..4]- (m :Member)
+RETURN dirk, r, m
+
+
+MATCH (dirk :Member {fname: "Dirk", lname: "Gray"}) –[r]-> (res :Restaurant)
+RETURN dirk, r, res
+
+
+MATCH p = (dirk :Member {fname: "Dirk", lname: "Gray"}) –[r]-> (res :Restaurant)
+RETURN p
+
+
+MATCH p = shortestPath((dirk :Member) –[:REVIEWED *]- (isiah :Member))
+WHERE dirk.fname = "Dirk" AND dirk.lname = "Gray" AND isiah.fname = "Isiah" AND isiah.lname = "Horn"
+RETURN p
+
+
+MATCH (dirk :Member {fname: "Dirk", lname: "Gray"}), (sicilian :Restaurant {name: "The Sicilian"})
+CREATE (dirk) -[:REVIEWED {taste: 4, service: 5, atmosphere: 4, value:3}]-> (sicilian)

@@ -1,0 +1,200 @@
+USING GROUP BY WITH ALIASES
+
+This illustrates the correct use of the GROUP BY clause and table aliases in ORACLE SQL.
+
+The following SQL statement will work in Oracle SQL:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(product.p_code)
+  2   from vendor, product
+  3   where vendor.v_code = product.v_code
+  4*  group by vendor.v_code, vendor.v_name
+
+    V_CODE V_NAME                              COUNT(PRODUCT.P_CODE)
+---------- ----------------------------------- ---------------------
+     21225 Bryson, Inc.                                            2
+     21231 D&E Supply                                              1
+     21344 Gomez Bros.                                             3
+     23119 Randsets Ltd.                                           2
+     24288 ORDVA, Inc.                                             3
+     25595 Rubicon Sis.                                            3
+
+6 rows selected.
+
+
+When we add aliases to the tables (FROM clause), the code will be like this:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(product.p_code)
+  2   from vendor v, product p
+  3   where vendor.v_code = product.v_code
+  4*  group by vendor.v_code, vendor.v_name
+ group by vendor.v_code, vendor.v_name
+                                *
+ERROR at line 4:
+ORA-00904: invalid column name
+
+Notice how it doesn't work. Why? The error message says there is a problem with the group by clause. Let's change "vendor.v_name" to "v.v_name" and run it again:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(prodcut.p_code)
+  2   from vendor v, product p
+  3   where vendor.v_code = product.v_code
+  4*  group by vendor.v_code, v.v_name
+ group by vendor.v_code, v.v_name
+                 *
+ERROR at line 4:
+ORA-00904: invalid column name
+
+Still gives an error. Let's now change "vendor.v_code" to "v.v_code" and run it again:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(prodcut.p_code)
+  2   from vendor v, product p
+  3   where vendor.v_code = product.v_code
+  4*  group by v.v_code, v.v_name
+ where vendor.v_code = product.v_code
+                               *
+ERROR at line 3:
+ORA-00904: invalid column name
+
+Still gives an error. Let's now change "product.v_code" to "p.v_code" and run it again:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(prodcut.p_code)
+  2   from vendor v, product p
+  3   where vendor.v_code = p.v_code
+  4*  group by v.v_code, v.v_name
+ where vendor.v_code = p.v_code
+              *
+ERROR at line 3:
+ORA-00904: invalid column name
+
+Still gives an error. Oracle it's going to asks us to change all references to use the alias. Let's do it:
+
+SQL> run
+  1  select v.v_code, v.v_name, count(p.p_code)
+  2   from vendor v, product p
+  3   where v.v_code = p.v_code
+  4*  group by v.v_code, v.v_name
+
+    V_CODE V_NAME                              COUNT(P.P_CODE)
+---------- ----------------------------------- ---------------
+     21225 Bryson, Inc.                                      2
+     21231 D&E Supply                                        1
+     21344 Gomez Bros.                                       3
+     23119 Randsets Ltd.                                     2
+     24288 ORDVA, Inc.                                       3
+     25595 Rubicon Sis.                                      3
+
+6 rows selected.
+
+It runs!. If we use alias, we need to change all our references to the alias.
+Can we still do some base table references in the columns? Let's try:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(product.p_code)
+  2   from vendor v, product p
+  3   where v.v_code = p.v_code
+  4*  group by v.v_code, v.v_name
+select vendor.v_code, vendor.v_name, count(product.p_code)
+                                                   *
+ERROR at line 1:
+ORA-00904: invalid column name
+
+No this way. Let fix this error and see if it works:
+
+SQL> run
+  1  select vendor.v_code, vendor.v_name, count(p.p_code)
+  2   from vendor v, product p
+  3   where v.v_code = p.v_code
+  4*  group by v.v_code, v.v_name
+select vendor.v_code, vendor.v_name, count(p.p_code)
+                             *
+ERROR at line 1:
+ORA-00904: invalid column name
+
+No this way either. 
+
+We know that the GROUP BY attributes and the non-aggregate attributes in the SELECT statement must match. But, if we use table aliases, we need to use them in the GROUP BY and in the attribute list in the SELECT statement when I have ambiguous attributes (attributes that are named the same in more than one table in my query).
+
+The following is also valid, because "v_name" is not an ambigous attribute (there is only one "v_name" and it is in the VENDOR table):
+
+SQL> run
+  1  select v.v_code, v_name, count(p.p_code)
+  2   from vendor v, product p
+  3   where v.v_code = p.v_code
+  4*  group by v.v_code, v_name
+
+    V_CODE V_NAME                              COUNT(P.P_CODE)
+---------- ----------------------------------- ---------------
+     21225 Bryson, Inc.                                      2
+     21231 D&E Supply                                        1
+     21344 Gomez Bros.                                       3
+     23119 Randsets Ltd.                                     2
+     24288 ORDVA, Inc.                                       3
+     25595 Rubicon Sis.                                      3
+
+6 rows selected.
+
+So, We need to use "alias" in all occurrences of ambiguous attributes (v_code) only, let's try:
+
+SQL> run
+  1  select v.v_code, v_name, count(p_code)
+  2   from vendor v, product p
+  3   where v.v_code = p.v_code
+  4*  group by v.v_code, v_name
+
+    V_CODE V_NAME                              COUNT(P_CODE)
+---------- ----------------------------------- -------------
+     21225 Bryson, Inc.                                    2
+     21231 D&E Supply                                      1
+     21344 Gomez Bros.                                     3
+     23119 Randsets Ltd.                                   2
+     24288 ORDVA, Inc.                                     3
+     25595 Rubicon Sis.                                    3
+
+6 rows selected.
+
+YES - Notice that the following will work because VENDOR does not have an alias and PRODUCT does, but we are using it in the statement.
+
+SQL> run
+  1  select vendor.v_code, v_name, count(p_code)
+  2   from vendor, product p
+  3   where vendor.v_code = p.v_code
+  4*  group by vendor.v_code, v_name
+
+    V_CODE V_NAME                              COUNT(P_CODE)
+---------- ----------------------------------- -------------
+     21225 Bryson, Inc.                                    2
+     21231 D&E Supply                                      1
+     21344 Gomez Bros.                                     3
+     23119 Randsets Ltd.                                   2
+     24288 ORDVA, Inc.                                     3
+     25595 Rubicon Sis.                                    3
+
+6 rows selected.
+
+If we try to use "product.v_code" instead of "p.v_code" in the WHERE clause, it will give an error because we defined an alias and Oracle expects it.
+
+SQL> run
+  1  select vendor.v_code, v_name, count(p_code)
+  2   from vendor, product p
+  3   where vendor.v_code = product.v_code
+  4*  group by vendor.v_code, v_name
+ where vendor.v_code = product.v_code
+                               *
+ERROR at line 3:
+ORA-00904: invalid column name
+
+Conclusions:
+
+1) If you have ONLY aggregate functions in the SELECT statement, you don't need a GROUP BY clause. You can still group by any attribute in the tables joined although the values won't display.
+
+2) If you list base table attributes other than the ones in an aggregate function in the SELECT statement, you need the GROUP BY clause. And, the attributes listed in the GROUP BY should match the base table attributes listed in the SELECT statement.
+
+3) When you have ambiguous attributes (attributes named the same in two or more tables)
+use the table name to differentiate them.
+
+EXCEPT If you declare an alias in the FROM clause then you MUST use the alias
+

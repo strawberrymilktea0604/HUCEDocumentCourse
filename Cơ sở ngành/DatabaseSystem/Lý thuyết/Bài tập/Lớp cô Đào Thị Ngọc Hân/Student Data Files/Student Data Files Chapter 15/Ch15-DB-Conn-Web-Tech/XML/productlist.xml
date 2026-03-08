@@ -1,0 +1,19 @@
+<?xml version ="1.0"?>
+<ProductList>
+	<Product>
+		<P_CODE>23109-HB</P_CODE>
+		<P_DESCRIPT>Claw hammer</P_DESCRIPT>
+		<P_INDATE>08/19/2018</P_INDATE>
+		<P_QOH>23</P_QOH>
+		<P_MIN>10</P_MIN>
+		<P_PRICE>5.95</P_PRICE>
+	</Product>
+	<Product>
+		<P_CODE>23114-AA</P_CODE>
+		<P_DESCRIPT>Sledge Hammer, 12 lb.</P_DESCRIPT>
+		<P_INDATE>09/01/2018</P_INDATE>
+		<P_QOH>8</P_QOH>
+		<P_MIN>5</P_MIN>
+		<P_PRICE>14.40</P_PRICE>
+	</Product>
+</ProductList>

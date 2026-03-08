@@ -1,0 +1,173 @@
+show dbs;
+
+use demo;
+
+db.getName();
+
+db.createCollection("newproducts");
+
+show collections;
+
+db.createCollection("userlog", {capped: true, size: 1048576, max: 1000});
+
+db.newproducts.renameCollection("products");
+
+db.userlog.drop();
+
+db.products.insert ( {name: "standard desk chair",
+			price: 150,
+			brand: "CheapCo",
+			type: "chair"}	);
+
+db.products.find();
+
+db.products.insert( {name: "cushioned desk chair",
+			brand: "RoughRider",
+			type: "chair",
+			keywords: ["chair", "office", "cushioned"],
+			price: 300});
+
+db.products.update({name: "standard desk chair"}, 
+	{name: "regular desk chair"},
+	false,
+	false);
+
+db.products.update({name: "regular desk chair"},
+			{name: "basic desk chair", price: 100, brand: "RoughRider", type: "chair"});
+
+db.products.update({name: "basic desk chair"},
+			{$set: 
+			{name: "standard desk chair"}
+		   });
+
+db.products.update({name: "standard desk chair"},
+			{$set: 
+			{price: 125, qoh: 10}
+		   });
+
+db.products.update({name: "standard desk chair"},
+			{$unset: 
+			{qoh: 1}
+		   });
+
+db.products.update({name: "standard desk chair"},
+			{$set: 
+				{brand: 
+					{name: "CheapCo",
+					phone: "555-1212"}
+				}
+			});
+
+db.products.update({type: "chair"},
+			{$inc: 
+			{price: 50},
+			}, false, true);
+
+db.products.update({name: "standard desk chair"},
+			{$set: 
+				{"brand.phone": "555-2121"}
+			});
+
+db.products.update({name: "cushioned desk chair"},
+			{$set: 
+			{keywords: ["chair", "office", "cushioned", "fancy"]}
+		   });
+
+db.products.update({name: "cushioned desk chair"},
+			{$push: 
+				{keywords: "elegant"}
+			});
+
+db.products.update({name: "cushioned desk chair"},
+			{$pull: 
+				{keywords: "office"}
+		   });
+
+db.products.update({name: "cushioned desk chair"},
+			{$addToSet: 
+					{keywords: "expensive"}
+			});
+
+db.products.update({name: "cushioned desk chair"},
+			{$addToSet: 
+					{keywords: "cushioned"}
+		   });
+
+db.products.update({name: "cushioned desk chair"},
+			{$pullAll: 
+				{keywords: ["fancy", "expensive", "cushioned"]}
+			});
+
+db.products.update({name: "cushioned desk chair"},
+		{$push: 
+			{keywords: 
+				{$each: ["heavy duty", "leather", "adjustable"]}
+			}
+		});
+
+db.products.update({name: "cushioned desk chair"},
+		{$addToSet: 
+			{keywords: 
+				{$each: ["arms", "heavy duty", "executive"]}
+			}
+		});
+
+db.products.update({},
+			{$rename:
+				{price: "saleprice"}
+			},
+		{multi:true});
+
+db.products.remove({name: "standard desk chair"});
+
+mongoimport -- db fact --collection patron --type json --file  Ch14_Fact.json
+
+use fact;
+
+db.patron.find({display: "Robert Carter"});
+
+db.patron.find({display: "Robert Carter"}, {display:1, type:1});
+
+db.patron.find({display: "Robert Carter"}, {checkouts: 0});
+
+db.patron.find({type: "faculty"}, {display:1, _id:0});
+
+db.patron.find({display: "Robert Carter"}).pretty();
+
+db.patron.find({}, {display:1, _id:0});
+
+db.patron.find({type: "student"}, {display:1}).limit(2);
+
+db.patron.find({type: "student"}, {display:1}).skip(2).limit(2);
+
+db.patron.find({type: "student"}, {display:1, age:1, _id:0}).sort({age: -1, lname:1});
+
+db.patron.find({type: "student"}, {display:1, age:1, _id:0}).sort({age: -1}).limit(5).skip(5);
+
+db.patron.find({type: "student"},{display:1, age:1, _id:0}).limit(5).skip(5).sort({age: -1});
+
+db.patron.find({type: "student"},{display:1, age:1, _id:0}).limit(5).sort({age: -1}).skip(5);
+
+db.patron.find({age: {$lte:30} }, {display:1, age:1}).sort({age: -1});
+
+db.patron.find({age: {$lt:21}, "checkouts.pubyear":2017}).pretty();
+
+db.patron.find({$and: [{type: "student"}, {age: {$gte: 27}}, {"checkouts.subject": "database"}]}, {display: 1, checkouts:1, _id: 0}).pretty();
+
+db.patron.find({$or: [{type: "faculty"}, {age: {$gt:30}}]}, {display:1, type:1, age: 1, _id:0}).sort({age:1});
+
+db.patron.find({$or: [
+			{$and: [{lname: "barry"}, {type: "faculty"}]},
+			{$and: [{lname: "hays"}, {age: {$lt: 30}}]}
+		     ]}, 
+		{display: 1, age: 1, type: 1}).pretty();
+
+db.patron.find({$and: [{"checkouts.subject": "programming"},{"checkouts.pubyear":2015}]}).pretty();
+
+db.patron.find({checkouts: {$elemMatch: {subject: "programming", pubyear: 2015}}}).pretty();
+
+
+
+
+
+

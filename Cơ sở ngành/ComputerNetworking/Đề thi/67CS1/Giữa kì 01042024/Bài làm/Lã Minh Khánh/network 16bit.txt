@@ -1,0 +1,42 @@
+network: 16bit
+host: 32bit
+byte 4: 0, 4, 8, 12, 16,.... 252
+subnet IPv4 address 172.16.1.4:
+Available IPv4 address range: 171.16.1.[17-22]
+
+
+172.16.1.4,
+class C:
+/29: network+subnet = 29bit
+subnet: 29-24=5 bit
+host = 32-29=3 bit
+Giả sử mạng con chia từ mạng 192.168.1.0/24
+192.168.1.[0, 8, 16, 24, 32, 40,..., 248]
+191.168.1.15/29
+subnet IPv4 address 192.168.1.16/29
+Available IPv4 address range: 192.168.1.[17-22]
+Broadcast IPv4 address 192.168.1.23
+subnet IPv4 address 192.168.1.240/29
+Available IPv4 address range: 192.168.1.[241 - 246]
+
+
+
+
+
+R1:
+Gig0/0: 203.162.1.217/16
+Se0/3/0: 177.421.3.99/24 clk
+Se0/3/1: 89.321.5.144/8 clk
+R2:
+Se0/1/0: 89.321.5.144/8
+Se0/1/1: 51.224.2.233/16 clk
+R3:
+Gig0/0: 255.75.9.125/24
+Seg0/2/1: 51.224.2.233/16
+Seg0/2/0: 177.421.3.99/24
+
+PC3: 203.162.2.3/16
+PC4: 203.162.2.4/16
+PC5: 255.75.7.2/24
+PC6: 255.75.7.3/24
+

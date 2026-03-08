@@ -1,0 +1,160 @@
+/* Oracle SQL Plus */ 
+/* This file contains many examples of commands used with SQL PLus */
+
+/* to set minimum rows for message "xx rows selected" */
+
+set feedback 10		/* set minimun rows for message*/
+
+show feedback    	/* shows setting */
+
+set feedback off 	/* turns feedback off */
+
+
+rem ---- formatting reports
+
+set headsep |		/* defines the new line separator for text lines */
+			/* default is ! */
+
+ttitle 'Products by Vendor|by Good Student'	/* page top title */
+
+btitle 'CH06 SaleCo'				/* page bottom title */
+
+column V_CODE heading 'Vendor|Code' format 9999999
+
+column P_CODE heading 'Product|Code' format a10
+
+						/* to hide a column */
+						/* column P_CODE noprint */
+				
+/* column truncated */ 
+column P_DESCRIPT heading 'Description' format a20 truncated 
+
+/* column word_wrapped */
+/* column P_DESCRIPT heading 'Description' format a20 word_wrapped */
+
+column P_QOH heading 'Qty|on Hand' format 9999
+
+column P_PRICE heading 'Price' format $9,990.99
+
+column Cost format $9,990.99
+
+break on V_CODE skip 2    			/* set the break on a column */
+						/* works with the order by   */
+						/* on the select statement   */
+						/* both must use same column */
+
+						/* break on V_CODE duplicate skip 2 */ 
+						/* writes V_CODE in each row */
+					
+						/* also break on page */
+						/* also break on report */
+				
+compute sum of Cost on V_CODE			/* sums an column on breaks  */
+						/* works with break on column */
+						/* both must use same column */	
+
+						/* also compute avg */	
+						/* also compute count */
+						/* count counts non-null */	
+						/* also compute maximun */	
+						/* also compute minimun */	
+						/* also compute number */	
+						/* number counts all rows */
+set linesize 77
+set pagesize 55
+set newpage 0					/* number of blank lines at top of page */
+
+spool report.txt				/* saves output to a file */
+
+select v_code, p_code, p_descript, p_qoh, p_price, p_qoh*p_price as Cost
+from product
+order by v_code, p_code;			/* semicolon at end of SQL statement */
+
+spool off					/* turns spool off */
+
+
+break 						/* show breaks */
+compute 					/* show computes */
+column						/* show column definitions */
+
+
+clear breaks					/* clear breaks */
+clear computes					/* clear computes */
+clear columns					/* clear columns */
+
+
+/* === other SQL Plus commands === */
+
+set pause "ENTER to continue...'
+set pause on
+set pause off
+
+/* === Functions === */
+
+/* SQL String Functions */
+LOWER(column)
+UPPER(column)
+INITCAP(column)
+
+/* concatenate strings */
+/* note the use of " double quotes in the column alias */
+
+select V_CODE || ', ' || V_NAME || ' phone is: ' || V_AREACODE || '-' || V_PHONE "Vendor Data"
+from vendor;
+
+/* Padding strings with a given character */
+select P_CODE, RPAD(P_DESCRIPT,30,'.') Description, P_QOH from product;
+
+
+/* Extacting characters */
+select SUBSTR(P_DESCRIPT,1,5) as Description from product;
+
+
+/* numeric functions */
+FLOOR(column)			/* largest integer <= value */
+CEIL(column)			/* smaller interger >= value */
+ROUND(column, precision)
+GREATEST(value1, value2,..)	/* greatest value of the list */
+LEAST(value1, value2,..)	/* smaller value of the list */
+				/* value could be column in query or table */
+
+
+/* NULL VALUE */
+NVL(column, substitute)		/* replaces null with a value*/
+
+
+/* DATE functions */
+select sysdate from dual;	/* returns current date */
+
+ADD_MONTHS(date, number)	/* add number months to date */
+GREATEST(date1, date2,..)	/* returns latest date */
+LEAST(date1, date2, ...)	/* returns oldest date */
+LAST_DAY(date)			/* last date of month */
+TO_DATE('DD-MON-YY')		/* converts string to date for date calculations */
+ROUND(date)			/* rounds date time to noon, for date arithmetic */
+TO_CHAR(date, format)		/* formats a date to a string */
+
+select TO_CHAR(P_INDATE,'YY-MM-DD') as DATE from product;
+select TO_CHAR(P_INDATE,'DAY') as DAY from product;	/* day of date, MONDAY, TUESDAY, etc */
+
+
+/* INPUT AND VARIABLES */
+accept W_STATE prompt 'Enter State (2 letters):'
+SELECT V_CODE, V_NAME, V_STATE FROM VENDOR WHERE V_STATE = '&W_STATE';
+
+accept W_QTY NUMBER prompt 'Enter Quantity: '
+SELECT P_CODE, P_DESCRIPT, P_QOH FROM PRODUCT WHERE P_QOH <= &W_QTY;
+
+
+/* AUTOMATIC COMMIT IN SQL PLUS */
+/* An implicit COMMIT occours when using any of the following: 			*/
+/* quit, exit, create table, create view, alter table 				*/
+/* drop table, drop view, grant, revoke, connect, disconnect. 			*/
+/* Any user accessing your tables don't see your changes until you commit 	*/
+/* they will see the 'old' data until you commit or autocommit is on 		*/
+
+show autocommit
+set autocommit on   		/* auto commit insert, updates and deletes */
+set autocommit off		/* turns off autocommit */
+
+

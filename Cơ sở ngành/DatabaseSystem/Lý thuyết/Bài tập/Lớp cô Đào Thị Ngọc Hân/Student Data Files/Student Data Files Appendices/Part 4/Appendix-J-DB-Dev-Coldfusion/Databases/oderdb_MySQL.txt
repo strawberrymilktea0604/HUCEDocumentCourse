@@ -1,0 +1,148 @@
+/* Database Systems, Coronel/Morris */
+/* Type of SQL : MySQL */
+
+CREATE TABLE DEPARTMENT (
+DEPT_ID varchar(50),
+DEPT_DESC varchar(50),
+USR_ID int
+);
+INSERT INTO DEPARTMENT VALUES('ACTG','Accounting','5');
+INSERT INTO DEPARTMENT VALUES('ADV','Advertising','13');
+INSERT INTO DEPARTMENT VALUES('FIN','Finance','17');
+INSERT INTO DEPARTMENT VALUES('HUMAN','Human Resources','10');
+INSERT INTO DEPARTMENT VALUES('MANU','Manufacturing','180');
+INSERT INTO DEPARTMENT VALUES('MKT','Marketing','12');
+INSERT INTO DEPARTMENT VALUES('PAYR','Payroll','6');
+INSERT INTO DEPARTMENT VALUES('R&D','Research and Development',NULL);
+INSERT INTO DEPARTMENT VALUES('SERV','Customer Services','15');
+
+/* -- */
+
+CREATE TABLE INVTYPE (
+TY_GROUP varchar(50),
+TY_CLASS varchar(2),
+TY_CATEG varchar(2),
+TY_TYPE varchar(2),
+TY_SUBTY varchar(2),
+TY_DESCR varchar(50),
+TY_UNIT varchar(5),
+TY_STATUS varchar(50)
+);
+INSERT INTO INVTYPE VALUES('HWEXME  ','HW','EX','ME','XX','Hard, Exp. Board-Memory','UN',NULL);
+INSERT INTO INVTYPE VALUES('HWMSXXXX','HW','MS','XX','XX','Hard, Miscelaneous','UN   ',NULL);
+INSERT INTO INVTYPE VALUES('SULSPP','SU','LS','PP','XX','Supply, Laser, Paper','UN',NULL);
+INSERT INTO INVTYPE VALUES('SULSTO','SU','LS','TO','XX','Supply, Laser, Toner','UN',NULL);
+INSERT INTO INVTYPE VALUES('SUMS','SU','MS','XX','XX','Supply, Misc','UN',NULL);
+INSERT INTO INVTYPE VALUES('SWED    ','SW','ED','XX','XX','Softw, Educational','UN   ',NULL);
+INSERT INTO INVTYPE VALUES('SWNWUT  ','SW','NW','UT','XX','Softw, Network Utilities','UN   ',NULL);
+
+/* -- */
+
+CREATE TABLE ORDERS (
+ORD_ID integer,
+ORD_DATE datetime,
+ORD_REQ_NUM varchar(6),
+ORD_PO_NUM varchar(6),
+VEN_CODE varchar(50),
+ORD_INV_NUM varchar(10),
+ORD_DESCRIP varchar(60),
+ORD_SHIP_COST float(8),
+ORD_TOT_COST float(8),
+USER_ID int,
+ORD_DATE_REC datetime,
+ORD_STATUS varchar(10),
+ORD_FUND_TYPE varchar(5)
+);
+INSERT INTO ORDERS VALUES('939','2015-11-11',NULL,NULL,'CART','8801','(4) Remanuf toners','0','215.8','5','2015-11-14','REC','LAB');
+INSERT INTO ORDERS VALUES('940','2015-12125',NULL,'245650','CART','210559','(1) HyperCam software','0','30','5',NULL,'OPEN','LAB');
+INSERT INTO ORDERS VALUES('941','2015-12-31', NULL,'24650','DELL','171114564','(2) 32MB SIMM and DIMM for Dell @Lab', '0','110.4','16','2016-01-03','REC','LAB');
+INSERT INTO ORDERS VALUES('942','2016-01-02', NULL, NULL,'LSREX','8893','(5) Remanuf','0','269.75','17','2016-01-04','REC','LAB');
+INSERT INTO ORDERS VALUES('943','2016-01-05', NULL,'245650','CART','C#638708','(2) 32MB EDO SIMMS for Vektron NT test','7.35','79.33','10', NULL,'OPEN','LAB');
+INSERT INTO ORDERS VALUES('944','2016-01-10',NULL,NULL,'DELL','8908','(1) HP4 new drum, (2) HP4 toner refill, (4) HP4 toner+drum','0','443.5','5','2016-01-11','REC','LAB');
+INSERT INTO ORDERS VALUES('945','2016-01-10', NULL,'245650','CART', NULL,'(10) 32MB EDO RAM SIMMS','12','372','6', NULL,'OPEN','LAB');
+INSERT INTO ORDERS VALUES('946','2016-01-12',NULL,NULL,'COEX','149363','(10) 8 1/2 x 11 Laser Paper Boxes','0','193.8','17','2016-01-13','REC','LAB');
+INSERT INTO ORDERS VALUES('947','2016-01-20', NULL, NULL,'DELL','8842','(4) Remanuf Toners','0','215.8','7','2016-01-22','REC','LAB');
+INSERT INTO ORDERS VALUES('950','2016-01-21', NULL, NULL,'LSREX','8856','(2) Toner w/drum','0','167.8','5','2016-01-22','REC','LAB');
+INSERT INTO ORDERS VALUES('951','2016-01-24', NULL, NULL,'CART','8993','(7) Remanf toners, (1) Toner w/ drum replace', '0', '431.6','13','2016-01-26','REC','LAB');
+
+/* -- */
+
+CREATE TABLE USER1 (
+USR_ID int,
+USR_FNAME varchar(40),
+USR_MNAME varchar(3),
+USR_LNAME varchar(40),
+USR_SSN varchar(50),
+DEPT_ID varchar(20),
+USR_JOBTITLE varchar(30),
+USR_BSNS_STREET varchar(150),
+USR_BSNS_CITY varchar(50),
+USR_BSNS_STATE varchar(2),
+USR_BSNS_ZIP varchar(15),
+USR_BSNS_FAX varchar(20),
+USR_BSNS_PH varchar(20),
+USR_HOME_STREET varchar(150),
+USR_HOME_CITY varchar(50),
+USR_HOME_STATE varchar(2),
+USR_HOME_ZIP varchar(15),
+USR_HOME_PH varchar(20),
+USR_PAGER varchar(20),
+USR_EMAIL varchar(25),
+USR_GENDER varchar(1),
+USR_OFFICE varchar(25),
+USR_POBOX varchar(25),
+USR_WEB_PAGE varchar(35)
+);
+INSERT INTO USER1 VALUES('5','John','J.','Dean','5508855','ACTG','Assistant Marketing','200 Oak St.','Murfreesboro','TN',
+	'37132-0001',NULL,'(615) 556-8888','120 Pool Rd.','Murfreesboro','TN','37129','(615) 896-9364','(615) 303-2720','John@home.com','M',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('6','Kris','L.','Jim','2208577','ACTG','Manager','200 Oak St.','Murfreesboro','TN','37132','(615) 870-1472','(615) 552-8870','502 Jane Ct.',
+	'Murfreesboro','TN','37130','(615) 871-1125',NULL,'Jane@think.net','F',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('7','Helen','G.','Hunt','4705820','HUMAN','Clerk','150 Lake St.','Murfreesboro','TN','37132',NULL,'(615) 552-9500','999 King St.','Smyrna','TN','37125',
+	'(615) 870-1144','(615) 402-8900','H_333@home.com','F',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('9','Teresa','M.','Rudley','4405571','FIN','Manager','200 Oak St.','Murfreesboro','TN','37132','(615) 870-1250','(615) 552-7140',
+	'230 Park Ave.','Murfreesboro','TN','37133','(615) 899-5581',NULL,'Tere@noname.net','F',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('10','Bob','O.','George','2210447','R&D','Researcher','200 Oak St.','Murfreesboro','TN','37132',NULL,'(615) 552-8540','55 Hill St.',
+	'Murfreesboro','TN','37130','(615) 980-7780','(615) 325-8900','bob_2@gohome.com','M',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('12','Van','K.','Hamm','2540258','PAYR','Clerk','150 Lake St.','Murfreesboro','TN','37132',NULL,'(615) 552-8702','1022 Unit Ave.','Murfreesboro','TN',
+	'37130','(615) 888-7711','(615) 220-8900','V_han@hotmail.com','M',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('13','Kim','L.','Carlton','4470582','ACTG','Accountant','200 Oak St.','Murfreesboro','TN','37132',NULL,'(615) 552-8704','2200 Phill Ct.',
+	'Murfreesboro','TN','37128','(615) 896-5520','12522002','Yiii@noname.com','F',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('14','Steven','B.','Tigger','5808871','ADV','Advertising Creator','200 Oak St.','Murfreesboro','TN','37132',NULL,'(615) 556-9802',
+	'1102 McKnight St.','Murfreesboro','TN','37129','(615) 898-0525','(615) 350-9800','Steve@hotmail.com','M',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('15','Ashley','P.','Folk','5870878','ACTG','Operator','200 Oak St.','Murfreesboro','TN','37132',NULL,'(615) 552-8220','99 Jackson Rd.',
+	'Murfreesboro','TN','37130','(615) 890-5572',NULL,'In_222@home.com','M',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('16','Paul','E.','Weed','4785878','SERV','Assistant Manager','150 Lake St.','Murfreesboro','TN','37132','(615) 705-7777','(615) 552-8871',
+	'410 Lowe Ct.','Murfreesboro','TN','37130','(615) 898-1252',NULL,'wlm_11@hotmail.com','M',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('17','Nancy','G.','Eaton','3508871','ACTG','Manager','200 Oak St.','Murfreesboro','TN','37132','(615) 870-5870','(615) 556-9804',
+	'1185 Bill St.','Murfreesboro','TN','37128','(615) 890-7824','(615) 238-7802','nancy@home.com','F',NULL,NULL,NULL);
+INSERT INTO USER1 VALUES('180','Jane','O','Keith','9090909','ACTG','Clerk','909','Lopp','OH','90999','399-0999','909-9999',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+/* -- */
+
+CREATE TABLE VENDOR (
+VEN_CODE varchar(50),
+VEN_NAME varchar(50),
+VEN_CONTACT_NAME varchar(50),
+VEN_ADDRESS varchar(100),
+VEN_CITY varchar(50),
+VEN_STATE varchar(2),
+VEN_ZIP varchar(50),
+VEN_PH varchar(15),
+VEN_FAX varchar(15),
+VEN_EMAIL varchar(50),
+VEN_CUS_ID varchar(75),
+VEN_SUPPORT_ID int,
+VEN_SUPPORT_PH varchar(15),
+VEN_WEB_PAGE varchar(50)
+);
+INSERT INTO VENDOR VALUES('CART','Cartridge Family','James Young','110 Highland Dr.','Atlanta',
+	'GA','77814','4045587458','4045285771','Young@catridge.com','J_900','100','8008570014','catridge.com');
+INSERT INTO VENDOR VALUES('COEX','Corporate Express','Penny Henze','508 South Military Trail','Deerfield Beach',
+	'FL','33442','6157264626','6152554772','pennyhenze@cexp.com','ILM_677','401','8005375137','cexp.com');
+INSERT INTO VENDOR VALUES('DELL','Dell Computer','Kim Berringer','250 Main St.','Round Rock',
+	'TX','78682','8007815222','8008425888','Customer@dell.com','MS-9093','41140','8005741425','dell.com');
+INSERT INTO VENDOR VALUES('GLOBAL','Global Corporation','Michael Fox','4744 Rock Rd.','Chicago','IL','45787',
+	'8004571555','8007872421','Glo_333@geocities.com','OB_992','454521','8004541212','global.com');
+INSERT INTO VENDOR VALUES('LSREX','Laser Express Company','Nicole Whether','5540 Pine St.','Albany','NY','41550',
+	'5184547110','5185754570','Janes@known.com','MM_3321','781','8005804712','laserexp.com');
+

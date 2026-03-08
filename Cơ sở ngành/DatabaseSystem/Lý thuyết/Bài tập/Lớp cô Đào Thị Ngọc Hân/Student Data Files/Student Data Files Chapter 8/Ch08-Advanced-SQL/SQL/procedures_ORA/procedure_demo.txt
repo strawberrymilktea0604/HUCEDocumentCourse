@@ -1,0 +1,60 @@
+: PROCEDURES DEMO
+: This file contains calls to the script files used in the stored procedure section.
+: For teaching purposes it will be better to copy and paste the script file code
+: from the actual script files to the SQL> prompt.
+
+: Do the anonymous PL/SQL examples in anon_PL_SQL_examples.SQL first
+
+: PRC_PROD_DISCOUNT to increase the discount of product with qty onhand >= p_min *2
+@PRC_PRODUCT_DISCOUNT_V1.SQL
+
+: Testing the PRC_PROD_DISCOUNT stored procedure
+
+SELECT * FROM PRODUCT;
+
+EXEC PRC_PROD_DISCOUNT;
+
+SELECT * FROM PRODUCT;
+
+: Second version of th ePRC_PROD_DISCOUNT procedure, using parameters
+@PRC_PROD_DISCOUNT_V2.SQL
+
+: Testing the second version of PRC_PROD_DISCOUNT
+EXEC PRC_PROD_DISCOUNT(1.5);
+
+EXEC PRC_PROD_DISCOUNT(.05);
+
+: PRC_CUS_ADD to add a new customer
+@PRC_CUS_ADD.SQL
+
+EXEC PRC_CUS_ADD('Walker','James',NULL,'615','84-HORSE');
+
+SELECT * FROM CUSTOMER WHERE CUS_LNAME = 'Walker';
+
+: Problems with NULLs and DEFAULT option 
+EXEC PRC_CUS_ADD('Lowery', 'Denisee', NULL, NULL, NULL);
+
+
+- Procedure to insert a new INVOICE
+@prc_inv_add.sql
+- Procedure to insert a new LINE 
+@prc_line_add.sql
+
+- Testing the procedures
+
+EXEC PRC_INV_ADD(20010,'09-APR-2018');
+EXEC PRC_LINE_ADD(1,'13-Q2/P2',1);   
+EXEC PRC_LINE_ADD(2,'23109-HB',1);   
+
+SELECT * FROM INVOICE WHERE CUS_CODE = 20010;
+SELECT * FROM LINE WHERE INV_NUMBER  = (SELECT INV_NUMBER FROM INVOICE WHERE CUS_CODE = 20010);
+SELECT * FROM PRODUCT WHERE P_CODE IN ('13-Q2/P2', '23109-HB'); 
+SELECT * FROM CUSTOMER WHERE CUS_CODE = 20010;
+
+
+: CURSOR EXAMPLE
+@PRC_CURSOR_EXAMPLE
+
+EXEC PRC_CURSOR_EXAMPLE;
+
+

@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>JavaScript: Form Select</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+// original code by Bill Trefzger 12/12/96
+function go(){
+if (document.selecter.select1.options[document.selecter.select1.selectedIndex].value != "none") {
+location = document.selecter.select1.options[document.selecter.select1.selectedIndex].value
+		}
+	}
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+document.write('<form name="selecter"><select name="select1" size=1>');
+document.write('<option value=none>Select Destination');
+document.write('<option value=none>--------------------');
+document.write('<option value="main.htm">Main');
+document.write('<option value="left.htm">Left');
+document.write('<option value="top.htm">Top');
+document.write('</select>');
+document.write('<input type="button" value="Go" onclick="go()">');
+document.write('</form>');
+// end hiding contents -->
+</script>
+<body bgcolor=Cyan>
+</body>
+</html>

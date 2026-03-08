@@ -1,0 +1,309 @@
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+--
+-- Host: localhost    Database: storeco
+-- ------------------------------------------------------
+-- Server version	8.0.35
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `customer` (
+  `cus_id` int NOT NULL,
+  `cus_lname` varchar(30) NOT NULL,
+  `cus_fname` varchar(30) NOT NULL,
+  `cus_initial` char(1) DEFAULT NULL,
+  `cus_areacode` char(3) NOT NULL,
+  `cus_contact` varchar(14) NOT NULL,
+  `cus_address` varchar(30) NOT NULL,
+  `cus_rank` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`cus_id`),
+  UNIQUE KEY `cus_id` (`cus_id`),
+  UNIQUE KEY `cus_contact` (`cus_contact`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (100010,'MAXIMO ','VREEMAN','F','615','844-2573','Hoang Cau, Dong Da','Bronze'),(100011,'SANG ','LUPIANI','','615','894-1238','Thuy Khue, Tay Ho','Gold'),(100012,'MOSHE ','GORDIN','E','615','894-2285','Hang Bai, Hoan Kiem','Silver'),(100013,'DOREATHA ','MCCALEBB','L','615','894-2180','Kim Ma, Ba Dinh','Silver'),(100014,'ELEANOR  ','MANDELLA','F','615','222-1672','Nui Truc, Ba Dinh','Diamond'),(100015,'GLENN ','FAGGS','O','713','442-3381','Xuan Thuy, Cau Giay',''),(100016,'BELKIS ','FERSNER','A','615','297-1228','Nguyen Trai, Thanh Xuan','Silver'),(100017,'BURTON ','BOREEN','','615','290-2556','Khuong Trung, Thanh Xuan',''),(100018,'CATALINA ','KAHRER','Q','713','382-7185','Truong Dinh, Hoang Mai','Bronze'),(100019,'RICH ','BROWNING','L','615','297-3809','Hang Bai, Hoan Kiem','Gold'),(100020,'WILLETTA ','TAMARO','A','615','274-3140','Le Thai To, Hoan Kiem','Plantium'),(100021,'LEONARD','LUBBERS','K','615','776-7327','Giai Phong, Hai Ba Trung','Silver'),(100022,'BEATA ','DOCKTER','W','713','788-8112','Le Duan, Dong Da','Silver'),(100023,'LENARD ','GOLDFINE','F','615','708-4466','Thuy Khue, Tay Ho','Plantium'),(100024,'BRYNN ','DULANEY','H','615','974-5218','Nguyen Trai, Thanh Xuan','Plantium'),(100025,'MAXWELL ','ABAYA','','713','133-1671','Nguyen Trai, Ha Dong','Bronze'),(100026,'Brown','James','M','713','299-1003','Xuan Thuy, Cau Giay','Diamond'),(100027,'TRAVIS ','FOIL','P','713','256-0138','Yen Hoa, Cau Giay',''),(100028,'ALI ','EASOM','T','713','926-1320','Giang Vo, Ba Dinh','Gold'),(100029,'ANNEMARIE ','SHERDON','','615','742-2486','Xa Dan, Dong Da','Silver');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `discount`
+--
+
+DROP TABLE IF EXISTS `discount`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `discount` (
+  `dis_id` char(3) NOT NULL,
+  `dis_condition` varchar(50) NOT NULL,
+  `dis_percent` char(3) NOT NULL,
+  `dis_time` datetime NOT NULL,
+  `dis_endtime` varchar(45) NOT NULL,
+  PRIMARY KEY (`dis_id`),
+  UNIQUE KEY `dis_id` (`dis_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `discount`
+--
+
+LOCK TABLES `discount` WRITE;
+/*!40000 ALTER TABLE `discount` DISABLE KEYS */;
+INSERT INTO `discount` VALUES ('977','Don toi thieu 10 usd','15%','2018-05-15 00:00:00',''),('978','Don toi thieu 30 usd','21%','2018-05-15 00:00:00',''),('979','Don toi thieu 50 usd','28%','2018-05-15 00:00:00',''),('980','Don toi thieu 30 usd','20%','2018-05-15 00:00:00',''),('981','Don toi thieu 100 usd','31%','2018-05-16 00:00:00',''),('982','Don toi thieu 10 usd','17%','2018-05-16 00:00:00',''),('983','Don toi thieu 30 usd','23%','2018-05-16 00:00:00',''),('984','Don toi thieu 100 usd','34%','2018-05-16 00:00:00',''),('985','Don toi thieu 50 usd','26%','2018-05-17 00:00:00',''),('986','Don toi thieu 10 usd','18%','2018-05-17 00:00:00',''),('987','Don toi thieu 100 usd','30%','2018-05-17 00:00:00',''),('988','Don toi thieu 50 usd','26%','2018-05-17 00:00:00',''),('989','Don toi thieu 10 usd','15%','2018-05-17 00:00:00',''),('990','Don toi thieu 50 usd','27%','2018-05-18 00:00:00',''),('991','Don toi thieu 100 usd','32%','2018-05-18 00:00:00',''),('992','Don toi thieu 30 usd','22%','2018-05-18 00:00:00','');
+/*!40000 ALTER TABLE `discount` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employee`
+--
+
+DROP TABLE IF EXISTS `employee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `employee` (
+  `emp_id` int NOT NULL,
+  `emp_title` varchar(20) NOT NULL,
+  `emp_fname` varchar(20) NOT NULL,
+  `emp_lname` varchar(20) NOT NULL,
+  `emp_initial` char(1) DEFAULT NULL,
+  `emp_dob` date NOT NULL,
+  `emp_gender` char(1) NOT NULL,
+  `store_id` int NOT NULL,
+  `emp_manager` char(5) NOT NULL,
+  PRIMARY KEY (`emp_id`),
+  UNIQUE KEY `emp_id` (`emp_id`),
+  KEY `store_id` (`store_id`),
+  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee`
+--
+
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+INSERT INTO `employee` VALUES (100,'Thu ngan','DALE','KAKIMOTO','P','1911-11-22','M',21249,'1001'),(101,'Nhan vien dong goi','JACK ','UMSTEAD','','2007-06-25','M',21247,'1002'),(102,'Ban hang','RUBEN ','CHRISTOFFERSE','G','2003-12-06','M',21246,'1003'),(103,'Quan ly kho','NELLE ','COLVILLE','K','1999-01-15','F',21238,'1004'),(104,'Bao ve','CRISTOBAL ','KAWAMURA','','1994-12-23','F',21228,'1005'),(105,'Thu ngan','GERMAINE ','WALDOCH','C','1986-05-14','M',21229,'1001'),(106,'Nhan vien dong goi','KENNETH ','QUINLIVAN','S','1971-02-14','M',21246,'1002'),(107,'Quan ly kho','ANNIE ','SHULSE','','1975-04-30','F',21229,'1004'),(108,'Thu ngan','DALLAS ','WALLEN','J','1977-10-24','F',21238,'1001'),(109,'Quan ly kho','AMELIA ','BOEMER','W','1988-04-18','F',21240,'1004'),(110,'Shipper','ABE ','BIARD','R','1970-05-14','M',21244,'1006'),(111,'Ban hang','DREW ','HOLLERUD','','1966-05-23','M',21242,'1003'),(112,'Thu ngan','KERSTIN ','WESTENHAVER','Q','1961-05-18','F',21242,'1001'),(113,'Nhan vien tap vu','BRYANNA  ','ADAMEC','G','1970-03-22','F',21249,'1007'),(114,'Ban hang','ALYSHA ','GIONEST','L','1956-06-08','M',21239,'1003'),(115,'Ban hang','ROMA ','GERCKENS','G','1972-09-09','F',21230,'1003'),(116,'Shipper','VENITA ','AUD','','1965-11-18','M',21246,'1006'),(117,'Bao ve','EMMITT ','BENDLE','V','1942-01-25','F',21238,'1005'),(118,'Thu ngan','MOHAMMAD ','SAYKO','F','1972-03-04','M',21237,'1001'),(119,'Quan ly kho','BRENDAN ','TILLER','A','1958-12-28','M',21242,'1004'),(120,'Nhan vien tap vu','JEREMY ','BENDERMAN','W','1974-10-16','F',21231,'1007'),(121,'Ban hang','ABDUL ','GRANEY','L','1971-11-03','F',21231,'1003'),(122,'Nhan vien dong goi','GABRIELA ','MERDIAN','','1975-05-20','M',21235,'1002'),(123,'Quan ly kho','DONETTE ','MIMBS','G','1968-09-10','M',21249,'1004'),(124,'Thu ngan','LEORA ','EIGNER','E','1974-08-05','F',21241,'1001'),(125,'Shipper','GAYNELLE ','TREACY','L','1998-02-14','F',21245,'1006'),(126,'Ban hang','SHERICE ','BACCO','A','1961-05-15','F',21248,'1003'),(127,'Quan ly kho','MOON ','BERBES','M','1976-05-22','F',21239,'1004'),(128,'Nhan vien dong goi','ERA ','JOHANN','Y','1982-04-04','M',21235,'1002'),(129,'Thu ngan','DONG ','CARRIG','L','1961-07-09','M',21227,'1001'),(130,'Ban hang','ADOLFO ','PREWITT','D','1970-05-06','M',21236,'1003'),(132,'Bao ve','BRADFORD ','TURCOTT','K','2000-08-30','F',21232,'1005'),(133,'Thu ngan','JOSIE ','BELLIPANNI','I','1980-09-05','F',21249,'1001'),(134,'Quan ly kho','SCOTT ','RIVEL','','1955-07-04','M',21238,'1004'),(135,'Bao ve','TYRON ','LATIKER','A','1965-07-25','M',21243,'1005'),(136,'Shipper','JOSIE ','BELLIPANNI ','M','1988-11-14','F',21235,'1006'),(137,'Thu ngan','LOUANNE ','PAJERSKI ','L','1974-01-01','F',21243,'1001'),(138,'Shipper','ROLANDO ','CUTILLO','F','1998-10-15','M',21236,'1006'),(139,'Quan ly kho','HERSHEL ','SILVERIO','O','1979-03-15','M',21225,'1004'),(140,'Thu ngan','ERMA ','KNIFE','','2002-02-05','M',21226,'1001');
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inv_item`
+--
+
+DROP TABLE IF EXISTS `inv_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `inv_item` (
+  `inv_items_code` int NOT NULL,
+  `inv_id` int DEFAULT NULL,
+  `product_id` int NOT NULL,
+  `inv_items_units` char(4) NOT NULL,
+  `inv_items_price` decimal(6,2) NOT NULL,
+  PRIMARY KEY (`inv_items_code`),
+  KEY `inv_id` (`inv_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `inv_item_ibfk_1` FOREIGN KEY (`inv_id`) REFERENCES `invoice` (`inv_id`),
+  CONSTRAINT `inv_item_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inv_item`
+--
+
+LOCK TABLES `inv_item` WRITE;
+/*!40000 ALTER TABLE `inv_item` DISABLE KEYS */;
+INSERT INTO `inv_item` VALUES (201,1001,19473,'2',250.68),(202,1001,19475,'1',208.64),(203,1002,19475,'1',208.64),(204,1003,19472,'1',60.54),(205,1003,19478,'1',158.34),(206,1004,19476,'2',2.50),(207,1004,19481,'1',11.45),(208,1004,19477,'1',643.23),(209,1005,19474,'1',44.22),(210,1005,19461,'1',24.56),(211,1005,19473,'1',125.34),(212,1006,19471,'1',5.53),(213,1007,19457,'1',29.11),(214,1007,19484,'1',30.67),(215,1007,19481,'1',11.45),(216,1007,19466,'1',48.77),(217,1008,19462,'1',37.00),(218,1008,19471,'1',5.53),(219,1009,19463,'1',2.25),(220,1010,19455,'1',1223.15),(221,1011,19477,'1',643.23),(222,1011,19457,'1',29.11),(223,1011,19472,'1',60.54),(224,1011,19484,'1',30.67),(225,1011,19467,'1',0.76),(226,1012,19468,'2',0.04),(227,1012,19462,'1',37.00),(228,1013,19457,'1',29.11),(229,1013,19470,'1',1.23),(230,1014,19455,'1',1223.15),(231,1015,19460,'1',21.56),(232,1015,19457,'1',29.11),(233,1016,19486,'1',249.76),(234,1016,19482,'1',250.33),(235,1016,19474,'1',44.22),(236,1016,19465,'1',0.29);
+/*!40000 ALTER TABLE `inv_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoice`
+--
+
+DROP TABLE IF EXISTS `invoice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `invoice` (
+  `inv_id` int NOT NULL,
+  `emp_id` int NOT NULL,
+  `cus_id` int NOT NULL,
+  `storeid` varchar(45) NOT NULL,
+  `inv_date` date NOT NULL,
+  `inv_num` char(6) NOT NULL,
+  `inv_total` decimal(8,2) NOT NULL,
+  `dis_id` char(3) DEFAULT NULL,
+  `inv_payment_type` varchar(7) NOT NULL,
+  `inv_descript` varchar(30) DEFAULT NULL,
+  `inv_totalafterdis` decimal(8,2) NOT NULL,
+  PRIMARY KEY (`inv_id`),
+  UNIQUE KEY `inv_id_UNIQUE` (`inv_id`),
+  KEY `emp_id` (`emp_id`),
+  KEY `cus_id` (`cus_id`),
+  KEY `invoice_ibfk_3` (`dis_id`),
+  CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`),
+  CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`cus_id`) REFERENCES `customer` (`cus_id`),
+  CONSTRAINT `invoice_ibfk_3` FOREIGN KEY (`dis_id`) REFERENCES `discount` (`dis_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoice`
+--
+
+LOCK TABLES `invoice` WRITE;
+/*!40000 ALTER TABLE `invoice` DISABLE KEYS */;
+INSERT INTO `invoice` VALUES (1001,129,100019,'21227','2023-05-06','4',827.13,'','Offline',' ',827.13),(1002,133,100013,'21249','2023-07-04','1',208.64,'992','Offline',' ',162.74),(1003,100,100016,'21249','2023-12-11','3',411.32,'981','Online','customers pay in installments',283.81),(1004,105,100029,'21229','2023-12-22','6',772.32,'986','Offline',' ',633.30),(1005,124,100014,'21241','2023-01-14','4',213.21,'989','Online',' ',181.31),(1006,112,100018,'21242','2023-09-07','2',11.23,'997','Online',' ',9.54),(1007,108,100011,'21238','2023-12-02','5',233.15,'985','Online',' ',172.53),(1008,140,100027,'21226','2023-08-04','2',42.53,'','Offline',' customers pay in installments',42.53),(1009,100,100028,'21249','2023-10-30','1',2.25,'','Online',' ',2.25),(1010,118,100012,'21237','2023-07-18','1',1223.15,'984','Offline',' ',807.27),(1011,133,100024,'21249','2023-02-14','6',815.21,'990','Online',' ',590.10),(1012,112,100026,'21242','2023-05-13','4',132.77,'','Offline','customers pay in installments',132.77),(1013,118,100020,'21237','2023-08-06','3',32.40,'978','Offline',' ',25.60),(1014,100,100017,'21249','2023-11-06','1',1223.15,'979','Online',' ',880.67),(1015,137,100015,'21243','2023-11-24','3',63.20,'','Online','customers pay in installments',63.20),(1016,124,100023,'21241','2023-04-19','5',578.12,'','Offline',' ',578.12);
+/*!40000 ALTER TABLE `invoice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product` (
+  `product_id` int NOT NULL,
+  `product_name` text NOT NULL,
+  `product_quantity` char(4) NOT NULL,
+  `product_unit_price` decimal(8,2) NOT NULL,
+  `product_descript` text NOT NULL,
+  `manf_date` date NOT NULL,
+  `vendor_id` int NOT NULL,
+  PRIMARY KEY (`product_id`),
+  UNIQUE KEY `product_id` (`product_id`),
+  KEY `vendor_id` (`vendor_id`),
+  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (19455,'Power painter, 15 psi., 3-nozzle','10',1223.15,'is a perfect construction site companion','2012-12-21',19115),(19456,'7.25-in. pwr. saw blade','35',25.33,'is a steel tapered or toothed blade used in woodworking, metalworking, and other similar industries','2012-10-11',19131),(19457,'9.00-in. pwr. saw blade','42',29.11,'is a steel tapered or toothed blade used in woodworking, metalworking, and other similar industries','2015-06-20',19133),(19458,'Hrd. cloth, 1/4-in., 2x50','23',15.23,'woven or felted fabric made from wool, cotton, or a similar fiber.','2018-09-08',19127),(19459,'Hrd. cloth, 1/2-in., 3x50','24',18.45,'woven or felted fabric made from wool, cotton, or a similar fiber.','2015-05-21',19118),(19460,'B&D jigsaw, 12-in. blade','55',21.56,'a machine saw with a fine blade enabling it to cut curved lines in a sheet of wood, metal, or plastic.','2019-01-01',19134),(19461,'B&D jigsaw, 8-in. blade','36',24.56,'a machine saw with a fine blade enabling it to cut curved lines in a sheet of wood, metal, or plastic.','2012-09-08',19119),(19462,'B&D cordless drill, 1/2-in.','20',37.00,'an electric drill which uses rechargeable batteries','2016-03-09',19129),(19463,'Claw hammer','35',2.25,'a hammer with one side of the head split and curved, used for extracting nails.','2019-12-21',19128),(19464,'Sledge hammer, 12 lb.','22',232.44,'a large, heavy hammer used for such jobs as breaking rocks and driving in fence posts.','2015-03-31',19131),(19465,'Rat-tail file, 1/8-in. fine','16',0.29,'a steel hand tool with small sharp teeth on some or all of its surfaces; used for smoothing wood or metal.','2012-05-06',19127),(19466,'Hicut chain saw, 16 in.','24',48.77,'a mechanical power-driven cutting tool with teeth set on a chain which moves around the edge of a blade.','2018-02-09',19121),(19467,'PVC pipe, 3.5-in., 8-ft','25',0.76,'PVC pipes includes their use in plumbing, sewage and drainage systems, drinking water distribution, irrigation systems, chemical handling, fume, exhaust and ventilation ducts, and recreation purposes','2016-10-03',19130),(19468,'1.25-in. metal screw, 25','11',0.02,'self-tapping screws typically used to secure sheet metal to metal, plastic, fiberglass, wood, or other materials','2013-12-10',19121),(19469,'2.5-in. wd. screw, 50','24',0.01,'a short, slender, sharp-pointed metal pin with a raised helical thread running around it and a slotted head, used to join things together by being rotated so that it pierces wood or other material and is held tightly in place.','2021-09-20',19117),(19470,'Steel matting, 4\'x8\'x1/6\", .5\" mesh','32',1.23,'a metal product made from the intersection of wires to make a mat','2012-12-21',19132),(19471,'Rgbic led strip smart WIFI RGB APP IP65','50',5.53,'this LED strip lights for bedroom allow you to power on/off, change brightness and color without lifting a finger','2015-12-24',19115),(19472,'Hot 10kg double bucket semi-automatic washing machine top load household washing machine','23',60.54,'a machine for washing clothes, sheets, and other things made of cloth','2016-07-25',19133),(19473,'adidas Men\'s Soccer Manchester United 23/24 Authentic Home Jersey','43',125.34,'Glory glory Man United','2019-10-11',19115),(19474,'Rechargeable Remote Control Riding Vehicle Four-wheel Bluetooth Remote Control Off-road Toy Kids Electric Car','12',44.22,'gorgeous light + multi-function early education player + one button start + three speed control + convenient handle + double electric double drive + four wheel shock absorber + double door design + mobile phone remote control','2014-08-05',19118),(19475,'Win 10 Touch screen Tablet Computer Industrial Box PC Mini Pc 8gb With Rs232','65',208.64,'4 sets of USB standard interfaces, HDMI output, Bluetooth 4.0, 3.5mm audio output interface, TF card expansion port, RJ45 network interface, RS232 interface','2015-04-03',19116),(19476,'Wholesale Double A4 Paper','23',1.25,'they can be used for documentation, printing, drawing, writing, and many other activities','2022-12-04',19133),(19477,'LG 27 cu. ft. Smart Counter-Depth MAX French Door Refrigerator Internal Water Dispenser Print Proof Stainless Steel','31',643.23,'significantly reduces cold air loss by keeping it where it matters most – on the inside','2018-09-21',19132),(19478,'Samsung split air conditioning climatiseur mobile ac air conditioners energy saving type R32 wall mounted 12000btu 1.5cv invert','22',158.34,'designed to improve temperature control within a room that has an exterior wall','2017-10-21',19126),(19479,'Used solar panels 450w 455w 460w 550w 650w Second-hand solar energy products photovoltaic panel solar photovoltaic solar power','76',2.64,'a device that converts sunlight into electricity by using photovoltaic (PV) cells','2017-05-03',19115),(19480,'Taipuxi Top Drones In Europe E58 Drone Camera 4k Professional Hd Long Range Mini Drones','23',4.21,'an uncrewed aircraft or vessel guided by remote control or onboard computers','2016-10-20',19123),(19481,'Bkav Pro antivirus software','42',11.45,'the pioneer antivirus software in using cloud computing technology in security','2012-12-21',19135),(19482,'BPhone A85','52',250.33,'a smartphone mAdE iN vIeTnAm','2022-12-23',19135),(19483,'Kids Electric Motorcycle Kids Bike Factory Price With LED Lights Three Wheels Motorbike For Kids To Drive','24',47.30,'24V 7ah Kids Ride on Motorcycle,13.6MPH Fast Speed Electric Battery-Powered Off-Road Motocross with 250W Strong Motor','2021-02-21',19126),(19484,'S116 Drone 4k Profesional GPS Drones With Camera Hd 8k Cameras Rc Helicopter 5G WiFi Fpv Drones Quadcopter Toys','53',30.67,'an uncrewed aircraft or vessel guided by remote control or onboard computers','2018-10-10',19121),(19485,'Factory price 520W Light weight rollable thin film Flexible home use Solar roof solar Panels Flexible solar panels','34',0.32,'a device that converts sunlight into electricity by using photovoltaic (PV) cells','2014-11-13',19120),(19486,'ASCOLI 501L Smart 4 Door Refrigerators Ultra-thin Dual Inverter Home Commercial Side by side French Door Refrigerators','22',249.76,'significantly reduces cold air loss by keeping it where it matters most – on the inside','2012-12-15',19121);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `region`
+--
+
+DROP TABLE IF EXISTS `region`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `region` (
+  `region_id` int NOT NULL,
+  `region_name` varchar(35) NOT NULL,
+  PRIMARY KEY (`region_id`),
+  UNIQUE KEY `region_id` (`region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `region`
+--
+
+LOCK TABLES `region` WRITE;
+/*!40000 ALTER TABLE `region` DISABLE KEYS */;
+INSERT INTO `region` VALUES (106,'Ba Dinh'),(107,'Dong Da'),(108,'Cau Giay'),(109,'Ha Dong'),(110,'Long Bien'),(111,'Nam Tu Liem'),(112,'Hoang Mai'),(113,'Quoc Oai'),(114,'My Duc'),(115,'Ba Vi'),(116,'Thanh Tri');
+/*!40000 ALTER TABLE `region` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `store`
+--
+
+DROP TABLE IF EXISTS `store`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `store` (
+  `store_id` int NOT NULL,
+  `store_name` varchar(20) NOT NULL,
+  `store_ytd_sales` decimal(11,2) NOT NULL,
+  `region_id` int NOT NULL,
+  PRIMARY KEY (`store_id`),
+  UNIQUE KEY `store_id` (`store_id`),
+  KEY `region_id` (`region_id`),
+  CONSTRAINT `store_ibfk_1` FOREIGN KEY (`region_id`) REFERENCES `region` (`region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `store`
+--
+
+LOCK TABLES `store` WRITE;
+/*!40000 ALTER TABLE `store` DISABLE KEYS */;
+INSERT INTO `store` VALUES (21225,'Kird Plaza',423249230.32,110),(21226,'Bassem Store.',836413123.55,112),(21227,'Basues',907936911.56,106),(21228,'Misa mart',573025701.54,111),(21229,'U23 Shop',642935404.32,106),(21230,'Organic Orchard.',271027516.23,111),(21231,'Rise & Shine',327013197.11,115),(21232,'TheFarmory',959697057.77,112),(21233,'Save Mart',255005795.44,110),(21234,'Grower’s Market',732786861.21,110),(21235,'Cermak Produce',367414078.22,113),(21236,'BestBargain',919514555.22,109),(21237,'Greenaway Grocer',797130445.22,109),(21238,'7-Eleven',393408695.65,115),(21239,'Hoang Cau Market',831599358.22,114),(21240,'Dome Shop',778733816.29,108),(21241,'Atari',851689343.98,109),(21242,'Masstel',882424432.44,109),(21243,'Commodore',415841784.77,113),(21244,'Ministop',258687374.48,107),(21245,'Jolymart',969892445.83,110),(21246,'Bazamart',527334193.45,106),(21247,'Freshcipe Shoppe.',671970066.24,111),(21248,'Circle K',926615383.59,108),(21249,'Anima',787114854.76,113),(21250,'DMart',637306999.36,108);
+/*!40000 ALTER TABLE `store` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vendor`
+--
+
+DROP TABLE IF EXISTS `vendor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `vendor` (
+  `vendor_id` int NOT NULL,
+  `vendor_name` varchar(20) NOT NULL,
+  `vendor_contact` varchar(14) NOT NULL,
+  `vendor_email` varchar(30) NOT NULL,
+  `vendor_areacode` char(3) NOT NULL,
+  PRIMARY KEY (`vendor_id`),
+  UNIQUE KEY `vendor_id` (`vendor_id`),
+  UNIQUE KEY `vendor_contact` (`vendor_contact`),
+  UNIQUE KEY `vendor_email` (`vendor_email`),
+  UNIQUE KEY `vendor_areacode` (`vendor_areacode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vendor`
+--
+
+LOCK TABLES `vendor` WRITE;
+/*!40000 ALTER TABLE `vendor` DISABLE KEYS */;
+INSERT INTO `vendor` VALUES (19115,'Bryson, Inc.','223-3234','bryson@gmail.com','435'),(19116,'SuperLoo, Inc.','215-8995','superloo@gmail.com','694'),(19117,'D&E Supply','228-3245','d&e@gmail.com','636'),(19118,'Gomez Bros.','889-2546','gomez@gmail.com','432'),(19119,'Dome Supply','678-1419','dome@gmail.com','778'),(19120,'Randsets Ltd.','678-3998','randsets@gmail.com','971'),(19121,'Brackman Bros.','228-1410','brackman@gmail.com','656'),(19122,'ORDVA, Inc.','898-1234','mrquan@ordva.com','379'),(19123,'B&K, Inc.','227-0093','mrshanh@bandk.com','714'),(19124,'Damal Supplies','890-3529','mrslinh@damal.com','433'),(19125,'Rubicon Systems','456-0092','mrchi@rubicon.com','391'),(19126,'PSG.','959-6563','mrmbappe@psg.net','855'),(19127,'YHDAA.','069-2773','mrtu@yhdaa.com','592'),(19128,'Sunda136','627-8902','sunda136@yahoo.com','743'),(19129,'MIAHouse','527-6813','miahouse@yahoo.com','468'),(19130,'MUvodoi','087-5943','muvodich@yahoo.com','555'),(19131,'Letv','642-3104','letv@yahoo.com','408'),(19132,'Andes','756-9287','andes@yahoo.com','272'),(19133,'GRS','234-8554','grs@yahoo.com','233'),(19134,'ANNTS','519-5173','anttskey@yahoo.com','570'),(19135,'BKaV','234-3694','bomphone@gmail.com','321'),(19136,'Quangno Systems','574-2459','bphone@yahoo.com','532');
+/*!40000 ALTER TABLE `vendor` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-05-23 17:46:19

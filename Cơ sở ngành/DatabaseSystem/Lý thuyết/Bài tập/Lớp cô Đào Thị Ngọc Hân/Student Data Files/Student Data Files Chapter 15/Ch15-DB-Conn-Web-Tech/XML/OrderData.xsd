@@ -1,0 +1,26 @@
+<xsd:schema xmlns:xsd="http://www.company.com/xmlschema">
+
+<xsd:element name="OrderData" type="Order"/>
+
+<xsd:complexType name="Order">
+	xsd:element name="ORD_ID"	type="xsd:string/>
+	xsd:element name="ORD_DATE"	type="xsd:date/>
+	xsd:element name="ORD_NAME"	type="xsd:string/>
+	xsd:element name="CUS_NAME"	type="xsd:string/>
+	xsd:element name="ORD_SHIPTO"	type="xsd:string/>
+	xsd:element name="ORD_PRODS"	type="xsd:productlist/>
+	xsd:element name="ORD_TOT"	type="xsd:decimal/>
+</xsd:complexType name="Order">
+
+<xsd:complexType name="prodlist"
+	<xsd:element name="product"	type="aproduct" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:complexType>
+
+<xsd:complexType name="aproduct">
+	xsd:element name="P_CODE"	type="xsd:string"		use="required"/>
+	xsd:element name="P_DESCRIPT"	type="xsd:string"		use="required"/>
+	xsd:element name="P_QOH"	type="xsd:positiveInteger"	use="required"/>
+	xsd:element name="P_PRICE"	type="xsd:decimal		use="required"/>
+</xsd:complexType>
+
+</xsd:schema>

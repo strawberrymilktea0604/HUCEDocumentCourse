@@ -1,0 +1,17 @@
+<?xml version ="1.0"?>
+<!DOCTYPE ProductList SYSTEM "ProductList.dtd">
+<ProductList>
+	<Product>
+		<P_CODE>23109-HB</P_CODE>
+		<P_DESCRIPT>Claw hammer</P_DESCRIPT>
+		<P_QOH>23</P_QOH>
+		<P_PRICE>5.95</P_PRICE>
+	</Product>
+	<Product>
+		<P_CODE>23114-AA</P_CODE>
+		<P_DESCRIPT>Sledge hammer, 12 lb.</P_DESCRIPT>
+		<P_QOH>8</P_QOH>
+		<P_MIN>5</P_MIN>
+		<P_PRICE>14.40</P_PRICE>
+	</Product>
+</ProductList>

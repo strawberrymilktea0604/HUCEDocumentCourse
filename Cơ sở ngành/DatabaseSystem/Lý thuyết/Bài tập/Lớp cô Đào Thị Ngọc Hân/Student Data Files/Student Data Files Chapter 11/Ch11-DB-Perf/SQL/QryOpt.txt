@@ -1,0 +1,90 @@
+/* QRYOPT.TXT */
+/* Qry Optimization Example*/
+
+/* Create tables */
+/* Run QRYOPTDATA.SQL script to load the data
+
+/* Create PLAN_TABLE */
+/* There are two versions of this script  */
+/* One is for version 9i and the other for version 10g  */
+/* Please use the correct one for your DBMS  */
+/* run UTLXPLAN.SQL to setup the PLAN table.
+
+/* ORACLE 9i query optimizer defaults to 'Choose' mode */
+/* Rule based if no statistics */
+/* Cost based if there are statistics */
+/* ORACLE 10g query optimizer defaults to 'ALL_ROWS' cost-based mode */
+/* Use Enterprise Manager GUI to check db initialization parameters */
+/* Optimizer: optimizer mode */
+
+/* SQL*PLUS Timing: SET TIMING ON     (optional)    */
+
+/* EXPLAIN PLAN USAGE: EXPLAIN PLAN FOR statement   */
+
+
+/* Gather statistics for QOVENDOR */
+ANALYZE TABLE QOVENDOR COMPUTE STATISTICS
+
+/* Second Explain Plan */
+EXPLAIN PLAN FOR SELECT * FROM QOVENDOR WHERE V_NAME LIKE 'B%' ORDER BY V_AREACODE
+
+/* Display the access plan */
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* Create an index in V_AREACODE and gather statistics */
+CREATE INDEX QOV_NDX1 ON QOVENDOR(V_AREACODE)
+
+ANALYZE TABLE QOVENDOR COMPUTE STATISTICS
+
+/* Third Explain Plan */
+EXPLAIN PLAN FOR SELECT * FROM QOVENDOR WHERE V_NAME LIKE 'B%' ORDER BY V_AREACODE
+
+/* Display the access plan:->  cost is cut in half! */
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* Create an index in V_NAME and gather statistics */
+CREATE INDEX QOV_NDX2 ON QOVENDOR(V_NAME)
+
+ANALYZE TABLE QOVENDOR COMPUTE STATISTICS
+
+/* Fourth Explain Plan */
+EXPLAIN PLAN FOR SELECT * FROM QOVENDOR WHERE V_NAME LIKE 'B%' ORDER BY V_AREACODE
+
+/* Display the access plan: -> second index does not help because LIKE % is not an equality comparison */
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* ------------------*/
+/* Functions on columns affects qry optimization */
+EXPLAIN PLAN FOR SELECT V_NAME, P_CODE FROM QOVENDOR V, QOPRODUCT P
+                 WHERE  V.V_CODE = P.V_CODE AND V_NAME = 'ORDVA, Inc.' 
+
+/* Display the access plan */
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* Use a function on indexed column */
+EXPLAIN PLAN FOR SELECT V_NAME, P_CODE FROM QOVENDOR V, QOPRODUCT P
+                 WHERE  V.V_CODE = P.V_CODE AND UPPER(V_NAME) = 'ORDVA, INC.'
+
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* ------------------*/
+/* Aggregate Functions also benefit from indexes */
+ANALYZE TABLE QOPRODUCT COMPUTE STATISTICS
+
+EXPLAIN PLAN FOR SELECT MAX(P_PRICE) FROM QOPRODUCT
+
+/ * Display the plan -> uses Full Table Scan! */
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* Create an index on P_PRICE and gather statistics*/
+CREATE INDEX QOP_NDX2 ON QOPRODUCT(P_PRICE)
+
+ANALYZE TABLE QOPRODUCT COMPUTE STATISTICS
+
+/* EXPLAIN PLAN FOR SELECT MAX(P_PRICE) FROM PRODUCT */
+EXPLAIN PLAN FOR SELECT MAX(P_PRICE) FROM QOPRODUCT 
+
+/ * Display the plan -> uses the index only! */
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)
+
+/* END */ 

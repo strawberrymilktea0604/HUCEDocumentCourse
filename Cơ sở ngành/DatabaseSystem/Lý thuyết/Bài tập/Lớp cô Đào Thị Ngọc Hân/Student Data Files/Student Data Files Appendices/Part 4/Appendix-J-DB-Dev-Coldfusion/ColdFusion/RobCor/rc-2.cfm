@@ -1,0 +1,30 @@
+<HTML>
+<CFQUERY NAME="VENDATA" DATASOURCE="RobCor">
+        SELECT * FROM VENDOR ORDER BY VEN_CODE
+</CFQUERY>
+<HEAD>
+<TITLE>Rob & Coronel -  ColdFusion Examples</TITLE>
+</HEAD>
+<BODY BGCOLOR="LIGHTBLUE">
+<H1>
+<B><CENTER>Simple Query using CFQUERY and CFOUTPUT</CENTER></B>
+<B><CENTER>(Horizontal Output)</CENTER></B>
+</H1>
+<BR>
+<HR>
+<PRE>
+<B>
+VENDOR CODE  VENDOR NAME  CONTACT PERSON     ADDRESS        CITY       STATE        ZIP        PHONE 		
+</B>
+<HR>
+<CFOUTPUT QUERY="VENDATA">
+#VEN_CODE#   #VEN_NAME#   #VEN_CONTACT_NAME# #VEN_ADDRESS#  #VEN_CITY# #VEN_STATE#  #VEN_ZIP#  #VEN_PH#<BR>
+</CFOUTPUT>
+</PRE>
+<FORM ACTION="rc-0.cfm" METHOD="post">
+	<INPUT TYPE="submit" VALUE="Main Menu ">
+</FORM>
+</BODY>
+</HTML>
+
+

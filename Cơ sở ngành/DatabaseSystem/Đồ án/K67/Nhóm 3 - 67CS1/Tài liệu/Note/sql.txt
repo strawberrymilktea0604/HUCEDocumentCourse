@@ -1,0 +1,352 @@
+USE storeco;
+
+CREATE TABLE region(
+       region_id CHAR(3) PRIMARY KEY,
+       region_descript VARCHAR(35) NOT NULL
+       UNIQUE (region_id)
+);
+
+CREATE TABLE store(
+       store_id CHAR(5) PRIMARY KEY,
+       store_name VARCHAR(20) NOT NULL,
+       store_ytd_sales NUMERIC(9,2) NOT NULL,
+       region_id CHAR(3) NOT NULL,
+       FOREIGN KEY (region_id)
+       REFERENCES region(region_id)
+       UNIQUE (store_id)
+);
+
+CREATE TABLE employee(
+       emp_id CHAR(5) PRIMARY KEY,
+       emp_title VARCHAR(20) NOT NULL,
+       emp_fname VARCHAR(20) NOT NULL,
+       emp_lname VARCHAR(20) NOT NULL,
+       emp_initial CHAR(1) NOT NULL,
+       emp_dob DATE NOT NULL,
+       emp_gender CHAR(1) NOT NULL,
+       store_id CHAR(5) NOT NULL,
+       FOREIGN KEY (store_id)
+       REFERENCES store(store_id),
+       emp_manager CHAR(5) NOT NULL
+       UNIQUE (emp_id),
+);
+
+CREATE TABLE vendor(
+       vendor_id CHAR(5) PRIMARY KEY,
+       vendor_name VARCHAR(20) NOT NULL,
+       vendor_contact VARCHAR(14) NOT NULL,
+       vendor_email VARCHAR(30) NOT NULL,
+       vendor_areacode CHAR(3) NOT NULL
+       UNIQUE (vendor_id),
+       UNIQUE (vendor_contact),
+       UNIQUE (vendor_email),
+       UNIQUE (vendor_areacode)
+);
+
+CREATE TABLE discount(
+       dis_id CHAR(3) PRIMARY KEY,
+       dis_condition VARCHAR(30) NOT NULL,
+       dis_percent CHAR(3) NOT NULL,
+       dis_time DATETIME NOT NULL
+       UNIQUE (dis_id)
+);
+
+CREATE TABLE invoice(
+       inv_id CHAR(5) PRIMARY KEY,
+       emp_id CHAR(5) NOT NULL,
+       cus_id CHAR(6) NOT NULL,
+       inv_date DATE NOT NULL,
+       inv_num CHAR(6) NOT NULL,
+       inv_total NUMERIC(6,2) NOT NULL,
+       dis_id CHAR(3) NOT NULL,
+       inv_payment_date DATE NOT NULL,
+       inv_descript VARCHAR(30) NOT NULL,
+       FOREIGN KEY (emp_id)
+       REFERENCES employee(emp_id),
+       FOREIGN KEY (cus_id)
+       REFERENCES customer(cus_id),
+       FOREIGN KEY (dis_id)
+       REFERENCES discount(dis_id)
+       UNIQUE (inv_id)
+
+);
+
+CREATE TABLE product(
+       product_id CHAR(6) PRIMARY KEY,
+       product_name VARCHAR(30) NOT NULL,
+       product_quantity CHAR(4) NOT NULL,
+       product_unit_price NUMERIC(6,2) NOT NULL,
+       product_descript VARCHAR(30) NOT NULL,
+       manf_date DATE NOT NULL,
+       vendor_id CHAR(5) NOT NULL,
+       store_id CHAR(5) NOT NULL,
+       FOREIGN KEY (vendor_id)
+       REFERENCES vendor(vendor_id),
+       FOREIGN KEY (store_id)
+       REFERENCES store(store_id)
+       UNIQUE (product_id)
+);
+
+CREATE TABLE inv_item(
+       inv_id CHAR(5) PRIMARY KEY,
+       product_id CHAR(6) NOT NULL,
+       inv_items_units CHAR(4) NOT NULL,
+       inv_items_price NUMERIC(6,2) NOT NULL,
+       FOREIGN KEY (inv_id)
+       REFERENCES invoice(inv_id),
+       FOREIGN KEY (product_id)
+       REFERENCES product(product_id)
+);
+
+
+
+INSERT INTO region VALUES(106,'Ba Dinh');
+INSERT INTO region VALUES(107,'Dong Da');
+INSERT INTO region VALUES(108,'Cau Giay');
+INSERT INTO region VALUES(109,'Ha Dong');
+INSERT INTO region VALUES(110,'Long Bien');
+INSERT INTO region VALUES(111,'Nam Tu Liem');
+INSERT INTO region VALUES(112,'Hoang Mai');
+INSERT INTO region VALUES(113,'Quoc Oai');
+INSERT INTO region VALUES(114,'My Duc');
+INSERT INTO region VALUES(115,'Ba Vi');
+INSERT INTO region VALUES(116,'Thanh Tri');
+
+
+
+
+
+INSERT INTO store VALUES(21225,'Kird Plaza'    ,423249230.32,110);
+INSERT INTO store VALUES(21226,'Bassem Store.'  ,836413123.55,112);
+INSERT INTO store VALUES(21227,'Basues'      ,907936911.56, 106);
+INSERT INTO store VALUES(21228,'Misa mart'     ,573025701.54  ,111);
+INSERT INTO store VALUES(21229,'U23 Shop'     ,642935404.32   ,106);
+INSERT INTO store VALUES(21230,'Organic Orchard.'   ,271027516.23,111);
+INSERT INTO store VALUES(21231,'Rise & Shine'  ,327013197.11,115);
+INSERT INTO store VALUES(21232,'TheFarmory'     ,959697057.77 ,112);
+INSERT INTO store VALUES(21233,'Save Mart'       ,255005795.44   ,110);
+INSERT INTO store VALUES(21234,'Grower’s Market'  ,732786861.21  ,110);
+INSERT INTO store VALUES(21235,'Cermak Produce' ,367414078.22   ,113);
+INSERT INTO store VALUES(21236,'BestBargain'    ,919514555.22,109);
+INSERT INTO store VALUES(21237,'Greenaway Grocer'  ,797130445.22,109);
+INSERT INTO store VALUES(21238,'7-Eleven'      ,393408695.65  ,115);
+INSERT INTO store VALUES(21239,'Hoang Cau Market'     ,831599358.22  ,114);
+INSERT INTO store VALUES(21240,'Dome Shop'     ,778733816.29   ,108);
+INSERT INTO store VALUES(21241,'Atari'   ,851689343.98,109);
+INSERT INTO store VALUES(21242,'Masstel'  ,882424432.44,109);
+INSERT INTO store VALUES(21243,'Commodore'     ,415841784.77 ,113);
+INSERT INTO store VALUES(21244,'Ministop'       ,258687374.48   ,107);
+INSERT INTO store VALUES(21245,'Jolymart'  ,969892445.83  ,110);
+INSERT INTO store VALUES(21246,'Bazamart' ,527334193.45   ,106);
+INSERT INTO store VALUES(21247,'Freshcipe Shoppe.'    ,671970066.24,111);
+INSERT INTO store VALUES(21248,'Circle K'  ,926615383.59,108);
+INSERT INTO store VALUES(21249,'Anima'      ,787114854.76   ,113);
+INSERT INTO store VALUES(21250,'DMart'     ,637306999.36  ,108);
+
+
+
+
+
+
+INSERT INTO employee VALUES(100,'Thu ngan' ,'DALE'   ,'KAKIMOTO' ,'P' ,'1911-11-22','M',21249, '1001');
+INSERT INTO employee VALUES(101,'Nhan vien dong goi' ,'JACK '     ,'UMSTEAD' ,'U' ,'2007-06-25','M',21247, '1002');
+INSERT INTO employee VALUES(102,'Ban hang' ,'RUBEN '    ,'CHRISTOFFERSE'  ,'G','2003-12-06','M',21246, '1003');
+INSERT INTO employee VALUES(103,'Quan ly kho' ,'NELLE '     ,'COLVILLE'   ,'K' ,'1999-01-15','F', 21238, '1004');
+INSERT INTO employee VALUES(104,'Bao ve' ,'CRISTOBAL '     ,'KAWAMURA'   ,'S' ,'1994-12-23','F', 21228, '1005');
+INSERT INTO employee VALUES(105,'Thu ngan' ,'GERMAINE '  ,'WALDOCH' ,'C' ,'1986-05-14','M', 21229 , '1001');
+INSERT INTO employee VALUES(106,'Nhan vien dong goi','KENNETH '     ,'QUINLIVAN','S' ,'1971-02-14','M',21246 , '1002');
+INSERT INTO employee VALUES(107,'Quan ly kho' ,'ANNIE '    ,'SHULSE'  ,'Ư' ,'1975-04-30','F', 21229 , '1004');
+INSERT INTO employee VALUES(108,'Thu ngan' ,'DALLAS ','WALLEN'   ,'J' ,'1977-10-24','F',21238 , '1001');
+INSERT INTO employee VALUES(109,'Quan ly kho' ,'AMELIA '     ,'BOEMER' ,'W' ,'1988-04-18','F',21240, '1004');
+INSERT INTO employee VALUES(110,'Shipper','ABE '   ,'BIARD','R' ,'1970-05-14','M',21244, '1006');
+INSERT INTO employee VALUES(111,'Ban hang' ,'DREW ','HOLLERUD' ,'B' ,'1966-05-23','M', 21242 , '1003');
+INSERT INTO employee VALUES(112,'Thu ngan' ,'KERSTIN '   ,'WESTENHAVER' ,'Q' ,'1961-05-18','F',21242 , '1001');
+INSERT INTO employee VALUES(113,'Nhan vien tap vu' ,'BRYANNA  '    ,'ADAMEC','G' ,'1970-03-22','F', 21249, '1007');
+INSERT INTO employee VALUES(114,'Ban hang' ,'ALYSHA '   ,'GIONEST'  ,'L' ,'1956-06-08','M',21239 , '1003');
+INSERT INTO employee VALUES(115,'Ban hang','ROMA '   ,'GERCKENS','G' ,'1972-09-09','F', 21230, '1003');
+INSERT INTO employee VALUES(116,'Shipper' ,'VENITA '     ,'AUD' ,'W' ,'1965-11-18','M',21246, '1006');
+INSERT INTO employee VALUES(117,'Bao ve' ,'EMMITT '   ,'BENDLE' ,'V' ,'1942-01-25','F',21238, '1005');
+INSERT INTO employee VALUES(118,'Thu ngan' ,'MOHAMMAD '     ,'SAYKO' ,'F' ,'1972-03-04','M',21237 , '1001');
+INSERT INTO employee VALUES(119,'Quan ly kho' ,'BRENDAN '    ,'TILLER'  ,'A','1958-12-28','M',21242, '1004');
+INSERT INTO employee VALUES(120,'Nhan vien tap vu' ,'JEREMY '     ,'BENDERMAN'   ,'W' ,'1974-10-16','F', 21231, '1007');
+INSERT INTO employee VALUES(121,'Ban hang' ,'ABDUL '     ,'GRANEY'   ,'L' ,'1971-11-03','F', 21231, '1003');
+INSERT INTO employee VALUES(122,'Nhan vien dong goi' ,'GABRIELA '  ,'MERDIAN' ,'G' ,'1975-05-20','M', 21235 , '1002');
+INSERT INTO employee VALUES(123,'Quan ly kho','DONETTE '     ,'MIMBS','G' ,'1968-09-10','M',21249, '1004');
+INSERT INTO employee VALUES(124,'Thu ngan' ,'LEORA '    ,'EIGNER'  ,'E' ,'1974-08-05','F', 21241 , '1001');
+INSERT INTO employee VALUES(125,'Shipper' ,'GAYNELLE ','TREACY'   ,'L' ,'1998-02-14','F',21245, '1006');
+INSERT INTO employee VALUES(126,'Ban hang' ,'SHERICE '     ,'BACCO' ,'A' ,'1961-05-15','F',21248, '1003');
+INSERT INTO employee VALUES(127,'Quan ly kho','MOON '   ,'BERBES','M' ,'1976-05-22','F',21239, '1004');
+INSERT INTO employee VALUES(128,'Nhan vien dong goi' ,'ERA ','JOHANN' ,'Y' ,'1982-04-04','M', 21235 , '1002');
+INSERT INTO employee VALUES(129,'Thu ngan' ,'DONG '   ,'CARRIG' ,'L' ,'1961-07-09','M',21227 , '1001');
+INSERT INTO employee VALUES(130,'Ban hang' ,'ADOLFO '    ,'PREWITT','D' ,'1970-05-06','M', 21236, '1003');
+INSERT INTO employee VALUES(131,'Nhan vien dong goi' ,'ERIK '   ,'HORNANDEZ'  ,'O' ,'1956-11-04','M',23 , '1002');
+INSERT INTO employee VALUES(132,'Bao ve','BRADFORD '   ,'TURCOTT','K' ,'2000-08-30','F', 21232, '1005');
+INSERT INTO employee VALUES(133,'Thu ngan' ,'JOSIE '     ,'BELLIPANNI' ,'I' ,'1980-09-05','F',21249 , '1001');
+INSERT INTO employee VALUES(134,'Quan ly kho' ,'SCOTT '   ,'RIVEL' ,'Z' ,'1955-07-04','M',21238, '1004');
+INSERT INTO employee VALUES(135,'Bao ve' ,'TYRON '     ,'LATIKER' ,'A' ,'1965-07-25','M',21243, '1005');
+INSERT INTO employee VALUES(136,'Shipper' ,'JOSIE '    ,'BELLIPANNI '  ,NULL,'1988-11-14','F',21235, '1006');
+INSERT INTO employee VALUES(137,'Thu ngan' ,'LOUANNE '     ,'PAJERSKI '   ,'L' ,'1974-01-01','F', 21243 , '1001');
+INSERT INTO employee VALUES(138,'Shipper' ,'ROLANDO '     ,'CUTILLO'   ,'F' ,'1998-10-15','M', 21236, '1006');
+INSERT INTO employee VALUES(139,'Quan ly kho' ,'HERSHEL '  ,'SILVERIO' ,'O' ,'1979-03-15','M', 21225, '1004');
+INSERT INTO employee VALUES(140,'Thu ngan','ERMA '     ,'KNIFE','N' ,'2002-02-05','M',21226 , '1001');
+
+
+
+
+INSERT INTO vendor VALUES(19115,'Bryson, Inc.'    ,'223-3234','bryson@gmail.com','435');
+INSERT INTO vendor VALUES(19116,'SuperLoo, Inc.'  ,'215-8995','superloo@gmail.com','694');
+INSERT INTO vendor VALUES(19117,'D&E Supply'      ,'228-3245','d&e@gmail.com','636');
+INSERT INTO vendor VALUES(19118,'Gomez Bros.'     ,'889-2546','gomez@gmail.com','432');
+INSERT INTO vendor VALUES(19119,'Dome Supply'     ,'678-1419','dome@gmail.com','778');
+INSERT INTO vendor VALUES(19120,'Randsets Ltd.'   ,'678-3998','randsets@gmail.com','971');
+INSERT INTO vendor VALUES(19121,'Brackman Bros.'  ,'228-1410','brackman@gmail.com','656');
+INSERT INTO vendor VALUES(19122,'ORDVA, Inc.'     ,'898-1234','mrquan@ordva.com','379');
+INSERT INTO vendor VALUES(19123,'B&K, Inc.'       ,'227-0093','mrshanh@bandk.com','714');
+INSERT INTO vendor VALUES(19124,'Damal Supplies'  ,'890-3529','mrslinh@damal.com','N');
+INSERT INTO vendor VALUES(19125,'Rubicon Systems' ,'456-0092','mrchi@rubicon.com','391');
+INSERT INTO vendor VALUES(19126,'PSG.'    ,'959-6563','mrmbappe@psg.net','855');
+INSERT INTO vendor VALUES(19127,'YHDAA.'  ,''069-2773','mrtu@yhdaa.com','592');
+INSERT INTO vendor VALUES(19128,'Sunda136'      ,'615','627-8902','sunda136@yahoo.com','743');
+INSERT INTO vendor VALUES(19129,'MIAHouse'     ,'615','527-6813','miahouse@yahoo.com','468');
+INSERT INTO vendor VALUES(19130,'MUvodoi'     ,'901','087-5943','muvodich@yahoo.com','555');
+INSERT INTO vendor VALUES(19131,'Letv'   ,'642-3104','letv@yahoo.com','408');
+INSERT INTO vendor VALUES(19132,'Andes'  ,'756-9287','andes@yahoo.com','272');
+INSERT INTO vendor VALUES(19133,'GRS'     ,'898-1234','grs@yahoo.com','636');
+INSERT INTO vendor VALUES(19134,'ANNTS'       ,'519-5173','anttskey@yahoo.com','570');
+INSERT INTO vendor VALUES(19135,'BKaV'  ,'234-3694','bomphone@gmail.com','N');
+INSERT INTO vendor VALUES(19136,'Quangno Systems' ,'574-2459','bphone@yahoo.com','656');
+
+
+INSERT INTO discount VALUES(977,'Don toi thieu 50000d','15%', '2018-05-15 00:00:00' );
+INSERT INTO discount VALUES(978,'Don toi thieu 75000d','21%', '2018-05-15 00:00:00');
+INSERT INTO discount VALUES(979,'Don toi thieu 100000d','28%', '2018-05-15 00:00:00');
+INSERT INTO discount VALUES(980,'Don toi thieu 75000d','20%', '2018-05-15 00:00:00');
+INSERT INTO discount VALUES(981,'Don toi thieu 150000d','31%', '2018-05-16 00:00:00');
+INSERT INTO discount VALUES(982,'Don toi thieu 50000d','17%', '2018-05-16 00:00:00');
+INSERT INTO discount VALUES(983,'Don toi thieu 75000d','23%', '2018-05-16 00:00:00');
+INSERT INTO discount VALUES(984,'Don toi thieu 150000d','34%', '2018-05-16 00:00:00');
+INSERT INTO discount VALUES(985,'Don toi thieu 100000d','26%', '2018-05-17 00:00:00');
+INSERT INTO discount VALUES(986,'Don toi thieu 50000d','18%', '2018-05-17 00:00:00');
+INSERT INTO discount VALUES(987,'Don toi thieu 150000d','30%', '2018-05-17 00:00:00');
+INSERT INTO discount VALUES(988,'Don toi thieu 100000d','26%', '2018-05-17 00:00:00');
+INSERT INTO discount VALUES(989,'Don toi thieu 50000d','15%', '2018-05-17 00:00:00');
+INSERT INTO discount VALUES(990,'Don toi thieu 100000d','27%', '2018-05-18 00:00:00');
+INSERT INTO discount VALUES(991,'Don toi thieu 150000d','32%', '2018-05-18 00:00:00');
+INSERT INTO discount VALUES(992,'Don toi thieu 75000d','22%, '2018-05-18 00:00:00');
+
+
+INSERT INTO customer VALUES(100010,'MAXIMO '   ,'VREEMAN','F' ,'615','844-2573','Hoang Cau, Dong Da', 'Silver');
+INSERT INTO customer VALUES(100011,'SANG '   ,'LUPIANI' ,'A' ,'615','894-1238','Thuy Khue, Tay Ho', 'Gold');
+INSERT INTO customer VALUES(100012,'MOSHE '   ,'GORDIN' ,'E' ,'615','894-2285','Hang Bai, Hoan Kiem', 'Silver');
+INSERT INTO customer VALUES(100013,'DOREATHA ' ,'MCCALEBB'  ,'L' ,'615','894-2180','Kim Ma, Ba Dinh', 'Silver');
+INSERT INTO customer VALUES(100014,'ELEANOR  ' ,'MANDELLA' ,'F','615','222-1672','Nui Truc, Ba Dinh', 'Diamond');
+INSERT INTO customer VALUES(100015,'GLENN ','FAGGS'   ,'O' ,'713','442-3381','Xuan Thuy, Cau Giay', 'Diamond');
+INSERT INTO customer VALUES(100016,'BELKIS '   ,'FERSNER' ,'A' ,'615','297-1228','Nguyen Trai, Thanh Xuan', 'Silver');
+INSERT INTO customer VALUES(100017,'BURTON ','BOREEN','K','615','290-2556','Khuong Trung, Thanh Xuan', 'Gold');
+INSERT INTO customer VALUES(100018,'CATALINA ' ,'KAHRER'  ,'Q' ,'713','382-7185','Truong Dinh, Hoang Mai, 'Gold');
+INSERT INTO customer VALUES(100019,'RICH '   ,'BROWNING','L' ,'615','297-3809','Hang Bai, Hoan Kiem', 'Gold');
+INSERT INTO customer VALUES(100020,'WILLETTA '   ,'TAMARO','A' ,'615','274-3140','Le Thai To, Hoan Kiem', 'Plantium');
+INSERT INTO customer VALUES(100021,'LEONARD'   ,'LUBBERS' ,'K' ,'615','776-7327','Giai Phong, Hai Ba Trung', 'Silver');
+INSERT INTO customer VALUES(100022,'BEATA '   ,'DOCKTER' ,'W' ,'713','788-8112','Le Duan, Dong Da', 'Silver');
+INSERT INTO customer VALUES(100023,'LENARD ' ,'GOLDFINE'  ,'F' ,'615','708-4466','Thuy Khue, Tay Ho', 'Plantium');
+INSERT INTO customer VALUES(100024,'BRYNN ' ,'DULANEY' ,'H','615','974-5218','Nguyen Trai, Thanh Xuan', 'Plantium');
+INSERT INTO customer VALUES(100025,'MAXWELL ','ABAYA'   ,'B' ,'713','133-1671','Nguyen Trai, Ha Dong', 'Diamond');
+INSERT INTO customer VALUES(100026,'Brown'   ,'James' ,'M' ,'713','299-1003','Xuan Thuy, Cau Giay', 'Diamond');
+INSERT INTO customer VALUES(100027,'TRAVIS ','FOIL','P','713','256-0138','Yen Hoa, Cau Giay', 'Gold');
+INSERT INTO customer VALUES(100028,'ALI ' ,'EASOM'  ,'T' ,'713','926-1320','Giang Vo, Ba Dinh', 'Gold');
+INSERT INTO customer VALUES(100029,'ANNEMARIE '   ,'SHERDON','Y' ,'615','742-2486','Xa Dan, Dong Da', 'Silver');
+
+INSERT INTO product VALUES(19455,'Power painter, 15 psi., 3-nozzle'     ,'10', 32343.21,  'Stain or paint', 2012-12-21, 19115, 21233);
+INSERT INTO product VALUES(19456,'7.25-in. pwr. saw blade'              ,'35',2432.25, 'industrial applications', 2012-10-11, 19131, 21240);
+INSERT INTO product VALUES(19457,'9.00-in. pwr. saw blade'              ,'42',132.25, 'industrial applications', 2015-06-20, 19133, 21241);
+INSERT INTO product VALUES(19458,'Hrd. cloth, 1/4-in., 2x50'            ,'23',55.24, 'woven or felted', 2018-09-08, 19127, 21228);
+INSERT INTO product VALUES(19459,'Hrd. cloth, 1/2-in., 3x50'            ,'24',56.11, 'woven or felted', 2015-05-21, 19118, 21225);
+INSERT INTO product VALUES(19460,'B&D jigsaw, 12-in. blade'             ,'55',345.33,  'the flat part on a knife', 2019-01-01, 19134, 21240);
+INSERT INTO product VALUES(19461,'B&D jigsaw, 8-in. blade'              ,'36',466.33,  'the flat part on a knife', 2012-09-08, 19119, 21240);
+INSERT INTO product VALUES(19462,'B&D cordless drill, 1/2-in.'          ,'20',123.44, 'drill and drive', 2016-03-09, 19129, 21239);
+INSERT INTO product VALUES(19463,'Claw hammer'                          ,'35',234.25, 'used for farming', 2019-12-21, 19128, 21225);
+INSERT INTO product VALUES(19464,'Sledge hammer, 12 lb.'                ,'22',555.11,  'used for farming', 2015-03-31, 19131, 21226);
+INSERT INTO product VALUES(19465,'Rat-tail file, 1/8-in. fine'          ,'16',266.11, 'used by engravers', 2012-05-06, 19127, 21229);
+INSERT INTO product VALUES(19466,'Hicut chain saw, 16 in.'              ,'24',555.25, 'Wood Cutting', 2018-02-09, 19121, 21235);
+INSERT INTO product VALUES(19467,'PVC pipe, 3.5-in., 8-ft'              ,'25',2123.88,'following fields', 2016-10-03, 19130, 21238);
+INSERT INTO product VALUES(19468,'1.25-in. metal screw, 25'             ,'11',3432.26,'industrial applications', 2013-12-10, 19121, 21239);
+INSERT INTO product VALUES(19469,'2.5-in. wd. screw, 50'                ,'24',563.25,'sharp-pointed metal', 2021-09-20, 19117, 21250);
+INSERT INTO product VALUES(19470' ,'Steel matting, 4''x8''x1/6", .5" mesh','32' ,243.41,'make a mat', 2012-12-21, 19132, 21242);
+INSERT INTO product VALUES(19471,'Waterproof Led Strip'     ,'50',255.23,  'used for gaming', 2015-12-24, 19115, 21228);
+INSERT INTO product VALUES(19472,'O-neck Womens T-shirt'              ,'23',114.25, 'wearing', 2016-07-25, 19133, 21234);
+INSERT INTO product VALUES(19473,'MU T-shirt'              ,'43',333.25, 'Manchester is red', 2019-10-11, 19115, 21225);
+INSERT INTO product VALUES(19474,'Remote Control Riding Vehicle Four-wheel'            ,'12',1321.25, 'toy is fun', 2014-08-05, 19118, 21248);
+INSERT INTO product VALUES(19475,'used laptop For dell E5480'            ,'65',666.25, 'cu nhung dung tot', 2015-04-03, 19116, 21240);
+INSERT INTO product VALUES(19476,'Wholesale Double A4 Paper'             ,'23',123.12,  'ho tro khi lam bai kiem tra', 2022-12-04, 19133, 21246);
+INSERT INTO product VALUES(19477,'Foor French Door Refrigerator'              ,'31',555.12,  'it is freeze', 2018-09-21, 19132, 21233);
+INSERT INTO product VALUES(19478,'Samsung split air conditioning'          ,'22',457.24, 'keeping the air', 2017-10-21, 19126, 21247);
+INSERT INTO product VALUES(19479,'Used solar panels 450w'                          ,'76',1223.25, 'sun is give energy', 2017-05-03, 19115, 21239);
+INSERT INTO product VALUES(19480,'Taipuxi Top Drones'                ,'23',1244.21,  'remote-controlled robots', 2016-10-20, 19123, 21229);
+INSERT INTO product VALUES(19481,'BKAV Virus'          ,'42',324.65, that ko the tin duoc', 2012-12-21, 19117, 21246);
+INSERT INTO product VALUES(19482,'BPhone Smartphone'              ,'52',455.25, 'that ko the tin duoc', 2022-12-23, 19122, 21225);
+INSERT INTO product VALUES(19483,'Kids Electric Motorcycle'              ,'24',2132.23,'toy is fun', 2021-02-21, 19126, 21244);
+INSERT INTO product VALUES(19484,'S116 Drone 4k Profesional GPS,             ,'53',132.25,'remote-controlled robots', 2018-10-10, 19121, 21250);
+INSERT INTO product VALUES(19485,'Factory price 520W'                ,'34',266.25,'sun is give energy', 2014-11-13, 19120, 21226);
+INSERT INTO product VALUES(19486 ,'4-Door French Door Refrigerator','22',543.25, 'it is freeze', 2012-12-15, 19121, 21230);
+
+
+
+
+
+
+
+
+INSERT INTO invoice VALUES(1001,104, 100019, '2023-05-06', '4', 0, 993, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1002,132, 100013, '2023-07-04', '1', 0, 992, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1003,125, 100016, '2023-12-11', '3', 0, 994, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1004,131, 100029, '2023-12-22', '6', 0, 986, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1005,110, 100014, '2023-01-14', '4', 0, 989, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1006,135, 100018, '2023-09-07', '2', 0, 991, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1007,120, 100011, '2023-12-02', '5', 0, 994, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1008,133, 100027, '2023-08-04', '2', 0, 977, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1009,137, 100028, '2023-10-30', '1', 0, 993, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1010,134, 100012, '2023-07-18', '1', 0, 982, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1011,107, 100024, '2023-02-14', '6', 0, 990, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1012,116, 100026, '2023-05-13', '4', 0, 985, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1013,108, 100020, '2023-08-06', '3', 0, 994, 'Offline',' ', 0);
+INSERT INTO invoice VALUES(1014,101, 100017, '2023-11-06', '1', 0, 991, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1015,135, 100015, '2023-11-24', '3', 0, 987, 'Online',' ', 0);
+INSERT INTO invoice VALUES(1016,122, 100023, '2023-04-19', '5', 0, 990, 'Offline',' ', 0); 
+
+
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(201, 1001, 19473 ,2 , 250.68);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(202, 1001, 19475 ,1 , 208.64);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(203, 1002, 19475 ,1 , 208.64);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(204, 1003, 19472 ,1 , 60.54);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(205, 1003, 19478 ,1 , 158.34);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(206, 1004, 19476 ,2 , 2.5);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(207, 1004, 19481 ,1 , 11.45);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(208, 1004, 19477 ,1 , 643.23);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(209, 1005, 19474 ,1 , 44.22);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(210, 1005, 19461 ,1 , 24.56);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(211, 1005, 19473 ,1 , 125.34);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(212, 1006, 19471 ,1 , 5.53);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(213, 1007, 19457 ,1 , 29.11);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(214, 1007, 19484 ,1 , 30.67);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(215, 1007, 19481 ,1 , 11.45);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(216, 1007, 19466 ,1 , 48.77);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(217, 1008, 19462 ,1 , 37.00);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(218, 1008, 19471 ,1 , 5.53);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(219, 1009, 19463 ,1 , 2.25);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(220, 1010, 19455 ,1 , 1223.15);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(221, 1011, 19477 ,1 , 643.23);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(222, 1011, 19457 ,1 , 29.11);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(223, 1011, 19472 ,1 , 60.54);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(224, 1011, 19484 ,1 , 30.67);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(225, 1011, 19467 ,1 , 0.76);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(226, 1012, 19468 ,2 , 0.04);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(227, 1012, 19462 ,1 , 37.00);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(228, 1013, 19457 ,1 , 29.11);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(229, 1013, 19470 ,1 , 1.23);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(230, 1014, 19455 ,1 , 1223.15);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(231, 1015, 19460 ,1 , 21.56);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(232, 1015, 19457 ,1 , 29.11);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(233, 1016, 19486 ,1 , 249.76);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(234, 1016, 19482 ,1 , 250.33);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(235, 1016, 19474 ,1 , 44.22);
+INSERT INTO `storeco`.`inv_item` (`inv_items_code`, `inv_id`, `product_id`, `inv_items_units`, `inv_items_price`) VALUES(236, 1016, 19465 ,1 , 0.29);
