@@ -1,0 +1,441 @@
+.soScreen{
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #EFF6FC;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ===== TOP BAR ===== */
+.soTopbar{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  /* ✅ quan trọng: nằm trên line */
+  z-index: 2;
+}
+
+.soLogo{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #77d08f 0%, #2e7a43 55%, #1e5a33 100%);
+  margin-right: 18px;
+}
+
+.soBrand{ margin-right: 28px; }
+.soBrandTitle{
+  color: #2B78C6;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+}
+.soBrandYear{
+  color: #2C2C2C;
+  opacity: .8;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.soBell{
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  border: 2px solid #2B78C6;
+  margin-right: 22px;
+  position: relative;
+}
+.soBellDot{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background: #E7F0FA;
+  border: 2px solid #2B78C6;
+  color: #1F69A6;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.soGlobalSearch{
+  flex: 1;
+  height: 46px;
+  border-radius: 23px;
+  border: 2px solid #C6D9F0;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  margin-right: 26px;
+}
+.soSearchIcon{
+  width: 18px;
+  height: 18px;
+  border: 2px solid #2B78C6;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+}
+.soSearchIcon::after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: #2B78C6;
+  right: -8px;
+  bottom: -2px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.soSearchPlaceholder{
+  color: #6B7A90;
+  opacity: .7;
+  font-size: 18px;
+}
+
+.soUserBox{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.soUserIcon{
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 2px solid #2B78C6;
+  position: relative;
+}
+.soUserIcon::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #2B78C6;
+  border-radius: 50%;
+  transform: translate(-50%,-62%);
+}
+.soUserIcon::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 22px;
+  height: 10px;
+  border: 2px solid #2B78C6;
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  transform: translateX(-50%);
+}
+
+.soUserLine1{
+  font-size: 20px;
+  font-weight: 700;
+  color: #1F69A6;
+  line-height: 24px;
+}
+.soUserLine2{
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  opacity: .75;
+  line-height: 22px;
+}
+
+/* ✅ FIX: đường kẻ ngang bị “cắt chữ” -> hạ xuống + cho nằm dưới */
+.soTopLine{
+  position: absolute;
+  left: 0;
+  top: 84px;              /* ✅ đổi 80 -> 84 */
+  width: 1440px;
+  height: 0px;
+  border: 3px solid #1877C7;
+  transform: rotate(-0.08deg);
+  z-index: 1;             /* ✅ thêm */
+  pointer-events: none;   /* ✅ thêm */
+}
+
+/* ===== SIDE NAV ===== */
+.soSide{
+  position: absolute;
+  left: 40px;
+  top: 160px;
+  width: 320px;
+  height: 650px;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 26px 18px;
+}
+
+.soSideItem{
+  height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+  color: #1F1F1F;
+  border-radius: 14px;
+  padding: 0 16px;
+  margin-bottom: 10px;
+}
+
+.soSideItem.active{
+  background: #B9D9F7;
+}
+
+.soSideIco{
+  width: 28px;
+  height: 28px;
+  background: #111;
+  border-radius: 6px;
+}
+
+/* ===== PANEL ===== */
+.soPanel{
+  position: absolute;
+  left: 392px;
+  top: 160px;
+  width: 1000px;
+  height: 730px;
+  background: #fff;
+  border: 1px solid #2B78C6;
+  box-sizing: border-box;
+}
+
+.soTabLeft{
+  position: absolute;
+  left: 36px;
+  top: 18px;
+  font-size: 22px;
+  color: #1F1F1F;
+}
+
+.soTabActive{
+  position: absolute;
+  left: 380px;
+  top: 18px;
+  font-size: 22px;
+  color: #2B78C6;
+}
+
+.soTabUnderline{
+  position: absolute;
+  left: 360px;
+  top: 52px;
+  width: 220px;
+  height: 4px;
+  background: #2B78C6;
+  border-radius: 2px;
+}
+
+.soPanelDivider{
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 1000px;
+  height: 1px;
+  background: #B0B0B0;
+}
+
+/* Search input (inside panel) */
+.soSearchBox{
+  position: absolute;
+  left: 190px;
+  top: 82px;
+  width: 420px;
+  height: 44px;
+  border: 2px solid #2B78C6;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.soSearchMini{
+  width: 16px;
+  height: 16px;
+  border: 2px solid #2B78C6;
+  border-radius: 50%;
+  position: relative;
+}
+.soSearchMini::after{
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 2px;
+  background: #2B78C6;
+  right: -7px;
+  bottom: -2px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.soSearchText{
+  font-size: 18px;
+  color: #6B7A90;
+  opacity: .7;
+}
+
+/* filter */
+.soFilterWrap{
+  position: absolute;
+  right: 220px;
+  top: 82px;
+  width: 220px;
+  height: 44px;
+}
+.soFilterSelect{
+  width: 100%;
+  height: 44px;
+  border: 2px solid #2B78C6;
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: 18px;
+  background: #fff;
+}
+
+/* create button */
+.soCreateBtn{
+  position: absolute;
+  right: 24px;
+  top: 82px;
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 12px;
+  background: #4E8FE0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.soPlus{
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* summary cards */
+.soCard{
+  position: absolute;
+  top: 156px;
+  width: 230px;
+  height: 78px;
+  border: 1px solid #2B78C6;
+  border-radius: 14px;
+  box-sizing: border-box;
+  padding: 12px 14px;
+}
+
+.soCard.c1{ left: 28px; }
+.soCard.c2{ left: 280px; }
+.soCard.c3{ left: 532px; }
+.soCard.c4{ left: 784px; }
+
+.soCardLabel{
+  font-size: 18px;
+  color: #1F1F1F;
+}
+.soCardValue{
+  margin-top: 4px;
+  font-size: 28px;
+  font-weight: 800;
+}
+.soCardValue.blue{ color: #1F69A6; }
+.soCardValue.green{ color: #4B7E1A; }
+.soCardValue.yellow{ color: #D28A00; }
+
+.soCardValueMoney{
+  margin-top: 4px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1F69A6;
+}
+
+.soCardIcon{
+  position: absolute;
+  right: 14px;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+.soCardIcon.blue{ background: #1F69A6; }
+.soCardIcon.green{ background: #4B7E1A; }
+.soCardIcon.yellow{ background: #D28A00; }
+
+.soBars{
+  position: absolute;
+  right: 12px;
+  top: 22px;
+}
+
+/* table */
+.soTableHead{
+  position: absolute;
+  left: 94px;
+  top: 300px;
+  width: 886px;
+  height: 38px;
+  border: 1px solid #2B78C6;
+  background: #EAF4FF;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.soRow{
+  position: absolute;
+  left: 94px;
+  width: 886px;
+  height: 40px;
+  border-left: 1px solid #2B78C6;
+  border-right: 1px solid #2B78C6;
+  border-bottom: 1px solid #2B78C6;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.col{
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #1F1F1F;
+}
+.cCode{ width: 110px; }
+.cDate{ width: 130px; }
+.cReceiver{ width: 230px; }
+.cReq{ width: 130px; }
+.cTotal{ width: 140px; }
+.cStatus{ width: 140px; font-weight: 700; }
+.cAction{ width: 106px; display: flex; gap: 10px; justify-content: center; }
+
+.cStatus.blue{ color: #1F69A6; }
+.cStatus.yellow{ color: #D28A00; }
+
+.soIconBtn{
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}

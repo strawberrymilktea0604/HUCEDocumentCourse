@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-black {
+            color: black;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </Style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3 ">
+                <!-- Header -->
+                <div
+                    class="bg-orange text-white p-2 d-flex justify-content-between align-items-center position-sticky top-0">
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                        <!-- Thu nhỏ -->
+                        <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Phóng to -->
+                        <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Đóng -->
+                        <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+
+                </div>
+
+                <div class="search-bar-container">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
+                    <button onclick="window.location.href='them_do_an.html'">
+                        <i class="bi bi-plus text-black"></i>
+                    </button>
+                </div>
+
+
+                <!-- Product List -->
+
+                <div class="container mt-3">
+                    <table class="table  text-center table-borderless">
+                        <thead class="table-light">
+                            <tr>
+                                
+                                <th scope="col">Tên đồ uống</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="drink-table-body">
+                            <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('http://localhost:3000/api/sanpham')
+            .then(response => response.json())
+            .then(data => {
+
+                    danhsachsanpham = data;
+                    renderTable(danhsachsanpham);
+                
+                
+                
+            })
+            .catch(error => console.error('Lỗi khi lấy dữ liệu:', error));
+        // Danh sách đồ uống
+        
+        // Thêm dòng vào bảng
+       
+        function renderTable(products) {
+            const tableBody = document.getElementById("drink-table-body");
+
+            tableBody.innerHTML = ""; // Xóa các dòng cũ
+
+            products.forEach( product => {
+                
+
+                const row = `
+                        <tr class="row-quan-ly">
+                            <td>
+                                <img src="${product.Anh_san_pham}" alt="${product.Ten_san_pham}" />
+                                ${product.Ten_san_pham}
+                            </td>
+                            <td>${parseFloat(product.Gia_nhap).toLocaleString()} đ</td>
+                            <td class="quantity-control">
+                            <button onclick="updateQuantity(${product.id}, -1)">−</button>
+                            <span>${product.So_Luong}</span>
+                            <button onclick="updateQuantity(${product.id}, 1)">+</button>
+                        </td>
+                            <td>
+                                <button class="btn btn-danger" >
+                                    <i class="bi bi-x "></i>
+                                </button>
+                            </td>
+                        </tr>
+                `;
+
+                tableBody.innerHTML += row;
+            });
+        }
+
+
+        // Khởi tạo bảng
+        renderTable();
+
+    </script>
+    <script>
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('../components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

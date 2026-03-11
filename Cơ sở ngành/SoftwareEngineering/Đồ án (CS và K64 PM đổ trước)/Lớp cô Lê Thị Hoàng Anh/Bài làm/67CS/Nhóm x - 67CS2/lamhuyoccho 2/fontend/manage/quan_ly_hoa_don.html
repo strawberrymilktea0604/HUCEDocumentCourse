@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-black {
+            color: black;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .side-quan-ly {
+            margin-top: 0;
+        }
+    </Style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3 ">
+                <!-- Header -->
+                <div
+                    class="side-quan-ly bg-orange text-white p-2 d-flex justify-content-between align-items-center position-sticky top-0">
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                        <!-- Thu nhỏ -->
+                        <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Phóng to -->
+                        <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Đóng -->
+                        <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+
+                </div>
+
+                <div class="search-bar-container">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
+                    <button onclick="window.location.href='them_do_an.html'">
+                        <i class="bi bi-plus text-black"></i>
+                    </button>
+                </div>
+
+
+                <!-- Product List -->
+
+                <div class="container mt-3">
+                    <table class="table  text-center table-borderless">
+                        <thead class="table-light">
+                            <tr>
+
+                                <th scope="col">STT</th>
+                                <th scope="col">MHD</th>
+                                <th scope="col">Ngày lập</th>
+                                <th scope="col">Khách hàng</th>
+
+                                <th scope="col">Tổng thanh toán</th>
+
+                                <th scope="col">Mã NV lập hoá đơn</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoice-table-body" class="cursor-pointer">
+                            <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal để chỉnh sửa thông tin -->
+    <div class="modal fade" id="editInvoiceModal" tabindex="-1" aria-labelledby="editInvoiceModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editInvoiceModalLabel">Chỉnh sửa hóa đơn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editInvoiceForm">
+                        <div class="mb-3">
+                            <label for="editInvoiceId" class="form-label">Mã HD</label>
+                            <input type="text" class="form-control" id="editInvoiceId" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editInvoiceDate" class="form-label">Ngày lập</label>
+                            <input type="datetime" class="form-control" id="editInvoiceDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editCustomer" class="form-label">Khách hàng</label>
+                            <input type="text" class="form-control" id="editCustomer">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="editTotal" class="form-label">Tổng thanh toán</label>
+                            <input type="number" class="form-control" id="editTotal">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="editEmployeeCode" class="form-label">Mã NV lập hóa đơn</label>
+                            <input type="text" class="form-control" id="editEmployeeCode">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="deleteInvoice">Xoá hoá đơn</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveChangesBtn">Lưu thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+    
+
+    <script>
+        
+        let invoices = [];
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Gọi API để lấy dữ liệu hóa đơn
+    fetch('http://localhost:3000/api/invoices')
+        .then(response => response.json())
+        .then(data => {
+            invoices = data; // Lưu dữ liệu hóa đơn vào biến invoices
+            // Hiển thị dữ liệu trên bảng
+            renderInvoices();
+            // Kích hoạt sự kiện click cho các hàng trong bảng
+            enableRowClick();
+        })
+        .catch(error => {
+            console.error('Error fetching invoices:', error);
+        });
+});
+
+// Hàm hiển thị dữ liệu vào bảng
+function renderInvoices() {
+    const tableBody = document.getElementById("invoice-table-body");
+    tableBody.innerHTML = ""; // Xóa dữ liệu cũ
+
+    invoices.forEach((invoice, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${invoice.ID_Hoa_don}</td>
+            <td>${invoice.Thoi_gian_lap}</td>
+            <td>${invoice.ID_Khach_hang}</td>
+            <td>${invoice.Tong_tien}</td>
+            <td>${invoice.ID_NV}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Thêm sự kiện click cho mỗi hàng trong bảng
+function enableRowClick() {
+    const rows = document.querySelectorAll("#invoice-table-body tr");
+    rows.forEach((row, index) => {
+        row.addEventListener("click", () => {
+            // Lấy thông tin hóa đơn từ mảng invoices
+            const invoice = invoices[index];
+
+            // Điền thông tin vào modal
+            document.getElementById("editInvoiceId").value = invoice.ID_Hoa_don;
+            document.getElementById("editInvoiceDate").value = invoice.Thoi_gian_lap;
+            document.getElementById("editCustomer").value = invoice.ID_Khach_hang;
+            document.getElementById("editTotal").value = invoice.Tong_tien;
+            document.getElementById("editEmployeeCode").value = invoice.ID_NV;
+
+            // Hiển thị modal
+            const editInvoiceModal = new bootstrap.Modal(document.getElementById("editInvoiceModal"));
+            editInvoiceModal.show();
+        });
+    });
+}
+
+// Lưu thay đổi thông tin hóa đơn
+document.getElementById("saveChangesBtn").addEventListener("click", () => {
+    const invoiceId = document.getElementById("editInvoiceId").value;
+    const updatedInvoice = {
+        Thoi_gian_lap: document.getElementById("editInvoiceDate").value,
+        ID_Khach_hang: document.getElementById("editCustomer").value,
+        Tong_tien: parseFloat(document.getElementById("editTotal").value),
+        ID_NV: document.getElementById("editEmployeeCode").value
+    };
+
+    // Kiểm tra xem các trường có đầy đủ dữ liệu hay không trước khi gửi yêu cầu PUT
+    if (!updatedInvoice.Thoi_gian_lap || !updatedInvoice.Tong_tien || !updatedInvoice.ID_NV || !updatedInvoice.ID_Khach_hang) {
+        alert('Thiếu thông tin cần thiết để cập nhật hóa đơn.');
+        return;
+    }
+
+    // Gửi yêu cầu PUT để cập nhật hóa đơn
+    fetch(`http://localhost:3000/api/invoices/${invoiceId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedInvoice)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Cập nhật hóa đơn thành công!') {
+            // Cập nhật lại dữ liệu trong mảng invoices
+            const index = invoices.findIndex(invoice => invoice.ID_Hoa_don === invoiceId);
+            invoices[index] = { ...invoices[index], ...updatedInvoice };
+
+            // Hiển thị lại dữ liệu trên bảng
+            renderInvoices();
+
+            // Đóng modal
+            const editInvoiceModal = bootstrap.Modal.getInstance(document.getElementById("editInvoiceModal"));
+            editInvoiceModal.hide();
+        } else {
+            alert('Cập nhật không thành công!');
+        }
+    })
+    .catch(error => {
+        console.error('Lỗi khi cập nhật hóa đơn:', error);
+    });
+});
+
+
+
+
+    </script>
+
+
+    <script>
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('../components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

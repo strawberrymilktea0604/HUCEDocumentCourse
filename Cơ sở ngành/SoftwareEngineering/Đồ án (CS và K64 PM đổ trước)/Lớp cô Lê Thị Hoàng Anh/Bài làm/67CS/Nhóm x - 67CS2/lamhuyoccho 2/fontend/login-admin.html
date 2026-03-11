@@ -1,0 +1,153 @@
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .btn-orange {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+        .btn-orange:hover {
+            background-color: #e65c00;
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .left-banner {
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-form {
+            max-width: 400px;
+        }
+
+        .form-divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        .img-fluid {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Đảm bảo ảnh luôn phù hợp */
+        }
+
+        .form-control {
+            
+            border: none;
+            border-bottom: 1px solid #000;
+            /* Đường gạch dưới màu đen */
+            outline: none;
+            /* Bỏ khung viền khi click */
+            border-radius: 0;
+            /* Bỏ viền bo góc */
+        }
+
+        input:focus {
+            border-bottom: 1px solid #ff6600;
+            /* Màu cam khi focus */
+            box-shadow: none;
+            /* Không hiển thị bóng */
+        }
+        .logo img {
+            max-height: 100px; /* Tăng chiều cao logo */
+            margin-bottom: 100px;
+        }
+        
+    </style>
+</head>
+
+<body>
+   
+    <div class="container-fluid vh-100 d-flex">
+        
+
+        <!-- Right Section: Login Form -->
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+            
+            <div class="login-form w-100 px-4 text-center">
+                <div class="logo mb-4">
+                    <a href="index.html">
+                        <img src="img/Icon/logo.png" alt="Flash Logo">
+                    </a>
+                </div>
+                
+                <h2 class="mb-4 text-center " style="color: #FF4F00;">Đăng nhập hệ thống</h2>
+                <form style="margin-top: 20px;">
+                   
+                    
+                    <!-- Email Input -->
+                    <div class="mb-3">
+
+                        <input  id="email-admin" class="form-control" placeholder="Địa chỉ email của bạn *" required>
+                    </div>
+                    <!-- Password Input -->
+                    <div class="mb-3">
+
+                        <input type="password" id="password-admin" class="form-control" placeholder="Mật khẩu *"
+                            required>
+                    </div>
+                    
+                    <!-- Login Button -->
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-orange w-100 py-2" onclick="validateLogin()">Đăng nhập</button>
+                    </div>
+                  
+                    <!-- Register Link -->
+                   
+                </form>
+            </div>
+        </div>
+        <!-- Left Section: Image -->
+        <div class="col-md-6 d-none d-md-block left-banner">
+            <img src="img/Back/login-banner.jpg" alt="Banner" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+    <script>
+        function validateLogin() {
+            // Lấy giá trị email và mật khẩu từ input
+            const email = document.getElementById('email-admin').value.trim();
+            const password = document.getElementById('password-admin').value.trim();
+            console.log(email);
+    
+            // Kiểm tra thông tin đăng nhập
+            if (email === 'admin' && password === '123') {
+                // Chuyển hướng đến trang manage.html
+                window.location.href = 'manage.html';
+            } else {
+                // Hiển thị cảnh báo nếu thông tin không chính xác
+                alert('Email hoặc mật khẩu không chính xác!');
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

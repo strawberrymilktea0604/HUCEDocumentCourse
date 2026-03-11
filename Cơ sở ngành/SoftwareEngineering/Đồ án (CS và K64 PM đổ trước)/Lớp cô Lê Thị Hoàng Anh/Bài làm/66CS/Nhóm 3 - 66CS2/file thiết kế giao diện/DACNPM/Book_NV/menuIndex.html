@@ -1,0 +1,625 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="menuIndex.css">
+    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
+</head>
+<body style="overflow-x: hidden;">
+    <div class="header">
+        <div class="header__container">
+            <div class="header__container_Icon">
+                <img class="header__container_Icon--img" src="../3214881.png" alt="Cafe">
+                <span class="header__container_Icon--title title">Cafe Sách</span>
+            </div>
+            <div class="header__container_Search">
+                <input class="header__container_Search--input input" type="text" placeholder="Cafe, Book, ...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header__container_User">
+              <div class="header__container_Cart">
+                  <i class="header__container_Cart--icon fa-solid fa-cart-shopping"></i>
+              </div>
+
+              <div class="header__container_Access--image">
+                  <img class="header__container_Access--image" src="../takina.jpg" alt="">
+                  <div class="header__container_Access--description">
+                      <span class="header__container_Access--description--item">Thông tin</span>
+                      <span class="header__container_Access--description--item">Tài Khoản</span>
+                      <span class="header__container_Access--description--item">Cài Đặt</span>
+                      <span class="header__container_Access--description--item">Đăng Xuất</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="body__navbar">
+            <div class="body__navbar__container">
+              <a href="../access_NV.html" class="body__navbar__container__item ">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="../NV_menu/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-mug-saucer"></i>
+                <span>Menu</span>
+            </a>
+            <a href="../Book_NV/menuIndex.html" class="body__navbar__container__item selected">
+                <i class="fa-solid fa-book"></i>
+                <span>Book</span>
+            </a>
+            <a href="../Voucher_NV/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-note-sticky"></i>
+                <span>Voucher</span>
+            </a>
+            
+            <a href="../Customer_NV/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-users"></i>
+                <span>Customer</span>
+            </a>
+            </div>
+        </div>
+        <div class="body__container">
+          
+            <!-- Cafe -->
+            <div class="body_Wrapper">
+              
+                <div class="body_Wrapper--title">
+                  <h1 class="body_Wrapper--title--Menu">Book</h1>
+                  <a href="../Book_all_NV/menuIndex.html" class="button__more" title="Xem đầy đủ">More</a>
+                </div>
+                <div class="body_Wrapper__card">
+                  <!-- Book -->
+                  <a style="text-decoration: none;" href="../BookDescription_NV/menuIndex.html" class="body_Wrapper__card--list">
+                    <div class="card">
+                        <div class="content">
+                           <div class="back">
+                                <div class="back-content" style=" background-image: url(../Book/12065619_10153093427693456_6048667141973243889_n-420x600.jpg);">
+                                </div>
+                           </div>
+                        <div class="front">
+                            <div class="img">
+                              <div class="circle">
+                              </div>
+                              <div class="circle" id="right">
+                              </div>
+                              <div class="circle" id="bottom">
+                              </div>
+                            </div>
+                            <div class="foront__wrapper">
+                                <div class="front-content">
+                                    <div class="front-content__wrapper">
+                                        <small class="badge">VTKA18</small>
+                                        <div class="IconFunction" >
+                                            <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                            <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                        </div>
+                                    </div>
+                                  <div class="description">
+                                        <div class="title">
+                                        <p class="title">
+                                            <strong>Nguyễn Nhật Ánh</strong>
+                                        </p>
+                                        </div>
+                                        </p>
+                                  </div>
+                                </div> 
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <span>Tôi Thấy Hoa Vàng Trên Cỏ Xanh</span>
+                  </a>
+                  <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                        <div class="card">
+                            <div class="content">
+                               <div class="back">
+                                    <div class="back-content" style=" background-image: url(../Book/sach_hay_nen_doc_nha_gia_kim_ea63da0d8f.jpeg);">
+                                    </div>
+                               </div>
+                            <div class="front">
+                                <div class="img">
+                                  <div class="circle">
+                                  </div>
+                                  <div class="circle" id="right">
+                                  </div>
+                                  <div class="circle" id="bottom">
+                                  </div>
+                                </div>
+                                <div class="foront__wrapper">
+                                    <div class="front-content">
+                                        <div class="front-content__wrapper">
+                                            <small class="badge">VTKA11</small>
+                                            <div class="IconFunction" >
+                                                <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                                <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                      <div class="description">
+                                            <div class="title">
+                                            <p class="title">
+                                                <strong>Paulo Coelho</strong>
+                                            </p>
+                                            </div>
+                                            </p>
+                                      </div>
+                                    </div> 
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <span>Nhà Giả Kim</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/Being\ in\ love.jpg);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA12</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Osho</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>BEING IN LOVE</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/Coder.png);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA12</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Hồng Ngát</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>300 bài code thiếu nhi</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/HuanHoaHong.png);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA12</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Huấn Rose</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Đệ Nhất Kiếm Tiền</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/1-sach-hay-song-cham.jpg);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA14</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>MELANIE BARNES</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Sống Chậm</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/muon-kip-nhan-sinh.png);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA15</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Nguyên Phong</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Muốn Kiếp Nhân Sinh</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                        <div class="card">
+                            <div class="content">
+                               <div class="back">
+                                    <div class="back-content" style=" background-image: url(../Book/img-5414-2-168.jpg);">
+                                    </div>
+                               </div>
+                            <div class="front">
+                                <div class="img">
+                                  <div class="circle">
+                                  </div>
+                                  <div class="circle" id="right">
+                                  </div>
+                                  <div class="circle" id="bottom">
+                                  </div>
+                                </div>
+                                <div class="foront__wrapper">
+                                    <div class="front-content">
+                                        <div class="front-content__wrapper">
+                                            <small class="badge">VTKA16</small>
+                                            <div class="IconFunction" >
+                                                <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                                <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                      <div class="description">
+                                            <div class="title">
+                                            <p class="title">
+                                                <strong>EISTEIN</strong>
+                                            </p>
+                                            </div>
+                                            </p>
+                                      </div>
+                                    </div> 
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <span>EISTEIN</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/tat-den.png);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA17</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Ngô Tất Tố</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Tắt Đèn</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/dat-rung-phuong-nam-anh-e1589981142974.jpg);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA18</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Đoàn Giỏi</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Đất Rừng Phương Nam</span>
+                    </a>
+                    <!-- Book -->
+                    <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/NXBTreStoryFull_03462015_104616.jpg);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA18</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Nguyễn Du</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Truyện Kiều</span>
+                    </a>
+                    
+                     <!-- Book -->
+                     <a style="text-decoration: none;" href="" class="body_Wrapper__card--list">
+                      <div class="card">
+                          <div class="content">
+                             <div class="back">
+                                  <div class="back-content" style=" background-image: url(../Book/Áp_phích_phim_Mắt_biếc.jpg);">
+                                  </div>
+                             </div>
+                          <div class="front">
+                              <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                              </div>
+                              <div class="foront__wrapper">
+                                  <div class="front-content">
+                                      <div class="front-content__wrapper">
+                                          <small class="badge">VTKA18</small>
+                                          <div class="IconFunction" >
+                                              <i class=" IconFunction--Edit fa-solid fa-pen"></i>
+                                              <i class=" IconFunction--delete fa-solid fa-trash"></i>
+                                          </div>
+                                      </div>
+                                    <div class="description">
+                                          <div class="title">
+                                          <p class="title">
+                                              <strong>Nguyễn Nhật Ánh</strong>
+                                          </p>
+                                          </div>
+                                          </p>
+                                    </div>
+                                  </div> 
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <span>Mắt Biếc</span>
+                    </a>
+                      
+                    
+                    
+                </div>  
+            </div>
+            <div class="body__page">
+              <div class="body__page--item"><</div>
+              <div class="body__page--item">1</div>
+              <div class="body__page--item pageSelected">2</div>
+              <div class="body__page--item">3</div>
+              <div class="body__page--item">4</div>
+              <div class="body__page--item">...</div>
+              <div class="body__page--item">20</div>
+              <div class="body__page--item">></div>
+            </div>
+           
+    <div class="Footer" style="display: none;">
+      <div class="Footer__wrapper">
+        <div class="box">
+          <div class="Close">
+            <button class="Close__btn">
+              <i class="Close--icon fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="container">
+              <div class="top-header">
+                  <header>Create</header>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="ID" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Name" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Classify" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Cost" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Size" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field input-field__Create">
+                  <input type="submit" class="submit" value="Create">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

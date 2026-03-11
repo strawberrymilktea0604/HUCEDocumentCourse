@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+    </Style>
+    <style>
+        .card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card img {
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .card-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .card-buttons button {
+            width: 48%;
+        }
+        </style>
+        
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3">
+                <!-- Header -->
+                <div
+                    class="bg-orange text-white p-2 d-flex justify-content-between align-items-center position-sticky top-0">
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                    <!-- Thu nhỏ -->
+                    <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                    <!-- Phóng to -->
+                    <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                    <!-- Đóng -->
+                    <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+                    
+                </div>
+
+                <!-- Main Sections -->
+                <div id="san-pham" class="container py-4">
+                    <h5 class="text-orange">Quản lý sản phẩm</h5>
+                    <div class="row text-center">
+                        <div class="col-md-4" onclick="window.location.href='manage/quan_ly_do_an.html'" >
+                            <p>Quản lý món ăn</p>
+                            <img src="img/icon quản lý/quan_ly_mon_an.png" alt="Food" class="img-fluid mb-2"
+                                style="max-height: 200px; cursor: pointer;">
+                        </div>
+                        <div class="col-md-4" onclick="window.location.href='manage/quan_ly_do_uong.html'">
+                            <p>Quản lý đồ uống</p>
+                            <img src="img/icon quản lý/quan_ly_do_uong.png" alt="Drink" class="img-fluid mb-2"
+                                style="max-height: 200px; cursor: pointer; ">
+                        </div>
+                        <div class="col-md-4">
+                            <p>Quản lý Coffee</p>
+                            <img src="img/icon quản lý/quan_ly_cafe.png" alt="Coffee" class="img-fluid mb-2"
+                                style="max-height: 200px; cursor: pointer;">
+
+                        </div>
+                        <div class="col-md-4">
+                            <p>Quản lý loại sản phẩm</p>
+                            <img src="img/icon quản lý/quan_ly_loai_san_pham.png" alt="Coffee" class="img-fluid mb-2"
+                                style="max-height: 200px; cursor: pointer;">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="luong" class="container py-4">
+                    <h5 class="text-orange">Quản lý lương</h5>
+                    <div class="row text-center">
+
+                        <div class="col-md-4">
+                            <p>Quản lý mức lương</p>
+                            <img src="img/icon quản lý/quan_ly_muc_luong.png" alt="Salary Level"
+                                class="img-fluid mb-2" style="max-height: 200px;">
+
+                        </div>
+                        <div class="col-md-4">
+                            <p>Chấm công</p>
+                            <img src="img/icon quản lý/cham_cong.png" alt="Attendance" class="img-fluid mb-2"
+                                style="max-height: 200px;">
+
+                        </div>
+                        <div class="col-md-4">
+                            <p>Bảng kê lương</p>
+                            <img src="img/icon quản lý/bang_ke_luong.png" alt="Salary Table" class="img-fluid mb-2"
+                                style="max-height: 200px;">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="nhan-su" class="container py-4">
+                    <h5 class="text-orange">Quản lý nhân sự</h5>
+                    <div class="row text-center">
+                        <div class="col-md-4" onclick="window.location.href='manage/quan_ly_nhan_vien.html'">
+                            <p>Quản lý nhân sự</p>
+                            <img src="img/icon quản lý/quan_ly_nhan_vien.png" alt="Human Resources"
+                                class="img-fluid mb-2" style="max-height: 200px; cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="thong-ke" class="container py-4">
+                    <h5 class="text-orange">Thống kê</h5>
+                    <div class="row text-center">
+                        <div class="col-md-4" onclick="window.location.href='manage/quan_ly_hoa_don.html'">
+                            <p>Thống kê hoá đơn</p>
+                            <img src="img/icon quản lý/thong_ke_hoa_don.png" alt="Statistics" class="img-fluid mb-2"
+                                style="max-height: 200px; cursor: pointer;">
+                        </div>
+                        <div class="col-md-4" onclick="window.location.href='manage/quan_ly_khach_hang.html'" >
+                            <p>Thống kê khách hàng</p>
+                            <img src="img/icon quản lý/thong_ke_khach_hang.png" alt="Attendance"
+                                class="img-fluid mb-2" style="max-height: 200px; cursor: pointer;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

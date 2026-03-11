@@ -1,0 +1,33 @@
+:root{
+  --bg: #eaf2f7;
+  --card: #ffffff;
+  --text: #203046;
+  --muted: #6b7a90;
+
+  --primary: #2f7bd3;
+  --primary-2: #1c5faa;
+
+  --line: rgba(32,48,70,.14);
+
+  --notifHead: #6f9da0;
+  --expHead: #e77b40;
+
+  --success: #2f9f67;
+  --warning: #f2c400;
+  --danger: #d54a4a;
+
+  --shadow: 0 10px 25px rgba(18, 38, 63, 0.12);
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a{ color: inherit; text-decoration: none; }
+button, input, select, textarea { font-family: inherit; }

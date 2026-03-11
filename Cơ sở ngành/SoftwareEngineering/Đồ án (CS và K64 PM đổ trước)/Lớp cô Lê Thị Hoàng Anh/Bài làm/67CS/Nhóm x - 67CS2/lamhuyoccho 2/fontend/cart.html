@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            /* Đảm bảo ảnh luôn phù hợp */
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <style>
+        .btn-orange {
+            background-color: #ff5722;
+            border: none;
+        }
+
+        .btn-orange:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+    <div class="orange-bar" style="width: 100%; height: 42px; background-color: #FF4F00;"></div>
+
+
+    <!-- Navbar -->
+
+
+
+    <!-- Section for Cards -->
+
+    <div class="container my-5">
+        <!-- Tiêu đề bảng -->
+        <h4 class="mb-3 text-center">Danh sách sản phẩm</h4>
+
+        <!-- Bảng sản phẩm -->
+        <table class="table table-borderless align-middle">
+            <thead class="bg-light">
+                <tr>
+                    <th scope="col">Sản phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col" class="text-center">Số lượng</th>
+                    <th scope="col">Tổng</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="product-table-body">
+                <!-- Các hàng sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Tổng cộng và nút thanh toán -->
+        <div class="d-flex justify-content-between align-items-center text-center">
+            <h5 id="total-price" class="fw-bold">Tổng cộng: 0</h5>
+            <button class="btn btn-orange px-4 py-2 text-white fw-bold">Thanh toán</button>
+        </div>
+    </div>
+
+    <!-- CSS tùy chỉnh -->
+
+
+
+
+    <!-- Footer -->
+    <script>
+        // Danh sách sản phẩm
+        const products = [
+            { name: "Combo đông êm đềm", price: 39000, quantity: 1, img: "img/Menu/IMG_1.jpg" },
+            { name: "Combo Naruto", price: 89000, quantity: 1, img: "img/Menu/IMG_1.jpg" },
+            { name: "Cafe nâu đá", price: 25000, quantity: 2, img: "img/Menu/IMG_1.jpg" },
+            { name: "Ô long vani sữa", price: 40000, quantity: 1, img: "img/Menu/IMG_1.jpg" },
+        ];
+
+        // Khởi tạo bảng sản phẩm
+        const tableBody = document.getElementById("product-table-body");
+        const totalPriceElement = document.getElementById("total-price");
+
+        function renderTable() {
+            tableBody.innerHTML = ""; // Xóa sạch các hàng cũ
+            let totalPrice = 0;
+
+            products.forEach((product, index) => {
+                const total = product.price * product.quantity;
+                totalPrice += total;
+
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+            <td>
+                <div class="d-flex align-items-center">
+                    <img src="${product.img}" alt="${product.name}" class="rounded me-3">
+                    <div>
+                        <p class="mb-1 fw-bold">${product.name}</p>
+                        <span class="text-muted">Ghi chú</span>
+                    </div>
+                </div>
+            </td>
+            <td>${product.price.toLocaleString("vi-VN")}</td>
+            <td>
+                <div class="d-flex align-items-center quantity-control">
+                    <button class="btn btn-light border px-2 py-1" onclick="updateQuantity(${index}, -1)">−</button>
+                    <span class="mx-2">${product.quantity}</span>
+                    <button class="btn btn-light border px-2 py-1" onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+            </td>
+            <td>${total.toLocaleString("vi-VN")}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteProduct(${index})">X</button>
+            </td>
+        `;
+
+                tableBody.appendChild(row);
+            });
+
+            totalPriceElement.innerText = `Tổng cộng: ${totalPrice.toLocaleString("vi-VN")}`;
+        }
+
+        // Cập nhật số lượng sản phẩm
+        function updateQuantity(index, change) {
+            if (products[index].quantity + change >= 1) {
+                products[index].quantity += change;
+                renderTable();
+            }
+        }
+
+        // Xóa sản phẩm
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            renderTable();
+        }
+
+        // Khởi tạo bảng khi tải trang
+        renderTable();
+
+    </script>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+
+</html>

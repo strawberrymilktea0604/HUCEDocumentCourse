@@ -1,0 +1,554 @@
+/* nền giống các trang khác */
+.stockInPage {
+  min-height: 100vh;
+  background: #ebf4f9;
+}
+
+/* layout: SideNav + Content */
+.stockInMain {
+  display: flex;
+  gap: 22px;
+  padding: 18px 18px 30px;
+}
+
+.stockInContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.stockPanel {
+  width: 1060px;
+  background: #fff;
+  border: 2px solid #2f80ed;
+  border-radius: 2px;
+  padding: 18px 18px 22px;
+}
+
+/* tabs top */
+.stockTabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 26px;
+  position: relative;
+}
+
+.tabBtn {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  padding: 8px 6px 10px;
+  cursor: pointer;
+  color: #111;
+}
+
+.tabBtn.active {
+  color: #2f80ed;
+  font-weight: 600;
+  border-bottom: 4px solid #2f80ed;
+}
+
+.topRightBtn {
+  margin-left: auto;
+  background: #4f8fdc;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.stockDivider {
+  margin-top: 10px;
+  border-top: 1px solid #cfd8dc;
+}
+
+/* tools row */
+.stockTools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margins: 0;
+  padding: 14px 0 4px;
+}
+
+.searchBox {
+  width: 520px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #2f80ed;
+  border-radius: 16px;
+  padding: 8px 14px;
+  background: #fff;
+}
+
+.searchBox input {
+  border: 0;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.sIcon {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.rightTools {
+  margin-left: auto;
+}
+
+.selectBox {
+  border: 2px solid #2f80ed;
+  border-radius: 12px;
+  padding: 9px 12px;
+  background: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+/* stat cards */
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  padding: 14px 0 18px;
+}
+
+.statCard {
+  border: 2px solid #2f80ed;
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statLabel {
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.statValue {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.statValue.blue { color: #2f80ed; }
+.statValue.green { color: #27ae60; }
+.statValue.orange { color: #f2994a; }
+
+.statIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+}
+
+.blueBox { background: rgba(47, 128, 237, 0.25); }
+.greenBox { background: rgba(39, 174, 96, 0.25); }
+.orangeBox { background: rgba(242, 153, 74, 0.25); }
+.chartBox { background: rgba(79, 143, 220, 0.25); }
+
+/* table */
+.tableWrap {
+  margin-top: 8px;
+  border: 2px solid #2f80ed;
+}
+
+.nmTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.nmTable thead th {
+  background: #efefef;
+  text-align: left;
+  padding: 10px 10px;
+  border-bottom: 2px solid #2f80ed;
+}
+
+.nmTable tbody td {
+  padding: 10px 10px;
+  border-bottom: 1px solid #2f80ed;
+}
+
+.emptyCell {
+  text-align: center;
+  padding: 18px;
+  color: #666;
+}
+
+/* status */
+.statusBlue { color: #2f80ed; font-weight: 600; }
+.statusOrange { color: #f2994a; font-weight: 600; }
+.statusGray { color: #666; font-weight: 600; }
+.linkGreen { color: #27ae60; font-weight: 700; }
+
+/* actions */
+.actionBtns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.iconBtn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px 4px;
+}
+
+.iconBtn.eye { color: #2f80ed; }
+.iconBtn.print { color: #27ae60; }
+.iconBtn.edit { color: #27ae60; }
+.iconBtn.trash { color: #eb5757; }
+
+/* ---------- MODAL ---------- */
+.nmOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 70px;
+  z-index: 9999;
+}
+
+.nmModal {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.nmModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.nmClose {
+  border: 0;
+  background: transparent;
+  font-size: 38px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.nmModalBody {
+  border-top: 2px solid #2f80ed;
+  padding: 22px;
+}
+
+/* form grid in modal */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px 26px;
+}
+
+.field label {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.req { color: red; }
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 2px solid #2f80ed;
+  border-radius: 18px;
+  padding: 12px 16px;
+  font-size: 22px;
+  outline: none;
+  background: #fff;
+}
+
+.field input:disabled {
+  background: #e9e9e9;
+  color: #111;
+}
+
+.field textarea {
+  height: 84px;
+  resize: none;
+}
+
+.field.span2 {
+  grid-column: span 2;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.endIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* sections */
+.sectionDivider {
+  border-top: 2px solid #2f80ed;
+  margin: 18px 0;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.btnPrimary {
+  background: #4f8fdc;
+  color: #fff;
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 18px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.linesWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.lineRow {
+  background: #e6f2fb;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.lineGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.7fr 0.7fr 0.8fr 0.9fr 44px;
+  gap: 16px;
+  align-items: end;
+}
+
+.lineGrid.reqGrid {
+  grid-template-columns: 1.1fr 0.6fr 0.6fr 0.8fr 1fr 44px;
+}
+
+.lineLabel {
+  font-size: 20px;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+.lineField select,
+.lineField input {
+  width: 100%;
+  border: 2px solid #2f80ed;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 20px;
+  outline: none;
+  background: #fff;
+}
+
+.trashBtn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 22px;
+  color: #eb5757;
+}
+
+/* total bar in create receipt modal */
+.sumBar {
+  margin-top: 14px;
+  background: #4f8fdc;
+  color: #fff;
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.emptyHint {
+  text-align: center;
+  color: #666;
+  font-size: 22px;
+  padding: 40px 0 30px;
+}
+
+/* footer buttons */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.modalFooter.rightOnly {
+  justify-content: flex-end;
+}
+
+.btnGhost {
+  border: 2px solid #2f80ed;
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px 26px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.btnPrimaryBig {
+  background: #4f8fdc;
+  color: #fff;
+  border: 0;
+  border-radius: 18px;
+  padding: 12px 26px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* detail layout */
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 40px;
+}
+
+.dLabel {
+  font-size: 22px;
+  opacity: 0.75;
+  margin-top: 14px;
+}
+
+.dValue {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* confirm delete modal (blue box like ảnh) */
+.confirmModal {
+  width: 520px;
+  background: #4f8fdc;
+  border-radius: 12px;
+  padding: 26px 22px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.3);
+}
+
+.confirmTitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b1a2b;
+  margin-bottom: 20px;
+}
+
+.confirmBtns {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.btnDanger {
+  background: #c84b5a;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 26px;
+  font-size: 22px;
+  cursor: pointer;
+}
+/* =========================
+   SCALE DOWN (thu nhỏ UI)
+   Dán khối này ở CUỐI file StockIn.css
+   ========================= */
+
+/* Tabs + nút */
+.tabBtn { font-size: 18px; }
+.topRightBtn { font-size: 14px; padding: 9px 14px; border-radius: 10px; }
+
+/* Search + select */
+.searchBox { padding: 7px 12px; border-radius: 14px; }
+.searchBox input { font-size: 14px; }
+.selectBox { font-size: 14px; padding: 8px 10px; border-radius: 12px; }
+
+/* Stat cards */
+.statLabel { font-size: 14px; margin-bottom: 4px; }
+.statValue { font-size: 22px; }
+
+/* Table */
+.nmTable { font-size: 14px; }
+.nmTable thead th { padding: 9px 10px; }
+.nmTable tbody td { padding: 9px 10px; }
+
+/* Modal header */
+.nmModalHeader { padding: 14px 18px; font-size: 26px; }
+.nmClose { font-size: 34px; }
+
+/* Form labels + inputs */
+.field label { font-size: 18px; margin-bottom: 8px; }
+.field input,
+.field select,
+.field textarea {
+  font-size: 16px;
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+/* Section title + buttons */
+.sectionTitle { font-size: 18px; }
+.btnPrimary { font-size: 16px; padding: 10px 14px; border-radius: 14px; }
+.btnGhost { font-size: 16px; padding: 10px 18px; border-radius: 14px; }
+.btnPrimaryBig { font-size: 16px; padding: 10px 18px; border-radius: 14px; }
+
+/* Line items (dòng nguyên liệu) */
+.lineRow { padding: 14px; border-radius: 16px; }
+.lineLabel { font-size: 14px; margin-bottom: 6px; }
+.lineField select,
+.lineField input {
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.trashBtn { font-size: 20px; }
+
+/* Tổng bar */
+.sumBar {
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 16px;
+}
+
+/* Detail text */
+.dLabel { font-size: 16px; margin-top: 12px; }
+.dValue { font-size: 20px; margin-top: 6px; }
+
+/* Confirm delete */
+.confirmModal { width: 460px; padding: 22px 18px; }
+.confirmTitle { font-size: 20px; }
+.btnDanger { font-size: 16px; padding: 9px 20px; border-radius: 12px; }

@@ -1,0 +1,368 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="menuIndex.css">
+    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
+</head>
+<body style="overflow-x: hidden;">
+    <div class="header">
+        <div class="header__container">
+            <div class="header__container_Icon">
+                <img class="header__container_Icon--img" src="../3214881.png" alt="Cafe">
+                <span class="header__container_Icon--title title">Cafe Sách</span>
+            </div>
+            <div class="header__container_Search">
+                <input class="header__container_Search--input input" type="text" placeholder="Cafe, Book, ...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header__container_User">
+
+              <div class="header__container_Cart">
+                  <i class="header__container_Cart--icon fa-solid fa-cart-shopping"></i>
+                  <div class="header__container_Cart__description">
+                    <div class="Cart__description--header" >
+                     Hóa Đơn
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/CafeG7.jpg" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">Cafe G7</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">2</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 20k</span>
+                          </div>
+                          </div>
+                          
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item--sperate"></div>
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/BacXiu.webp" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">Bạc Xỉu</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">1</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 10k</span>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item--sperate"></div>
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/CafeMilk.jpg" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">CafeMilk</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">1</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 10k</span>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item--sperate"></div>
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/capuchino.jpg" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">CaPuhin</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">1</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 10k</span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="Cart__description--footer">
+                      <Button class="Cart__description--footer--btn"> In Hóa Đơn</Button>
+                    </div>
+                  </div>
+              </div>
+              <div class="header__container_Access--image">
+                  <img class="header__container_Access--image" src="../Image/9904b891b1ce5e359348de1c4c7e5cb2.jpg" alt="">
+                  <div class="header__container_Access--description">
+                      <span class="header__container_Access--description--item">Thông tin</span>
+                      <span class="header__container_Access--description--item">Tài Khoản</span>
+                      <span class="header__container_Access--description--item">Cài Đặt</span>
+                      <span class="header__container_Access--description--item">Đăng Xuất</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="body__navbar">
+            <div class="body__navbar__container">
+                <div class="body__navbar__container__item ">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </div>
+                <div class="body__navbar__container__item selected">
+                    <i class="fa-solid fa-mug-saucer"></i>
+                    <span>Menu</span>
+                </div>
+                <div class="body__navbar__container__item">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Book</span>
+                </div>
+                <div class="body__navbar__container__item">
+                    <i class="fa-solid fa-note-sticky"></i>
+                    <span>Voucher</span>
+                </div>
+                <div class="body__navbar__container__item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Customer</span>
+                </div>
+                <div class="body__navbar__container__item">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Employee</span>  
+                </div>
+                <div class="body__navbar__container__item">
+                    <i class="fa-solid fa-address-card"></i>
+                    <span>Account</span>
+                </div>
+                <div class="body__navbar__container__item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span>Report</span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="body__container">
+            <div class="body_Wrapper">  
+              <div class="body_Wrapper_header">
+                <img class="body_Wrapper_header--img" src="../3214881.png" alt="Cafe">
+                <span class="body_Wrapper_header--title">Cafe Sách</span>
+              </div>
+              <div class="Cart__description__item--sperate"></div>
+              <div class="wrapper_HoaDon_title">
+                <h1 class="HoaDon_Title">Hóa đơn thanh toán</h1>
+              </div>
+              <div class="HoaDon_Contents">
+                <div class="Time">
+                  <div class="Time_title">
+                    <span>ID</span>
+                    <span>Time</span>
+                    <span>Nhân Viên</span>
+                  </div>
+                  <div class="Time_Content">
+                    <span>HD80</span>
+                    <span>12:30:30 16-11-2023</span>
+                    <span>Trần Hồng Ngát 0123456</span>
+                  </div>
+                </div>
+                <div class="HoaDon_Body__title">
+                  <div class="HoaDon_Body_name_SP">
+                    Name
+                  </div>
+                  <div class="HoaDon_Body_SL">
+                    SL
+                  </div>
+                  <div class="HoaDon_Body_Cost">
+                    Đơn Giá
+                  </div>
+                  <div class="HoaDon_Body_SumCost">
+                    Thành Tiền
+                  </div>
+                </div>
+                <div class="Cart__description__item--sperate--dash"></div>
+                <!-- Sản Phẩm -->
+                <div class="HoaDon_Body__SP">
+                  <div class="HoaDon_Body_name_SP">
+                    Cafe G7 Trung Nguyên
+                  </div>
+                  <div class="HoaDon_Body_SL">
+                    2
+                  </div>
+                  <div class="HoaDon_Body_Cost">
+                    20k
+                  </div>
+                  <div class="HoaDon_Body_SumCost">
+                    40k
+                  </div>
+                </div>
+                <!-- Sản Phẩm -->
+                <div class="HoaDon_Body__SP">
+                  <div class="HoaDon_Body_name_SP">
+                    Bạc Xỉu Trung Nguyên
+                  </div>
+                  <div class="HoaDon_Body_SL">
+                    1
+                  </div>
+                  <div class="HoaDon_Body_Cost">
+                    10k
+                  </div>
+                  <div class="HoaDon_Body_SumCost">
+                    10k
+                  </div>
+                </div>
+                <!-- Sản Phẩm -->
+                <div class="HoaDon_Body__SP">
+                  <div class="HoaDon_Body_name_SP">
+                    Cà phê Sữa 
+                  </div>
+                  <div class="HoaDon_Body_SL">
+                    1
+                  </div>
+                  <div class="HoaDon_Body_Cost">
+                    10k
+                  </div>
+                  <div class="HoaDon_Body_SumCost">
+                    10k
+                  </div>
+                </div>
+                <!-- Sản Phẩm -->
+                <div class="HoaDon_Body__SP">
+                  <div class="HoaDon_Body_name_SP">
+                   Capuchino 
+                  </div>
+                  <div class="HoaDon_Body_SL">
+                    1
+                  </div>
+                  <div class="HoaDon_Body_Cost">
+                    10k
+                  </div>
+                  <div class="HoaDon_Body_SumCost">
+                    10k
+                  </div>
+                </div>
+                <div class="HoaDon_Body__SP">
+                  <div class="HoaDon_Body_name_SP">
+                   Voucher 30-4 1-5
+                  </div>
+                  <div class="HoaDon_Body_SL">
+                    1
+                  </div>
+                  <div class="HoaDon_Body_Cost">
+                    2k
+                  </div>
+                  <div class="HoaDon_Body_SumCost">
+                    2k
+                  </div>
+                </div>
+                <div class="Cart__description__item--sperate--dash"></div>
+                <div class="HoaDon_Body__TotalCost">
+                  <div class="HoaDon_Body__TotalCost--title">
+                    <span>Tổng Tiền</span>
+                  </div>
+                  <div class="HoaDon_Body__TotalCost--cost">
+                    <span>68K</span>
+                  </div>
+                </div>
+                <div class="Cart__description__item--sperate--dash"></div>
+                <div class="HoaDon_Body__TotalPayment">
+                  <div class="HoaDon_Body__TotalPayment--Money">
+                    <span>Tiền Mặt</span>
+                    <div class="Cart__description__item--sperate--dash"></div>
+                    <div class="wrapper_Payment">
+                      <div class="wrapper_Payment__title">
+                        <span >Tiền Khách Đưa:</span>
+                        <span>Tiền thừa trả lại:</span>
+                      </div>
+                      <div class="wrapper_Payment__cost">
+                        <span>68k</span>
+                        <span>...</span>
+                      </div>
+                    </div>
+                    <span class="btn_Bill">Đã Thanh Toán</span>
+                  </div>
+                  <div class="HoaDon_Body__TotalPayment--QR">
+                    <span>QR</span>
+                    <img class="HoaDon_Body__TotalCost--QR" src="../QR.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Footer" style="display: none;">
+      <div class="Footer__wrapper">
+        <div class="box">
+          <div class="Close">
+            <button class="Close__btn">
+              <i class="Close--icon fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="container">
+              <div class="top-header">
+                  <header>Create</header>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="ID" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Name" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Classify" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Cost" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Size" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field input-field__Create">
+                  <input type="submit" class="submit" value="Create">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

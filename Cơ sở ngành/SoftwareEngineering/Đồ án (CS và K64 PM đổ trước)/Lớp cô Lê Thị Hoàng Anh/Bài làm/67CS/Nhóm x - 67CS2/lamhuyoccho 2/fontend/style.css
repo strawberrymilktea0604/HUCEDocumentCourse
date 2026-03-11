@@ -1,0 +1,348 @@
+/* Định dạng header */
+header {
+    position: fixed; /* Cố định header */
+    height: 30px;
+    top: 0;          /* Đặt header ở đầu trang */
+    left: 0;         /* Canh lề trái */
+    width: 100%;     /* Đảm bảo header chiếm toàn bộ chiều ngang */
+    z-index: 1000;   /* Đảm bảo header luôn ở trên các thành phần khác */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng để phân biệt header với nội dung */
+   
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng cho header */
+    padding: 10px 20px;
+}
+
+/* Logo */
+.navbar-brand img {
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Tăng kích thước icon khi hover */
+    cursor: pointer;
+}
+
+.navbar-brand span {
+    font-size: 1.5rem;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* Menu Links */
+.nav-link {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff4500 !important;
+}
+
+/* Icons Styling */
+.icon {
+    height: 30px; /* Chiều cao tối đa cho icon */
+    width: auto;  /* Tự động căn chỉnh chiều rộng */
+    transition: transform 0.2s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Tăng kích thước icon khi hover */
+    cursor: pointer;
+}
+
+/* Badge (cho giỏ hàng) */
+.position-relative .badge {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+}
+
+
+/* Phần card */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text span {
+    font-size: 1rem;
+}
+
+/* Button custom */
+.btn-danger {
+    background-color: #ff4500;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #e63e00;
+}
+
+/* nav menu */
+/* Đảm bảo các lựa chọn trên navbar cách đều */
+.navbar-nav .nav-item {
+    flex-grow: 1; /* Mỗi mục sẽ chiếm không gian bằng nhau */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+/* Gạch chân khi lựa chọn được active */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #ff4500; /* Màu nổi bật */
+    border-bottom: 2px solid #ff4500; /* Gạch chân khi active */
+}
+
+/* Sticky-top: cố định thanh navbar khi cuộn */
+.sticky-nav {
+    position: sticky; /* Ensures it stays below the header when scrolling */
+    top: 60px; /* Height of the header (adjust this if header's height changes) */
+    width: 100%;
+    background: #f8f9fa;
+    z-index: 999; /* Lower than the header */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar menu */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ban đầu menu ẩn bên ngoài màn hình */
+    width: 300px; /* Chiều rộng sidebar */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    transition: right 0.3s ease; /* Hiệu ứng chuyển động */
+    padding: 20px;
+    overflow-y: auto; /* Scroll khi nội dung quá nhiều */
+}
+
+/* Khi sidebar hiển thị */
+.sidebar-menu.active {
+    right: 0; /* Đưa sidebar vào trong màn hình */
+}
+
+/* Close button */
+.close-btn {
+    font-size: 30px;
+    color: #ff4500;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Menu items */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    margin: 15px 0;
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.menu-items li a:hover {
+    color: #ff4500;
+}
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Làm mờ phần bên ngoài */
+    z-index: 1001; /* Phủ bên dưới sidebar */
+    opacity: 0; /* Ban đầu ẩn đi */
+    visibility: hidden; /* Không hiện trên giao diện */
+    transition: opacity 0.3s ease;
+}
+
+/* Khi overlay hiển thị */
+.overlay.active {
+    opacity: 1; /* Hiển thị overlay */
+    visibility: visible;
+}
+
+/* Container của banner */
+.banner-container {
+    position: relative;
+    width: 100%; /* Chiều rộng toàn bộ trình duyệt */
+    height: 400px; /* Chiều cao cố định */
+    overflow: hidden; /* Ẩn các ảnh nằm ngoài khung */
+    margin: 0; /* Không có khoảng cách với lề */
+}
+
+/* Hình ảnh */
+.banner-images {
+    display: flex; /* Đặt tất cả ảnh nằm ngang */
+    transition: transform 0.5s ease; /* Hiệu ứng chuyển động */
+}
+
+.banner {
+    width: 100%; /* Chiều rộng của ảnh bao toàn bộ container */
+    height: 400px; /* Chiều cao cố định của ảnh */
+    object-fit: cover; /* Cắt hoặc co giãn ảnh để vừa với kích thước */
+    flex-shrink: 0; /* Không cho ảnh co lại */
+}
+
+/* Nút chuyển đổi */
+.nav-button {
+    position: absolute;
+    top: 50%; /* Đặt giữa theo chiều dọc */
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Màu nền trong suốt */
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10; /* Hiển thị trên ảnh */
+}
+
+.prev-button {
+    left: 10px; /* Vị trí nút "<" */
+}
+
+.next-button {
+    right: 10px; /* Vị trí nút ">" */
+}
+
+/* Khi di chuột qua nút */
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.8); /* Làm tối hơn khi hover */
+}
+
+
+.quantity-control {
+   
+   
+    justify-content: center;
+    gap: 20px;
+}
+
+.quantity-control button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quantity-control button:hover {
+    color: #ff6600;
+}
+
+.quantity-control span {
+    background-color: #ff6600;
+    color: white;
+    font-size: 16px;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.table td, .table th {
+    background-color: white;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.table td img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+
+.row-quan-ly {
+    height: 80px; /* Tăng khoảng cách giữa các dòng */
+    background-color: white; /* Thêm nền trắng */
+    border-radius: 10px; /* Tùy chọn: Bo góc cho các hàng */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Tùy chọn: Hiệu ứng đổ bóng */
+}
+
+
+.btn-delete {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    color: darkred;
+}
+
+.search-bar-container {
+    background-color: #ffffff; /* Màu nền của thanh */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    position: sticky;
+    top: 0; /* Giữ cố định khi cuộn */
+    z-index: 1; /* Đảm bảo thanh luôn nổi trên */
+}
+
+.search-bar-container input {
+    border: none;
+    border-radius: 20px; /* Bo tròn */
+    background-color: #D9D9D9; /* Màu nền xám */
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 60%; /* Tùy chỉnh độ rộng */
+    outline: none; /* Xóa viền khi focus */
+}
+
+.search-bar-container input::placeholder {
+    color: #999; /* Màu placeholder */
+}
+
+.search-bar-container button {
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 50%; /* Nút tròn */
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.search-bar-container button:hover {
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+    background-color: #ffddcc; /* Màu nền nhạt hơn khi hover */
+}

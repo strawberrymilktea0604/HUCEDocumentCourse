@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-black {
+            color: black;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </Style>
+    <style>
+        .card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: auto;
+        }
+
+        .card img {
+            border-radius: 10px;
+            width: 200px;
+
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .card-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-buttons button {
+            width: 48%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100 ">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3 ">
+                <!-- Header -->
+                <div
+                    class="bg-orange text-white p-2 d-flex justify-content-between align-items-center position-sticky top-0">
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                        <!-- Thu nhỏ -->
+                        <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Phóng to -->
+                        <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Đóng -->
+                        <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+
+                </div>
+
+                <div class="search-bar-container">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm nhân viên">
+                    <button onclick="window.location.href='them_nhan_vien.html'">
+                        <i class="bi bi-plus text-black"></i>
+                    </button>
+                </div>
+
+
+
+
+                <div class="container mt-3">
+                    <table class="table  text-center table-borderless">
+                        <thead class="">
+                            <tr>
+                                <th class="col">STT</th>
+                                <th>ID Nhân Viên</th>
+                                <th>Tên Nhân Viên</th>
+                                <th>Tuổi</th>
+                                <th>Địa Chỉ</th>
+                                <th>SĐT</th>
+                                <Th>Giới tính</Th>
+
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="customer-table-body">
+                            <!-- Các hàng sẽ được load từ JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal chỉnh sửa thông tin -->
+    <div class="modal fade" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editEmployeeModalLabel">Chỉnh sửa nhân viên</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editEmployeeForm">
+                        <div class="mb-3">
+                            <label for="editEmployeeName" class="form-label">Họ Tên</label>
+                            <input type="text" class="form-control" id="editEmployeeName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmployeeID" class="form-label">Mã Nhân Viên</label>
+                            <input type="text" class="form-control" id="editEmployeeID" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmployeePhone" class="form-label">Số Điện Thoại</label>
+                            <input type="text" class="form-control" id="editEmployeePhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmployeeAge" class="form-label">Tuổi Nhân Viên</label>
+                            <input type="text" class="form-control" id="editEmployeeAge">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmployeeAddress" class="form-label">Địa chỉ</label>
+                            <input type="text" class="form-control" id="editEmployeeAddress">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmployeeGender" class="form-label">Giới tính</label>
+                            <select id="typeSelect" name="type">
+                                <option value="nam">Nam</option>
+                                <option value="nu">Nữ</option>
+
+                            </select>
+                        </div>
+
+
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="deleteEmployee">Xoá</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveEmployeeChanges">Lưu Thay Đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Hàm mở modal chỉnh sửa với dữ liệu nhân viên
+        function openEditModal(employee) {
+            // Đổ dữ liệu vào các trường trong modal
+            document.getElementById('editEmployeeID').value = employee.ID_NV;
+            document.getElementById('editEmployeeName').value = employee.Ho_Ten;
+            document.getElementById('editEmployeePhone').value = employee.So_Dien_Thoai || '';
+            document.getElementById('editEmployeeAge').value = employee.Tuoi || '';
+            document.getElementById('editEmployeeAddress').value = employee.Dia_Chi || '';
+            document.getElementById('typeSelect').value = employee.Gioi_Tinh || 'nam';
+
+            // Hiển thị modal
+            const editEmployeeModal = new bootstrap.Modal(document.getElementById('editEmployeeModal'));
+            editEmployeeModal.show();
+        }
+
+        // Hàm load dữ liệu từ API và thêm sự kiện click vào từng hàng
+        async function loadEmployees() {
+            try {
+                const response = await fetch('http://localhost:3000/api/nhan-vien');
+                const employees = await response.json();
+
+                // Lấy tbody của bảng
+                const tableBody = document.getElementById('customer-table-body');
+                tableBody.innerHTML = '';
+
+                // Thêm từng nhân viên vào bảng
+                employees.forEach((employee, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${employee.ID_NV}</td>
+                <td>${employee.Ho_Ten}</td>
+                <td>${employee.Tuoi || 'N/A'}</td>
+                <td>${employee.Dia_Chi || 'N/A'}</td>
+                <td>${employee.So_Dien_Thoai}</td>
+                <td>${employee.Gioi_Tinh}</td>
+            `;
+
+                    // Thêm sự kiện click cho hàng
+                    row.addEventListener('click', () => openEditModal(employee));
+
+                    // Thêm hàng vào bảng
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Lỗi khi load dữ liệu:', error);
+            }
+        }
+
+        // Load dữ liệu khi trang được tải
+        document.addEventListener('DOMContentLoaded', loadEmployees);
+        // Hàm xử lý lưu thay đổi khi bấm nút "Lưu Thay Đổi"
+        document.getElementById('saveEmployeeChanges').addEventListener('click', async function () {
+            const id = document.getElementById('editEmployeeID').value;  // Lấy ID nhân viên
+            const Ho_Ten = document.getElementById('editEmployeeName').value;  // Lấy tên nhân viên
+            const So_Dien_Thoai = document.getElementById('editEmployeePhone').value;  // Lấy số điện thoại
+            const Tuoi = document.getElementById('editEmployeeAge').value;  // Lấy tuổi
+            const Dia_Chi = document.getElementById('editEmployeeAddress').value;  // Lấy địa chỉ
+            const Gioi_Tinh = document.getElementById('typeSelect').value;  // Lấy giới tính
+
+            // Kiểm tra các trường dữ liệu
+            if (!Ho_Ten || !So_Dien_Thoai || !Tuoi || !Dia_Chi || !Gioi_Tinh) {
+                alert('Vui lòng điền đầy đủ thông tin!');
+                return;
+            }
+
+            // Gửi yêu cầu PUT để cập nhật dữ liệu
+            try {
+                const response = await fetch(`http://localhost:3000/api/nhan-vien/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        Ho_Ten,
+                        So_Dien_Thoai,
+                        Tuoi,
+                        Dia_Chi,
+                        Gioi_Tinh
+                    })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert(data.message);
+                    loadEmployees();  // Tải lại danh sách nhân viên sau khi cập nhật thành công
+                    const editEmployeeModal = new bootstrap.Modal(document.getElementById('editEmployeeModal'));
+                    editEmployeeModal.hide();  // Đóng modal sau khi cập nhật
+                } else {
+                    alert('Cập nhật thất bại!');
+                }
+            } catch (error) {
+                console.error('Lỗi khi cập nhật:', error);
+                alert('Có lỗi xảy ra, vui lòng thử lại!');
+            }
+        });
+        
+
+
+
+    </script>
+
+
+
+
+    <script>
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('../components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

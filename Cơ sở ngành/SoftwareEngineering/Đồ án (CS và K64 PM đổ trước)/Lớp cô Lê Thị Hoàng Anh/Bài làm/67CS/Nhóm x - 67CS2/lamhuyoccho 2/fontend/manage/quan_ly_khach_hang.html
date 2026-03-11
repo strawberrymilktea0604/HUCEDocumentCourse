@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-black {
+            color: black;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </Style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3 ">
+                <!-- Header -->
+                <div
+                    class="bg-orange text-white p-2 d-flex justify-content-between align-items-center position-sticky top-0">
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                        <!-- Thu nhỏ -->
+                        <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Phóng to -->
+                        <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Đóng -->
+                        <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+
+                </div>
+
+
+
+                <!-- Product List -->
+
+                <div class="container mt-3">
+                    <table class="table  text-center table-borderless">
+                        <thead class="">
+                            <tr>
+                                <th class="col">STT</th>
+                                <th>ID Khách Hàng</th>
+                                <th>Tên Khách Hàng</th>
+                                <th>Tuổi</th>
+                                <th>Địa Chỉ</th>
+                                <th>SĐT</th>
+
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="customer-table-body">
+                            <!-- Các hàng sẽ được load từ JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal chỉnh sửa thông tin khách hàng -->
+    <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCustomerModalLabel">Chỉnh sửa khách hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editCustomerForm">
+                        <div class="mb-3">
+                            <label for="editCustomerId" class="form-label">ID Khách Hàng</label>
+                            <input type="text" class="form-control" id="editCustomerId" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editCustomerName" class="form-label">Tên Khách Hàng</label>
+                            <input type="text" class="form-control" id="editCustomerName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editCustomerAge" class="form-label">Tuổi</label>
+                            <input type="number" class="form-control" id="editCustomerAge">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editCustomerAddress" class="form-label">Địa Chỉ</label>
+                            <input type="text" class="form-control" id="editCustomerAddress">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editCustomerPhone" class="form-label">SĐT</label>
+                            <input type="text" class="form-control" id="editCustomerPhone">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="deleteCustomer">Xoá khách hàng</button>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveCustomerChanges">Lưu Thay Đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let customers = []; // Biến lưu danh sách khách hàng
+            let editingCustomerIndex = null; // Biến lưu index của khách hàng đang chỉnh sửa
+
+            // Hàm fetch dữ liệu khách hàng từ API
+            function fetchCustomers() {
+                fetch('http://localhost:3000/api/customers') // Địa chỉ API
+                    .then(response => response.json())
+                    .then(data => {
+                        customers = data; // Lưu danh sách khách hàng vào biến
+                        renderCustomers(); // Gọi hàm render bảng
+                    })
+                    .catch(error => {
+                        console.error('Error loading customers:', error);
+                    });
+            }
+
+            // Hàm render danh sách khách hàng vào bảng
+            function renderCustomers() {
+                const tableBody = document.getElementById('customer-table-body');
+                tableBody.innerHTML = ''; // Xóa dữ liệu cũ
+
+                // Duyệt qua dữ liệu và thêm vào bảng
+                customers.forEach((customer, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${customer.ID_Khach_hang}</td>
+                <td>${customer.Ten_khach_hang}</td>
+                <td>${customer.Tuoi}</td>
+                <td>${customer.Dia_chi}</td>
+                <td>${customer.SDT}</td>
+            `;
+
+                    // Thêm sự kiện click vào từng hàng
+                    row.addEventListener('click', () => {
+                        openEditModal(index);
+                    });
+
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // Hàm mở modal chỉnh sửa
+            function openEditModal(index) {
+                const customer = customers[index];
+
+                // Điền thông tin khách hàng vào modal
+                document.getElementById("editCustomerId").value = customer.ID_Khach_hang;
+                document.getElementById("editCustomerName").value = customer.Ten_khach_hang;
+                document.getElementById("editCustomerAge").value = customer.Tuoi;
+                document.getElementById("editCustomerAddress").value = customer.Dia_chi;
+                document.getElementById("editCustomerPhone").value = customer.SDT;
+
+                // Lưu index của khách hàng đang chỉnh sửa
+                editingCustomerIndex = index;
+
+                // Hiển thị modal
+                const modal = new bootstrap.Modal(document.getElementById("editCustomerModal"));
+                modal.show();
+            }
+
+            // Lưu thay đổi từ modal
+            document.getElementById("saveCustomerChanges").addEventListener("click", () => {
+                if (editingCustomerIndex !== null) {
+                    const updatedCustomer = {
+                        Ten_khach_hang: document.getElementById("editCustomerName").value,
+                        Tuoi: parseInt(document.getElementById("editCustomerAge").value),
+                        Dia_chi: document.getElementById("editCustomerAddress").value,
+                        SDT: document.getElementById("editCustomerPhone").value,
+                    };
+
+                    const customerId = document.getElementById("editCustomerId").value;
+
+                    fetch(`http://localhost:3000/api/customers/${customerId}`, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(updatedCustomer),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.message);
+                            fetchCustomers(); // Reload lại danh sách khách hàng
+                            const modal = bootstrap.Modal.getInstance(document.getElementById("editCustomerModal"));
+                            modal.hide();
+                        })
+                        .catch(error => console.error('Error updating customer:', error));
+                }
+            });
+            // Sự kiện click nút "Xóa khách hàng"
+            document.getElementById("deleteCustomer").addEventListener("click", () => {
+                if (editingCustomerIndex !== null) {
+                    const customerId = document.getElementById("editCustomerId").value;
+
+                    fetch(`http://localhost:3000/api/customers/${customerId}`, {
+                        method: "DELETE",
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.message);
+                            fetchCustomers(); // Reload lại danh sách khách hàng
+                            const modal = bootstrap.Modal.getInstance(document.getElementById("editCustomerModal"));
+                            modal.hide();
+                        })
+                        .catch(error => console.error('Error deleting customer:', error));
+                }
+            });
+
+
+            // Gọi hàm fetch dữ liệu khi trang được tải
+            fetchCustomers();
+        });
+
+    </script>
+
+
+    <script>
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('../components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

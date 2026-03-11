@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+        .text-black{
+            color: black;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        .form-control {
+            
+            border: none;
+            border-bottom: 1px solid #000;
+            /* Đường gạch dưới màu đen */
+            outline: none;
+            /* Bỏ khung viền khi click */
+            border-radius: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            /* Bỏ viền bo góc */
+        }
+
+        input:focus {
+            border-bottom: 1px solid #ff6600;
+            /* Màu cam khi focus */
+            box-shadow: none;
+            /* Không hiển thị bóng */
+        }
+    </Style>
+    
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3">
+                <!-- Header -->
+                <div
+                    class="bg-orange text-white p-2 d-flex justify-content-between align-items-center " >
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                        <!-- Thu nhỏ -->
+                        <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Phóng to -->
+                        <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Đóng -->
+                        <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+
+                </div>
+
+                <div class="container " style="margin-top: 100px;">
+                    <form>
+                        <div class="mb-4">
+
+                            <input type="text" id="idNV" class="form-control" placeholder="Nhập id" required>
+                        </div>
+                        <!-- Tên sản phẩm -->
+                        <div class="mb-3">
+                            
+                            <input type="text" id="nameNV" class="form-control" placeholder="Nhập tên nhân viên" required>
+                        </div>
+                
+                        <!-- Giá thành -->
+                        <div class="mb-3">
+                            <label for="">Nhập ngày sinh</label>
+                            <input type="date" id="ngaysinhNV" class="form-control" placeholder="Nhập ngày sinh" required>
+                        </div>
+                
+                        <!-- Số lượng -->
+                        <div class="mb-4">
+
+                            <input type="text" id="gioitinhNV" class="form-control" placeholder="Nhập giới tính" required>
+                        </div>
+                        <div class="mb-4">
+
+                            <input type="text" id="sdtNV" class="form-control" placeholder="Nhập số điện thoại" required>
+                        </div>
+                        <div class="mb-4">
+
+                            <input type="text" id="CCCDNV" class="form-control" placeholder="Nhập CMND" required>
+                        </div>
+                        <div class="mb-4">
+
+                            <input type="text" id="addressNV" class="form-control" placeholder="Nhập địa chỉ" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="">Nhập ngày vào làm</label>
+                            <input type="date" id="ngayvaolam" class="form-control" placeholder="Nhập số lượng" required>
+                        </div>
+                        <div class="mb-4">
+
+                            <input type="text" id="chucvu" class="form-control" placeholder="Nhập chức vụ" required>
+                        </div>
+                
+                        <!-- Hình ảnh mô tả sản phẩm -->
+                        <div class="mb-4">
+                            <label for="productImage" class="form-label">Hình ảnh <span class="text-danger">*</span></label>
+                            <div class="border border-dashed p-3 text-center" style="border-radius: 5px; cursor: pointer;">
+                                <label for="productImage" class="d-block">
+                                    <img src="../img/icon quản lý/them-anh-mon-an.png" alt="">
+                                </label>
+                                <input type="file" id="productImage" class="form-control d-none" accept="image/*" required>
+                            </div>
+                        </div>
+                
+                        <!-- Nút xác nhận -->
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="submit" class="btn btn-orange px-5 py-2" style="background-color: #ff6600; color: white; border-radius: 5px;">
+                                Xác nhận
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('../components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+  
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body >
+
+</html >

@@ -1,0 +1,275 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="menuIndex.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<body style="overflow-x: hidden;">
+    <div class="header">
+        <div class="header__container">
+            <div class="header__container_Icon">
+                <img class="header__container_Icon--img" src="../3214881.png" alt="Cafe">
+                <span class="header__container_Icon--title title">Cafe Sách</span>
+            </div>
+            <div class="header__container_Search">
+                <input class="header__container_Search--input input" type="text" placeholder="Cafe, Book, ...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header__container_User">
+
+              <div class="header__container_Cart">
+                  <i class="header__container_Cart--icon fa-solid fa-cart-shopping"></i>
+                  <div class="header__container_Cart__description">
+                    <div class="Cart__description--header" >
+                     Hóa Đơn
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/CafeG7.jpg" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">Cafe G7</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">2</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 20k</span>
+                          </div>
+                          </div>
+                          
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item--sperate"></div>
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/BacXiu.webp" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">Bạc Xỉu</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">1</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 10k</span>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item--sperate"></div>
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/CafeMilk.jpg" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">CafeMilk</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">1</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 10k</span>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- SP -->
+                    <div class="Cart__description__item--sperate"></div>
+                    <div class="Cart__description__item">
+                        <img class="Cart__description__item--image" src="../Cafe/capuchino.jpg" alt="">
+                        <div class="Cart__description__item--title">
+                          <span class="Cart__description__item--title--header">CaPuhin</span>
+                          <span class="Cart__description__item--title--small">Trung Nguyên</span>
+                        </div>
+                        <div class="Cart__description__item--amount">
+                          <div class="item__amount__wrapp">
+                            <div class="item__amount">
+                              <button class="item__amount__btn item__amount__btnprev">
+                                <i class="fa-solid fa-minus"></i>
+                              </button>
+                              <button class="item__amount__btn">1</button>
+                              <button class="item__amount__btn item__amount__btn next">
+                                <i class="fa-solid fa-plus"></i>
+                              </button>
+                            </div>
+                            <span class="item__amount__cost">Cost : 10k</span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="Cart__description--footer">
+                      <Button class="Cart__description--footer--btn"> In Hóa Đơn</Button>
+                    </div>
+                  </div>
+              </div>
+              <div class="header__container_Access--image">
+                  <img class="header__container_Access--image" src="../Image/9904b891b1ce5e359348de1c4c7e5cb2.jpg" alt="">
+                  <div class="header__container_Access--description">
+                      <span class="header__container_Access--description--item">Thông tin</span>
+                      <span class="header__container_Access--description--item">Tài Khoản</span>
+                      <span class="header__container_Access--description--item">Cài Đặt</span>
+                      <span class="header__container_Access--description--item">Đăng Xuất</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="body__navbar">
+            <div class="body__navbar__container">
+              <a href="../access.html" class="body__navbar__container__item ">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="../Menu/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-mug-saucer"></i>
+                <span>Menu</span>
+            </a>
+            <a href="../Book_QL/menuIndex.html" class="body__navbar__container__item ">
+                <i class="fa-solid fa-book"></i>
+                <span>Book</span>
+            </a>
+            <a href="../Voucher_QL/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-note-sticky"></i>
+                <span>Voucher</span>
+            </a>
+            <a href="../Bill_QL/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-money-check"></i>
+                <span>Bill</span>
+            </a>
+            <a href="../Customer_QL_NV/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-users"></i>
+                <span>Customer</span>
+            </a>
+            <a href="../Employee_QL/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-user"></i>
+                <span>Employee</span>  
+            </a>
+            <a href="../Account_QL/menuIndex.html" class="body__navbar__container__item">
+                <i class="fa-solid fa-address-card"></i>
+                <span>Account</span>
+            </a>
+            <a href="../Report_QL/menuIndex.html" class="body__navbar__container__item selected">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Report</span>
+            </a>
+                
+            </div>
+        </div>
+        <div class="body__container">
+          <h1>Doanh thu Theo tuần</h1>
+          <div class="body__container_chart">
+            <div class="simple-bar-chart">
+              
+              <div class="item" style="--clr: #5EB344; --val: 80">
+                <div class="label">Thứ hai</div>
+                <div class="value">80%</div>
+              </div>
+              
+              <div class="item" style="--clr: #FCB72A; --val: 50">
+                <div class="label">Thứ ba</div>
+                <div class="value">50%</div>
+              </div>
+              
+              <div class="item" style="--clr: #F8821A; --val: 100">
+                <div class="label">Thứ tư</div>
+                <div class="value">100%</div>
+              </div>
+              
+              <div class="item" style="--clr: #E0393E; --val: 15">
+                <div class="label">Thứ năm</div>
+                <div class="value">15%</div>
+              </div>
+              
+              <div class="item" style="--clr: #963D97; --val: 20">
+                <div class="label">Thứ sáu</div>
+                <div class="value">20%</div>
+              </div>
+              
+              <div class="item" style="--clr: #069CDB; --val: 80">
+                <div class="label">Thứ bảy</div>
+                <div class="value">80%</div>
+              </div>
+            
+              <div class="item" style="--clr: #06db14; --val: 90">
+                <div class="label">Chủ Nhật</div>
+                <div class="value">90%</div>
+              </div>
+            </div>
+          </div>
+          <div class="chart--sperate"></div>
+          <h1>Số Sản phẩm nhiều nhất theo tuần</h1>
+          <div class="body__container_Circle">
+            <div id="pieChart" class="chart"></div>
+          </div>
+        </div>
+    </div>
+
+    <div class="Footer" style="display: none;">
+      <div class="Footer__wrapper">
+        <div class="box">
+          <div class="Close">
+            <button class="Close__btn">
+              <i class="Close--icon fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="container">
+              <div class="top-header">
+                  <header>Create</header>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="ID" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Name" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Classify" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Cost" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field">
+                  <input type="text" class="input" placeholder="Size" required>
+                  <i class="bx bx-user"></i>
+              </div>
+              <div class="input-field input-field__Create">
+                  <input type="submit" class="submit" value="Create">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="menuIndex.js"></script>
+</body>
+</html>

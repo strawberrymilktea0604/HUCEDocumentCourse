@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="box">
+        <form method="post" class="container">
+            <div class="top-header">
+                <header>Login</header>
+            </div>
+            <div class="input-field">
+                <input type="text" id="Username" class="input" placeholder="Username" required>
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" id="Password" class="input" placeholder="Password" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <a href="" id="link" class="input-field">
+                <input type="submit" class="submit" onclick="access()" >
+            </a>
+            <div class="bottom">
+                <div class="left">
+                    <input type="checkbox"  id="check">
+                    <label for="check"> Remember Me</label>
+                </div>
+                <div class="right">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+
+// window.onload = function() {
+//     document.getElementById('link').onclick = function() {
+//         document.getElementById('myform').submit();
+//         var Username = document.getElementById("Username");
+//         var Password = document.getElementById("Password");
+//         var link = document.getElementById("link");
+//         link.setAttribute('herf', "http://127.0.0.1:5500/access.html")
+//         return false;
+//     };
+// };
+    function access() {
+       
+        window.location.href('http://127.0.0.1:5500/access.html')
+       
+        if(Username.value =='Hipdz' && Password.value =='16112003'){
+        }
+        console.log(Username.value)
+
+    }
+
+</script>
+</html>

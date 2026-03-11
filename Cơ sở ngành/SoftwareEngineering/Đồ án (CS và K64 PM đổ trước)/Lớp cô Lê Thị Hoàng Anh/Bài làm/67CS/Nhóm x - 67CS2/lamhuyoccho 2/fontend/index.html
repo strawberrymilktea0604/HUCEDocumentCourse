@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            /* Đảm bảo ảnh luôn phù hợp */
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <div class="orange-bar" style="width: 100%; height: 42px; background-color: #FF4F00;"></div>
+
+    <div class="banner-container">
+        <!-- Nút "<" -->
+        <button class="nav-button prev-button" onclick="changeSlide(-1)">&#60;</button>
+
+        <!-- Hình ảnh -->
+        <div class="banner-images">
+            <img src="img/Back/banner1.png" class="banner" alt="Banner 1">
+            <img src="img/Back/banner2.jpeg" class="banner" alt="Banner 2">
+            <img src="img/Back/banner3.png" class="banner" alt="Banner 3">
+        </div>
+
+        <!-- Nút ">" -->
+        <button class="nav-button next-button" onclick="changeSlide(1)">&#62;</button>
+    </div>
+
+
+    <section id="danhmucmonan" class="py-5">
+        <div class="container mt-4">
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                <h2 class="mb-4" style="margin: 0; padding-right: 10px;">Danh Mục Món Ăn</h2>
+                <div style="flex-grow: 1; height: 3px; background-color: black;"></div>
+            </div>
+
+            <!-- Thêm id để JavaScript có thể thao tác -->
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <!-- JavaScript sẽ thêm nội dung vào đây -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="cothebansethich" class="py-5">
+        <div class="container mt-4">
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                <h2 class="mb-4" style="margin: 0; padding-right: 10px;">Có Thể Bạn Sẽ Thích</h2>
+                <div style="flex-grow: 1; height: 3px; background-color: black;"></div>
+            </div>
+
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        fetch('http://localhost:3000/api/sanpham')
+            .then(response => response.json())
+            .then(data => {
+
+                danhsachsanpham = data;
+
+
+
+
+
+                renderMenu("danhmucmonan", danhsachsanpham);
+                renderMenu("cothebansethich", danhsachsanpham);
+
+
+
+            })
+            .catch(error => console.error('Lỗi khi lấy dữ liệu:', error));
+        function renderMenu(sectionId, products) {
+            const section = document.querySelector(`#${sectionId} .row`);
+
+
+            products.forEach(product => {
+
+
+                const card = `
+        <div class="col">
+          <div class="card">
+            <img src="${product.Anh_san_pham}" alt="${product.Ten_san_pham}">
+            <div class="card-body text-center">
+              <h5 class="card-title">${product.Ten_san_pham}</h5>
+              <p class="text-danger fw-bold">${parseFloat(product.Gia_nhap).toLocaleString()} 
+                <span class="text-muted"><s>${parseFloat(product.Gia_nhap).toLocaleString()}</s></span>
+              </p>
+              <button class="btn btn-danger">Thêm</button>
+            </div>
+          </div>
+        </div>`;
+                section.innerHTML += card;
+            });
+        }
+
+    </script>
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js">
+
+    </script>
+</body>
+
+</html>

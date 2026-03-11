@@ -1,0 +1,32 @@
+:root{
+  --ui-scale: 1;
+}
+
+/* khung nhìn */
+.scaleStage{
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #E9F0F4;
+}
+
+/* kích thước layout THỰC sau khi scale (để hết bị “nhỏ/không khít”) */
+.scaleCanvas{
+  width: calc(1440px * var(--ui-scale));
+  height: calc(1024px * var(--ui-scale));
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* canvas gốc 1440x1024 */
+.scaleRoot{
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  inset: 0;
+  transform-origin: top left;
+  transform: scale(var(--ui-scale));
+}

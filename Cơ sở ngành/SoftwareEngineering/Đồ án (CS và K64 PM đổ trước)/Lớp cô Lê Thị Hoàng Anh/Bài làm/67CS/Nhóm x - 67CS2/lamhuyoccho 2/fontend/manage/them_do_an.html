@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đồ Uống</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <Style>
+        /* Sidebar cố định */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Thanh quản lý hệ thống cố định */
+        .bg-orange {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Đảm bảo thanh này luôn ở trên */
+        }
+
+        .text-orange {
+            color: #ff6600;
+        }
+
+        .text-black {
+            color: black;
+        }
+
+        .text-orange:hover {
+            text-decoration: underline;
+        }
+
+        .bg-orange {
+            background-color: #ff6600;
+        }
+
+        /* Tạo khoảng cách giữa các thẻ a trong sidebar */
+        .sidebar .nav-link {
+            margin-bottom: 30px;
+            /* Tạo khoảng cách giữa các liên kết */
+            padding: 10px 15px;
+            /* Tăng khoảng padding để dễ click */
+            font-size: 16px;
+            /* Tăng kích thước chữ */
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .form-control {
+
+            border: none;
+            border-bottom: 1px solid #000;
+            /* Đường gạch dưới màu đen */
+            outline: none;
+            /* Bỏ khung viền khi click */
+            border-radius: 0;
+            margin-top: 40px;
+            /* Bỏ viền bo góc */
+        }
+
+        input:focus {
+            border-bottom: 1px solid #ff6600;
+            /* Màu cam khi focus */
+            box-shadow: none;
+            /* Không hiển thị bóng */
+        }
+    </Style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 offset-md-3 fixed-top">
+                <!-- Header -->
+                <div class="bg-orange text-white p-2 d-flex justify-content-between align-items-center ">
+                    <h4 class="m-0">Quản lý hệ thống</h4>
+                    <div>
+                        <i class="bi bi-gear-fill fs-4"></i>
+                        <!-- Thu nhỏ -->
+                        <i class="bi bi-dash fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Phóng to -->
+                        <i class="bi bi-square fs-4 me-3" style="cursor: pointer;"></i>
+
+                        <!-- Đóng -->
+                        <i class="bi bi-x fs-4" style="cursor: pointer;"></i>
+                    </div>
+
+                </div>
+
+                <div class="container " style="margin-top: 100px;">
+                    <form onsubmit="ThemSanPham(event)">
+                        <!-- Tên sản phẩm -->
+                        <div class="mb-3">
+                            <input type="text" id="productName" class="form-control" placeholder="Nhập tên sản phẩm" required>
+                        </div>
+                    
+                        <!-- Giá thành -->
+                        <div class="mb-3">
+                            <input type="number" id="productPrice" class="form-control" placeholder="Nhập giá thành" required>
+                        </div>
+                    
+                        <!-- Số lượng -->
+                        <div class="mb-4">
+                            <input type="number" id="productQuantity" class="form-control" placeholder="Nhập số lượng" required>
+                        </div>
+                    
+                        <div class="mb-4">
+                            <label for="typeSelect">Chọn loại:</label>
+                            <select id="typeSelect" name="type">
+                                <option value="1">Loại 1- ưu đãi</option>
+                                <option value="2">Loại 2- món mới</option>
+                                <option value="3">Loại 3- bán chạy</option>
+                                <option value="4">Loại 4- đồ uống</option>
+                                <option value="5">Loại 5- coffee</option>
+                                <option value="6">Loại 6- đồ ăn </option>
+                            </select>
+                        </div>
+                    
+                        <!-- Hình ảnh mô tả sản phẩm -->
+                        <div class="mb-4">
+                            <label for="productImage" class="form-label">Hình ảnh mô tả sản phẩm<span class="text-danger">*</span></label>
+                            <div class="border border-dashed p-3 text-center" style="border-radius: 5px; cursor: pointer;">
+                                <label for="productImage" class="d-block">
+                                    <img id="imagePreview" src="../img/icon quản lý/them-anh-mon-an.png" alt="Chọn ảnh" style="max-width: 100%; max-height: 200px;">
+                                </label>
+                                <input type="file" id="productImage" class="form-control d-none" accept="image/*" required onchange="previewImage(event)">
+                            </div>
+                        </div>
+                    
+                        <!-- Nút xác nhận -->
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="submit" class="btn btn-orange px-5 py-2" style="background-color: #ff6600; color: white; border-radius: 5px;">
+                                Xác nhận
+                            </button>
+                        </div>
+                    </form>
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var file = event.target.files[0]; // Lấy tệp ảnh người dùng đã chọn
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imagePreview').src = e.target.result; // Cập nhật src của thẻ img
+                };
+                reader.readAsDataURL(file); // Đọc tệp ảnh và trả về URL để hiển thị
+            }
+        }
+        function ThemSanPham(event) {
+        event.preventDefault(); // Ngừng việc form tự gửi request
+
+        // Lấy thông tin từ các input
+        var productName = document.getElementById('productName').value;
+        var productPrice = document.getElementById('productPrice').value;
+        var productQuantity = document.getElementById('productQuantity').value;
+        var productType = document.getElementById('typeSelect').value;
+        var productImage = document.getElementById('productImage').files[0];
+
+        // Kiểm tra nếu người dùng chưa chọn ảnh
+        if (!productImage) {
+            alert("Vui lòng chọn ảnh sản phẩm.");
+            return;
+        }
+
+        // Đọc tệp ảnh dưới dạng base64
+        var reader = new FileReader();
+        reader.readAsDataURL(productImage);
+        reader.onloadend = function () {
+            var base64Image = reader.result.split(',')[1]; // Tách phần base64
+
+            // Gửi dữ liệu lên server
+            fetch('/api/them-san-pham', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Ten_san_pham: productName,
+                    Gia_nhap: productPrice,
+                    So_Luong: productQuantity,
+                    ID_Loai: productType,
+                    Anh_san_pham: base64Image
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Hiển thị thông báo thành công
+                // Có thể làm mới form sau khi thêm sản phẩm thành công
+                document.querySelector('form').reset();
+                document.getElementById('imagePreview').src = '../img/icon quản lý/them-anh-mon-an.png'; // Reset hình ảnh
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Có lỗi xảy ra khi thêm sản phẩm.');
+            });
+        };
+
+      // Đọc tệp ảnh dưới dạng base64
+    }
+        
+        // Load sidebar.html vào div với ID 'sidebar-container'
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('../components/side-bar-admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
