@@ -1,0 +1,9 @@
+#!/bin/bash
+echo -n "Nhập file cần tìm: "
+read file
+found=$(ls | grep ^"$file"$ | wc -l)
+if [ "$found" -gt 0 ]; then
+  echo "File có tồn tại trong thư mục hiện hành"
+else
+  echo "File không tồn tại trong thư mục hiện hành"
+fi

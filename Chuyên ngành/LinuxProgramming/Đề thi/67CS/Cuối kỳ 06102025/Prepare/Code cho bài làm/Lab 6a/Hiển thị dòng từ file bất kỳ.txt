@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ "$#" -lt 2 ]; then
+  echo "Yeu cau nhap tham so!"
+  exit 1
+fi
+line_num="$1"
+file="$2"
+if [ ! -f "$file" ]; then
+  echo "File $file khong ton tai"
+  exit 2
+fi
+lines=$(wc -l < "$file")
+if ! [[ "$line_num" =~ ^[0-9]+$ ]]; then
+  echo "Tham so khong phu hop: phai la so nguyen duong"
+  exit 3
+fi
+if [ "$line_num" -lt 1 ] || [ "$line_num" -gt "$lines" ]; then
+  echo "So dong khong hop le: vuot qua so dong trong file"
+  exit 4
+else
+  echo "Noi dung dong so $line_num trong file $file:"
+  sed -n "${line_num}p" "$file"
+fi

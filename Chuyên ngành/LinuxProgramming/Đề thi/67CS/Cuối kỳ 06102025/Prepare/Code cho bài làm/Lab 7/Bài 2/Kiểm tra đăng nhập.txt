@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+input="ds_sinhvien_2"
+while IFS="::" read -r hoten ngaysinh
+do
+    username=$(echo "$hoten" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+    echo "==> Kiem tra dang nhap cua $username ..."
+    if echo "$ngaysinh" | su "$username" -c "exit" 2>/dev/null; then
+        echo "Tai khoan $username dang nhap thanh cong"
+    else
+        echo "Tai khoan $username dang nhap that bai"
+    fi
+done < "$input"

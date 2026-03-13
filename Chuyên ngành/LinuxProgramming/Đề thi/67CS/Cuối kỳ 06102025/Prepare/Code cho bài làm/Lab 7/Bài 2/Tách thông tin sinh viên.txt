@@ -1,0 +1,20 @@
+#!/bin/bash
+input="ds_sinhvien"
+output="ds_sinhvien_1"
+> "$output"
+while IFS= read -r line
+do
+    [ -z "$line" ] && continue
+    stt=$(echo "$line" | cut -d":" -f1)
+    hoten=$(echo "$line" | cut -d":" -f3)
+    ngaysinh=$(echo "$line" | cut -d":" -f5)
+    quequan=$(echo "$line" | cut -d":" -f7)
+    diemt=$(echo "$line" | cut -d":" -f9)
+    {
+        echo "STT: $stt"
+        echo "Ho va ten: $hoten"
+        echo "Ngay sinh: $ngaysinh"
+        echo "Que quan: $quequan"
+        echo "Diem TS: $diemt"
+    } >> "$output"
+done < "$input"

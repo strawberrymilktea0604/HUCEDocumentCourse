@@ -1,0 +1,6 @@
+$ echo $PS2
+$ export PS2="...more..."
+$ if [ 1 -eq 1 ]
+...more...then
+...more...echo "Dung!"
+...more...fi

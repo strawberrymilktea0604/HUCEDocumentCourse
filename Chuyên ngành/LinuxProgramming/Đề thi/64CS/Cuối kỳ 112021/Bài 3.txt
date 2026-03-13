@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Gán biến cho dễ quản lý
+search_str="$1"
+target_file="$2"
+
+# 1. Kiểm tra số lượng tham số
+if [ $# -ne 2 ]; then
+    echo "❌ Cách dùng: $0 <chuỗi cần tìm> <tên file>" >&2
+    exit 1
+fi
+
+# 2. Kiểm tra file tồn tại (-f kiểm tra file thường)
+if [ ! -f "$target_file" ]; then
+    echo "❌ Lỗi: File '$target_file' không tồn tại hoặc không phải là file hợp lệ." >&2
+    exit 1
+fi
+
+# 3. Kiểm tra quyền đọc (-r)
+if [ ! -r "$target_file" ]; then
+    echo "❌ Lỗi: Không có quyền đọc file '$target_file'." >&2
+    exit 1
+fi
+
+# 4. Thực hiện tìm kiếm
+# grep sẽ in ra toàn bộ dòng chứa chuỗi cần tìm (thay thế hoàn toàn vòng lặp while)
+grep "$search_str" "$target_file"

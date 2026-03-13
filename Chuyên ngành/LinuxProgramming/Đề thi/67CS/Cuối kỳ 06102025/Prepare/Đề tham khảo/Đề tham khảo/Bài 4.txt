@@ -1,0 +1,41 @@
+#!/bin/bash
+
+while true
+do
+    echo "=============================="
+    echo "        MENU CHÍNH"
+    echo "=============================="
+    echo "1. Hello"
+    echo "2. Count"
+    echo "3. Statistic"
+    echo "4. Exit"
+    echo "=============================="
+    read -p "Nhập lựa chọn của bạn: " choice
+
+    case $choice in
+        1|h|H)
+            echo "Xin chào, $USER!"
+            echo "Bạn đang ở thư mục: $(pwd)"
+            echo "Thời gian hiện tại: $(date)"
+            ;;
+        2|c|C)
+            read -p "Nhập chuỗi 1: " chuoi1
+            read -p "Nhập chuỗi 2: " chuoi2
+            count=$(echo "$chuoi1" | grep -o "$chuoi2" | wc -l)
+            echo "Chuỗi \"$chuoi2\" xuất hiện $count lần trong chuỗi 1."
+            ;;
+        3|s|S)
+            # Đếm số user có UID >= 1000 trong /etc/passwd
+            so_user=$(awk -F: '$3 >= 1000 {count++} END {print count}' /etc/passwd)
+            echo "Số người dùng có UID >= 1000: $so_user"
+            ;;
+        4|e|E)
+            echo "Tạm biệt!"
+            break
+            ;;
+        *)
+            echo "❌ Lựa chọn không hợp lệ, vui lòng chọn lại!"
+            ;;
+    esac
+    echo
+done

@@ -1,0 +1,26 @@
+#!/bin/bash
+cp /etc/passwd passwd_copy
+if [ "$?" -eq 0 ]; then
+  echo "Copy thanh cong"
+else
+  echo "Copy that bai"
+  exit 1
+fi
+lines=$(wc -l < passwd_copy)
+if [ "$#" -eq 0 ]; then
+  echo "Khong co tham so, hien thi dong cuoi:"
+  tail -n 1 passwd_copy
+else
+  line_num="$1"
+  if ! [[ "$line_num" =~ ^[0-9]+$ ]]; then
+    echo "Tham so khong phu hop"
+    exit 2
+  fi
+  if [ "$line_num" -lt 1 ] || [ "$line_num" -gt "$lines" ]; then
+    echo "Tham so khong hop le: vuot qua so luong dong trong file"
+    exit 3
+  else
+    echo "Hien thi noi dung dong so $line_num:"
+    sed -n "${line_num}p" passwd_copy
+  fi
+fi

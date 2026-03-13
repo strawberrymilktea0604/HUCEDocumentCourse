@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+  echo "Chưa có tham số!"
+  exit 1
+fi
+file="$1"
+base="${file%.jpg}"
+mv "$file" "${base}.png"

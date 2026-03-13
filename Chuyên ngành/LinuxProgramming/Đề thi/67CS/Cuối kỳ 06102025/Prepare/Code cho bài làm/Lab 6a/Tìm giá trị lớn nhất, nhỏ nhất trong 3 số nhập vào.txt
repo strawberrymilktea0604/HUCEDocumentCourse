@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n "Mời nhập số đầu tiên: "
+read a
+echo -n "Mời nhập số thứ hai: "
+read b
+echo -n "Mời nhập số thứ ba: "
+read c
+# Phần logic so sánh tương tự bài 4a

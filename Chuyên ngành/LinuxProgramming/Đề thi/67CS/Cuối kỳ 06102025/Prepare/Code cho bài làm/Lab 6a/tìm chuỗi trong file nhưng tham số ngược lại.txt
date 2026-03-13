@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ "$#" -lt 2 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+file="$1"
+string="$2"
+line=$(grep "$string" "$file" | wc -l)
+if [ "$line" -gt 0 ]; then
+  echo "Chuoi $string trong $file co $line dong"
+else
+  echo "Chuoi $string khong co trong $file"
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+  echo "Tham số không hợp lệ!"
+  exit 1
+fi
+file="$1"
+# ... (phần còn lại giống script câu 4)

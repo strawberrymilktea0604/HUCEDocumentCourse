@@ -1,0 +1,4 @@
+$ echo $PS1
+$ export PS1="MyShell> "
+MyShell> export PS1="\u:\w> "
+minhkhanhla:~>

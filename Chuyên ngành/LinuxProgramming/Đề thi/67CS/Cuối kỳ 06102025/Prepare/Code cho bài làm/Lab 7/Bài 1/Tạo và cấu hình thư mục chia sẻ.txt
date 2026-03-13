@@ -1,0 +1,9 @@
+#!/bin/bash
+SHARE_DIR="/home/share"
+if [ ! -d "$SHARE_DIR" ]; then
+    mkdir "$SHARE_DIR"
+    echo "Đã tạo thư mục $SHARE_DIR"
+fi
+chmod 1733 "$SHARE_DIR"
+echo "Đã cấu hình phân quyền cho $SHARE_DIR"
+ls -ld "$SHARE_DIR"

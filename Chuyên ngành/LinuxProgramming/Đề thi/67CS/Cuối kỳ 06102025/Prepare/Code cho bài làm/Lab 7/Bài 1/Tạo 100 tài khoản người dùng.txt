@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+
+for i in $(seq 1 100); do
+    A=$(printf '%03d' "$i")
+    USER="student${A}"
+    if id -u "$USER" >/dev/null 2>&1; then
+        echo "Đã tồn tại: $USER - bỏ qua"
+        continue
+    fi
+    useradd -m -s /bin/bash -c "Student ${A}" "$USER"
+    echo "${USER}:123456" | chpasswd
+    echo "Tạo và đặt mật khẩu cho: $USER"
+done

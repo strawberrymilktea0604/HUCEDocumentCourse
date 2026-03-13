@@ -1,0 +1,39 @@
+#!/bin/bash
+files=$(ls /etc | shuf -n 10)
+for f in $files; do
+  path="/etc/$f"
+  echo "$f"
+  if [ -f "$path" ]; then
+    echo -e "\tDay la mot file"
+  elif [ -d "$path" ]; then
+    echo -e "\tDay la mot thu muc"
+  else
+    echo -e "\tKhong xac dinh duoc loai"
+  fi
+  if [ -r "$path" ]; then
+    echo -e "\tBan co quyen doc $f"
+  else
+    echo -e "\tBan khong co quyen doc $f"
+  fi
+  if [ -w "$path" ]; then
+    echo -e "\tBan co quyen ghi trong $f"
+  else
+    echo -e "\tBan khong co quyen ghi trong $f"
+  fi
+  if [ -x "$path" ]; then
+    echo -e "\tBan co quyen thuc thi $f"
+  else
+    echo -e "\tBan khong co quyen thuc thi $f"
+  fi
+  if [ -O "$path" ]; then
+    echo -e "\tBan so huu $f"
+  else
+    echo -e "\tBan khong so huu $f"
+  fi
+  if [ -G "$path" ]; then
+    echo -e "\tBan la thanh vien cua nhom so huu $f"
+  else
+    echo -e "\tBan khong phai thanh vien cua nhom so huu $f"
+  fi
+  echo ""
+done

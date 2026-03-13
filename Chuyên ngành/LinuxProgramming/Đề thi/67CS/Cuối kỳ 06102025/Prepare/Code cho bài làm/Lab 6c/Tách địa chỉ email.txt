@@ -1,0 +1,9 @@
+#!/bin/bash
+read -p "Nhập địa chỉ email: " email
+user="${email%@*}"
+domain_full="${email#*@}"
+domain_main="${domain_full%%.*}"
+domain_suffix="${domain_full#*.}"
+echo "Biến 1 (username): $user"
+echo "Biến 2 (domain): $domain_main"
+echo "Biến 3 (đuôi): $domain_suffix"

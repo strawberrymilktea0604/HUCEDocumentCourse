@@ -1,0 +1,9 @@
+#!/bin/bash
+input="ds_sinhvien_2"
+output="ds_taikhoan"
+> "$output"
+while IFS="::" read -r hoten ngaysinh
+do
+    tk=$(echo "$hoten" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+    echo "$tk::$ngaysinh" >> "$output"
+done < "$input"

@@ -1,0 +1,7 @@
+#!/bin/bash
+# ... (phần copy và kiểm tra tham số tương tự bài 8)
+# ...
+else
+  echo "Hien thi noi dung dong so $line_num, thay ':' bang '$2':"
+  sed -n "${line_num}p" passwd_copy | tr ":" "$2"
+fi

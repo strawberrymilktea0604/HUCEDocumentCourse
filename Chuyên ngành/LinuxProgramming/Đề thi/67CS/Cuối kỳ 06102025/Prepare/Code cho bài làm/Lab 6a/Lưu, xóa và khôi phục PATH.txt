@@ -1,0 +1,8 @@
+$ echo "$PATH" > oldpath.txt
+$ export PATH=""
+$ ls
+$ mkdir test
+$ /bin/ls
+$ /bin/mkdir test
+$ export PATH=$(/bin/cat oldpath.txt)
+$ ls

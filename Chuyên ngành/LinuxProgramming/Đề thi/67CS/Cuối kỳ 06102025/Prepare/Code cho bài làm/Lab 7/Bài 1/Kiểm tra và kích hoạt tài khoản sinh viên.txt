@@ -1,0 +1,16 @@
+#!/bin/bash
+for i in $(seq 1 100); do
+    A=$(printf '%03d' "$i")
+    USER="student${A}"
+    if id "$USER" &>/dev/null; then
+        STATUS=$(getent shadow "$USER" | cut -d: -f2)
+        if [[ "$STATUS" == "!"* ]]; then
+            echo "$USER đang bị khóa, cần kích hoạt lại"
+            passwd -u "$USER"
+        else
+            echo "$USER đã active (có thể đăng nhập)"
+        fi
+    else
+        echo "$USER chưa tồn tại"
+    fi
+done

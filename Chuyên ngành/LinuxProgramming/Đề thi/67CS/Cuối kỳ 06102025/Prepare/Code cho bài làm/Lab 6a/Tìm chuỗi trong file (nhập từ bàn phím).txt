@@ -1,0 +1,11 @@
+#!/bin/bash
+echo -n "Nhập chuỗi ta cần tìm: "
+read string
+echo -n "Nhập đường dẫn tuyệt đối của file: "
+read path
+line=$(grep "$string" "$path" | wc -l)
+if [ "$line" -gt 0 ]; then
+  echo "Chuoi $string trong file $path co $line dong"
+else
+  echo "Chuoi $string khong co trong file $path"
+fi

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+target_param=""
+
+# Duyệt qua danh sách tham số cho đến khi hết
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -c)
+            # Nếu gặp -c, lấy tham số ngay sau nó ($2)
+            if [ -n "$2" ]; then
+                target_param="$2"
+                shift 2 # Bỏ qua '-c' và 'giá trị của nó'
+            else
+                echo "Lỗi: Khong co gia tri sau -c"
+                shift 1
+            fi
+            ;;
+        *)
+            # Nếu không phải -c, bỏ qua và đi tiếp
+            shift 1
+            ;;
+    esac
+done
+
+# Kiểm tra và in kết quả
+if [ -n "$target_param" ]; then
+    echo "Tham so can tim la: $target_param"
+else
+    echo "Khong tim thay tham so sau -c"
+fi

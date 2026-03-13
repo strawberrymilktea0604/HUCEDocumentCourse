@@ -1,0 +1,12 @@
+#!/bin/bash
+echo -n "Mời các bạn nhập số 1: "
+read so1
+echo -n "Mời các bạn nhập số 2: "
+read so2
+if [ "$so1" -eq "$so2" ]; then
+  echo "2 số bằng nhau!"
+elif [ "$so1" -gt "$so2" ]; then
+  echo "Số 1 lớn hơn số 2!"
+else
+  echo "Số 2 lớn hơn số 1!"
+fi

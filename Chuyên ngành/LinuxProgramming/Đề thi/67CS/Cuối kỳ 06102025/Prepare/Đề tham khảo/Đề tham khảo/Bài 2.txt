@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Kiểm tra tham số đầu vào
+if [ $# -lt 1 ]; then
+    echo "Cách dùng: $0 <file> [dong|tu]"
+    exit 1
+fi
+
+file="$1"
+
+# Kiểm tra file tồn tại
+if [ ! -f "$file" ]; then
+    echo "File không tồn tại!"
+    exit 1
+fi
+
+# Hàm đếm dòng
+dem_dong=$(awk 'END {print NR}' "$file")
+
+# Hàm đếm từ
+dem_tu=$(awk '{w += NF} END {print w}' "$file")
+
+# Xử lý theo tham số
+if [ $# -eq 1 ]; then
+    echo "Số dòng: $dem_dong"
+    echo "Số từ: $dem_tu"
+elif [ "$2" = "dong" ]; then
+    echo "Số dòng: $dem_dong"
+elif [ "$2" = "tu" ]; then
+    echo "Số từ: $dem_tu"
+else
+    echo "Tham số không hợp lệ! (chỉ dùng: dong hoặc tu)"
+fi

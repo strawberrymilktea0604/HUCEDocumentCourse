@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ "$#" -ne 1 ]; then
+  echo "Tham so khong hop le, nhap lai!"
+  exit 1
+fi
+n="$1"
+if [ "$n" -lt 0 ]; then
+  echo "Khong co giai thua cho so am!"
+  exit 1
+fi
+gt_while=1
+i=1
+while [ "$i" -le "$n" ]; do
+  gt_while=$((gt_while * i))
+  i=$((i + 1))
+done
+echo "Giai thua cua $n la: $gt_while"

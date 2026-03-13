@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$#" -lt 13 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+echo "Tong cua 2 so ${12} và ${13} la: " `expr "${12}" + "${13}"`

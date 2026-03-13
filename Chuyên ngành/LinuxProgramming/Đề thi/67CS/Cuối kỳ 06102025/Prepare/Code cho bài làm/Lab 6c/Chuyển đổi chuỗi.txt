@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+  echo "Chưa có tham số!"
+  exit 1
+fi
+sed 's/::/,/g' "$1" > output.txt
+cat output.txt

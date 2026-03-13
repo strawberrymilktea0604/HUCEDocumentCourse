@@ -1,0 +1,30 @@
+#!/bin/bash
+if [ "$#" -lt 3 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+a="$1"
+b="$2"
+c="$3"
+max="$a"
+imax=1
+if [ "$b" -gt "$max" ]; then
+  max="$b"
+  imax=2
+fi
+if [ "$c" -gt "$max" ]; then
+  max="$c"
+  imax=3
+fi
+min="$a"
+imin=1
+if [ "$b" -lt "$min" ]; then
+  min="$b"
+  imin=2
+fi
+if [ "$c" -lt "$min" ]; then
+  min="$c"
+  imin=3
+fi
+echo "Tham số thứ $imax có giá trị lớn nhất ($max)"
+echo "Tham số thứ $imin có giá trị nhỏ nhất ($min)"

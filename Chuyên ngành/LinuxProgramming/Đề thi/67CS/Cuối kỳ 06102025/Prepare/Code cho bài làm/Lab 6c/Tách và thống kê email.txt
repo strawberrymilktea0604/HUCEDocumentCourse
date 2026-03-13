@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+  echo "Chưa có tham số!"
+  exit 1
+fi
+input=$1
+cut -d@ -f1 "$input" > tai_khoan.txt
+cut -d@ -f2 "$input" | cut -d. -f1 > ncc.txt
+sort ncc.txt | uniq -c | sort -nr > thongke.txt

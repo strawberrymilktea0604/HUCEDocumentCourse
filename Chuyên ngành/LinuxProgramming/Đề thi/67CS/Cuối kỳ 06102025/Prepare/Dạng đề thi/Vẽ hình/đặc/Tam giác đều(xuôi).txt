@@ -1,0 +1,21 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập chiều cao tam giác!"
+  exit 1
+fi
+
+n="$1"
+
+for ((i=1; i<=n; i++)); do
+  # Căn trái bằng khoảng trắng
+  for ((s=i; s<n; s++)); do
+    printf " "
+  done
+
+  # In sao cách nhau 1 khoảng để nhìn cân hơn
+  for ((j=1; j<=i; j++)); do
+    printf "* "
+  done
+
+  echo
+done

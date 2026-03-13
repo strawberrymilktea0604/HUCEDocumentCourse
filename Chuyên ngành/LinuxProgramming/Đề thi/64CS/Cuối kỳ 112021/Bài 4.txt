@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# --- CẤU HÌNH TRÒ CHƠI ---
+MIN=1
+MAX=10
+MAX_ATTEMPTS=5
+TARGET=$(( RANDOM % MAX + MIN ))
+count=0
+
+# --- BẮT ĐẦU ---
+echo "🎲 TRÒ CHƠI ĐOÁN SỐ ($MIN - $MAX)"
+echo "⚡ Bạn có tổng cộng $MAX_ATTEMPTS lượt đoán."
+
+while (( count < MAX_ATTEMPTS )); do
+    # Hiển thị số lượt còn lại
+    echo "-----------------------------------"
+    read -p "Lượt $((count + 1)): Nhập số bạn đoán: " guess
+
+    # 1. Kiểm tra tính hợp lệ (Phải là số nguyên)
+    if ! [[ "$guess" =~ ^[0-9]+$ ]]; then
+        echo "⚠️  Lỗi: Vui lòng chỉ nhập số!"
+        continue
+    fi
+
+    # 2. Kiểm tra khoảng giá trị
+    if (( guess < MIN || guess > MAX )); then
+        echo "⚠️  Lỗi: Số phải nằm trong khoảng $MIN đến $MAX."
+        continue
+    fi
+
+    # Tăng biến đếm (chỉ tăng khi nhập đúng định dạng)
+    ((count++))
+
+    # 3. So sánh kết quả
+    if (( guess == TARGET )); then
+        echo ""
+        echo "🎉 CHÚC MỪNG! Bạn đã đoán đúng số $TARGET trong $count lượt!"
+        exit 0
+    elif (( guess < TARGET )); then
+        echo "📉 Sai rồi! Số bí mật LỚN HƠN số $guess."
+    else
+        echo "📈 Sai rồi! Số bí mật NHỎ HƠN số $guess."
+    fi
+done
+
+# Nếu thoát vòng lặp nghĩa là đã thua
+echo ""
+echo "😢 Rất tiếc, bạn đã hết lượt. Số bí mật là: $TARGET"

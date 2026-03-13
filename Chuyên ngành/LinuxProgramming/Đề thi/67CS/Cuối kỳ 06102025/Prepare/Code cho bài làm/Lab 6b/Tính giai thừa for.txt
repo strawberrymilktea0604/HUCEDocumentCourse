@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ "$#" -ne 1 ]; then
+  echo "Tham so khong hop le, nhap lai!"
+  exit 1
+fi
+n="$1"
+if [ "$n" -lt 0 ]; then
+  echo "Khong co giai thua cho so am!"
+  exit 1
+fi
+gt_for=1
+for ((i=1; i<=n; i++)); do
+  gt_for=$((gt_for * i))
+done
+echo "Giai thua cua $n la: $gt_for"

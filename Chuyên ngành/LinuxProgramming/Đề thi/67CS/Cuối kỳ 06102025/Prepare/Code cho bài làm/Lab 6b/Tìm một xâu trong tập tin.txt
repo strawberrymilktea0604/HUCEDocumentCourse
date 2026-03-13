@@ -1,0 +1,21 @@
+#!/bin/sh
+echo "Chuong trinh tim xau \"$1\" trong tap tin $2"
+wordlen=$(expr length "$1")
+line_num=0
+while read textline
+do
+  line_num=$((line_num + 1))
+  textlen=$(expr length "$textline")
+  end=$((textlen - wordlen + 1))
+  index=1
+  while [ $index -le $end ]
+  do
+    temp=$(expr substr "$textline" $index $wordlen)
+    if [ "$temp" = "$1" ]; then
+      echo "Tim thay \"$1\" tai dong $line_num: $textline"
+      break
+    fi
+    index=$((index + 1))
+  done
+done < "$2"
+exit 0

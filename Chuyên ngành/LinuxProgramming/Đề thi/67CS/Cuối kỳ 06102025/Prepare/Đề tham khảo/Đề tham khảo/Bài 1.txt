@@ -1,0 +1,28 @@
+#!/bin/bash
+n=$((4004267 % 2 + 3))
+echo "Tạo $n tài khoản: sv01 → sv0$n"
+
+# Tạo nhóm
+groupadd -f sinhvien
+
+# Tạo user và thêm vào nhóm
+for i in $(seq -w 1 $n); do
+  username="sv0$i"
+  if id -u "$username" >/dev/null 2>&1; then
+    echo "$username đã tồn tại, bỏ qua tạo"
+  else
+    useradd -m -G sinhvien "$username"
+    # Thiết lập mật khẩu tạm (tuỳ distro: passwd --stdin chỉ trên một số distro)
+    echo "123" | passwd --stdin "$username" 2>/dev/null || echo "Thiết lập mật khẩu cho $username thủ công nếu cần"
+  fi
+done
+
+# Tạo thư mục nộp bài
+mkdir -p /var/thubai
+chown root:sinhvien /var/thubai
+
+# DÙNG symbolic chmod
+chmod u=rwx,g=wx,o= /var/thubai
+
+echo "Hoàn tất. Quyền hiện tại cho /var/thubai:"
+ls -ld /var/thubai

@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "Nhap duong dan tuyet doi: " path
+if [ ! -e "$path" ]; then
+  echo "Duong dan khong ton tai hoac sai!"
+  exit 1
+fi
+quyen=$(ls -l "$path")
+echo "$quyen"

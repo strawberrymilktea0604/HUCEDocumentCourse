@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir -p ~/myetc
+for file in /etc/*; do
+  if [ -f "$file" ] && [ -r "$file" ]; then
+    fname=$(basename "$file")
+    cp "$file" ~/myetc/"$fname".txt
+  fi
+done
+echo "Đã copy các file đọc được từ /etc sang ~/myetc với đuôi .txt"

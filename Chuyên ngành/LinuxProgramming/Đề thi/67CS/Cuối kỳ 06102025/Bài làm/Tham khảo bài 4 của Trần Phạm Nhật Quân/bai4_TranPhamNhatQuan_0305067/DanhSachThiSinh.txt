@@ -1,0 +1,11 @@
+SBD,,Ho va ten,,Ngay sinh,,Chuyen mon,,Tieng Anh,,Tin hoc
+1,,Le Trong Hung,,17.03.2002,,10,,9,,10
+2,,Hoang Tien Dung,,01.02.1998,,10,,6,,10
+3,,Nguyen Thanh Dat,,20.03.1997,,8,,4,,5
+4,,Luong Van Duc,,20.02.2002,,10,,4,,8
+5,,Nguyen Anh Duc,,12.04.1996,,4,,8,,6
+6,,Nguyen Trung Duc,,23.12.2001,,5,,4,,7
+7,,Nguyen Hoang Bang,,01.02.1998,,7,,9,,8
+8,,Nguyen Nam Hai,,03.04.2002,,4,,4,,9
+9,,Pham Viet Hai,,24.03.1999,,9,,4,,4
+10,,Bui Thi Hanh,,11.03.2001,,4,,8,,9

@@ -1,0 +1,46 @@
+#!/bin/bash
+size=${!#}
+n=$#
+for ((k=1; k<n; k++)); do
+  hinh=${!k}
+  case $hinh in
+    tam_giac_duoi)
+      for ((i=1; i<=size; i++)); do
+        for ((j=1; j<=i; j++)); do
+          echo -n "*"
+        done
+        echo
+      done
+      ;;
+    tam_giac_tren)
+      for ((i=size; i>=1; i--)); do
+        for ((j=1; j<=i; j++)); do
+          echo -n "*"
+        done
+        echo
+      done
+      ;;
+    tam_giac_so)
+      num=1
+      for ((i=1; i<=size; i++)); do
+        for ((j=1; j<=i; j++)); do
+          echo -n "$num "
+          num=$((num+1))
+        done
+        echo
+      done
+      ;;
+    hinh_vuong)
+      for ((i=1; i<=size; i++)); do
+        for ((j=1; j<=size; j++)); do
+          echo -n "*"
+        done
+        echo
+      done
+      ;;
+    *)
+      echo "Chuong trinh chua biet ve hinh: $hinh"
+      ;;
+  esac
+  echo
+done

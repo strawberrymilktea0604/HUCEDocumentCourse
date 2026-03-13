@@ -1,0 +1,20 @@
+# n = 3
+# Tao n tai khoan
+sudo useradd sv01
+sudo useradd sv02
+sudo useradd sv03
+
+# Tao nhom sinhvien
+sudo addgroup sinhvien
+
+# Them sinh vien vao group
+sudo adduser sv01 sinhvien
+sudo adduser sv02 sinhvien
+
+# Tao thu muc /var/thubai
+sudo mkdir /var/thubai
+
+# Phan quyen
+# sudo chown root:sinhvien /var/thubai
+sudo chgrp -R sinhvien /var/thubai
+sudo chmod 730 /var/thubai

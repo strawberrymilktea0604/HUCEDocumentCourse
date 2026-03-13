@@ -1,0 +1,15 @@
+#!/bin/bash
+input="ds_sinhvien"
+output="ds_sinhvien_2"
+> "$output"
+lineno=0
+while IFS= read -r line
+do
+    lineno=$((lineno+1))
+    if [ $lineno -eq 1 ]; then
+        continue
+    fi
+    hoten=$(echo "$line" | cut -d":" -f3)
+    ngaysinh=$(echo "$line" | cut -d":" -f5)
+    echo "$hoten::$ngaysinh" >> "$output"
+done < "$input"

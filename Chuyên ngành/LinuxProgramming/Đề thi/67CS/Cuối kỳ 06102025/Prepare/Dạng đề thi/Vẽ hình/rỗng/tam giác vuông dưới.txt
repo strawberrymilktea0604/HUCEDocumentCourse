@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+
+n="$1"
+
+for ((i=1; i<=n; i++)); do
+  for ((j=1; j<=i; j++)); do
+    # In sao cho cạnh trái, cạnh chéo, hoặc đáy
+    if [[ $i -eq n || $j -eq 1 || $j -eq i ]]; then
+      printf "*"
+    else
+      printf " "
+    fi
+  done
+  echo
+done

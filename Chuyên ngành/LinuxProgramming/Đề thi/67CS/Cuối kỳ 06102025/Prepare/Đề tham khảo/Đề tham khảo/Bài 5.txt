@@ -1,0 +1,27 @@
+#!/bin/bash
+# ========================================
+# Bài 5 – Xử lý danh sách học sinh
+# ========================================
+
+mssv=4004267
+alpha=$((mssv % 3 + 2))
+beta=$((alpha + 7))
+
+echo "alpha = $alpha, beta = $beta"
+echo "Trích dòng $alpha → $beta từ DanhSachHocSinh.txt"
+
+# 1. Tạo file xét
+sed -n "${alpha},${beta}p" DanhSachHocSinh.txt > DanhSachHocSinhDuocXet.txt
+
+# 2. 3 học sinh có điểm Tin học cao nhất
+echo "===== 3 HỌC SINH CÓ ĐIỂM TIN HỌC CAO NHẤT ====="
+sort -t',' -k10 -nr DanhSachHocSinhDuocXet.txt | head -n 3
+
+# 3. Học sinh sinh sau năm 1999
+echo
+echo "===== HỌC SINH SINH SAU NĂM 1999 ====="
+awk -F',' '{
+    split($6, d, ".")
+    if (d[3] >= 2000)
+        print $0
+}' DanhSachHocSinhDuocXet.txt

@@ -1,0 +1,21 @@
+#!/bin/bash
+if [ "$#" -lt 2 ]; then
+  echo "Bạn chưa nhập tham số!"
+  echo "Cách dùng: $0 <chiều_dài> <chiều_rộng>"
+  exit 1
+fi
+
+dai="$1"
+rong="$2"
+
+for ((i=1; i<=rong; i++)); do
+  for ((j=1; j<=dai; j++)); do
+    # In sao ở viền trên, viền dưới, hoặc ở cột đầu/cuối
+    if [[ $i -eq 1 || $i -eq $rong || $j -eq 1 || $j -eq $dai ]]; then
+      printf "*"
+    else
+      printf " "
+    fi
+  done
+  echo
+done

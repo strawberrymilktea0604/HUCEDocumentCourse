@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+
+n="$1"
+
+# In tam giác rỗng ngược, bỏ đỉnh (hàng có 1 *)
+for ((i=n; i>=2; i--)); do
+  for ((j=1; j<=i; j++)); do
+    if [[ $i -eq n || $j -eq 1 || $j -eq i ]]; then
+      printf "*"
+    else
+      printf " "
+    fi
+  done
+  echo
+done

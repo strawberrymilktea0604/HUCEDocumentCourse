@@ -1,0 +1,25 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập chiều cao tam giác!"
+  exit 1
+fi
+
+n="$1"
+
+for ((i=n; i>=1; i--)); do
+  # In khoảng trắng đầu dòng (để nghiêng sang phải)
+  for ((s=i; s<n; s++)); do
+    printf "  "
+  done
+
+  # In dấu sao hoặc khoảng trắng bên trong
+  for ((j=1; j<=i; j++)); do
+    if [[ $i -eq n || $j -eq 1 || $j -eq i ]]; then
+      printf "* "
+    else
+      printf "  "
+    fi
+  done
+
+  echo
+done

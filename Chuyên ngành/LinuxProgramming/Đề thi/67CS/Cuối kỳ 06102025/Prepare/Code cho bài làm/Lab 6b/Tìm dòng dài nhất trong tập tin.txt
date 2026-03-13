@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Chuong trinh tim dong dai nhat trong tap tin $1"
+max=0
+dong=""
+while read line
+do
+  n=$(echo -n "$line" | wc -c)
+  if [ $n -gt $max ]; then
+    dong="$line"
+    max=$n
+  fi
+done < "$1"
+echo "Dong trong tap tin $1 co do dai max = $max la:"
+echo "$dong"
+exit 0

@@ -1,0 +1,39 @@
+#!/bin/bash
+if [ $# -lt 1 ]; then
+  echo "Tham so khong hop le!"
+  exit 1
+fi
+if [ "$1" = "-l" ] || [ "$1" = "-w" ]; then
+  opt=$1
+  file=$2
+else
+  opt="all"
+  file=$1
+fi
+if [ ! -f "$file" ]; then
+  echo "Tap tin $file khong ton tai!"
+  exit 1
+fi
+line_count=0
+while read line
+do
+  line_count=$((line_count + 1))
+done < "$file"
+word_count=0
+while read line
+do
+  for wd in $line
+  do
+    word_count=$((word_count + 1))
+  done
+done < "$file"
+if [ "$opt" = "-l" ]; then
+  echo "So dong cua tap tin $file la: $line_count"
+elif [ "$opt" = "-w" ]; then
+  echo "So tu cua tap tin $file la: $word_count"
+else
+  echo "Tap tin $file co:"
+  echo "  $line_count dong"
+  echo "  $word_count tu"
+fi
+exit 0

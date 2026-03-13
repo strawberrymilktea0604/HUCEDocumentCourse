@@ -1,0 +1,25 @@
+#!/bin/bash
+read -p "Nhập đường dẫn tuyệt đối của file: " file
+if [ ! -e "$file" ]; then
+  echo "File không tồn tại!"
+  exit 1
+fi
+echo "Thông tin kiểm tra cho file: $file"
+echo "------------------------------------"
+[ -r "$file" ] && echo "File Có quyền đọc" || echo "File Không có quyền đọc"
+[ -w "$file" ] && echo "File Có quyền ghi" || echo "File Không có quyền ghi"
+[ -x "$file" ] && echo "File Có quyền thực thi" || echo "File Không có quyền thực thi"
+user=$(whoami)
+group=$(id -gn)
+owner=$(stat -c %U "$file")
+group_owner=$(stat -c %G "$file")
+if [ "$user" = "$owner" ]; then
+  echo "Bạn là chủ sở hữu file"
+else
+  echo "Bạn KHÔNG phải chủ sở hữu (chủ sở hữu là: $owner)"
+fi
+if [ "$group" = "$group_owner" ]; then
+  echo "Bạn thuộc nhóm sở hữu file"
+else
+  echo "Bạn KHÔNG thuộc nhóm sở hữu (nhóm sở hữu là: $group_owner)"
+fi

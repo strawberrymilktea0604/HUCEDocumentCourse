@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+tong=0
+for so in "$@"; do
+  tong=$((tong + so))
+done
+echo "Tong cac so la: $tong"

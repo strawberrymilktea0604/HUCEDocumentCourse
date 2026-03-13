@@ -1,0 +1,7 @@
+#!/bin/bash
+read -p "Nhập vào một giá trị: " val
+if [[ "$val" =~ ^-?[0-9]+$ ]]; then
+  echo "$val là số nguyên"
+else
+  echo "$val KHÔNG phải số nguyên"
+fi

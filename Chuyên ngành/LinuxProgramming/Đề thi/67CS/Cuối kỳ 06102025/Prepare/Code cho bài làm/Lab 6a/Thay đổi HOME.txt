@@ -1,0 +1,7 @@
+$ cd
+$ pwd
+$ echo $HOME
+$ export HOME=/tmp
+$ echo $HOME
+$ cd
+$ pwd

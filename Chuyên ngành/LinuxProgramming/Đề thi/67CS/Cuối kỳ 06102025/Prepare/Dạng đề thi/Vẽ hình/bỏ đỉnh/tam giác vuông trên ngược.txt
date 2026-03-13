@@ -1,0 +1,26 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+
+n="$1"
+
+# Bỏ đỉnh (i=0), giữ đáy
+for ((i=1; i<n; i++)); do
+  # In khoảng trắng đầu dòng
+  for ((s=0; s<i; s++)); do
+    printf " "
+  done
+
+  # In dấu sao hoặc khoảng trống bên trong
+  for ((j=0; j<n-i; j++)); do
+    if [[ $i -eq $((n-1)) || $j -eq 0 || $j -eq $((n-i-1)) ]]; then
+      printf "* "
+    else
+      printf "  "
+    fi
+  done
+
+  echo
+done

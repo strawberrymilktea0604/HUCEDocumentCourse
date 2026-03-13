@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ $# -lt 1 ]; then
+  read -p "Chưa có tham số 1, mời nhập chuỗi thứ nhất: " str1
+else
+  str1="$1"
+fi
+if [ $# -lt 2 ]; then
+  read -p "Chưa có tham số 2, mời nhập chuỗi thứ hai: " str2
+else
+  str2="$2"
+fi
+if [ "$str1" = "$str2" ]; then
+  echo "Hai chuỗi giống nhau"
+else
+  echo "Hai chuỗi KHÁC nhau"
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -ge 1 ]; then
+  file="$1"
+else
+  read -p "Chưa có tham số! Nhập đường dẫn tuyệt đối của file: " file
+fi
+# ... (phần còn lại giống script câu 4)

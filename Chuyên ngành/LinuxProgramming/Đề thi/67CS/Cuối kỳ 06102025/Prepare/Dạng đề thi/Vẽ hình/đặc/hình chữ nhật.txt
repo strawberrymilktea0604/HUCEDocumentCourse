@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ "$#" -lt 2 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+dai="$1"
+rong="$2"
+for ((i=1; i<=rong; i++)); do
+  for ((j=1; j<=dai; j++)); do
+    printf "*"
+  done
+  echo
+done

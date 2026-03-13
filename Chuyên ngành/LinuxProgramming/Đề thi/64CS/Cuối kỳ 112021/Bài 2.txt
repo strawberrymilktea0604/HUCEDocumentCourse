@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Định nghĩa file dữ liệu
+file="dsthatsu"
+
+# Kiểm tra file tồn tại
+if [ ! -f "$file" ]; then
+    echo "❌ Lỗi: File '$file' không tồn tại!"
+    exit 1
+fi
+
+# --- PHẦN 1: Top 5 điểm Tin học ---
+echo "📌 Danh sách 5 học sinh có điểm Tin học cao nhất:"
+
+# tail -n +2: Bỏ qua dòng tiêu đề (dòng 1)
+# sort -t, -k7,7nr: Cắt theo dấu phẩy, sort cột 7 (Tin học), kiểu số (n), giảm dần (r)
+# head -n 5: Lấy 5 dòng đầu
+tail -n +2 "$file" | sort -t, -k7,7nr | head -n 5 | while IFS=, read -r hoten _ _ _ _ _ tinhoc; do
+    echo "$hoten - Điểm Tin: $tinhoc"
+done
+
+echo ""
+
+# --- PHẦN 2: Sinh từ năm 1999 ---
+echo "📌 Danh sách học sinh sinh từ năm 1999 trở đi:"
+
+# Đọc file bỏ qua dòng đầu tiên
+tail -n +2 "$file" | while IFS=, read -r hoten _ ngaysinh _; do
+    # Cắt lấy năm sinh (lấy phần sau dấu chấm cuối cùng)
+    nam_sinh=${ngaysinh##*.}
+    
+    # Kiểm tra năm sinh (chỉ xử lý nếu nam_sinh là số để tránh lỗi)
+    if [[ "$nam_sinh" =~ ^[0-9]+$ ]] && [ "$nam_sinh" -ge 1999 ]; then
+        echo "$hoten - Ngày sinh: $ngaysinh"
+    fi
+done

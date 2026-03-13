@@ -1,0 +1,10 @@
+#!/bin/bash
+echo -n "Mời các bạn nhập số: "
+read n
+if [ "$n" -eq 0 ]; then
+  echo "Đây là số 0!"
+elif [ "$n" -gt 0 ]; then
+  echo "Đây là số nguyên dương!"
+else
+  echo "Đây là số nguyên âm!"
+fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ "$#" -lt 2 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+if [ "$1" -eq "$2" ]; then
+  echo "2 số bằng nhau!"
+elif [ "$1" -gt "$2" ]; then
+  echo "Số 1 lớn hơn số 2!"
+else
+  echo "Số 2 lớn hơn số 1!"
+fi

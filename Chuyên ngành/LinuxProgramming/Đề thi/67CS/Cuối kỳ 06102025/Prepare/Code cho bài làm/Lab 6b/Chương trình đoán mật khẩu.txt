@@ -1,0 +1,16 @@
+#!/bin/bash
+password="vuphuong123"
+count=0
+while [ $count -lt 5 ]
+do
+  read -s -p "Nhap mat khau: " input
+  echo
+  if [ "$input" = "$password" ]; then
+    echo "Chuc mung ban"
+    exit 0
+  else
+    echo "Sai mat khau, vui long nhap lai!"
+  fi
+  count=$((count + 1))
+done
+echo "Khoa tai khoan"

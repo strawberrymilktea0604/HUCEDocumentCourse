@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+  echo "Bạn chưa nhập tham số!"
+  exit 1
+fi
+max="$1"
+shift
+for so in "$@"; do
+  if [ "$so" -gt "$max" ]; then
+    max="$so"
+  fi
+done
+echo "So lon nhat la: $max"

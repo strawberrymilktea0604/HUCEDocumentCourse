@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# MSSV
+mssv=4004267
+n=$((mssv % 3 + 6))
+echo "🎲 Trò chơi xúc xắc $n mặt 🎲"
+echo "--------------------------------------"
+
+tong_mat=0
+tong_thang=0
+
+while true
+do
+    # Sinh ngẫu nhiên từ 1 đến n
+    xucxac=$((RANDOM % n + 1))
+
+    # Người chơi nhập số đoán và tiền cược
+    read -p "Nhập số bạn đoán (1-$n): " doan
+    read -p "Nhập số tiền cược: " tien
+
+    if [ "$doan" -eq "$xucxac" ]; then
+        tien_thang=$((tien * 10))
+        echo "✅ Bạn đoán đúng! Số xúc xắc = $xucxac. Bạn thắng $tien_thang!"
+        tong_thang=$((tong_thang + tien_thang))
+    else
+        echo "❌ Sai rồi! Số xúc xắc là $xucxac. Bạn mất $tien!"
+        tong_mat=$((tong_mat + tien))
+    fi
+
+    # Hỏi có chơi tiếp không
+    read -p "Chơi tiếp không? (Y/N): " tiep
+    if [[ "$tiep" =~ [Nn] ]]; then
+        break
+    fi
+    echo "--------------------------------------"
+done
+
+echo "--------------------------------------"
+echo "💰 Tổng tiền đã mất: $tong_mat"
+echo "💵 Tổng tiền thu được: $tong_thang"
+echo "--------------------------------------"

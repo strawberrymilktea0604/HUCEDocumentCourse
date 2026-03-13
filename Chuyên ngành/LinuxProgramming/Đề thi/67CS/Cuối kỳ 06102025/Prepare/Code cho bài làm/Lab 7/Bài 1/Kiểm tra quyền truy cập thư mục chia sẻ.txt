@@ -1,0 +1,24 @@
+#!/bin/bash
+if su - student001 -c "echo 'Bai nop 001' > /home/share/file001.txt"; then
+    echo "student001 tạo file thành công"
+else
+    echo "student001 KHÔNG tạo được file"
+fi
+
+if su - student001 -c "cat /home/share/file001.txt" >/dev/null 2>&1; then
+    echo "student001 đọc lại file của mình thành công"
+else
+    echo "student001 KHÔNG đọc được file của mình"
+fi
+
+if su - student002 -c "cat /home/share/file001.txt" >/dev/null 2>&1; then
+    echo "student002 ĐỌC ĐƯỢC file của student001 (sai)"
+else
+    echo "student002 KHÔNG đọc được file của student001 (đúng)"
+fi
+
+if su - student001 -c "ls /home/share" >/dev/null 2>&1; then
+    echo "student001 ls được thư mục (sai)"
+else
+    echo "student001 KHÔNG ls được thư mục (đúng)"
+fi

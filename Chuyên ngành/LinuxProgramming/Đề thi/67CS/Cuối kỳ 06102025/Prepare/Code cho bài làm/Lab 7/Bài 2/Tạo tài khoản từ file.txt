@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+input="ds_sinhvien_2"
+while IFS="::" read -r hoten ngaysinh
+do
+    username=$(echo "$hoten" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+    if id "$username" &>/dev/null; then
+        echo "User $username đã tồn tại, bỏ qua."
+    else
+        useradd -m -s /bin/bash -c "$hoten" "$username"
+        echo "$username:$(openssl passwd -6 "$ngaysinh")" | chpasswd -e
+        echo "Tạo và đặt mật khẩu cho: $username ($hoten)"
+    fi
+done < "$input"

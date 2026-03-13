@@ -1,0 +1,21 @@
+#!/bin/bash
+read -p "Nhap duong dan tuyet doi: " path
+if [ ! -e "$path" ]; then
+  echo "Duong dan $path khong ton tai!"
+  exit 1
+fi
+name=$(basename "$path")
+echo "$name"
+if [ -f "$path" ]; then
+  echo -e "\tDay la mot file"
+elif [ -d "$path" ]; then
+  echo -e "\tDay la mot thu muc"
+else
+  echo -e "\tKhong xac dinh duoc loai"
+fi
+if [ -r "$path" ]; then
+  echo -e "\tBan co quyen doc $name"
+else
+  echo -e "\tBan khong co quyen doc $name"
+fi
+# ... (các kiểm tra quyền khác tương tự script 5b)

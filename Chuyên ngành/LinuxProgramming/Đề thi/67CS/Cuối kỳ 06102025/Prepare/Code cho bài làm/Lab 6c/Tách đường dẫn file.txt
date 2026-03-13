@@ -1,0 +1,10 @@
+#!/bin/bash
+read -p "Nhập đường dẫn tuyệt đối của file: " filepath
+if [ ! -e "$filepath" ]; then
+  echo "File không tồn tại!"
+  exit 1
+fi
+dir="${filepath%/*}"
+file="${filepath##*/}"
+echo "Đường dẫn thư mục cha: $dir"
+echo "Tên file: $file"

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+user_file="/etc/passwd"
+
+# Đếm số người dùng thêm vào hệ thống (UID >= 1000 và != 65534 - thường là 'nobody')
+user_count=0
+# Đếm số tài khoản hệ thống (UID < 1000)
+system_count=0
+# Đếm số người dùng shell bash
+bash_count=0
+
+while IFS=: read -r username passwd uid gid desc home shell
+do
+    if [ "$uid" -ge 1000 ] && [ "$uid" -ne 65534 ]; then
+        user_count=$((user_count+1))
+    else
+        system_count=$((system_count+1))
+    fi
+
+    if [ "$shell" = "/bin/bash" ]; then
+        bash_count=$((bash_count+1))
+    fi
+done < "$user_file"
+
+echo "Số người dùng thêm vào hệ thống: $user_count"
+echo "Số tài khoản hệ thống: $system_count"
+echo "Số người dùng shell bash: $bash_count"

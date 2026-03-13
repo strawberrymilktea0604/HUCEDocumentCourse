@@ -1,0 +1,29 @@
+Bài 1: Quản lý file và thư mục
+Kịch bản cần kiểm tra sự tồn tại của bất kỳ file nào có tên theo mẫu {tên sinh viên}_*.sh trong thư mục /home/{tên sinh viên}nt_hk3/kiemtra{ngày tháng}/. Nếu có bất kỳ file nào khớp với mẫu này tồn tại, kịch bản phải thực hiện việc xóa 500 file có tên từ {tên sinh viên}_1.sh đến {tên sinh viên}_500.sh. Ngược lại, nếu không tìm thấy file nào, kịch bản phải tạo mới thư mục theo cấu trúc trên, sau đó tạo 500 file rỗng bên trong với quy tắc đặt tên tuần tự tương ứng, thay đổi quyền của thư mục để tước mọi quyền truy cập của group và others, và cuối cùng là di chuyển thư mục này vào /share/bin.
+
+Bài 2: Kiểm tra quyền truy cập file
+Hãy viết một kịch bản bash có khả năng nhận một danh sách các tham số từ dòng lệnh, trong đó tham số cuối cùng luôn là một đường dẫn và các tham số đứng trước đó là yêu cầu kiểm tra các quyền truy cập cụ thể. Kịch bản cần phải xác định xem đường dẫn được cung cấp là một file hay một thư mục.
+Trong trường hợp đường dẫn trỏ đến một file, kịch bản phải dựa vào các tham số đã cho để thực hiện các công việc sau:
+1. Kiểm tra và thông báo người dùng có quyền đọc (read) đối với file hay không.
+2. Kiểm tra và thông báo người dùng có quyền ghi (write) đối với file hay không.
+3. Kiểm tra và thông báo người dùng có quyền thực thi (execute) đối với file hay không.
+Nếu đường dẫn là một thư mục, kịch bản chỉ cần hiển thị một thông báo duy nhất xác nhận đây là thư mục rồi kết thúc.
+
+Bài 3: Vẽ hình tam giác
+Hãy tạo một kịch bản bash có chức năng vẽ một hình tam giác cân rỗng ruột ra màn hình. Kịch bản này phải nhận vào hai tham số khi thực thi: tham số đầu tiên là một ký tự sẽ được dùng để vẽ các cạnh của tam giác, và tham số thứ hai là một số nguyên xác định chiều cao của hình. Dựa trên hai giá trị này, chương trình sẽ hiển thị hình tam giác tương ứng.
+
+    *
+   * *
+  *   *
+ *     *
+*********
+
+Bài 4: Menu tương tác
+Bạn được yêu cầu xây dựng một kịch bản bash tạo ra một menu chức năng tương tác, hoạt động trong một vòng lặp cho đến khi người dùng chọn thoát. Menu này phải cung cấp bốn lựa chọn, có thể được gọi bằng số hoặc chữ cái đầu tiên (không phân biệt hoa thường). Các chức năng cụ thể bao gồm:
+
+1. Present WD (P): Hiển thị đường dẫn làm việc hiện tại và dòng tóm tắt của lệnh tree.
+2. Input (I): Cho phép người dùng nhập vào một đường dẫn tuyệt đối và lưu lại để dùng cho các chức năng khác.
+3. Information (T): Phân tích đường dẫn đã lưu, báo cáo nó là file hay thư mục cùng với các quyền đọc, ghi, thực thi của người dùng. Nếu chưa có đường dẫn nào được lưu, chức năng này phải yêu cầu nhập tại chỗ.
+4. Exit (E): In một lời chào tạm biệt và chấm dứt hoạt động của kịch bản.
+
+Bài 5: Giống với các đề thi của các lớp trước đó (t không kịp làm)
