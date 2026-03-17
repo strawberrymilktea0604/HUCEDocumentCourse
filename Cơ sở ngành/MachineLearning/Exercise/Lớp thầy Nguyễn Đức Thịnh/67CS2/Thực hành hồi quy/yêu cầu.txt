@@ -1,0 +1,1 @@
+đọc dữ liệu từ file lấy dữ liệu cột điểm giữa kì là X , Y điểm cuối kì là Z .Xây dựng mô hình hồi quy tuyến tính chỉ rõ sự phụ thuộc của điểm cuối kì Z theo điểm giữa kì X, Y

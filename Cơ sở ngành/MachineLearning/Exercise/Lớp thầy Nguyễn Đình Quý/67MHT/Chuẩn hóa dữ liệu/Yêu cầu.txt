@@ -1,0 +1,1 @@
+Thực hành chuẩn hóa vector đặc trưng. Thực hành theo hướng dẫn trong file đính kèm. Không sử dụng chatGPT để làm bài thực hành

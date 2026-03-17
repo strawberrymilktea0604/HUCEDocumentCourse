@@ -1,0 +1,12 @@
+# Bài thực hành: Mạng Nơ Ron Nhân Tạo
+# File requirements.txt - Danh sách thư viện cần thiết
+
+# Core libraries
+numpy>=1.19.0
+
+# Visualization
+matplotlib>=3.3.0
+seaborn>=0.11.0
+
+# Optional: For better progress display (not required)
+# tqdm>=4.50.0
